@@ -3,7 +3,12 @@
 This is a frontend part of the application for my diploma that is about scouts knowledge and how people can learn it more. Also, the app will be used like a translator for morse code, semafor.
 
 ## Features
-
+- Morse Code
+- Semafor
+- Orientation
+- Maps
+- learning material
+- learning courses
 
 ## Getting Started
 
