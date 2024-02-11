@@ -22,6 +22,8 @@ class CustomDialogNoButtons extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
       ),
       backgroundColor: Colors.transparent,
+      shadowColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
       insetPadding: const EdgeInsets.all(20),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -30,7 +32,7 @@ class CustomDialogNoButtons extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-              color: Colors.white,
+              color: Theme.of(context).hintColor
             ),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -45,12 +47,12 @@ class CustomDialogNoButtons extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Colors.black,
+                            color: Colors.white,
                             width: 2,
                           ),
                           borderRadius: const BorderRadius.all(Radius.circular(30)),
                         ),
-                        child: Icon(icon, color: Colors.black, size: 36),
+                        child: Icon(icon, color: Colors.white, size: 36),
                       ),
                     ],
                   ),
@@ -59,8 +61,9 @@ class CustomDialogNoButtons extends StatelessWidget {
                     content,
                     style: const TextStyle(
                       fontSize: 14,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                       fontFamily: 'JetBrains Mono',
+                      color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),

@@ -97,9 +97,11 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   fonts:
-    - family: JetBrains Mono
+    - family: JetBrainsMono-Bold
       fonts:
         - asset: assets/fonts/JetBrainsMono/JetBrainsMono-Bold.ttf
+    - family: JetBrainsMono-Regular
+      fonts:
         - asset: assets/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf
 
 
@@ -107,6 +109,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/icons/
     - assets/images/
     - assets/images/rsk_logo.png
     - assets/images/single_separator_forest.png

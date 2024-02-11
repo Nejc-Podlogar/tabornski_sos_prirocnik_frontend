@@ -4,4 +4,5 @@ class RouteNames {
   static const String morseCode = '/morse-code';
   static const String orientation = '/orientation';
   static const String settings = '/settings';
+  static const String morseCodeTranslator = '/morse-code/morse-translator';
 }

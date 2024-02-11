@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_app_bar.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/materials_widget.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart';
@@ -51,7 +53,9 @@ class MorseCodeView extends StatelessWidget {
                     icon: const Icon(Icons.g_translate_outlined),
                     iconSize: MediaQuery.of(context).size.width * 0.14,
                     color: Colors.white,
-                    onPressed: () {  },
+                    onPressed: () {
+                      context.go(RouteNames.morseCodeTranslator);
+                    },
                   ),
                 ),
                 Container(
