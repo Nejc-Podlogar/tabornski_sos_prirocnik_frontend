@@ -45,6 +45,11 @@ dependencies:
   torch_controller: ^2.0.1
   bloc_concurrency: ^0.2.4
   meta: ^1.9.1
+  path_provider: ^2.1.2
+  flutter_cached_pdfview: ^0.4.2
+  flutter_speed_dial: ^7.0.0
+  share_plus: ^7.2.2
+  flutter_file_saver: ^0.6.2
 
 dev_dependencies:
   flutter_test:
@@ -114,6 +119,8 @@ flutter:
     - assets/
     - assets/icons/
     - assets/images/
+    - assets/pdfs/
     - assets/images/rsk_logo.png
     - assets/images/single_separator_forest.png
+    - assets/pdfs/GSJ23_razpis.pdf
 

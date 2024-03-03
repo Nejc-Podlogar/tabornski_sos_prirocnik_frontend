@@ -8,4 +8,5 @@ class AssetsRes {
   static const String PLUGIN_VERSION = '1.0.0+1';
   static const String RSK_LOGO = 'assets/images/rsk_logo.png';
   static const String SINGLE_SEPARATOR_FOREST = 'assets/images/single_separator_forest.png';
+  static const String GSJ23_RAZPIS = 'assets/pdfs/GSJ23_razpis.pdf';
 }

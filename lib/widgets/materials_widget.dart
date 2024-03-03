@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:tabornski_sos_prirocnik_frontend/widgets/pdf_custom_viewer.dart';
 
 import '../models/models.dart' as models;
 
@@ -59,7 +61,15 @@ class MaterialsWidget extends StatelessWidget {
                                       Icons.file_copy_outlined,
                                       color: Theme.of(context).hintColor,
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                        // Open the material pdf
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => PDFScreen(path: materials[index].file, title: materials[index].name,),
+                                          ),
+                                        );
+                                    },
                                   ))),
                           SizedBox(
                             width: 50,

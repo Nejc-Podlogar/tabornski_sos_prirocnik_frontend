@@ -13,7 +13,7 @@ class MorseCodeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<models.Material> materials = <models.Material>[
       models.Material(
-          name: 'Morsejeva abeceda', file: 'morse_code.pdf', description: ''),
+          name: 'GSJ razpis', file: 'assets/pdfs/GSJ23_razpis.pdf', description: 'GSJ razpis'),
       models.Material(
           name: 'Morsejeva abeceda 2', file: 'morse_code.pdf', description: ''),
     ];
