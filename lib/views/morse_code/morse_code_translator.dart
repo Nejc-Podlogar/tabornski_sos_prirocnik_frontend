@@ -158,73 +158,75 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
 
   //The custom bottom sheet for the settings.
   void showTorchSettingsBottomSheet(BuildContext context) {
-  final morseTranslationBloc = BlocProvider.of<MorseTranslationBloc>(context);
+    final morseTranslationBloc = BlocProvider.of<MorseTranslationBloc>(context);
 
-  showModalBottomSheet(
-    showDragHandle: true,
-    shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25),
-          topRight: Radius.circular(25),
-        )),
-    context: context,
-    builder: (BuildContext context) {
-      return BlocBuilder<MorseTranslationBloc, MorseTranslationState>(
-          bloc: morseTranslationBloc,
-          builder: (BuildContext context, MorseTranslationState state) {
-            return Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  SwitchListTile(
-                    inactiveTrackColor: primaryCardTheme.color!,
-                    activeColor: Theme.of(context).primaryColor,
-                    activeTrackColor: Colors.grey.withAlpha(70),
-                    title: const Text('Auto Repeating Transmission'),
-                    value: (morseTranslationBloc.state as MorseTranslationInitial).isAutoRepeating,
-                    onChanged: (bool value) {
-                      // Update isAutoRepeatingEnabled
-                      morseTranslationBloc.add(ToggleAutoRepeat(isAutoRepeating: value));
-                    },
-                  ),
-                  const SizedBox(height: 50),
-                  morseTranslationBloc.isTransmitting
-                      ? OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(double.maxFinite, 50),
-                        backgroundColor: primaryCardTheme.color,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                      onPressed: () {
-                        morseTranslationBloc.add(ToggleTransmitting(
-                            morseCode: _textTranslatedController.text));
+    showModalBottomSheet(
+      showDragHandle: true,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(25),
+        topRight: Radius.circular(25),
+      )),
+      context: context,
+      builder: (BuildContext context) {
+        return BlocBuilder<MorseTranslationBloc, MorseTranslationState>(
+            bloc: morseTranslationBloc,
+            builder: (BuildContext context, MorseTranslationState state) {
+              return Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SwitchListTile(
+                      inactiveTrackColor: primaryCardTheme.color!,
+                      activeColor: Theme.of(context).primaryColor,
+                      activeTrackColor: Colors.grey.withAlpha(70),
+                      title: const Text('Auto Repeating Transmission'),
+                      value: (morseTranslationBloc.state
+                              as MorseTranslationInitial)
+                          .isAutoRepeating,
+                      onChanged: (bool value) {
+                        // Update isAutoRepeatingEnabled
+                        morseTranslationBloc
+                            .add(ToggleAutoRepeat(isAutoRepeating: value));
                       },
-                      child: const Text('Stop transmitting'))
-                      : OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(double.maxFinite, 50),
-                        backgroundColor: Theme.of(context).hintColor,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                      onPressed: () {
-                        morseTranslationBloc.add(ToggleTransmitting(
-                            morseCode: _textTranslatedController.text,
-                        ));
-                      },
-                      child: const Text('Start transmitting')),
-                ],
-              ),
-            );
-          }
-      );
-    },
-  );
-}
+                    ),
+                    const SizedBox(height: 50),
+                    morseTranslationBloc.isTransmitting
+                        ? OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              fixedSize: const Size(double.maxFinite, 50),
+                              backgroundColor: primaryCardTheme.color,
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                            ),
+                            onPressed: () {
+                              morseTranslationBloc.add(ToggleTransmitting(
+                                  morseCode: _textTranslatedController.text));
+                            },
+                            child: const Text('Stop transmitting'))
+                        : OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              fixedSize: const Size(double.maxFinite, 50),
+                              backgroundColor: Theme.of(context).hintColor,
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                            ),
+                            onPressed: () {
+                              morseTranslationBloc.add(ToggleTransmitting(
+                                morseCode: _textTranslatedController.text,
+                              ));
+                            },
+                            child: const Text('Start transmitting')),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -243,114 +245,112 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
           ),
           Align(
             alignment: Alignment.topCenter,
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.58,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30))),
-              child: Column(children: <Widget>[
-                Expanded(
-                  flex: 4, // 40% of the available space
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: SingleChildScrollView(
-                      child: SingleChildScrollView(
-                        child: BlocBuilder<MorseTranslationBloc,
-                                MorseTranslationState>(
-                            builder: (BuildContext context,
-                                MorseTranslationState state) {
-                          bool isTextFieldEnabled = true;
-                          if (state is MorseTranslationInitial &&
-                              state.languageSetting.languageSetting ==
-                                  MorseLanguageSetting.none) {
-                            isTextFieldEnabled = false;
+            child: BlocBuilder<MorseTranslationBloc, MorseTranslationState>(
+              builder: (context, state) {
+                bool isTextFieldEnabled = true;
+                if (state is MorseTranslationInitial &&
+                    state.languageSetting.languageSetting ==
+                        MorseLanguageSetting.none) {
+                  isTextFieldEnabled = false;
 
-                            _textEditingController.text =
-                                state.languageSetting.inputText ?? '';
-                          }
+                  _textEditingController.text =
+                      state.languageSetting.inputText ?? '';
+                }
 
-                          return TextField(
-                            controller: _textEditingController,
-                            enabled: isTextFieldEnabled,
-                            maxLines: null,
-                            decoration: InputDecoration(
-                              hintText: isTextFieldEnabled
-                                  ? 'Vnesi besedilo...'
-                                  : 'Izberi vrsto prevoda',
-                              border: InputBorder.none,
-                            ),
-                            onChanged: _handleInputTranslation,
-                          );
-                        }),
-                      ),
-                    ),
-                  ),
-                ),
-                const Divider(
-                  color: Colors.black,
-                  endIndent: 15,
-                  indent: 15,
-                  thickness: 1,
-                ),
-                Expanded(
-                    flex: 6,
-                    child: Stack(children: <Widget>[
-                      BlocBuilder<MorseTranslationBloc, MorseTranslationState>(
-                          builder: (BuildContext context,
-                              MorseTranslationState state) {
-                            _textTranslatedController.text =
-                                state.languageSetting.translatedText ?? '';
-                            return SingleChildScrollView(
-                              child: Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: TextField(
-                                  maxLines: null,
-                                  enabled: false,
-                                  controller: _textTranslatedController,
-                                  decoration: const InputDecoration(
-                                    hintText: 'Prevod...',
-                                    border: InputBorder.none,
-                                  ),
-                                ),
+                _textTranslatedController.text =
+                    state.languageSetting.translatedText ?? '';
+
+                return Container(
+                  height: MediaQuery.of(context).size.height * 0.58,
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30))),
+                  child: Column(children: <Widget>[
+                    Expanded(
+                      flex: 4, // 40% of the available space
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: SingleChildScrollView(
+                          child: SingleChildScrollView(
+                            child: TextField(
+                              controller: _textEditingController,
+                              enabled: isTextFieldEnabled,
+                              maxLines: null,
+                              decoration: InputDecoration(
+                                hintText: isTextFieldEnabled
+                                    ? 'Vnesi besedilo...'
+                                    : 'Izberi vrsto prevoda',
+                                border: InputBorder.none,
                               ),
-                            );
-                      }),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: IconButton(
-                          icon: const Icon(Icons.flashlight_on_outlined),
-                          onPressed: () {
-                            showTorchSettingsBottomSheet(context);
-                          },
+                              onChanged: _handleInputTranslation,
+                            ),
+                          ),
                         ),
                       ),
-                      Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              IconButton(
-                                  onPressed: () {
-                                    _textEditingController.clear();
-                                    _textTranslatedController.clear();
-                                    BlocProvider.of<MorseTranslationBloc>(
-                                            context)
-                                        .add(ClearInput());
-                                  },
-                                  icon: const Icon(
-                                      Icons.delete_outline_outlined)),
-                              IconButton(
-                                  onPressed: () {
-                                    Clipboard.setData(ClipboardData(
-                                        text: _textTranslatedController.text));
-                                  },
-                                  icon: const Icon(Icons.copy_rounded))
-                            ],
-                          ))
-                    ])),
-              ]),
+                    ),
+                    const Divider(
+                      color: Colors.black,
+                      endIndent: 15,
+                      indent: 15,
+                      thickness: 1,
+                    ),
+                    Expanded(
+                        flex: 6,
+                        child: Stack(children: <Widget>[
+                          SingleChildScrollView(
+                            child: Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: TextField(
+                                maxLines: null,
+                                enabled: false,
+                                controller: _textTranslatedController,
+                                decoration: const InputDecoration(
+                                  hintText: 'Prevod...',
+                                  border: InputBorder.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: IconButton(
+                              icon: const Icon(Icons.flashlight_on_outlined),
+                              onPressed: () {
+                                showTorchSettingsBottomSheet(context);
+                              },
+                            ),
+                          ),
+                          Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  IconButton(
+                                      onPressed: () {
+                                        _textEditingController.clear();
+                                        _textTranslatedController.clear();
+                                        BlocProvider.of<MorseTranslationBloc>(
+                                                context)
+                                            .add(ClearInput());
+                                      },
+                                      icon: const Icon(
+                                          Icons.delete_outline_outlined)),
+                                  IconButton(
+                                      onPressed: () {
+                                        Clipboard.setData(ClipboardData(
+                                            text: _textTranslatedController
+                                                .text));
+                                      },
+                                      icon: const Icon(Icons.copy_rounded))
+                                ],
+                              ))
+                        ])),
+                  ]),
+                );
+              },
             ),
           ),
           Align(

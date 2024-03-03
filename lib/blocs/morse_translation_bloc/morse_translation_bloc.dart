@@ -113,13 +113,12 @@ class MorseTranslationBloc
   }
 
   _mapClearInputToState(ClearInput event, emit) {
-    if (state is MorseTranslationInitial) {
-      MorseTranslationInitial initialState = state as MorseTranslationInitial;
-      emit(MorseTranslationInitial(
-          languageSetting: initialState.languageSetting
-              .copyWith(inputText: null, translatedText: null),
-          isAutoRepeating: state.isAutoRepeating));
-    }
+    emit(MorseTranslationInitial(
+        languageSetting: MorseCodeLanguage(
+            languageSetting: state.languageSetting.languageSetting,
+            inputText: null,
+            translatedText: null),
+        isAutoRepeating: state.isAutoRepeating));
   }
 
   _mapToggleTransmittingToState(ToggleTransmitting event, emit) async {
