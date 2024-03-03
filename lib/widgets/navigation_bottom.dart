@@ -22,19 +22,19 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
 
     switch (_currentIndex) {
       case 0:
-        context.go(RouteNames.morseCode);
+        context.goNamed(RouteNames.morseCode);
         break;
       case 1:
-        Navigator.of(context).pushNamed('/home');
+        context.goNamed(RouteNames.home);
         break;
       case 2:
-        context.go(RouteNames.orientation);
+        context.goNamed(RouteNames.orientation);
         break;
       case 3:
-        context.go(RouteNames.settings);
+        context.goNamed(RouteNames.settings);
         break;
       default:
-        context.go('/settings');
+        context.goNamed(RouteNames.settings);
         break;
     }
 

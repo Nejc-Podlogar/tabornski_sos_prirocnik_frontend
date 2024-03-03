@@ -54,7 +54,7 @@ class MorseCodeView extends StatelessWidget {
                     iconSize: MediaQuery.of(context).size.width * 0.14,
                     color: Colors.white,
                     onPressed: () {
-                      context.go(RouteNames.morseCodeTranslator);
+                      context.goNamed(RouteNames.morseCodeTranslator);
                     },
                   ),
                 ),
@@ -85,10 +85,12 @@ class MorseCodeView extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(20)),
                   child: IconButton(
-                    icon: const Icon(Icons.folder_open_outlined),
+                    icon: const Icon(Icons.menu_book_outlined),
                     iconSize: MediaQuery.of(context).size.width * 0.14,
                     color: Colors.white,
-                    onPressed: () {  },
+                    onPressed: () {
+                      context.goNamed(RouteNames.morseCodeMaterials);
+                    },
                   ),
                 ),
               ]

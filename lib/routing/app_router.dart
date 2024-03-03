@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
 
 import '../blocs/morse_translation_bloc/morse_translation_bloc.dart';
 import '../views/home/home_screen.dart';
 import '../views/morse_code/morse_code.dart';
+import '../views/morse_code/morse_code_materials.dart';
 import '../views/morse_code/morse_code_translator.dart';
 import '../views/orientation/orientation.dart';
 import '../views/settings/settings.dart';
@@ -14,29 +16,29 @@ class AppRouter {
   static GoRouter router = GoRouter(
     routes: [
       GoRoute(
-          name: 'root',
-          path: '/',
+          name: RouteNames.root,
+          path: RoutePaths.root,
           pageBuilder: (context, state) {
             return MaterialPage(child: WelcomeView());
           },
           routes: <RouteBase>[
             GoRoute(
-              name: 'home',
-              path: 'home',
+              name: RouteNames.home,
+              path: RoutePaths.home,
               pageBuilder: (context, state) {
                 return const MaterialPage(child: HomeView());
               },
             ),
             GoRoute(
-              name: 'morse-code',
-              path: 'morse-code',
+              name: RouteNames.morseCode,
+              path: RoutePaths.morseCode,
               pageBuilder: (context, state) {
                 return const MaterialPage(child: MorseCodeView());
               },
               routes: <GoRoute> [
                 GoRoute(
-                  name: 'morse-code-translator',
-                  path: 'morse-translator',
+                  name: RouteNames.morseCodeTranslator,
+                  path: RoutePaths.morseCodeTranslator,
                   pageBuilder: (context, state) {
                     return MaterialPage(
                         child: BlocProvider(
@@ -44,19 +46,26 @@ class AppRouter {
                             child: const MorseCodeTranslatorView()
                         ));
                   }
+                ),
+                GoRoute(
+                  name: RouteNames.morseCodeMaterials,
+                  path: RoutePaths.morseCodeMaterials,
+                  pageBuilder: (context, state) {
+                    return const MaterialPage(child: MorseCodeMaterials());
+                  }
                 )
               ]
             ),
             GoRoute(
-              name: 'orientation',
-              path: 'orientation',
+              name: RouteNames.orientation,
+              path: RoutePaths.orientation,
               pageBuilder: (context, state) {
                 return const MaterialPage(child: OrientationView());
               },
             ),
             GoRoute(
-              name: 'settings',
-              path: 'settings',
+              name: RouteNames.settings,
+              path: RoutePaths.settings,
               pageBuilder: (context, state) {
                 return const MaterialPage(child: SettingsView());
               },

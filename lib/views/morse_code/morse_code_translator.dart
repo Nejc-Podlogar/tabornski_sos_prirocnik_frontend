@@ -9,6 +9,7 @@ import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart'
 
 import '../../blocs/morse_translation_bloc/morse_translation_bloc.dart';
 import '../../models/morse_code_language.dart';
+import '../../themes/default_dark.dart';
 
 class MorseCodeTranslatorView extends StatefulWidget {
   const MorseCodeTranslatorView({Key? key}) : super(key: key);
@@ -20,7 +21,8 @@ class MorseCodeTranslatorView extends StatefulWidget {
 
 class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
   final TextEditingController _textEditingController = TextEditingController();
-  final TextEditingController _textTranslatedController = TextEditingController();
+  final TextEditingController _textTranslatedController =
+      TextEditingController();
 
   // Handle input translation
   void _handleInputTranslation(String input) {
@@ -28,10 +30,9 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
     // add morseCodeLanguageModel from the current state and the input wit TranslateInput event
     morseTranslationBloc.add(TranslateInput(
         inputText: input,
-        morseCodeLanguageModel: (morseTranslationBloc.state
-                as MorseTranslationInitial)
-            .languageSetting));
-
+        morseCodeLanguageModel:
+            (morseTranslationBloc.state as MorseTranslationInitial)
+                .languageSetting));
   }
 
   Row _buildButtonsRow(BuildContext context, dynamic leftButtonContent,
@@ -155,13 +156,86 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
     );
   }
 
+  //The custom bottom sheet for the settings.
+  void showTorchSettingsBottomSheet(BuildContext context) {
+  final morseTranslationBloc = BlocProvider.of<MorseTranslationBloc>(context);
+
+  showModalBottomSheet(
+    showDragHandle: true,
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        )),
+    context: context,
+    builder: (BuildContext context) {
+      return BlocBuilder<MorseTranslationBloc, MorseTranslationState>(
+          bloc: morseTranslationBloc,
+          builder: (BuildContext context, MorseTranslationState state) {
+            return Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  SwitchListTile(
+                    inactiveTrackColor: primaryCardTheme.color!,
+                    activeColor: Theme.of(context).primaryColor,
+                    activeTrackColor: Colors.grey.withAlpha(70),
+                    title: const Text('Auto Repeating Transmission'),
+                    value: (morseTranslationBloc.state as MorseTranslationInitial).isAutoRepeating,
+                    onChanged: (bool value) {
+                      // Update isAutoRepeatingEnabled
+                      morseTranslationBloc.add(ToggleAutoRepeat(isAutoRepeating: value));
+                    },
+                  ),
+                  const SizedBox(height: 50),
+                  morseTranslationBloc.isTransmitting
+                      ? OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        fixedSize: const Size(double.maxFinite, 50),
+                        backgroundColor: primaryCardTheme.color,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                      onPressed: () {
+                        morseTranslationBloc.add(ToggleTransmitting(
+                            morseCode: _textTranslatedController.text));
+                      },
+                      child: const Text('Stop transmitting'))
+                      : OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        fixedSize: const Size(double.maxFinite, 50),
+                        backgroundColor: Theme.of(context).hintColor,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                      onPressed: () {
+                        morseTranslationBloc.add(ToggleTransmitting(
+                            morseCode: _textTranslatedController.text,
+                        ));
+                      },
+                      child: const Text('Start transmitting')),
+                ],
+              ),
+            );
+          }
+      );
+    },
+  );
+}
+
   @override
   Widget build(BuildContext context) {
     bool isKeyboardOpen = MediaQuery.of(context).viewInsets.bottom != 0;
 
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: const CustomAppBar(title: 'Morse Code Translator'),
+        appBar: const CustomAppBar(
+          title: 'Morse Code Translator',
+          enablePopButton: true,
+        ),
         bottomNavigationBar: CustomBottomNavigation(),
         body: Stack(children: <Widget>[
           Container(
@@ -193,8 +267,8 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                                   MorseLanguageSetting.none) {
                             isTextFieldEnabled = false;
 
-                            _textEditingController.text = state.languageSetting.inputText
-                                ?? '';
+                            _textEditingController.text =
+                                state.languageSetting.inputText ?? '';
                           }
 
                           return TextField(
@@ -224,32 +298,32 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                     flex: 6,
                     child: Stack(children: <Widget>[
                       BlocBuilder<MorseTranslationBloc, MorseTranslationState>(
-                          builder: (BuildContext context, MorseTranslationState state) {
-                            if (state is MorseTranslationSuccess) {
-                              _textTranslatedController.text = state.languageSetting.translatedText ?? '';
-                              return SingleChildScrollView(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(15.0),
-                                  child: TextField(
-                                    maxLines: null,
-                                    enabled: false,
-                                    controller: _textTranslatedController,
-                                    decoration: const InputDecoration(
-                                      hintText: 'Prevod...',
-                                      border: InputBorder.none,),
+                          builder: (BuildContext context,
+                              MorseTranslationState state) {
+                            _textTranslatedController.text =
+                                state.languageSetting.translatedText ?? '';
+                            return SingleChildScrollView(
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: TextField(
+                                  maxLines: null,
+                                  enabled: false,
+                                  controller: _textTranslatedController,
+                                  decoration: const InputDecoration(
+                                    hintText: 'Prevod...',
+                                    border: InputBorder.none,
                                   ),
                                 ),
-                              );
-                            } else {
-                              return Container();
-                            }
-                          }
-                      ),
+                              ),
+                            );
+                      }),
                       Align(
                         alignment: Alignment.topRight,
                         child: IconButton(
                           icon: const Icon(Icons.flashlight_on_outlined),
-                          onPressed: () {},
+                          onPressed: () {
+                            showTorchSettingsBottomSheet(context);
+                          },
                         ),
                       ),
                       Align(
@@ -261,14 +335,16 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                                   onPressed: () {
                                     _textEditingController.clear();
                                     _textTranslatedController.clear();
-                                    BlocProvider.of<MorseTranslationBloc>(context)
+                                    BlocProvider.of<MorseTranslationBloc>(
+                                            context)
                                         .add(ClearInput());
                                   },
                                   icon: const Icon(
                                       Icons.delete_outline_outlined)),
                               IconButton(
                                   onPressed: () {
-                                    Clipboard.setData(ClipboardData(text: _textTranslatedController.text));
+                                    Clipboard.setData(ClipboardData(
+                                        text: _textTranslatedController.text));
                                   },
                                   icon: const Icon(Icons.copy_rounded))
                             ],

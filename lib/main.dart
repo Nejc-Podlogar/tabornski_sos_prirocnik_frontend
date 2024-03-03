@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/blocs/morse_translation_bloc/morse_translation_bloc.dart';
 import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_bloc.dart';
 import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_state.dart';
 import 'package:tabornski_sos_prirocnik_frontend/routing/app_router.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => ThemeBloc())
+          BlocProvider(create: (context) => ThemeBloc()),
+          BlocProvider(create: (context) => MorseTranslationBloc())
         ],
         child: BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, ThemeState state) {

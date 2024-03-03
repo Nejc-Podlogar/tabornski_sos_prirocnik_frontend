@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
@@ -11,7 +12,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showLeading;
   final Color? actionsColor;
   final bool showActions;
-  final disableBackButton;
+  final bool disableBackButton;
+  final bool enablePopButton;
 
 
   @override
@@ -27,6 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actionsColor = Colors.black,
     this.showActions = true,
     this.disableBackButton = false,
+    this.enablePopButton = false
   }) : preferredSize = const Size.fromHeight(kToolbarHeight),
         super(key: key);
   
@@ -39,13 +42,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       shadowColor: Colors.transparent,
       leading: showLeading ? IconButton(
         icon: Icon(
-            Icons.house_outlined,
+            enablePopButton ? Icons.arrow_back_ios_rounded : Icons.home_outlined,
             color: leadingColor,
           weight: FontWeight.w300.value.toDouble(),
         ),
-        onPressed: () {
-          context.goNamed('home');
-        },
+        onPressed: () => enablePopButton ? context.pop() : context.goNamed(RouteNames.home),
       ) : disableBackButton ? Container() : null,
       title: Image.asset(
         'assets/images/taborniski_sos_prirocnik_logo.png',
