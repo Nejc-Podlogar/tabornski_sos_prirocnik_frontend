@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 final ThemeData lightTheme = ThemeData(
+  fontFamily: 'JetBrains Mono',
   primaryColor: const Color(0xFF5E8C61),
   hintColor: const Color(0xFF611599),
   textTheme: const TextTheme(

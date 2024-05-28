@@ -4,9 +4,16 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 class AssetsRes {
+  AssetsRes._();
+
   static const String PLUGIN_NAME = 'tabornski_sos_prirocnik_frontend';
   static const String PLUGIN_VERSION = '1.0.0+1';
   static const String RSK_LOGO = 'assets/images/rsk_logo.png';
+  static const String CANCEL = 'assets/images/semaphore/flags/cancel.png';
+  static const String ERROR = 'assets/images/semaphore/flags/error.png';
+  static const String LETTERS = 'assets/images/semaphore/flags/letters.png';
+  static const String NUMERALS = 'assets/images/semaphore/flags/numerals.png';
+  static const String SPACE = 'assets/images/semaphore/flags/space.png';
   static const String SINGLE_SEPARATOR_FOREST = 'assets/images/single_separator_forest.png';
   static const String GSJ23_RAZPIS = 'assets/pdfs/GSJ23_razpis.pdf';
 }

@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
+import 'package:tabornski_sos_prirocnik_frontend/views/semaphore/semaphore_materials.dart';
 
 import '../blocs/morse_translation_bloc/morse_translation_bloc.dart';
 import '../views/home/home_screen.dart';
 import '../views/morse_code/morse_code.dart';
+import '../views/morse_code/morse_code_learning.dart';
 import '../views/morse_code/morse_code_materials.dart';
 import '../views/morse_code/morse_code_translator.dart';
 import '../views/orientation/orientation.dart';
+import '../views/semaphore/semaphore.dart';
+import '../views/semaphore/semaphore_translator.dart';
 import '../views/settings/settings.dart';
 import '../views/welcome/welcome_screen.dart';
 
@@ -52,6 +56,36 @@ class AppRouter {
                   path: RoutePaths.morseCodeMaterials,
                   pageBuilder: (context, state) {
                     return const MaterialPage(child: MorseCodeMaterials());
+                  }
+                ),
+                GoRoute(
+                  name: RouteNames.morseCodeLearning,
+                  path: RoutePaths.morseCodeLearning,
+                  pageBuilder: (context, state) {
+                    return const MaterialPage(child: MorseCodeLearning());
+                  }
+                )
+              ]
+            ),
+            GoRoute(
+              name: RouteNames.semaphore,
+              path: RoutePaths.semaphore,
+                pageBuilder: (context, state) {
+                  return const MaterialPage(child: SemaphoreView());
+                },
+              routes: <GoRoute> [
+                GoRoute(
+                  name: RouteNames.semaphoreTranslator,
+                  path: RoutePaths.semaphoreTranslator,
+                  pageBuilder: (context, state) {
+                    return const MaterialPage(child: SemaphoreTranslatorView());
+                  }
+                ),
+                GoRoute(
+                  name: RouteNames.semaphoreMaterials,
+                    path: RoutePaths.semaphoreMaterials,
+                  pageBuilder: (context, state) {
+                    return MaterialPage(child: SemaphoreMaterialsView());
                   }
                 )
               ]

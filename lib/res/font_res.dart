@@ -4,6 +4,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 class FontRes {
+  FontRes._();
+
   static const String JETBRAINSMONO_BOLD = 'JetBrainsMono-Bold';
   static const String JETBRAINSMONO_REGULAR = 'JetBrainsMono-Regular';
 }

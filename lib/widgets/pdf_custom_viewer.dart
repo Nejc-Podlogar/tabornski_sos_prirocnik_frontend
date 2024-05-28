@@ -71,37 +71,33 @@ class _PDFScreenState extends State<PDFScreen> {
         title: Text(widget.title),
       ),
       body: Stack(children: [
-        InteractiveViewer(
-          minScale: 1.0,
-          maxScale: 3.0,
-            child: PDF(
-              enableSwipe: true,
-              swipeHorizontal: false,
-              autoSpacing: true,
-              pageFling: false,
-              onRender: (_pages) {
-                setState(() {
-                  currentPage = 1;
-                  pages = _pages!;
-                  isReady = true;
-                });
-              },
-              onError: (error) {
-                print(error.toString());
-              },
-              onPageError: (page, error) {
-                print('$page: ${error.toString()}');
-              },
-              onViewCreated: (PDFViewController pdfViewController) {
-                _controller.complete(pdfViewController);
-              },
-              onPageChanged: (int? page, int? total) {
-                setState(() {
-                  currentPage = page! + 1;
-                });
-              },
-            ).fromAsset(widget.path)
-        ),
+        PDF(
+          enableSwipe: true,
+          swipeHorizontal: false,
+          autoSpacing: true,
+          pageFling: false,
+          onRender: (_pages) {
+            setState(() {
+              currentPage = 1;
+              pages = _pages!;
+              isReady = true;
+            });
+          },
+          onError: (error) {
+            print(error.toString());
+          },
+          onPageError: (page, error) {
+            print('$page: ${error.toString()}');
+          },
+          onViewCreated: (PDFViewController pdfViewController) {
+            _controller.complete(pdfViewController);
+          },
+          onPageChanged: (int? page, int? total) {
+            setState(() {
+              currentPage = page! + 1;
+            });
+          },
+        ).fromAsset(widget.path),
         isReady
             ? Positioned(
             top: 10,

@@ -37,7 +37,6 @@ class MaterialsWidget extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: materials.length,
-
                   itemBuilder: (context, index) {
                     return Center(
                       child: Column(

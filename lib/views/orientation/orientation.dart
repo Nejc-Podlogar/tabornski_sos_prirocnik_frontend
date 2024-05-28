@@ -6,6 +6,8 @@ import 'package:tabornski_sos_prirocnik_frontend/widgets/materials_widget.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart';
 
 import '../../models/material.dart' as models;
+import '../../themes/default_dark.dart';
+import '../../widgets/MorseCodeCustomDisplay.dart';
 
 class OrientationView extends StatelessWidget {
   const OrientationView({Key? key}) : super(key: key);
@@ -170,19 +172,10 @@ class OrientationView extends StatelessWidget {
                   height: MediaQuery.of(context).size.width * 0.25,
                   width: MediaQuery.of(context).size.width * 0.25,
                   decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
+                      color: primaryCardTheme.color,
                       borderRadius: BorderRadius.circular(20)),
                   child: const Center(
-                    child: Text(
-                      '...',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w300,
-                        fontFamily: 'JetBrains Mono',
-                        color: Colors.white,
-                      ),
-                    ),),
+                    child: MorseCodeCustomDisplay(morseCodeText: '...', color: Colors.white),),
                 ),
               ],
             ),

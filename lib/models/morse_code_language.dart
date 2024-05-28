@@ -87,4 +87,31 @@ enum FilterType {
   Numbers
 }
 
+enum MorseCodeLearningType {
+  Reading,
+  Sending
+}
+
+enum MorseCodeLearningAmount {
+  letters,
+  words,
+  sentences
+}
+
+enum LearningInteractionType {
+  cards,
+  keyboard,
+  tokens
+}
+
+class MorseCodeLearning {
+  final FilterType filterType;
+  final MorseCodeLearningType learningType;
+  final MorseCodeLearningAmount learningAmount;
+  final LearningInteractionType interactionType;
+  final int numberOfIterations;
+
+  MorseCodeLearning({required this.filterType, required this.learningType, required this.learningAmount, required this.interactionType, required this.numberOfIterations});
+}
+
 

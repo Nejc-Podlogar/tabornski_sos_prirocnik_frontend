@@ -69,7 +69,7 @@ class MorseCodeView extends StatelessWidget {
                     icon: const Icon(Icons.school_outlined),
                     iconSize: MediaQuery.of(context).size.width * 0.14,
                     color: Colors.white,
-                    onPressed: () {  },
+                    onPressed: () => context.goNamed(RouteNames.morseCodeLearning)
                   ),
                 ),
               ],

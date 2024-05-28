@@ -25,7 +25,7 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
         context.goNamed(RouteNames.morseCode);
         break;
       case 1:
-        context.goNamed(RouteNames.home);
+        context.goNamed(RouteNames.semaphore);
         break;
       case 2:
         context.goNamed(RouteNames.orientation);
@@ -34,7 +34,7 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
         context.goNamed(RouteNames.settings);
         break;
       default:
-        context.goNamed(RouteNames.settings);
+        context.goNamed(RouteNames.home);
         break;
     }
 

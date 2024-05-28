@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tabornski_sos_prirocnik_frontend/themes/default_dark.dart';
@@ -22,6 +23,7 @@ class _SettingsViewState extends State<SettingsView> {
   final _nameController = TextEditingController(text: 'uporabnik');
   bool _isEditing = false;
   bool _notificationsEnabled = false;
+  bool _darkModeEnabled = false;
 
   @override
   void initState() {
@@ -81,15 +83,35 @@ class _SettingsViewState extends State<SettingsView> {
     if (value) {
       var status = Permission.notification.status;
       if (await status.isDenied) {
-        Permission.notification.request();
+        await Permission.notification.request();
 
-        if (await Permission.notification.isGranted) {
-          await showDialog(
+        await Permission.notification.isGranted.then((status) {
+          if(status) {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) => const CustomDialogNoButtons(
+                  title: 'Notifications enabled',
+                  content: 'You will now receive notifications',
+                  icon: Icons.notifications_active_outlined,
+                  duration: Duration(seconds: 2)),
+            );
+
+            setState(() {
+              _notificationsEnabled = true;
+            });
+          }
+        });
+      }
+    } else {
+      await Permission.notification.status.then((status) {
+        if (status.isGranted) {
+          showDialog(
             context: context,
             builder: (BuildContext context) => const CustomDialogNoButtons(
-                title: 'Notifications enabled',
-                content: 'You will now receive notifications',
-                icon: Icons.notifications_active_outlined,
+                title: 'Manual notification disable required',
+                content:
+                'Please disable the notifications in your phone settings',
+                icon: Icons.restore_from_trash_outlined,
                 duration: Duration(seconds: 2)),
           );
 
@@ -97,22 +119,100 @@ class _SettingsViewState extends State<SettingsView> {
             _notificationsEnabled = true;
           });
         }
-
-
-      }
-    } else {
-      var status = await Permission.notification.status;
-      if (status.isGranted) {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) => const CustomDialogNoButtons(
-              title: 'Manual notification disable required',
-              content: 'Please disable the notifications in your phone settings',
-              icon: Icons.restore_from_trash_outlined,
-              duration: Duration(seconds: 2)),
-        );
-      }
+      });
     }
+  }
+
+  void showAboutDialog() async {
+    await PackageInfo.fromPlatform().then((packageInfo) {
+      String appName = packageInfo.appName;
+      String version = packageInfo.version;
+
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Close button at the top left
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
+                  // Logo at the top
+                  const CircleAvatar(
+                    radius: 50.0,
+                    backgroundImage: AssetImage(
+                        'assets/images/taborniski_sos_prirocnik_logo.png'),
+                    backgroundColor: Colors.transparent,
+                  ),
+                  const SizedBox(height: 20),
+                  // Custom content here
+                  Text(appName,
+                      style:
+                          const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 10),
+                  const Text('Developed by: Nejc Podlogar',
+                      style: TextStyle(fontSize: 14)),
+                  const SizedBox(height: 10),
+                  const SizedBox(height: 10),
+                  Text('Version $version', style: const TextStyle(fontSize: 12)),
+                  const Text('© 2024 Nejc Podlogar',
+                      style: TextStyle(fontSize: 10)),
+                  const SizedBox(height: 50),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: primaryCardTheme.color,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) => LicensePage(
+                                applicationName: appName,
+                                applicationVersion: version,
+                                applicationIcon: CircleAvatar(
+                                  backgroundColor: Colors.transparent,
+                                  radius: 40.0,
+                                  child: Image.asset(
+                                      'assets/images/taborniski_sos_prirocnik_logo.png'),
+                                ),
+                                applicationLegalese: '© 2024 Nejc Podlogar',
+                              ),
+                            ));
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.fromLTRB(15, 8, 15, 8),
+                            child: Text('View Licenses',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.white)),
+                          ),
+                        ),
+                      ])
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    });
   }
 
   @override
@@ -173,7 +273,7 @@ class _SettingsViewState extends State<SettingsView> {
                                       setState(() {
                                         _isEditing = false;
                                       });
-                                    } ,
+                                    },
                                     style: const TextStyle(
                                       fontSize: 14,
                                       fontFamily: 'JetBrains Mono',
@@ -185,21 +285,24 @@ class _SettingsViewState extends State<SettingsView> {
                                     showCursor: _isEditing,
                                     cursorColor: Colors.white,
                                     decoration: InputDecoration(
-                                      border: _isEditing ? const UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white),
-                                      ) : InputBorder.none,
+                                      border: _isEditing
+                                          ? const UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Colors.white),
+                                            )
+                                          : InputBorder.none,
                                       focusedBorder: const UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white),
+                                        borderSide:
+                                            BorderSide(color: Colors.white),
                                       ),
-                                    )
-                                ),
+                                    )),
                               ),
                             ),
                             if (_isEditing)
                               IconButton(
                                 icon: const Icon(
-                                    Icons.save,
-                                    color: Colors.white,
+                                  Icons.save,
+                                  color: Colors.white,
                                   size: 14,
                                 ),
                                 onPressed: () {
@@ -314,9 +417,13 @@ class _SettingsViewState extends State<SettingsView> {
                         ))
                   ]),
                   checkmarkSwitch(
-                    value: false,
-                    callback: (bool value) =>
-                        context.read<ThemeBloc>().add(ToggleThemeEvent()),
+                    value: _darkModeEnabled,
+                    callback: (bool value) {
+                      context.read<ThemeBloc>().add(ToggleThemeEvent());
+                      setState(() {
+                        _darkModeEnabled = value;
+                      });
+                    }
                   )
                 ],
               ),
@@ -353,6 +460,7 @@ class _SettingsViewState extends State<SettingsView> {
                   checkmarkSwitch(
                     value: _notificationsEnabled,
                     callback: (bool value) {
+                      print('Toggling notifications: $value');
                       _toggleNotifications(value);
                     },
                   )
@@ -465,6 +573,19 @@ class _SettingsViewState extends State<SettingsView> {
               thickness: 1,
               indent: 20,
               endIndent: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextButton(
+                    onPressed: () => showAboutDialog(),
+                    child: Text('About',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                          color: primaryCardTheme.color,
+                        )))
+              ],
             ),
           ],
         ),
