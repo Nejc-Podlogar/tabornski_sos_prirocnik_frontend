@@ -77,7 +77,7 @@ class MorseCodeRepository {
       MorseLanguageSetting translationType) {
     //return true;
 
-    // If translationType is textToMorse, and valueAmount is words, then we need to compare the text to the expected value.
+
 
 
     if (translationType == MorseLanguageSetting.textToMorse) {
@@ -142,6 +142,12 @@ class MorseCodeRepository {
       }
 
     } else {
+
+      RegExp regExp = RegExp(r'[.,\/#!$%\^&\*;:{}=\-_`~()]');
+
+      text = text.split('').map((char) {
+        return regExp.hasMatch(char) ? '' : char;
+      }).join('');
 
       if (valueAmount == MorseCodeLearningAmount.words) {
         final List<String> textLetters = replaceSlovenianLetters(text.toUpperCase().trim()).split('');
