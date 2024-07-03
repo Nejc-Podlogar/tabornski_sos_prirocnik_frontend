@@ -46,7 +46,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             color: leadingColor,
           weight: FontWeight.w300.value.toDouble(),
         ),
-        onPressed: () => enablePopButton ? context.pop() : context.goNamed(RouteNames.home),
+        onPressed: () => enablePopButton ? context.pop(context) : context.goNamed(RouteNames.home),
       ) : disableBackButton ? Container() : null,
       title: Image.asset(
         'assets/images/taborniski_sos_prirocnik_logo.png',

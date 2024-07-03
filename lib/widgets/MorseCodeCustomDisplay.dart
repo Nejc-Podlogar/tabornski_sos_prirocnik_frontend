@@ -12,32 +12,59 @@ class MorseCodeCustomDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> displayElements = [];
+    for (int i = 0; i < morseCodeText.length; i++) {
+      String e = morseCodeText[i];
+      if (e == '.') {
+        displayElements.add(Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: CircleAvatar(
+            radius: 5,
+            backgroundColor: color,
+          ),
+        ));
+      } else if (e == '-') {
+        displayElements.add(Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Container(
+            width: 25,
+            height: 6,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              color: color,
+            ),
+          ),
+        ));
+      } else if (e == ' ') {
+        displayElements.add(Transform.rotate(
+          angle: 40 * 3.14 / 180,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: color,
+              ),
+              width: 2,
+              height: 20,
+            ),
+          ),
+        ));
+      }
+      if (i < morseCodeText.length - 1 &&
+          morseCodeText[i + 1] != ' ' &&
+          e != ' ') {
+        displayElements.add(const SizedBox.shrink());
+      }
+    }
+
     return Wrap(
       alignment: WrapAlignment.start,
-      spacing: 2.0, // Space between the dots and dashes horizontally
-      runSpacing: 4.0, // Space between the lines vertically
-      children: morseCodeText.split('').map((e) {
-        return e == '.'
-            ? Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: CircleAvatar(
-                  radius: 5,
-                  backgroundColor: color,
-                ),
-              )
-            : e == '-'
-                ? Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Container(
-                        width: 25, // Same as the diameter of the CircleAvatar
-                        height: 6, // Specify the height of the dash
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: color,
-                        )),
-                  )
-                : const SizedBox(width: 20,); // Use SizedBox.shrink() for an empty space that takes no space
-      }).toList(),
+      crossAxisAlignment: WrapCrossAlignment.center,
+      direction: Axis.horizontal,
+      spacing: 2.0,
+      runSpacing: 4.0,
+      children: displayElements,
     );
   }
 }

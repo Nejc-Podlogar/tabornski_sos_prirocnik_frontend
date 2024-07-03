@@ -25,19 +25,20 @@ class _MorseCodeLearningState extends State<MorseCodeLearning> {
   int? _selectedNumberOfRepetitions;
 
 
-  /*Widget _buildSelectionChips(Map<dynamic, dynamic> options, int minWidth, Function validator, dynamic value) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.8,
-      child: Wrap(
-        direction: Axis.horizontal,
-        spacing: 20,
-        runSpacing: 1,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        alignment: WrapAlignment.center,
-        children: options.,
-      ),
-    );
-  }*/
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => _resetState());
+    super.initState();
+  }
+
+  void _resetState() {
+    setState(() {
+      _selectedLearningType = null;
+      _selectedLearningAmount = null;
+      _selectedLearningInteractionType = null;
+      _selectedNumberOfRepetitions = null;
+    });
+  }
 
 
 

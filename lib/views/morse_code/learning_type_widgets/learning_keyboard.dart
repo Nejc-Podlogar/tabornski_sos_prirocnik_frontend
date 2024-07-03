@@ -22,8 +22,8 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
   int index = 0;
 
   void displayBottomSheet(BuildContext context, AppLocalizations localizations,
-      MorseExerciseState state) {
-    if (state.exerciseText?.length == state.correctAnswers?.length) {
+      MorseExerciseState state, {bool finishExercise = false}) {
+    if (finishExercise) {
       showModalBottomSheet(
           context: context,
           shape: const RoundedRectangleBorder(
@@ -91,6 +91,28 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
                   ? localizations.partiallyCorrectAnswer
                   : localizations.errorWhileValidating;
 
+      Widget currentIcon = lastValidation == MorseCodeValidation.correct ?
+        Icon(
+          Icons.check_circle,
+          color: currentColor,
+          size: 32,
+        ) : lastValidation == MorseCodeValidation.incorrect ?
+        Icon(
+          Icons.cancel,
+          color: currentColor,
+          size: 32,
+        ) : lastValidation == MorseCodeValidation.partial ?
+        Icon(
+          Icons.help,
+          color: currentColor,
+          size: 32,
+        ) : Icon(
+          Icons.error,
+          color: currentColor,
+          size: 32,
+        );
+
+
       showModalBottomSheet(
           context: context,
           shape: const RoundedRectangleBorder(
@@ -108,11 +130,7 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Icon(
-                        Icons.check_circle,
-                        color: currentColor,
-                        size: 32,
-                      ),
+                      currentIcon,
                       const SizedBox(width: 10),
                       Text(
                         text,
@@ -128,9 +146,15 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
                   lastValidation != MorseCodeValidation.correct ? const SizedBox(height: 10) : const SizedBox(),
                   lastValidation != MorseCodeValidation.correct ? widget.params.learningType ==
                       MorseLanguageSetting.textToMorse
-                      ? MorseCodeCustomDisplay(
-                      morseCodeText: state.expectedAnswers![index], color: Colors.black)
-                      : Text(state.exerciseText?[index] ??
+                      ? Expanded(
+                        child: Scrollbar(
+                          child: SingleChildScrollView(
+                            child: MorseCodeCustomDisplay(
+                            morseCodeText: state.expectedAnswers![index], color: Colors.black),
+                          ),
+                        ),
+                      )
+                      : Text(state.expectedAnswers?[index] ??
                       'ERROR, NO EXERCISE') : const SizedBox(),
                   const SizedBox(height: 20),
                   Center(
@@ -139,9 +163,16 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: TextButton(
                             onPressed: () {
-                              BlocProvider.of<MorseExerciseBloc>(context)
-                                  .add(MorseExerciseNext());
-                              context.pop(context);
+                              if (state.exerciseText?.length == state.correctAnswers?.length) {
+                                context.pop(context);
+                                FocusScope.of(context).unfocus();
+                                WidgetsBinding.instance.addPostFrameCallback((_) => displayBottomSheet(context, localizations, state, finishExercise: true));
+                              } else {
+                                BlocProvider.of<MorseExerciseBloc>(context)
+                                    .add(MorseExerciseNext());
+                                FocusScope.of(context).unfocus();
+                                context.pop(context);
+                              }
                             },
                             style: TextButton.styleFrom(
                               backgroundColor: currentColor,
@@ -186,6 +217,8 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
             children: <Widget>[
               Text(
                 localizations.translateTheFollowingText,
+                softWrap: true,
+                maxLines: 3,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -217,11 +250,15 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
                     ),
                   ),
                   const SizedBox(width: 20),
-                  Text(
-                    state.exerciseText?[index] ?? 'ERROR, NO EXERCISE',
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
+                  Flexible(
+                    child: Text(
+                      state.exerciseText?[index] ?? 'ERROR, NO EXERCISE',
+                      softWrap: true,
+                      maxLines: 3,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
                 ],
