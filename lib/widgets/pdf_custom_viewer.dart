@@ -42,7 +42,7 @@ class _PDFScreenState extends State<PDFScreen> {
       final File tempFile = File('${tempDir.path}/${fileName}');
        await tempFile.writeAsBytes(bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes));
 
-       await Share.shareFiles([tempFile.path], text: 'Sharing PDF from Taborniski SOS Priročnik app');
+       await Share.shareXFiles([XFile(tempFile.path)], text: 'Sharing PDF from Taborniski SOS Priročnik app');
     } catch (e) {
       throw 'Problem while sharing the PDF: $e';
     }
@@ -119,6 +119,7 @@ class _PDFScreenState extends State<PDFScreen> {
       floatingActionButton: isReady
           ? SpeedDial(
               icon: Icons.more_horiz_outlined,
+              iconTheme: const IconThemeData(color: Colors.white),
               activeIcon: Icons.close,
               mini: false,
               spaceBetweenChildren: 4,

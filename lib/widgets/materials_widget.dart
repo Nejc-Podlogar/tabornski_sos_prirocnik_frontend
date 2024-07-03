@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/pdf_custom_viewer.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/models.dart' as models;
 
@@ -14,12 +15,12 @@ class MaterialsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        const Row(
+        Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Gradiva:',
-                style: TextStyle(
+                '${AppLocalizations.of(context)!.materials}:',
+                style: const TextStyle(
                   fontSize: 16,
                   fontFamily: 'JetBrains Mono',
                   fontWeight: FontWeight.normal,
@@ -28,7 +29,7 @@ class MaterialsWidget extends StatelessWidget {
               ),
             ]),
         Padding(
-          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+          padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
           child: SizedBox(
               height: 100,
               width: MediaQuery.of(context).size.width,
@@ -38,53 +39,51 @@ class MaterialsWidget extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: materials.length,
                   itemBuilder: (context, index) {
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                              margin: const EdgeInsets.all(10),
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Theme.of(context).hintColor,
-                                  width: 2,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Center(
-                                  child: IconButton(
-                                    icon: Icon(
-                                      size: 24,
-                                      Icons.file_copy_outlined,
-                                      color: Theme.of(context).hintColor,
-                                    ),
-                                    onPressed: () {
-                                        // Open the material pdf
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => PDFScreen(path: materials[index].file, title: materials[index].name,),
-                                          ),
-                                        );
-                                    },
-                                  ))),
-                          SizedBox(
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                            margin: const EdgeInsets.all(10),
+                            height: 50,
                             width: 50,
-                            child: Text(
-                              materials[index].name,
-                              style: const TextStyle(
-                                fontFamily: 'JetBrains Mono',
-                                color: Colors.black,
-                                fontSize: 7,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Theme.of(context).hintColor,
+                                width: 2,
                               ),
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.visible,
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                          )
-                        ],
-                      )
+                            child: Center(
+                                child: IconButton(
+                                  icon: Icon(
+                                    size: 24,
+                                    Icons.file_copy_outlined,
+                                    color: Theme.of(context).hintColor,
+                                  ),
+                                  onPressed: () {
+                                      // Open the material pdf
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => PDFScreen(path: materials[index].file, title: materials[index].name,),
+                                        ),
+                                      );
+                                  },
+                                ))),
+                        SizedBox(
+                          width: 50,
+                          child: Text(
+                            materials[index].name,
+                            style: const TextStyle(
+                              fontFamily: 'JetBrains Mono',
+                              color: Colors.black,
+                              fontSize: 7,
+                            ),
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.visible,
+                          ),
+                        )
+                      ],
                     );
                   },
                 ),

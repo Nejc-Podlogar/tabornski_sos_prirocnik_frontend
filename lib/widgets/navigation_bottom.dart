@@ -42,40 +42,43 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      backgroundColor: Colors.white,
-      currentIndex: _currentIndex,
-      onTap: _onItemTapped,
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(
-              Icons.more_horiz_sharp,
-              color: Colors.black,
+    return Theme(
+      data: Theme.of(context).copyWith(splashColor: Colors.transparent),
+      child: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        currentIndex: _currentIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+                Icons.more_horiz_sharp,
+                color: Colors.black,
+            ),
+            label: ''
           ),
-          label: ''
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-              Icons.flag_outlined,
-              color: Colors.black,
+          BottomNavigationBarItem(
+            icon: Icon(
+                Icons.flag_outlined,
+                color: Colors.black,
+            ),
+            label: ''
           ),
-          label: ''
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-              Icons.map_outlined,
-              color: Colors.black,
+          BottomNavigationBarItem(
+            icon: Icon(
+                Icons.map_outlined,
+                color: Colors.black,
+            ),
+            label: ''
           ),
-          label: ''
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-              Icons.settings_outlined,
-              color: Colors.black,
+          BottomNavigationBarItem(
+            icon: Icon(
+                Icons.settings_outlined,
+                color: Colors.black,
+            ),
+            label: '',
           ),
-          label: '',
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

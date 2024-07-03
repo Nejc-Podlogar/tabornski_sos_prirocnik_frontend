@@ -2,20 +2,43 @@ import 'package:flutter/material.dart';
 
 final ThemeData darkTheme = ThemeData(
   fontFamily: 'JetBrains Mono',
+  splashColor: Colors.transparent,
   primaryColor: const Color(0xFF5E8C61),
   hintColor: const Color(0xFF611599),
   textTheme: const TextTheme(
-    headline1: TextStyle(color: Colors.black),
-    bodyText1: TextStyle(color: Colors.black),
+    displayLarge: TextStyle(color: Colors.black),
+    bodyLarge: TextStyle(color: Colors.black),
   ),
   scaffoldBackgroundColor: const Color(0xFF1A1A1A),
   appBarTheme: const AppBarTheme(
+    foregroundColor: Colors.transparent,
+    surfaceTintColor: Colors.transparent,
+    shadowColor: Colors.transparent,
     backgroundColor: Color(0xFF5E8C61),
     titleTextStyle: TextStyle(color: Colors.white),
     iconTheme: IconThemeData(color: Colors.white),
   ),
   cardTheme: const CardTheme(
     color: Colors.white, // Default card background
+  ),
+  chipTheme: const ChipThemeData(
+    backgroundColor: Colors.white,
+    labelStyle: TextStyle(
+        color: Color(0xFFB2B39C),
+    ),
+    brightness: Brightness.dark,
+    selectedColor: Color(0xFFB2B39C),
+    checkmarkColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      side: BorderSide(
+        color: Color(0xFFB2B39C),
+        width: 1.5,
+      ),
+      borderRadius: BorderRadius.all(
+          Radius.circular(10),
+      ),
+    ),
+
   ),
 );
 

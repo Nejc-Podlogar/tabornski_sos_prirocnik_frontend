@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/models/models.dart';
 import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
+import 'package:tabornski_sos_prirocnik_frontend/views/morse_code/learning_screen.dart';
 import 'package:tabornski_sos_prirocnik_frontend/views/semaphore/semaphore_materials.dart';
 
 import '../blocs/morse_translation_bloc/morse_translation_bloc.dart';
 import '../views/home/home_screen.dart';
 import '../views/morse_code/morse_code.dart';
-import '../views/morse_code/morse_code_learning.dart';
+import '../views/morse_code/morse_code_learning_selector.dart';
 import '../views/morse_code/morse_code_materials.dart';
 import '../views/morse_code/morse_code_translator.dart';
 import '../views/orientation/orientation.dart';
@@ -59,11 +61,32 @@ class AppRouter {
                   }
                 ),
                 GoRoute(
-                  name: RouteNames.morseCodeLearning,
-                  path: RoutePaths.morseCodeLearning,
+                  name: RouteNames.morseCodeLearningSelector,
+                  path: RoutePaths.morseCodeLearningSelector,
                   pageBuilder: (context, state) {
                     return const MaterialPage(child: MorseCodeLearning());
-                  }
+                  },
+                  routes: <GoRoute> [
+                      GoRoute(
+                        name: RouteNames.morseCodeLearning,
+                        path: RoutePaths.morseCodeLearning,
+                        pageBuilder: (context, state) {
+                          MorseCodeLearningParams? params;
+                          if (state.extra != null) {
+                            var extra = state.extra as Map<String, dynamic>;
+                            if (extra['params'] is MorseCodeLearningParams) {
+                              params = extra['params'] as MorseCodeLearningParams;
+                            }
+                          }
+
+                          if(params == null) {
+                            throw Exception('MorseCodeLearningParams are not provided');
+                          }
+
+                          return MaterialPage(child: LearningScreen(params: params));
+                        }
+                      )
+                    ]
                 )
               ]
             ),

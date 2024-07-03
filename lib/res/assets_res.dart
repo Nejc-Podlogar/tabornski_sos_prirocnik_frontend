@@ -8,6 +8,7 @@ class AssetsRes {
 
   static const String PLUGIN_NAME = 'tabornski_sos_prirocnik_frontend';
   static const String PLUGIN_VERSION = '1.0.0+1';
+  static const String CARD_SWIPE_ICON = 'assets/icons/card_swipe_icon.svg';
   static const String RSK_LOGO = 'assets/images/rsk_logo.png';
   static const String CANCEL = 'assets/images/semaphore/flags/cancel.png';
   static const String ERROR = 'assets/images/semaphore/flags/error.png';

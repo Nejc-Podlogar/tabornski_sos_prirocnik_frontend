@@ -36,6 +36,8 @@ class _CheckMarkSwitchState extends State<checkmarkSwitch> {
       activeTrackColor: Theme.of(context).primaryColor,
       activeColor: Colors.white,
       inactiveTrackColor: primaryCardTheme.color,
+      inactiveThumbColor: Colors.white,
+
     );
   }
 }

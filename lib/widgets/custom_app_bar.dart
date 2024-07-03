@@ -37,9 +37,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 10,
-
-      backgroundColor: Colors.transparent,
-      shadowColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
       leading: showLeading ? IconButton(
         icon: Icon(
             enablePopButton ? Icons.arrow_back_ios_rounded : Icons.home_outlined,

@@ -4,6 +4,7 @@ import 'package:tabornski_sos_prirocnik_frontend/models/models.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/MorseCodeCustomDisplay.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_app_bar.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MorseCodeMaterials extends StatefulWidget {
   const MorseCodeMaterials({Key? key}) : super(key: key);
@@ -55,8 +56,9 @@ class _MorseCodeMaterialsViewState extends State<MorseCodeMaterials> {
                         : Colors.black,
                   ),
                   selectedColor: Theme.of(context).hintColor,
+                  checkmarkColor: Colors.white,
                   label: Text(
-                    filterType.name,
+                    filterType == FilterType.All ? AppLocalizations.of(context)!.all : filterType == FilterType.Letters ? AppLocalizations.of(context)!.letters : AppLocalizations.of(context)!.numbers,
                   ),
                   selected: selection.contains(filterType),
                   onSelected: (selected) {

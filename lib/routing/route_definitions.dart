@@ -7,6 +7,7 @@ class RoutePaths {
   static const String settings = 'settings';
   static const String morseCodeTranslator = 'translator';
   static const String morseCodeMaterials = 'materials';
+  static const String morseCodeLearningSelector = 'selector';
   static const String morseCodeLearning = 'learning';
   static const String semaphoreTranslator = 'translator';
   static const String semaphoreMaterials = 'materials';
@@ -21,6 +22,7 @@ class RouteNames {
   static const String settings = 'Settings';
   static const String morseCodeTranslator = 'MorseCodeTranslator';
   static const String morseCodeMaterials = 'MorseCodeMaterials';
+  static const String morseCodeLearningSelector = 'MorseCodeLearningSelector';
   static const String morseCodeLearning = 'MorseCodeLearning';
   static const String semaphoreTranslator = 'SemaphoreTranslator';
   static const String semaphoreMaterials = 'SemaphoreMaterials';

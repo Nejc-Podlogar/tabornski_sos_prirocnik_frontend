@@ -50,13 +50,28 @@ class OrientationView extends StatelessWidget {
                   height: MediaQuery.of(context).size.width * 0.25,
                   width: MediaQuery.of(context).size.width * 0.25,
                   decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: IconButton(
-                    icon: const Icon(Icons.g_translate_outlined),
-                    iconSize: MediaQuery.of(context).size.width * 0.14,
-                    color: Colors.white,
-                    onPressed: () {  },
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                      // Handle your onTap action here
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.g_translate_outlined,
+                          size: MediaQuery.of(context).size.width * 0.14,
+                          color: Colors.white,
+                        ),
+                        const Text(
+                          'Karte',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(

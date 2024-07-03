@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/generated/l10n.dart';
 import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_app_bar.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/materials_widget.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart';
 import '../../models/models.dart' as models;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MorseCodeView extends StatelessWidget {
   const MorseCodeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     final List<models.Material> materials = <models.Material>[
       models.Material(
           name: 'GSJ razpis', file: 'assets/pdfs/GSJ23_razpis.pdf', description: 'GSJ razpis'),
@@ -19,13 +22,13 @@ class MorseCodeView extends StatelessWidget {
     ];
 
     return Scaffold(
-        appBar: const CustomAppBar(title: 'Morsejeva abeceda'),
+        appBar: CustomAppBar(title: AppLocalizations.of(context)!.morseCodeAlphabet),
         bottomNavigationBar: CustomBottomNavigation(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const SizedBox(height: 20),
-            const Text('Morsejeva abeceda'),
+            Text(AppLocalizations.of(context)!.morseCodeAlphabet),
             const SizedBox(height: 40),
             const SizedBox(
                 width: 300,
@@ -49,14 +52,27 @@ class MorseCodeView extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(20)),
-                  child: IconButton(
-                    icon: const Icon(Icons.g_translate_outlined),
-                    iconSize: MediaQuery.of(context).size.width * 0.14,
-                    color: Colors.white,
-                    onPressed: () {
-                      context.goNamed(RouteNames.morseCodeTranslator);
-                    },
-                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.g_translate_outlined),
+                        iconSize: MediaQuery.of(context).size.width * 0.12,
+                        color: Colors.white,
+                        onPressed: () {
+                          context.goNamed(RouteNames.morseCodeTranslator);
+                        },
+                      ),
+                      Text(
+                        AppLocalizations.of(context)!.translator,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          fontFamily: 'JetBrains Mono'
+                        )
+                      )
+                    ]),
                 ),
                 Container(
                   margin: const EdgeInsets.all(20),
@@ -65,11 +81,25 @@ class MorseCodeView extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(20)),
-                  child: IconButton(
-                    icon: const Icon(Icons.school_outlined),
-                    iconSize: MediaQuery.of(context).size.width * 0.14,
-                    color: Colors.white,
-                    onPressed: () => context.goNamed(RouteNames.morseCodeLearning)
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      IconButton(
+                          icon: const Icon(Icons.school_outlined),
+                          iconSize: MediaQuery.of(context).size.width * 0.12,
+                          color: Colors.white,
+                          onPressed: () => context.goNamed(RouteNames.morseCodeLearningSelector)
+                      ),
+                      Text(
+                          AppLocalizations.of(context)!.exercises,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
+                              fontFamily: 'JetBrains Mono'
+                          )
+                      )
+                    ],
                   ),
                 ),
               ],
@@ -84,13 +114,27 @@ class MorseCodeView extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(20)),
-                  child: IconButton(
-                    icon: const Icon(Icons.menu_book_outlined),
-                    iconSize: MediaQuery.of(context).size.width * 0.14,
-                    color: Colors.white,
-                    onPressed: () {
-                      context.goNamed(RouteNames.morseCodeMaterials);
-                    },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      IconButton(
+                        icon: const Icon(Icons.menu_book_outlined),
+                        iconSize: MediaQuery.of(context).size.width * 0.12,
+                        color: Colors.white,
+                        onPressed: () {
+                          context.goNamed(RouteNames.morseCodeMaterials);
+                        },
+                      ),
+                      Text(
+                          AppLocalizations.of(context)!.dictionary,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
+                              fontFamily: 'JetBrains Mono'
+                          )
+                      )
+                    ],
                   ),
                 ),
               ]

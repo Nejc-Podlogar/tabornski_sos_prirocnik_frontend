@@ -58,7 +58,7 @@ class MorseTranslationBloc
 
       emit(MorseTranslationLoading(
           languageSetting:
-              initialState.languageSetting.copyWith(inputText: event.inputText),
+              initialState.languageSetting.copyWith(inputText: [event.inputText]),
           isAutoRepeating: state.isAutoRepeating));
 
       if (initialState.languageSetting.languageSetting ==
@@ -66,16 +66,16 @@ class MorseTranslationBloc
         try {
           emit(MorseTranslationSuccess(
               languageSetting: initialState.languageSetting.copyWith(
-                  inputText: event.inputText,
-                  translatedText: morseCodeRepository
-                      .translateToMorseCode(event.inputText)),
+                  inputText: [event.inputText],
+                  translatedText: [morseCodeRepository
+                      .translateToMorseCode(event.inputText)]),
               isAutoRepeating: state.isAutoRepeating));
         } catch (e) {
           emit(MorseTranslationFailure(
               errorMessage:
                   "Problem with translating the inputted text to morse code. Please validate that you only use allowed characters.",
               languageSetting: initialState.languageSetting.copyWith(
-                inputText: event.inputText,
+                inputText: [event.inputText],
                 languageSetting: initialState.languageSetting.languageSetting,
                 translatedText: null,
               ),
@@ -86,16 +86,16 @@ class MorseTranslationBloc
         try {
           emit(MorseTranslationSuccess(
               languageSetting: initialState.languageSetting.copyWith(
-                  inputText: event.inputText,
+                  inputText: [event.inputText],
                   translatedText:
-                      morseCodeRepository.translateToText(event.inputText)),
+                      [morseCodeRepository.translateToText(event.inputText)]),
               isAutoRepeating: state.isAutoRepeating));
         } catch (e) {
           emit(MorseTranslationFailure(
               errorMessage:
                   "Problem with translating the inputted morse code to text. Please validate that you only use allowed characters ( . - / ).",
               languageSetting: initialState.languageSetting.copyWith(
-                inputText: event.inputText,
+                inputText: [event.inputText],
                 languageSetting: initialState.languageSetting.languageSetting,
                 translatedText: null,
               ),
@@ -116,8 +116,8 @@ class MorseTranslationBloc
     emit(MorseTranslationInitial(
         languageSetting: MorseCodeLanguage(
             languageSetting: state.languageSetting.languageSetting,
-            inputText: null,
-            translatedText: null),
+            value: null,
+            translatedValue: null),
         isAutoRepeating: state.isAutoRepeating));
   }
 
@@ -129,7 +129,7 @@ class MorseTranslationBloc
       if (state is MorseTranslationInitial) {
         MorseTranslationInitial initialState = state as MorseTranslationInitial;
 
-        if (initialState.languageSetting.translatedText == null ||
+        if (initialState.languageSetting.translatedValue == null ||
             initialState.languageSetting.languageSetting !=
                 MorseLanguageSetting.textToMorse ||
             await torchController.hasTorch == false) {
@@ -137,7 +137,7 @@ class MorseTranslationBloc
               errorMessage:
                   "Problem with starting the torch transmitting. Please validate that you have translated the text to morse code and that you have the correct language setting.",
               languageSetting: initialState.languageSetting.copyWith(
-                translatedText: event.morseCode,
+                translatedText: [event.morseCode],
               ),
               isAutoRepeating: state.isAutoRepeating));
           return;
@@ -151,14 +151,14 @@ class MorseTranslationBloc
           _isTransmitting = false;
           emit(MorseTorchStoppedTransmitting(
               languageSetting: initialState.languageSetting.copyWith(
-                translatedText: event.morseCode,
+                translatedText: [event.morseCode],
               ),
               isAutoRepeating: state.isAutoRepeating));
         } else {
           _isTransmitting = true;
           emit(MorseTorchStartedTransmitting(
               languageSetting: initialState.languageSetting.copyWith(
-                translatedText: event.morseCode,
+                translatedText: [event.morseCode],
               ),
               isAutoRepeating: state.isAutoRepeating));
 
@@ -166,7 +166,7 @@ class MorseTranslationBloc
             await torchController.toggle();
           }
 
-          final String morseCode = initialState.languageSetting.translatedText!;
+          final String morseCode = initialState.languageSetting.translatedValue![0];
           do {
             for (int i = 0; i < morseCode.length; i++) {
               if (morseCode[i] == ".") {
@@ -196,7 +196,7 @@ class MorseTranslationBloc
 
           emit(MorseTorchStoppedTransmitting(
               languageSetting: initialState.languageSetting.copyWith(
-                translatedText: event.morseCode,
+                translatedText: [event.morseCode],
               ),
               isAutoRepeating: state.isAutoRepeating));
         }
@@ -208,7 +208,7 @@ class MorseTranslationBloc
           errorMessage:
               "Problem with starting the torch transmitting. Please try again.",
           languageSetting: initialState.languageSetting.copyWith(
-            translatedText: event.morseCode,
+            translatedText: [event.morseCode],
           ),
           isAutoRepeating: state.isAutoRepeating));
     }

@@ -44,14 +44,20 @@ dependencies:
   permission_handler: 11.3.1
   torch_controller: ^2.0.1
   bloc_concurrency: ^0.2.5
-  meta: 1.9.1
+  meta: ^1.12.0
   path_provider: ^2.1.3
   flutter_cached_pdfview: ^0.4.2
   flutter_speed_dial: ^7.0.0
   share_plus: 9.0.0
   flutter_file_saver: ^0.6.2
   package_info_plus: 8.0.0
-  collection: 1.17.2
+  collection: ^1.18.0
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  flutter_card_swiper: ^7.0.1
+  http: ^1.2.1
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +76,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -118,8 +125,10 @@ flutter:
 
 
   assets:
+    - .env
     - assets/
     - assets/icons/
+    - assets/icons/card_swipe_icon.svg
     - assets/images/
     - assets/images/rsk_logo.png
     - assets/images/semaphore/flags/
@@ -131,4 +140,5 @@ flutter:
     - assets/images/single_separator_forest.png
     - assets/pdfs/
     - assets/pdfs/GSJ23_razpis.pdf
-
+flutter_intl:
+  enabled: true

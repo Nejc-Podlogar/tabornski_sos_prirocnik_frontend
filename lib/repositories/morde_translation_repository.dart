@@ -1,22 +1,132 @@
+import '../models/morse_code_language.dart';
+
 class MorseCodeRepository {
   final Map<String, String> _morseCodeMapping = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
-    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
-    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
-    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--',
-    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
-    '9': '----.', '0': '-----', ' ': '/', '\n': '\n'
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
+    'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..',
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+    '0': '-----',
+    ' ': '/',
+    '\n': '\n'
   };
 
-
   String translateToMorseCode(String text) {
-    return text.toUpperCase().split('').map((char) => _morseCodeMapping[char] ?? '').join(' ');
+    return text
+        .toUpperCase()
+        .split('')
+        .map((char) => _morseCodeMapping[char] ?? '')
+        .join(' ');
   }
 
   String translateToText(String morseCode) {
-    final Map<String, String> _textMapping = _morseCodeMapping.map((k, v) => MapEntry(v, k));
+    final Map<String, String> _textMapping =
+        _morseCodeMapping.map((k, v) => MapEntry(v, k));
 
-    return morseCode.split(' ').map((code) => _textMapping[code] ?? '').join('').toLowerCase();
+    return morseCode
+        .split(' ')
+        .map((code) => _textMapping[code] ?? '')
+        .join('')
+        .toLowerCase();
+  }
+
+  MorseCodeValidation validateTranslation(
+      String text,
+      String expectedValue,
+      MorseCodeLearningAmount valueAmount,
+      MorseLanguageSetting translationType) {
+    //return true;
+
+    // If translationType is textToMorse, and valueAmount is words, then we need to compare the text to the expected value.
+
+
+    if (translationType == MorseLanguageSetting.textToMorse) {
+
+      if (valueAmount == MorseCodeLearningAmount.words) {
+        final List<String> textLetters = text.toUpperCase().split(' ');
+        final List<String> expectedLetters = expectedValue.toUpperCase().split(' ');
+
+        int correctLetters = 0;
+        int incorrectLetters = 0;
+
+        for (int i = 0; i < textLetters.length; i++) {
+          if (textLetters[i] == expectedLetters[i]) {
+            correctLetters++;
+          } else {
+            incorrectLetters++;
+          }
+        }
+
+        if (correctLetters == textLetters.length) {
+          return MorseCodeValidation.correct;
+        } else if (incorrectLetters > correctLetters) {
+          return MorseCodeValidation.incorrect;
+        } else {
+          return MorseCodeValidation.partial;
+        }
+      }else if (valueAmount == MorseCodeLearningAmount.sentences) {
+        // We need to compare sentences in this case. The sentences are separated by a / character.
+        // The letters in the text variable are separated by spaces. If every word in completely correct, then return MorseCodeValidation.correct,
+        // if there is more incorrect words than correct words, then return MorseCodeValidation.incorrect, otherwise return MorseCodeValidation.partial
+
+        final List<String> textSentences = text.toUpperCase().split('/');
+        final List<String> expectedSentences = expectedValue.toUpperCase().split('/');
+
+        int correctSentences = 0;
+        int incorrectSentences = 0;
+
+        for (int i = 0; i < textSentences.length; i++) {
+          if (textSentences[i] == expectedSentences[i]) {
+            correctSentences++;
+          } else {
+            incorrectSentences++;
+          }
+        }
+
+        if (correctSentences == textSentences.length) {
+          return MorseCodeValidation.correct;
+        } else if (incorrectSentences > correctSentences) {
+          return MorseCodeValidation.incorrect;
+        } else {
+          return MorseCodeValidation.partial;
+        }
+
+      }
+
+    }
+
+    return MorseCodeValidation.failed;
+
   }
 }

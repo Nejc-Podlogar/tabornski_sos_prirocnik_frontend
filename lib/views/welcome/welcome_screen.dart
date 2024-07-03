@@ -72,7 +72,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                       context.go('/home');
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Theme.of(context).primaryColor,
+                      backgroundColor: Theme.of(context).primaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),  // Rounded border
                       ),

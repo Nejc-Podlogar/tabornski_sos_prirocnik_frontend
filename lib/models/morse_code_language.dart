@@ -6,17 +6,17 @@ enum MorseLanguageSetting {
 
 class MorseCodeLanguage {
   final MorseLanguageSetting languageSetting;
-  final String? inputText;
-  final String? translatedText;
+  final List<String>? value;
+  final List<String>? translatedValue;
 
 
-  MorseCodeLanguage({this.languageSetting = MorseLanguageSetting.none, this.inputText, this.translatedText});
+  MorseCodeLanguage({this.languageSetting = MorseLanguageSetting.none, this.value, this.translatedValue});
 
-  MorseCodeLanguage copyWith({MorseLanguageSetting? languageSetting, String? inputText, String? translatedText}) {
+  MorseCodeLanguage copyWith({MorseLanguageSetting? languageSetting, List<String>? inputText, List<String>? translatedText}) {
     return MorseCodeLanguage(
       languageSetting: languageSetting ?? this.languageSetting,
-      inputText: inputText ?? this.inputText,
-      translatedText: translatedText ?? this.translatedText,
+      value: inputText ?? this.value,
+      translatedValue: translatedText ?? this.translatedValue,
     );
   }
 
@@ -87,9 +87,11 @@ enum FilterType {
   Numbers
 }
 
-enum MorseCodeLearningType {
-  Reading,
-  Sending
+enum MorseCodeValidation {
+  correct,
+  partial,
+  incorrect,
+  failed
 }
 
 enum MorseCodeLearningAmount {
@@ -104,14 +106,21 @@ enum LearningInteractionType {
   tokens
 }
 
-class MorseCodeLearning {
-  final FilterType filterType;
-  final MorseCodeLearningType learningType;
+class MorseCodeLearningParams {
+  final MorseLanguageSetting learningType;
   final MorseCodeLearningAmount learningAmount;
   final LearningInteractionType interactionType;
   final int numberOfIterations;
 
-  MorseCodeLearning({required this.filterType, required this.learningType, required this.learningAmount, required this.interactionType, required this.numberOfIterations});
+  Map<String, dynamic> toJson() => {
+    "type": learningAmount.toString(),
+    "translateType": learningType.toString(),
+    "numberOfElements": numberOfIterations,
+  };
+
+
+
+  MorseCodeLearningParams({required this.learningType, required this.learningAmount, required this.interactionType, required this.numberOfIterations});
 }
 
 

@@ -10,6 +10,7 @@ import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart'
 import '../../blocs/morse_translation_bloc/morse_translation_bloc.dart';
 import '../../models/morse_code_language.dart';
 import '../../themes/default_dark.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MorseCodeTranslatorView extends StatefulWidget {
   const MorseCodeTranslatorView({Key? key}) : super(key: key);
@@ -78,10 +79,13 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                   content,
                   fit: BoxFit.contain,
                 )
-              : Text(
-                  content,
+              : Text(content,
                   textAlign: TextAlign.center,
-                )),
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w300,
+                      fontFamily: 'JetBrains Mono'))),
     );
   }
 
@@ -108,13 +112,13 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
               children: <Widget>[
                 _buildListTile(
                     context,
-                    'Besedilo v Morsejevo abecedo',
+                    AppLocalizations.of(context)!.textToMorseCode,
                     MorseLanguageSetting.textToMorse,
                     currentTranslationType,
                     morseTranslationBloc),
                 _buildListTile(
                     context,
-                    'Morsejeva abeceda v besedilo',
+                    AppLocalizations.of(context)!.morseCodeToText,
                     MorseLanguageSetting.morseToText,
                     currentTranslationType,
                     morseTranslationBloc),
@@ -181,7 +185,7 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                       inactiveTrackColor: primaryCardTheme.color!,
                       activeColor: Theme.of(context).primaryColor,
                       activeTrackColor: Colors.grey.withAlpha(70),
-                      title: const Text('Auto Repeating Transmission'),
+                      title: Text(AppLocalizations.of(context)!.continuousTransmission),
                       value: (morseTranslationBloc.state
                               as MorseTranslationInitial)
                           .isAutoRepeating,
@@ -205,7 +209,7 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                               morseTranslationBloc.add(ToggleTransmitting(
                                   morseCode: _textTranslatedController.text));
                             },
-                            child: const Text('Stop transmitting'))
+                            child: Text(AppLocalizations.of(context)!.stopTransmitting))
                         : OutlinedButton(
                             style: OutlinedButton.styleFrom(
                               fixedSize: const Size(double.maxFinite, 50),
@@ -219,7 +223,7 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                                 morseCode: _textTranslatedController.text,
                               ));
                             },
-                            child: const Text('Start transmitting')),
+                            child: Text(AppLocalizations.of(context)!.startTransmitting)),
                   ],
                 ),
               );
@@ -254,11 +258,11 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                   isTextFieldEnabled = false;
 
                   _textEditingController.text =
-                      state.languageSetting.inputText ?? '';
+                      state.languageSetting.value?[0] ?? '';
                 }
 
                 _textTranslatedController.text =
-                    state.languageSetting.translatedText ?? '';
+                    state.languageSetting.translatedValue?[0] ?? '';
 
                 return Container(
                   height: MediaQuery.of(context).size.height * 0.58,
@@ -280,8 +284,9 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                               maxLines: null,
                               decoration: InputDecoration(
                                 hintText: isTextFieldEnabled
-                                    ? 'Vnesi besedilo...'
-                                    : 'Izberi vrsto prevoda',
+                                    ? '${AppLocalizations.of(context)!.inputText}...'
+                                    : AppLocalizations.of(context)!
+                                        .selectTranslationType,
                                 border: InputBorder.none,
                               ),
                               onChanged: _handleInputTranslation,
@@ -306,8 +311,9 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                                 maxLines: null,
                                 enabled: false,
                                 controller: _textTranslatedController,
-                                decoration: const InputDecoration(
-                                  hintText: 'Prevod...',
+                                decoration: InputDecoration(
+                                  hintText:
+                                      '${AppLocalizations.of(context)!.translation}...',
                                   border: InputBorder.none,
                                 ),
                               ),
@@ -366,17 +372,19 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                       if (state is MorseTranslationInitial &&
                           state.languageSetting.languageSetting ==
                               MorseLanguageSetting.textToMorse) {
-                        return _buildButtonsRow(context, 'Besedilo',
+                        return _buildButtonsRow(context, AppLocalizations.of(context)!.text,
                             'assets/icons/morse_code_icon.svg');
                       } else if (state is MorseTranslationInitial &&
                           state.languageSetting.languageSetting ==
                               MorseLanguageSetting.morseToText) {
                         return _buildButtonsRow(context,
-                            'assets/icons/morse_code_icon.svg', 'Besedilo');
+                            'assets/icons/morse_code_icon.svg', AppLocalizations.of(context)!.text);
                       } else {
                         // Create a button that will open a popup where the user can select the translation type
                         return _buildButtonsRow(
-                            context, 'Izberi vrsto prevoda', null);
+                            context,
+                            AppLocalizations.of(context)!.selectTranslationType,
+                            null);
                       }
                     },
                   ),
