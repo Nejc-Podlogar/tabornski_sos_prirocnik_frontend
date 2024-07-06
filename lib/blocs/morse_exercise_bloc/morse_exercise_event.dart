@@ -6,8 +6,9 @@ abstract class MorseExerciseEvent {}
 class MorseExerciseStart extends MorseExerciseEvent {
   final List<String> exerciseText;
   final List<String> expectedAnswers;
+  final List<bool>? areTranslationsCorrect;
 
-  MorseExerciseStart({required this.exerciseText, required this.expectedAnswers});
+  MorseExerciseStart(this.areTranslationsCorrect, {required this.exerciseText, required this.expectedAnswers});
 
 }
 
@@ -16,8 +17,10 @@ class MorseExerciseValidate extends MorseExerciseEvent {
   final String userInput;
   final MorseLanguageSetting translationType;
   final MorseCodeLearningAmount valueAmount;
+  final LearningInteractionType interactionType;
+  final CardSwiperDirection? swiperDirection;
 
-  MorseExerciseValidate({required this.indexOfValueToCompare, required this.userInput, required this.translationType, required this.valueAmount});
+  MorseExerciseValidate(this.swiperDirection, {required this.indexOfValueToCompare, required this.userInput, required this.translationType, required this.valueAmount, required this.interactionType});
 }
 
 class UndoPreviousAnswer extends MorseExerciseEvent {

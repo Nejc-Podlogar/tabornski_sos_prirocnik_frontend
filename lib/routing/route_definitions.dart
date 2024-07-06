@@ -11,6 +11,7 @@ class RoutePaths {
   static const String morseCodeLearning = 'learning';
   static const String semaphoreTranslator = 'translator';
   static const String semaphoreMaterials = 'materials';
+  static const String webview = 'webview';
 }
 
 class RouteNames {
@@ -26,4 +27,5 @@ class RouteNames {
   static const String morseCodeLearning = 'MorseCodeLearning';
   static const String semaphoreTranslator = 'SemaphoreTranslator';
   static const String semaphoreMaterials = 'SemaphoreMaterials';
+  static const String webview = 'Webview';
 }

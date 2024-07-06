@@ -15,8 +15,12 @@ class ProgressDots extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      direction: Axis.horizontal,
+      spacing: 6,
+      runSpacing: 5,
       children: List.generate(
         exerciseSize,
         (index) {
@@ -60,7 +64,6 @@ class ProgressDots extends StatelessWidget {
           }
 
           return Container(
-            margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 5),
             width: 15,
             height: 15,
             decoration: decoration,

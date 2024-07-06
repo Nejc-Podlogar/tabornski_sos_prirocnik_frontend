@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:meta/meta.dart';
 import 'package:tabornski_sos_prirocnik_frontend/models/models.dart';
 import 'package:tabornski_sos_prirocnik_frontend/repositories/morde_translation_repository.dart';
@@ -26,6 +27,7 @@ class MorseExerciseBloc extends Bloc<MorseExerciseEvent, MorseExerciseState> {
     emit(MorseExerciseStartState(
       exerciseText: event.exerciseText,
       expectedAnswers: event.expectedAnswers,
+      areTranslationsCorrect: event.areTranslationsCorrect
     ));
   }
 
@@ -34,7 +36,8 @@ class MorseExerciseBloc extends Bloc<MorseExerciseEvent, MorseExerciseState> {
       exerciseText: state.exerciseText,
       expectedAnswers: state.expectedAnswers,
       userInput: state.userInput,
-      correctAnswers: state.correctAnswers
+      correctAnswers: state.correctAnswers,
+      areTranslationsCorrect: state.areTranslationsCorrect
     ));
   }
 
@@ -51,8 +54,10 @@ class MorseExerciseBloc extends Bloc<MorseExerciseEvent, MorseExerciseState> {
         event.userInput,
         state.expectedAnswers![event.indexOfValueToCompare],
         event.valueAmount,
-        event.translationType
-
+        event.translationType,
+        state.areTranslationsCorrect?[event.indexOfValueToCompare] ?? false,
+        event.interactionType,
+        event.swiperDirection
       );
 
       final List<MorseCodeValidation> updatedCorrectAnswers = List.from(state.correctAnswers!);
@@ -63,7 +68,8 @@ class MorseExerciseBloc extends Bloc<MorseExerciseEvent, MorseExerciseState> {
         exerciseText: state.exerciseText,
         expectedAnswers: state.expectedAnswers,
         userInput: state.userInput,
-        correctAnswers: updatedCorrectAnswers
+        correctAnswers: updatedCorrectAnswers,
+        areTranslationsCorrect: state.areTranslationsCorrect
       ));
 
     } catch (e) {
@@ -76,7 +82,8 @@ class MorseExerciseBloc extends Bloc<MorseExerciseEvent, MorseExerciseState> {
         exerciseText: state.exerciseText,
         expectedAnswers: state.expectedAnswers,
         userInput: state.userInput,
-        correctAnswers: updatedCorrectAnswers
+        correctAnswers: updatedCorrectAnswers,
+        areTranslationsCorrect: state.areTranslationsCorrect
       ));
     }
 
@@ -94,7 +101,9 @@ class MorseExerciseBloc extends Bloc<MorseExerciseEvent, MorseExerciseState> {
         exerciseText: state.exerciseText,
         expectedAnswers: state.expectedAnswers,
         userInput: state.userInput,
-        correctAnswers: updatedCorrectAnswers));
+        correctAnswers: updatedCorrectAnswers,
+        areTranslationsCorrect: state.areTranslationsCorrect
+    ));
 
 
   }

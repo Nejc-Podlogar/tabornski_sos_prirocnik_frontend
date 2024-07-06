@@ -16,6 +16,7 @@ class MorseExerciseApiService {
         'type': params.learningAmount.name.toString(),
         'translateType': params.learningType.name.toString(),
         'numberOfElements': params.numberOfIterations,
+        "learningInteractionType": params.learningInteractionType.name.toString()
       };
     }
     final headers = {'Content-Type': 'application/json'};
@@ -34,6 +35,7 @@ class MorseExerciseApiService {
         value: List<String>.from(responseList['value']),
         translatedValue: List<String>.from(responseList['translatedValue']),
         languageSetting: params.learningType,
+        areTranslationsCorrect: responseList['areTranslationsCorrect'] != null ? List<bool>.from(responseList['areTranslationsCorrect']) : null
       );
     } else {
       throw Exception('Failed to load exercise');

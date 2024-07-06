@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/api/post_api_service.dart';
 import 'package:tabornski_sos_prirocnik_frontend/blocs/morse_exercise_bloc/morse_exercise_bloc.dart';
+import 'package:tabornski_sos_prirocnik_frontend/blocs/post_cubit/post_cubit.dart';
 import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_bloc.dart';
 import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_state.dart';
 import 'package:tabornski_sos_prirocnik_frontend/routing/app_router.dart';
@@ -34,12 +36,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final postApiService = PostApiService();
+
+
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => ThemeBloc()),
           BlocProvider(create: (context) => MorseTranslationBloc()),
           BlocProvider(create: (context) => SemaphoreBloc()),
           BlocProvider(create: (context) => MorseExerciseBloc()),
+          BlocProvider(create: (context) => PostCubit(postApiService))
         ],
         child: BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, ThemeState state) {

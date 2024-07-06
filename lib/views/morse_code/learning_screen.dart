@@ -23,25 +23,8 @@ class LearningScreen extends StatefulWidget {
 class _LearningScreenState extends State<LearningScreen> {
   final MorseExerciseBloc morseExerciseBloc = MorseExerciseBloc();
 
-  // Arrays for card testing
-  List<String> valueText = ['ena', 'dve', 'tri', 'stiri'];
-  List<String> translatedText = [
-    '. -. .-',
-    '-.. ...- .',
-    '- .-. ..',
-    '... - .. .-. ..'
-  ];
-  List<String> answers = [
-    '. -. .-',
-    '. -. .-',
-    '- .-. ....',
-    '... - .. .-. ..'
-  ];
-
   @override
   void initState() {
-    morseExerciseBloc.add(MorseExerciseStart(
-        exerciseText: valueText, expectedAnswers: translatedText));
     super.initState();
   }
 
@@ -53,7 +36,9 @@ class _LearningScreenState extends State<LearningScreen> {
         enablePopButton: true,
       ),
       bottomNavigationBar: CustomBottomNavigation(),
-      body: widget.params.interactionType == LearningInteractionType.cards ? LearningCards(answers: answers, morseExerciseBloc: morseExerciseBloc, translatedText: translatedText, valueText: valueText) : widget.params.interactionType == LearningInteractionType.keyboard ? LearningKeyboard(params: widget.params,) : const SizedBox(),
+      body: widget.params.learningInteractionType == LearningInteractionType.cards ?
+      LearningCards(params: widget.params,) : widget.params.learningInteractionType == LearningInteractionType.keyboard ?
+      LearningKeyboard(params: widget.params,) : const SizedBox(),
     );
   }
 }

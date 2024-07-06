@@ -1,3 +1,5 @@
+import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+
 import '../models/morse_code_language.dart';
 
 class MorseCodeRepository {
@@ -74,9 +76,31 @@ class MorseCodeRepository {
       String text,
       String expectedValue,
       MorseCodeLearningAmount valueAmount,
-      MorseLanguageSetting translationType) {
+      MorseLanguageSetting translationType,
+      bool isTranslationValid,
+      LearningInteractionType interactionType,
+      CardSwiperDirection? swiperDirection
+      ) {
     //return true;
 
+
+
+    // validating card swipes.
+    if (interactionType == LearningInteractionType.cards) {
+      if (swiperDirection == CardSwiperDirection.right) {
+        if (isTranslationValid) {
+          return MorseCodeValidation.correct;
+        } else {
+          return MorseCodeValidation.incorrect;
+        }
+      } else if (swiperDirection == CardSwiperDirection.left) {
+        if (!isTranslationValid) {
+          return MorseCodeValidation.correct;
+        } else {
+          return MorseCodeValidation.incorrect;
+        }
+      }
+    }
 
 
 

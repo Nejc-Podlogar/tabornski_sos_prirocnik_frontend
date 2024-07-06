@@ -411,16 +411,16 @@ class _MorseCodeLearningState extends State<MorseCodeLearning> {
                     MorseCodeLanguage response = await MorseExerciseApiService().getSpecificExercise(MorseCodeLearningParams(
                       learningType: _selectedLearningType!,
                       learningAmount: _selectedLearningAmount!,
-                      interactionType: _selectedLearningInteractionType!,
+                      learningInteractionType: _selectedLearningInteractionType!,
                       numberOfIterations: _selectedNumberOfRepetitions!,
                     ));
 
-                    BlocProvider.of<MorseExerciseBloc>(context).add(MorseExerciseStart(exerciseText: response.value!, expectedAnswers: response.translatedValue!));
+                    BlocProvider.of<MorseExerciseBloc>(context).add(MorseExerciseStart(exerciseText: response.value!, expectedAnswers: response.translatedValue!, response.areTranslationsCorrect));
 
                     context.pushNamed(RouteNames.morseCodeLearning, extra: {'params': MorseCodeLearningParams(
                     learningType: _selectedLearningType!,
                     learningAmount: _selectedLearningAmount!,
-                    interactionType: _selectedLearningInteractionType!,
+                    learningInteractionType: _selectedLearningInteractionType!,
                     numberOfIterations: _selectedNumberOfRepetitions!,
                   )});
 

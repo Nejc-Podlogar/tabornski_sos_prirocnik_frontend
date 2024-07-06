@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tabornski_sos_prirocnik_frontend/blocs/morse_exercise_bloc/morse_exercise_bloc.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/MorseCodeCustomDisplay.dart';
@@ -117,7 +118,7 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
           context: context,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20), topRight: Radius.circular(25)),
+                topLeft: Radius.circular(25), topRight: Radius.circular(25)),
           ),
           isDismissible: false,
           builder: (BuildContext context) {
@@ -303,9 +304,11 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
                   child: Text('${localizations.progress}:'),
                 ),
               ),
-              ProgressDots(
-                  correctAnswers: state.correctAnswers ?? [],
-                  exerciseSize: state.exerciseText?.length ?? 0),
+              Center(
+                child: ProgressDots(
+                    correctAnswers: state.correctAnswers ?? [],
+                    exerciseSize: state.exerciseText?.length ?? 0),
+              ),
               const SizedBox(height: 20),
               Center(
                 child: ElevatedButton(
@@ -318,10 +321,13 @@ class _LearningKeyboardState extends State<LearningKeyboard> {
                   onPressed: () {
                     BlocProvider.of<MorseExerciseBloc>(context).add(
                         MorseExerciseValidate(
+                            null,
+                            interactionType: LearningInteractionType.keyboard,
                             indexOfValueToCompare: index,
                             userInput: textEditingController.text,
                             translationType: widget.params.learningType,
-                            valueAmount: widget.params.learningAmount));
+                            valueAmount: widget.params.learningAmount,
+                        ));
                   },
                   child: SizedBox(
                       width: MediaQuery.of(context).size.width * 0.75,

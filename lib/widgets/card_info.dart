@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../themes/default_dark.dart';
 
 class InfoCard extends StatelessWidget {
   final String title;
   final String description;
-  final String url;
+  final String? url;
 
-  const InfoCard({Key? key, required this.title, required this.description, required this.url}) : super(key: key);
+  const InfoCard({Key? key, required this.title, required this.description, this.url}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
-
-    Future<void> _launchUrl() async {
-      if(!await launchUrlString(url)) {
-        throw Exception('Could not launch the url');
-      }
-    }
+    AppLocalizations localizations = AppLocalizations.of(context)!;
 
     // create an info card that is the 85% of the screen width
     return SizedBox(
@@ -58,30 +55,30 @@ class InfoCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                Positioned(
+                url != null ? Positioned(
                     right: 0,
                     bottom: 0,
                     child: ElevatedButton(
-                      onPressed: _launchUrl,
+                      onPressed: () => context.pushNamed(RouteNames.webview, extra: { 'url': url ?? ''}),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).primaryColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),  // Rounded border
                         ),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(left: 8.0, right: 8.0),
-                        child: Text(
-                            'More info',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontFamily: 'JetBrains Mono',
-                            )
-                        )
+                      child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                          child: Text(
+                              localizations.readMore,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontFamily: 'JetBrains Mono',
+                              )
+                          )
                       ),
                     )
-                )
+                ) : const SizedBox.shrink()
               ],
             )
         ),

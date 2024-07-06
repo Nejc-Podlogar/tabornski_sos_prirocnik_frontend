@@ -5,6 +5,7 @@ import 'package:tabornski_sos_prirocnik_frontend/models/models.dart';
 import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
 import 'package:tabornski_sos_prirocnik_frontend/views/morse_code/learning_screen.dart';
 import 'package:tabornski_sos_prirocnik_frontend/views/semaphore/semaphore_materials.dart';
+import 'package:tabornski_sos_prirocnik_frontend/widgets/webview_container.dart';
 
 import '../blocs/morse_translation_bloc/morse_translation_bloc.dart';
 import '../views/home/home_screen.dart';
@@ -126,6 +127,21 @@ class AppRouter {
               pageBuilder: (context, state) {
                 return const MaterialPage(child: SettingsView());
               },
+            ),
+            GoRoute(
+              name: RouteNames.webview,
+              path: RoutePaths.webview,
+              pageBuilder: (context, state) {
+                String? url;
+                if (state.extra != null) {
+                  var extra = state.extra as Map<String, dynamic>;
+                  if (extra['url'] is String) {
+                    url = extra['url'] as String;
+                  }
+                }
+
+                return MaterialPage(child: WebviewContainer(url: url ?? '',));
+              }
             )
           ]
       ),

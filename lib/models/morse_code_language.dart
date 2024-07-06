@@ -8,15 +8,17 @@ class MorseCodeLanguage {
   final MorseLanguageSetting languageSetting;
   final List<String>? value;
   final List<String>? translatedValue;
+  final List<bool>? areTranslationsCorrect;
 
 
-  MorseCodeLanguage({this.languageSetting = MorseLanguageSetting.none, this.value, this.translatedValue});
+  MorseCodeLanguage({this.languageSetting = MorseLanguageSetting.none, this.value, this.translatedValue, this.areTranslationsCorrect});
 
-  MorseCodeLanguage copyWith({MorseLanguageSetting? languageSetting, List<String>? inputText, List<String>? translatedText}) {
+  MorseCodeLanguage copyWith({MorseLanguageSetting? languageSetting, List<String>? inputText, List<String>? translatedText, List<bool>? areTranslationsCorrect}) {
     return MorseCodeLanguage(
       languageSetting: languageSetting ?? this.languageSetting,
       value: inputText ?? this.value,
       translatedValue: translatedText ?? this.translatedValue,
+      areTranslationsCorrect: areTranslationsCorrect ?? this.areTranslationsCorrect
     );
   }
 
@@ -109,18 +111,19 @@ enum LearningInteractionType {
 class MorseCodeLearningParams {
   final MorseLanguageSetting learningType;
   final MorseCodeLearningAmount learningAmount;
-  final LearningInteractionType interactionType;
+  final LearningInteractionType learningInteractionType;
   final int numberOfIterations;
 
   Map<String, dynamic> toJson() => {
     "type": learningAmount.toString(),
     "translateType": learningType.toString(),
     "numberOfElements": numberOfIterations,
+    "learningInteractionType": learningInteractionType.toString()
   };
 
 
 
-  MorseCodeLearningParams({required this.learningType, required this.learningAmount, required this.interactionType, required this.numberOfIterations});
+  MorseCodeLearningParams({required this.learningType, required this.learningAmount, required this.learningInteractionType, required this.numberOfIterations});
 }
 
 
