@@ -19,7 +19,7 @@ class WebviewContainer extends StatelessWidget {
           print('Page started loading: $url');
         },
       )
-    );
+    )..loadRequest(Uri.parse(url));
 
 
 

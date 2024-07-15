@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tabornski_sos_prirocnik_frontend/blocs/semaphore_bloc/semaphore_bloc.dart';
 import 'package:tabornski_sos_prirocnik_frontend/models/semaphore.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/navigation_bottom.dart';
@@ -20,29 +21,6 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
   final TextEditingController _textEditingController = TextEditingController();
   final TextEditingController _textTranslatedController = TextEditingController();
 
-  final List<String> _translatedImages = [
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-    'assets/images/semaphore/flags/A_1.png',
-  ];
 
   // Handle inpute translation
   void _handleInputTranslation(String input) {
@@ -56,12 +34,12 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
   }
 
   Row _buildButtonsRow(BuildContext context, dynamic leftButtonContent,
-      dynamic rightButtonContent) {
+      dynamic rightButtonContent, AppLocalizations localisations) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _buildLanguageButton(context, leftButtonContent,
+        _buildLanguageButton(context, leftButtonContent, localisations,
             isOnlyButton: rightButtonContent == null),
         if (rightButtonContent != null) ...[
           IconButton(
@@ -72,13 +50,13 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
               color: Theme.of(context).appBarTheme.iconTheme?.color,
             ),
           ),
-          _buildLanguageButton(context, rightButtonContent),
+          _buildLanguageButton(context, rightButtonContent, localisations),
         ]
       ],
     );
   }
 
-  SizedBox _buildLanguageButton(BuildContext context, dynamic content,
+  SizedBox _buildLanguageButton(BuildContext context, dynamic content, AppLocalizations localisations,
       {bool isOnlyButton = false}) {
     return SizedBox(
       width: isOnlyButton
@@ -92,20 +70,28 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
             shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           ),
-          onPressed: () => _showtranslationTypeBottomSheet(context),
-          child: content.endsWith('.svg')
-              ? SvgPicture.asset(
-            content,
-            fit: BoxFit.contain,
-          )
-              : Text(
-            content,
-            textAlign: TextAlign.center,
+          onPressed: () => _showTranslationTypeBottomSheet(context, localisations),
+          child: Center(
+            child: content.endsWith('.svg')
+                ? SvgPicture.asset(
+              content,
+              fit: BoxFit.contain,
+            )
+                : Text(
+                content,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Roboto',
+                )
+            ),
           )),
     );
   }
 
-  void _showtranslationTypeBottomSheet(BuildContext context) {
+  void _showTranslationTypeBottomSheet(BuildContext context, AppLocalizations localisations) {
     final morseTranslationBloc = BlocProvider.of<SemaphoreBloc>(context);
     final currentTranslationType =
         (morseTranslationBloc.state as SemaphoreInitial)
@@ -120,6 +106,7 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
               topRight: Radius.circular(25),
             )),
         context: context,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         builder: (BuildContext context) {
           return Padding(
             padding: const EdgeInsets.all(10.0),
@@ -128,13 +115,13 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
               children: <Widget>[
                 _buildListTile(
                     context,
-                    'Besedilo v Semafor (zastavice)',
+                    localisations.textToSemaphore,
                     SemaphoreLanguageSetting.textToFlags,
                     currentTranslationType,
                     morseTranslationBloc),
                 _buildListTile(
                     context,
-                    'Semafor (zastavice) v besedilo',
+                    localisations.semaphoreToText,
                     SemaphoreLanguageSetting.flagsToText,
                     currentTranslationType,
                     morseTranslationBloc),
@@ -160,10 +147,7 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
       ),
       child: ListTile(
         title: Text(title,
-            style: TextStyle(
-                color: currentTranslationType != setting
-                    ? Colors.black
-                    : Colors.white)),
+            style: currentTranslationType  == setting ? Theme.of(context).textTheme.displaySmall?.copyWith(color: Colors.white) : Theme.of(context).textTheme.displaySmall),
         trailing: currentTranslationType == setting
             ? const Icon(Icons.check, color: Colors.white)
             : null,
@@ -205,7 +189,7 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
     await showModalBottomSheet(
         context: context,
         showDragHandle: true,
-
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25),
@@ -248,7 +232,7 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
     ));
   }
 
-  List<Widget> _buildTranslationWidget(BuildContext context, SemaphoreState state, bool isTextFieldEnabled) {
+  List<Widget> _buildTranslationWidget(BuildContext context, SemaphoreState state, bool isTextFieldEnabled, AppLocalizations localizations) {
     if (state.languageSetting.semaphoreSetting == SemaphoreLanguageSetting.textToFlags || state.languageSetting.semaphoreSetting == SemaphoreLanguageSetting.none) {
       return <Widget> [
         Expanded(
@@ -263,9 +247,10 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
                   maxLines: null,
                   decoration: InputDecoration(
                     hintText: isTextFieldEnabled
-                        ? 'Vnesi besedilo...'
-                        : 'Izberi vrsto prevoda',
+                        ? '${localizations.inputText}...'
+                        : localizations.selectTranslationType,
                     border: InputBorder.none,
+                    hintStyle: Theme.of(context).textTheme.labelLarge,
                   ),
                   onChanged: _handleInputTranslation,
                 ),
@@ -273,8 +258,8 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
             ),
           ),
         ),
-        const Divider(
-          color: Colors.black,
+        Divider(
+          color: Theme.of(context).textTheme.labelSmall!.color,
           endIndent: 15,
           indent: 15,
           thickness: 1,
@@ -308,6 +293,7 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
                             showModalBottomSheet(
                               context: context,
                               isScrollControlled: true,
+                              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                               builder: (BuildContext context) {
                                 return SizedBox(
                                   height: MediaQuery.of(context).size.height,
@@ -337,14 +323,17 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
             child: Stack(children: <Widget>[
               GestureDetector(
                 onTap: _pickImage,
-                child: state.languageSetting.flags == null || state.languageSetting.flags!.isEmpty ? const Center(
+                child: state.languageSetting.flags == null || state.languageSetting.flags!.isEmpty ? Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.touch_app_outlined),
+                      const Icon(Icons.touch_app_outlined),
                       Padding(
-                        padding: EdgeInsets.all(12),
-                        child: Text('Izberi zastavice...'),
+                        padding: const EdgeInsets.all(12),
+                        child: Text(
+                            '${localizations.selectFlags}...',
+                            style: Theme.of(context).textTheme.labelLarge
+                        ),
                       ),
                     ],
                   ),
@@ -366,6 +355,7 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
                             showModalBottomSheet(
                               context: context,
                               isScrollControlled: true,
+                              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                               builder: (BuildContext context) {
                                 return SizedBox(
                                   height: MediaQuery.of(context).size.height,
@@ -387,8 +377,8 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
                     ],
                   ))
             ])),
-        const Divider(
-          color: Colors.black,
+        Divider(
+          color: Theme.of(context).textTheme.labelSmall!.color,
           endIndent: 15,
           indent: 15,
           thickness: 1,
@@ -405,9 +395,10 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
                       controller: _textTranslatedController,
                       enabled: false,
                       maxLines: null,
-                      decoration: const InputDecoration(
-                        hintText: 'Prevedno besedilo...',
+                      decoration: InputDecoration(
+                        hintText: '${localizations.translatedText}...',
                         border: InputBorder.none,
+                        hintStyle: Theme.of(context).textTheme.labelLarge,
                       ),
                       onChanged: _handleInputTranslation,
                     ),
@@ -448,6 +439,8 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations localizations = AppLocalizations.of(context)!;
+
     bool isKeyboardOpen = MediaQuery.of(context).viewInsets.bottom != 0;
 
     return Scaffold(
@@ -481,12 +474,12 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
 
                 return Container(
                   height: MediaQuery.of(context).size.height * 0.58,
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(30),
                           bottomRight: Radius.circular(30))),
-                  child: Column(children: _buildTranslationWidget(context, state, isTextFieldEnabled),),
+                  child: Column(children: _buildTranslationWidget(context, state, isTextFieldEnabled, localizations),),
                 );
               },
             ),
@@ -504,17 +497,17 @@ class _SemaphoreTranslatorViewState extends State<SemaphoreTranslatorView> {
                       if (state is SemaphoreInitial &&
                           state.languageSetting.semaphoreSetting ==
                               SemaphoreLanguageSetting.textToFlags) {
-                        return _buildButtonsRow(context, 'Besedilo',
-                            'assets/icons/morse_code_icon.svg');
+                        return _buildButtonsRow(context, localizations.text,
+                            'assets/icons/morse_code_icon.svg', localizations);
                       } else if (state is SemaphoreInitial &&
                           state.languageSetting.semaphoreSetting ==
                               SemaphoreLanguageSetting.flagsToText) {
                         return _buildButtonsRow(context,
-                            'assets/icons/morse_code_icon.svg', 'Besedilo');
+                            'assets/icons/morse_code_icon.svg', localizations.text, localizations);
                       } else {
                         // Create a button that will open a popup where the user can select the translation type
                         return _buildButtonsRow(
-                            context, 'Izberi vrsto prevoda', null);
+                            context, localizations.selectTranslationType, null, localizations);
                       }
                     },
                   ),

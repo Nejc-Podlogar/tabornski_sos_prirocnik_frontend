@@ -39,7 +39,8 @@ class _SemaphoreMaterialsState extends State<SemaphoreMaterialsView> {
               children: FilterSemaphoreType.values.map((filterType) {
                 return ChoiceChip(
                   padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  surfaceTintColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                     side: BorderSide(
@@ -52,7 +53,7 @@ class _SemaphoreMaterialsState extends State<SemaphoreMaterialsView> {
                   labelStyle: TextStyle(
                     color: selection.contains(filterType)
                         ? Colors.white
-                        : Colors.black,
+                        : Theme.of(context).textTheme.labelLarge!.color,
                   ),
                   selectedColor: Theme.of(context).hintColor,
                   label: Text(

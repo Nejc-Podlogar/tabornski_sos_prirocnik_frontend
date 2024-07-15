@@ -1,6 +1,16 @@
 {
   "appTitle": "Scouts S.O.S Manual",
   "readMore": "Read more",
+  "comingSoon": "Coming\nsoon",
+
+  "begin": "Begin",
+    "introApplication": "The application is primarily intended for scouts who want to learn the Morse and Semaphore alphabets and practice their knowledge of orientation. \nThe application contains a translator, dictionary, learning materials and exercises. \nIt also includes the possibility of learning topography. \nThe application is designed to be easy to use and allows learning in various ways.",
+  "introMorseCode": "In the Morse code alphabet you have several different tools available. \nYou have a translator to and from Morse code. \nYou can transmit translated text via the flashlight on your phone. \nThere are also learning materials available, which you can also download to your device. \nYou can also train on customized exercises to improve your knowledge of morse code.",
+  "introSemaphore": "In the Semaphore alphabet you have several different tools available. \nYou have a translator to and from Semaphore. \nThere are also learning materials available, which you can also download to your device. \nThere is also a separate list for all the characters and special symbols.",
+    "introTopography": "In orientation you have a lot of learning and revision materials available. \nAlso available separately are topographic signs, where you can learn and revise them with the help of customized exercises. \nTopographic signs used in the exercises are valid for the DTK25 map.",
+  "morseCode": "Morse code",
+  "semaphore": "Semaphore",
+  "startUsingTheApp": "Start using the app",
 
   "translator": "Translator",
   "dictionary": "Dictionary",
@@ -18,6 +28,7 @@
   "specialCharacters": "Special characters",
 
   "morseCodeAlphabet": "Morse code alphabet",
+  "morseCodeDescription": "Morse code is a method used in telecommunication to encode text characters as sequences of two different signal durations, called dots and dashes or dits and dahses. Morse code is named after Samuel Morse, an inventor of the telegraph.",
   "textToMorseCode": "Text to Morse code",
   "morseCodeToText": "Morse code to text",
   "startTransmitting": "Start transmitting",
@@ -46,5 +57,31 @@
   "errorWhileValidating": "Error while validating",
   "endOfExercise": "End of exercise",
   "finishExercise": "Finish exercise",
-  "correctAnswerWas": "Correct answer was"
+  "correctAnswerWas": "Correct answer was",
+
+  "semaphoreAlphabet": "Semaphore alphabet",
+  "semaphoreDescription": "Semaphore is a system of sending messages by holding the arms or two flags or poles in certain positions according to an alphabetic code.",
+  "textToSemaphore": "Text to Semaphore (flags)",
+  "semaphoreToText": "Semaphore (flags) to text",
+
+  "orientation": "Orientation",
+  "topography": "Topography",
+  "topographyLearning": "Topography learning",
+  "topoImages": "Images",
+  "topoText": "Text",
+  "topoCategories": "Categories",
+  "topoCategory": "{selectedTopoCategory, select, geodetske_tocke{Geodetic points} morje_in_morska_obala{The sea and the sea coast} naselja_in_objekti{Settlements and facilities} promet{Traffic} rastje_in_vrste_tal{Growth and soil types} relief{Relief} vodovje{Water supply} meje_in_ograje{Borders and fences} other{Other}}",
+
+  "user": "User",
+  "settings": "Settings",
+  "preferences": "Preferences",
+  "darkMode": "Dark theme",
+  "allowNotifications": "Allow notifications",
+  "permissions": "Permissions",
+  "manage": "Manage",
+  "deleteData": "Delete data",
+  "about": "About",
+
+  "translatedText": "Translated text",
+  "selectFlags": "Select flags"
 }

@@ -4,17 +4,22 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:flutter_file_saver/flutter_file_saver.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:pdfx/pdfx.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_bloc.dart';
+import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_state.dart';
 
 class PDFScreen extends StatefulWidget {
   final String path;
   final String title;
+  final bool isLocal;
 
-  const PDFScreen({Key? key, required this.path, required this.title})
+  const PDFScreen({Key? key, required this.path, required this.title, this.isLocal = true})
       : super(key: key);
 
   @override
@@ -25,11 +30,11 @@ class _PDFScreenState extends State<PDFScreen> {
   int pages = 0;
   int currentPage = 0;
   bool isReady = false;
-  final Completer<PDFViewController> _controller =
-      Completer<PDFViewController>();
+  late var pdfController;
 
   @override
   void initState() {
+    pdfController = PdfController(document: PdfDocument.openAsset(widget.path));
     super.initState();
   }
 
@@ -66,38 +71,35 @@ class _PDFScreenState extends State<PDFScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final isDarkTheme = context.read<ThemeBloc>().state is DarkThemeState;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Stack(children: [
-        PDF(
-          enableSwipe: true,
-          swipeHorizontal: false,
-          autoSpacing: true,
-          pageFling: false,
-          onRender: (_pages) {
+        PdfView(
+          controller: pdfController,
+          scrollDirection: Axis.vertical,
+          pageSnapping: true,
+          backgroundDecoration: BoxDecoration(color: Theme.of(context).scaffoldBackgroundColor),
+          onDocumentLoaded: (document) {
             setState(() {
+              pages = document.pagesCount;
               currentPage = 1;
-              pages = _pages!;
               isReady = true;
             });
           },
-          onError: (error) {
-            print(error.toString());
-          },
-          onPageError: (page, error) {
-            print('$page: ${error.toString()}');
-          },
-          onViewCreated: (PDFViewController pdfViewController) {
-            _controller.complete(pdfViewController);
-          },
-          onPageChanged: (int? page, int? total) {
+          onPageChanged: (page) {
             setState(() {
-              currentPage = page! + 1;
+              currentPage = page;
             });
           },
-        ).fromAsset(widget.path),
+          onDocumentError: (error) {
+            print(error);
+          },
+        ),
         isReady
             ? Positioned(
             top: 10,

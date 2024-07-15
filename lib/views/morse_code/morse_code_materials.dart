@@ -40,7 +40,7 @@ class _MorseCodeMaterialsViewState extends State<MorseCodeMaterials> {
               children: FilterType.values.map((filterType) {
                 return ChoiceChip(
                   padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                     side: BorderSide(
@@ -53,7 +53,7 @@ class _MorseCodeMaterialsViewState extends State<MorseCodeMaterials> {
                   labelStyle: TextStyle(
                     color: selection.contains(filterType)
                         ? Colors.white
-                        : Colors.black,
+                        : Theme.of(context).textTheme.labelLarge!.color,
                   ),
                   selectedColor: Theme.of(context).hintColor,
                   checkmarkColor: Colors.white,

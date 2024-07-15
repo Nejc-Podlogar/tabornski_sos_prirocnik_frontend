@@ -19,4 +19,14 @@ class SharedPrefs {
 
     return isFirstTime;
   }
+
+  Future<bool> getTheme() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('isDarkMode') ?? false;
+  }
+
+  Future<void> setTheme(bool isDarkMode) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('isDarkMode', isDarkMode);
+  }
 }

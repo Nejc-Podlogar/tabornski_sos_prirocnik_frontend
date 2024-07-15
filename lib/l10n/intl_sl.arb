@@ -1,6 +1,16 @@
 {
   "appTitle": "Taborniški S.O.S Priročnik",
   "readMore": "Preberi več",
+  "comingSoon": "Prihaja\nkmalu",
+
+  "begin": "Začni",
+  "introApplication": "Aplikacija je namenjena predvsem tabornikov, ki se želijo naučiti morsejeve in semaforjeve abecede ter povaditi znanje iz orientacije. \nAplikacija vsebuje prevajalnik, slovar, gradiva za učenje in vaje. \nVsebuje tudi možnost učenja topografije. \nAplikacija je zasnovana tako, da je enostavna za uporabo in omogoča učenje na različne načine.",
+  "introMorseCode": "Pri morsejevi abecedi imate na voljo več različnih orodij. \nNa voljo vam je prevajalnik v morsejevo abecedo in iz nje. Prevedeno besedilo lahko oddajate preko bliskavice na telefonu. \nNa voljo pa so vam tudi gradiva za učenje, katera lahko prenesete tudi na svojo napravo. \nLahko tudi vadite morsejevo abecedo s pomočjo prilagodljivih vaj in tako izboljašate svoje znanje.",
+  "introSemaphore": "Pri semaforjevi abecedi imate na voljo več različnih orodij. \nNa voljo vam je prevajalnik v semaforjevo abecedo in iz nje. \nNa voljo pa so vam tudi gradiva za učenje, katera lahko prenesete tudi na svojo napravo. \nNa voljo je tudi ločen seznam vseh znakov in posebnih simbolov.",
+  "introTopography": "Pri orientaciji imate na voljo veliko gradiva za učenje in ponavljanje. \nPrav tako ločeno na voljo tudi topografski znaki, kjer se jih lahko s pomočjo prilagojenih nalog tudi učite in ponavljate. \nTopografski znaki uporabljeni v nalogah veljajo za mapo DTK25",
+  "morseCode": "Morsejeva abeceda",
+  "semaphore": "Semaforjeva abeceda",
+  "startUsingTheApp": "Začni uporabljati aplikacijo",
 
   "translator": "Prevajalnik",
   "dictionary": "Slovar",
@@ -18,6 +28,7 @@
   "specialCharacters": "Posebni znaki",
 
   "morseCodeAlphabet": "Morsejeva abeceda",
+    "morseCodeDescription": "Morsejeva abeceda je metoda, ki se uporablja v telekomunikacijah za kodiranje znakov besedila kot zaporedij dveh različnih trajanj signalov, imenovanih pike in črtice ali dits in dahses. Morsejeva abeceda je poimenovana po Samuelu Morseu, izumitelju telegrafa.",
   "textToMorseCode": "Besedilo v Morsejevo abecedo",
   "morseCodeToText": "Morsejeva abeceda v besedilo",
   "startTransmitting": "Začni oddajati",
@@ -46,5 +57,31 @@
   "errorWhileValidating": "Napaka pri preverjanju",
   "endOfExercise": "Konec vaje",
   "finishExercise": "Končaj vajo",
-  "correctAnswerWas": "Pravilen odgovor je bil"
+  "correctAnswerWas": "Pravilen odgovor je bil",
+
+  "semaphoreAlphabet": "Semaforjeva abeceda",
+  "semaphoreDescription": "Semafor je sistem pošiljanja sporočil z držanjem rok ali dveh zastavic ali palic v določenih položajih glede na abecedni kodo.",
+  "textToSemaphore": "Besedilo v semafor (zastavice)",
+  "semaphoreToText": "Semafor (zastavica) v besedilo",
+
+  "orientation": "Orientacija",
+  "topography": "Topografija",
+  "topographyLearning": "Učenje topografije",
+  "topoText": "Besedilo",
+  "topoImages": "Slike",
+  "topoCategories": "Kategorije",
+  "topoCategory": "{selectedTopoCategory, select, geodetske_tocke{Geodetske točke} morje_in_morska_obala{Morje in morska obala} naselja_in_objekti{Naselja in objekti} promet{Promet} rastje_in_vrste_tal{Rastje in vrste tal} relief{Relief} vodovje{Vodovje} meje_in_ograje{Meje in ograje} other{Ostalo}}",
+
+  "user": "Uporabnik",
+  "settings": "Nastavitve",
+  "preferences": "Nastavitve",
+  "darkMode": "Temna tema",
+  "allowNotifications": "Dovoli obvestila",
+  "permissions": "Dovoljenja",
+  "manage": "Upravljaj",
+  "deleteData": "Izbriši podatke",
+  "about": "O aplikaciji",
+
+  "translatedText": "Prevedeno besedilo",
+  "selectFlags": "Izberi zastavice"
 }

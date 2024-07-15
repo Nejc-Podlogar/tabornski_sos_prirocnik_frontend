@@ -6,8 +6,21 @@ final ThemeData darkTheme = ThemeData(
   primaryColor: const Color(0xFF5E8C61),
   hintColor: const Color(0xFF611599),
   textTheme: const TextTheme(
-    displayLarge: TextStyle(color: Colors.black),
-    bodyLarge: TextStyle(color: Colors.black),
+    displayLarge: TextStyle(color: Colors.white, fontSize: 24, fontFamily: 'JetBrains Mono'),
+    displayMedium: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'JetBrains Mono'),
+    displaySmall: TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'JetBrains Mono'),
+    bodyLarge: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'JetBrains Mono'),
+    bodyMedium: TextStyle(color: Colors.white, fontSize: 14, fontFamily: 'JetBrains Mono'),
+    bodySmall: TextStyle(color: Colors.white, fontSize: 12, fontFamily: 'JetBrains Mono'),
+    titleLarge: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'JetBrains Mono'),
+    titleMedium: TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'JetBrains Mono'),
+    titleSmall: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'JetBrains Mono'),
+    headlineLarge: TextStyle(color: Colors.white, fontSize: 24, fontFamily: 'JetBrains Mono'),
+    headlineMedium: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'JetBrains Mono'),
+    headlineSmall: TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'JetBrains Mono'),
+    labelLarge: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'JetBrains Mono'),
+    labelMedium: TextStyle(color: Colors.white, fontSize: 14, fontFamily: 'JetBrains Mono'),
+    labelSmall: TextStyle(color: Colors.white, fontSize: 12, fontFamily: 'JetBrains Mono'),
   ),
   scaffoldBackgroundColor: const Color(0xFF1A1A1A),
   appBarTheme: const AppBarTheme(
@@ -17,6 +30,9 @@ final ThemeData darkTheme = ThemeData(
     backgroundColor: Color(0xFF5E8C61),
     titleTextStyle: TextStyle(color: Colors.white),
     iconTheme: IconThemeData(color: Colors.white),
+  ),
+  iconTheme: const IconThemeData(
+    color: Colors.white,
   ),
   cardTheme: const CardTheme(
     color: Colors.white, // Default card background

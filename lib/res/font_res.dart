@@ -6,6 +6,7 @@
 class FontRes {
   FontRes._();
 
+  static const String CUSTOMICONS = 'CustomIcons';
   static const String JETBRAINSMONO_BOLD = 'JetBrainsMono-Bold';
   static const String JETBRAINSMONO_REGULAR = 'JetBrainsMono-Regular';
 }

@@ -23,10 +23,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     required this.title,
-    this.titleColor = Colors.black,
-    this.leadingColor = Colors.black,
+    this.titleColor,
+    this.leadingColor,
     this.showLeading = true,
-    this.actionsColor = Colors.black,
+    this.actionsColor,
     this.showActions = true,
     this.disableBackButton = false,
     this.enablePopButton = false
@@ -35,6 +35,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   
   @override
   Widget build(BuildContext context) {
+
+    final Color _leadingColor = leadingColor ?? Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black;
+    final Color _actionsColor = actionsColor ?? Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black;
+    final Color _titleColor = titleColor ?? Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black;
+
     return AppBar(
       elevation: 10,
         surfaceTintColor: Colors.transparent,
@@ -43,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: showLeading ? IconButton(
         icon: Icon(
             enablePopButton ? Icons.arrow_back_ios_rounded : Icons.home_outlined,
-            color: leadingColor,
+            color: _leadingColor,
           weight: FontWeight.w300.value.toDouble(),
         ),
         onPressed: () => enablePopButton ? context.pop(context) : context.goNamed(RouteNames.home),
@@ -52,13 +57,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         'assets/images/taborniski_sos_prirocnik_logo.png',
         height: 60,
       ),
+      foregroundColor: _titleColor,
       centerTitle: true,
       actions: showActions ? <Widget>[
         IconButton(
           icon: Icon(
               Icons.info_outline_rounded,
               weight: FontWeight.w300.value.toDouble(),
-              color: actionsColor,
+              color: _actionsColor,
           ),
           onPressed: () {
 

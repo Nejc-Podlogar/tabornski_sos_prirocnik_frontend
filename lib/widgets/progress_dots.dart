@@ -1,14 +1,8 @@
-
-// crate a widget that would display a number of circles with different colors.
-// the input would be an array with values of type MorseCodeValidation. If the entry is correct, the circle is green, otherwise red. if it is partially, make it yellow.
-// it needs to be a row of the dots, centered in the middle of the screen.
-
 import 'package:flutter/material.dart';
-
-import '../models/morse_code_language.dart';
+import '../models/morse_code_language.dart'; // Assuming MorseCodeValidation is defined here
 
 class ProgressDots extends StatelessWidget {
-  final List<MorseCodeValidation> correctAnswers;
+  final List<dynamic> correctAnswers; // Changed to List<dynamic>
   final int exerciseSize;
 
   ProgressDots({required this.correctAnswers, required this.exerciseSize});
@@ -27,32 +21,43 @@ class ProgressDots extends StatelessWidget {
           Color dotColor;
           IconData iconData;
           BoxDecoration decoration;
+
           if (index < correctAnswers.length) {
-            switch (correctAnswers[index]) {
-              case MorseCodeValidation.correct:
+            var answer = correctAnswers[index];
+            if (answer is MorseCodeValidation) {
+              // Handle MorseCodeValidation
+              switch (answer) {
+                case MorseCodeValidation.correct:
+                  dotColor = Theme.of(context).primaryColor;
+                  iconData = Icons.check;
+                  break;
+                case MorseCodeValidation.partial:
+                  dotColor = Colors.grey;
+                  iconData = Icons.question_mark_sharp;
+                  break;
+                default:
+                  dotColor = Theme.of(context).hintColor;
+                  iconData = Icons.close;
+              }
+            } else if (answer is bool) {
+              // Handle bool
+              if (answer) {
                 dotColor = Theme.of(context).primaryColor;
                 iconData = Icons.check;
-                decoration = BoxDecoration(
-                  color: dotColor,
-                  shape: BoxShape.circle,
-                );
-                break;
-              case MorseCodeValidation.partial:
-                dotColor = Colors.grey;
-                iconData = Icons.question_mark_sharp;
-                decoration = BoxDecoration(
-                  color: dotColor,
-                  shape: BoxShape.circle,
-                );
-                break;
-              default:
+              } else {
                 dotColor = Theme.of(context).hintColor;
                 iconData = Icons.close;
-                decoration = BoxDecoration(
-                  color: dotColor,
-                  shape: BoxShape.circle,
-                );
+              }
+            } else {
+              // Default case if neither MorseCodeValidation nor bool
+              dotColor = Colors.transparent;
+              iconData = Icons.circle;
             }
+            decoration = BoxDecoration(
+              color: dotColor,
+              shape: BoxShape.circle,
+              border: answer == true || answer is MorseCodeValidation && answer != MorseCodeValidation.correct ? null : Border.all(color: Colors.grey, width: 1),
+            );
           } else {
             dotColor = Colors.transparent;
             iconData = Icons.circle;

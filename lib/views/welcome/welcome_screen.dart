@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/routing/route_definitions.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/forest_painter.dart';
+
+import '../../generated/l10n.dart';
 
 class WelcomeView extends StatefulWidget {
   @override
@@ -21,6 +24,8 @@ class _WelcomeViewState extends State<WelcomeView> {
 
   @override
   Widget build(BuildContext context) {
+    final S localisations = S.of(context);
+
     return Scaffold(
       body: Stack(
         children: [
@@ -33,10 +38,10 @@ class _WelcomeViewState extends State<WelcomeView> {
               });
             },
             children: [
-              _buildPage(title: 'Začni', description: ''),
-              _buildPage(title: 'Morsejeva abeceda', description: ''),
-              _buildPage(title: 'Semafor', description: ''),
-              _buildPage(title: 'Topografija', description: '')
+              _buildPage(title: localisations.begin, description: localisations.introApplication),
+              _buildPage(title: localisations.morseCode, description: localisations.introMorseCode),
+              _buildPage(title: localisations.semaphore, description: localisations.introSemaphore),
+              _buildPage(title: localisations.topography, description: localisations.introTopography)
             ],
           ),
           Positioned(
@@ -69,7 +74,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      context.go('/home');
+                      context.goNamed(RouteNames.home);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).primaryColor,
@@ -80,7 +85,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Text("ZAČNI Z UPORABO", style: TextStyle(color: Colors.white)),
+                        Text(localisations.startUsingTheApp.toUpperCase(), style: const TextStyle(color: Colors.white)),
                         Container(width: 10,),
                         const Icon(Icons.arrow_forward, color: Colors.white)  // Right arrow
                       ],
@@ -112,6 +117,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -131,14 +137,21 @@ class _WelcomeViewState extends State<WelcomeView> {
             ),
           ],
         ),
-        Expanded(
-            child: Center(
-          child: Text(
-            description,
-            style: const TextStyle(fontSize: 18),
-            textAlign: TextAlign.center,
-          ),
-        ))
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(height: 40),
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: MediaQuery.of(context).size.width * 0.6,
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
+        )
       ],
     );
   }

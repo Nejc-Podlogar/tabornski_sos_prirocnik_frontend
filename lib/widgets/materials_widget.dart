@@ -20,11 +20,7 @@ class MaterialsWidget extends StatelessWidget {
             children: <Widget>[
               Text(
                 '${AppLocalizations.of(context)!.materials}:',
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'JetBrains Mono',
-                  fontWeight: FontWeight.normal,
-                ),
+                style: Theme.of(context).textTheme.headlineMedium,
 
               ),
             ]),
@@ -71,14 +67,10 @@ class MaterialsWidget extends StatelessWidget {
                                   },
                                 ))),
                         SizedBox(
-                          width: 50,
+                          width: 100,
                           child: Text(
                             materials[index].name,
-                            style: const TextStyle(
-                              fontFamily: 'JetBrains Mono',
-                              color: Colors.black,
-                              fontSize: 7,
-                            ),
+                            style: Theme.of(context).textTheme.bodySmall,
                             textAlign: TextAlign.center,
                             overflow: TextOverflow.visible,
                           ),

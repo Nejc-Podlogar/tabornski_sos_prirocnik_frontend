@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_state.dart';
 import 'package:tabornski_sos_prirocnik_frontend/themes/default_dark.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/checkmark_switch.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_dialog.dart';
@@ -11,6 +12,8 @@ import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart'
 
 import '../../blocs/theme_block/theme_bloc.dart';
 import '../../blocs/theme_block/theme_event.dart';
+import '../../generated/l10n.dart';
+import '../../utils/shared_prefs.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({Key? key}) : super(key: key);
@@ -30,13 +33,14 @@ class _SettingsViewState extends State<SettingsView> {
     super.initState();
     _loadUserName();
     // check for permission status
-    Permission.notification.status.then((status) {
+     Permission.notification.status.then((status) {
       if (status.isGranted) {
         setState(() {
           _notificationsEnabled = true;
         });
       }
     });
+     _darkModeEnabled = context.read<ThemeBloc>().state is DarkThemeState;
   }
 
   void _loadUserName() async {
@@ -217,6 +221,7 @@ class _SettingsViewState extends State<SettingsView> {
 
   @override
   Widget build(BuildContext context) {
+    final S localisations = S.of(context);
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
@@ -348,9 +353,9 @@ class _SettingsViewState extends State<SettingsView> {
                                   context.go('/home');
                                 },
                               ),
-                              const Text(
-                                'Settings',
-                                style: TextStyle(
+                              Text(
+                                localisations.settings,
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontFamily: 'JetBrains Mono',
                                   fontWeight: FontWeight.normal,
@@ -383,7 +388,7 @@ class _SettingsViewState extends State<SettingsView> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Preferences'.toUpperCase(),
+                  localisations.preferences.toUpperCase(),
                   style: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'JetBrains Mono',
@@ -408,7 +413,7 @@ class _SettingsViewState extends State<SettingsView> {
                     Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          'Dark mode',
+                          localisations.darkMode,
                           style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'JetBrains Mono',
@@ -417,13 +422,13 @@ class _SettingsViewState extends State<SettingsView> {
                         ))
                   ]),
                   checkmarkSwitch(
-                    value: _darkModeEnabled,
-                    callback: (bool value) {
-                      context.read<ThemeBloc>().add(ToggleThemeEvent());
-                      setState(() {
-                        _darkModeEnabled = value;
-                      });
-                    }
+                      value: _darkModeEnabled,
+                      callback: (bool value) {
+                        context.read<ThemeBloc>().add(ToggleThemeEvent());
+                        setState(() {
+                          _darkModeEnabled = value;
+                        });
+                      }
                   )
                 ],
               ),
@@ -448,7 +453,7 @@ class _SettingsViewState extends State<SettingsView> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: Text(
-                        'Allow notifications',
+                        localisations.allowNotifications,
                         style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'JetBrains Mono',
@@ -487,7 +492,7 @@ class _SettingsViewState extends State<SettingsView> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: Text(
-                        'Permissions',
+                        localisations.permissions,
                         style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'JetBrains Mono',
@@ -512,7 +517,7 @@ class _SettingsViewState extends State<SettingsView> {
                             ),
                           )),
                       child: Text(
-                        'Manage'.toUpperCase(),
+                        localisations.manage.toUpperCase(),
                         style: const TextStyle(
                           fontSize: 10,
                           fontFamily: 'JetBrains Mono',
@@ -543,7 +548,7 @@ class _SettingsViewState extends State<SettingsView> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: Text(
-                        'Delete data',
+                        localisations.deleteData,
                         style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'JetBrains Mono',
@@ -579,7 +584,7 @@ class _SettingsViewState extends State<SettingsView> {
               children: <Widget>[
                 TextButton(
                     onPressed: () => showAboutDialog(),
-                    child: Text('About',
+                    child: Text(localisations.about,
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w300,

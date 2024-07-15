@@ -42,43 +42,41 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: Theme.of(context).copyWith(splashColor: Colors.transparent),
-      child: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: _currentIndex,
-        onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.more_horiz_sharp,
-                color: Colors.black,
-            ),
-            label: ''
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      currentIndex: _currentIndex,
+      onTap: _onItemTapped,
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(
+              Icons.more_horiz_sharp,
+              color: Theme.of(context).iconTheme.color,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.flag_outlined,
-                color: Colors.black,
-            ),
-            label: ''
+          label: ''
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+              Icons.flag_outlined,
+              color: Theme.of(context).iconTheme.color,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.map_outlined,
-                color: Colors.black,
-            ),
-            label: ''
+          label: ''
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+              Icons.map_outlined,
+              color: Theme.of(context).iconTheme.color,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.settings_outlined,
-                color: Colors.black,
-            ),
-            label: '',
+          label: ''
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+              Icons.settings_outlined,
+              color: Theme.of(context).iconTheme.color,
           ),
-        ],
-      ),
+          label: '',
+        ),
+      ],
     );
   }
 }

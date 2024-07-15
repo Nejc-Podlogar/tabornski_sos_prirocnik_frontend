@@ -73,23 +73,25 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           ),
-          onPressed: () => _showtranslationTypeBottomSheet(context),
-          child: content.endsWith('.svg')
-              ? SvgPicture.asset(
-                  content,
-                  fit: BoxFit.contain,
-                )
-              : Text(content,
+          onPressed: () => _showTranslationTypeBottomSheet(context),
+          child: Center(
+              child: content.endsWith('.svg')
+                  ? SvgPicture.asset(
+                content,
+                fit: BoxFit.contain,
+              )
+                  : Text(content,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w300,
-                      fontFamily: 'JetBrains Mono'))),
+                      fontFamily: 'Roboto'))
+          )),
     );
   }
 
-  void _showtranslationTypeBottomSheet(BuildContext context) {
+  void _showTranslationTypeBottomSheet(BuildContext context) {
     final morseTranslationBloc = BlocProvider.of<MorseTranslationBloc>(context);
     final currentTranslationType =
         (morseTranslationBloc.state as MorseTranslationInitial)

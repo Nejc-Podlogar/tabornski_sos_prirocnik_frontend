@@ -59,6 +59,7 @@ dependencies:
   http: ^1.2.1
   flutter_dotenv: ^5.1.0
   webview_flutter: ^4.8.0
+  pdfx: ^2.6.0
 
 dev_dependencies:
   flutter_test:
@@ -115,6 +116,9 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   fonts:
+    - family: CustomIcons
+      fonts:
+        - asset: assets/fonts/CustomIcons.ttf
     - family: JetBrainsMono-Bold
       fonts:
         - asset: assets/fonts/JetBrainsMono/JetBrainsMono-Bold.ttf
@@ -139,7 +143,16 @@ flutter:
     - assets/images/semaphore/flags/numerals.png
     - assets/images/semaphore/flags/space.png
     - assets/images/single_separator_forest.png
+    - assets/images/topografija/geodetske_tocke/
+    - assets/images/topografija/meje_in_ograje/
+    - assets/images/topografija/morje_in_morska_obala/
+    - assets/images/topografija/naselja_in_objekti/
+    - assets/images/topografija/promet_komunikacije/
+    - assets/images/topografija/rastje_in_vrste_tal/
+    - assets/images/topografija/relief/
+    - assets/images/topografija/vodovje/
     - assets/pdfs/
     - assets/pdfs/GSJ23_razpis.pdf
+    - assets/pdfs/topografski-znaki-za-dtk25.pdf
 flutter_intl:
   enabled: true

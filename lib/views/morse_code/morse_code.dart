@@ -14,6 +14,8 @@ class MorseCodeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final AppLocalizations localizations = AppLocalizations.of(context)!;
+
     final List<models.Material> materials = <models.Material>[
       models.Material(
           name: 'GSJ razpis', file: 'assets/pdfs/GSJ23_razpis.pdf', description: 'GSJ razpis'),
@@ -22,24 +24,23 @@ class MorseCodeView extends StatelessWidget {
     ];
 
     return Scaffold(
-        appBar: CustomAppBar(title: AppLocalizations.of(context)!.morseCodeAlphabet),
+        appBar: CustomAppBar(title: localizations.morseCodeAlphabet),
         bottomNavigationBar: CustomBottomNavigation(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const SizedBox(height: 20),
-            Text(AppLocalizations.of(context)!.morseCodeAlphabet),
+            Text(
+                localizations.morseCodeAlphabet,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             const SizedBox(height: 40),
-            const SizedBox(
+            SizedBox(
                 width: 300,
                 child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare nec velit at maximus. Proin neque diam, vestibulum molestie dolor sed, pulvinar vehicula mauris. Vivamus in porta leo. Proin dignissim augue eget neque lacinia, non finibus risus pretium.',
+                    localizations.morseCodeDescription,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 9,
-                    fontWeight: FontWeight.w300,
-                    fontFamily: 'JetBrains Mono'
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 )),
             const SizedBox(height: 20),
             Row(
@@ -64,13 +65,8 @@ class MorseCodeView extends StatelessWidget {
                         },
                       ),
                       Text(
-                        AppLocalizations.of(context)!.translator,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
-                          fontFamily: 'JetBrains Mono'
-                        )
+                        localizations.translator,
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
                       )
                     ]),
                 ),
@@ -91,13 +87,8 @@ class MorseCodeView extends StatelessWidget {
                           onPressed: () => context.goNamed(RouteNames.morseCodeLearningSelector)
                       ),
                       Text(
-                          AppLocalizations.of(context)!.exercises,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w300,
-                              fontFamily: 'JetBrains Mono'
-                          )
+                          localizations.exercises,
+                          style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
                       )
                     ],
                   ),
@@ -126,13 +117,8 @@ class MorseCodeView extends StatelessWidget {
                         },
                       ),
                       Text(
-                          AppLocalizations.of(context)!.dictionary,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w300,
-                              fontFamily: 'JetBrains Mono'
-                          )
+                          localizations.dictionary,
+                          style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
                       )
                     ],
                   ),

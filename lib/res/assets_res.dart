@@ -17,4 +17,5 @@ class AssetsRes {
   static const String SPACE = 'assets/images/semaphore/flags/space.png';
   static const String SINGLE_SEPARATOR_FOREST = 'assets/images/single_separator_forest.png';
   static const String GSJ23_RAZPIS = 'assets/pdfs/GSJ23_razpis.pdf';
+  static const String TOPOGRAFSKI_ZNAKI_ZA_DTK25 = 'assets/pdfs/topografski-znaki-za-dtk25.pdf';
 }
