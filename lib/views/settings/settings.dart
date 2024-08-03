@@ -136,6 +136,7 @@ class _SettingsViewState extends State<SettingsView> {
         context: context,
         builder: (BuildContext context) {
           return Dialog(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25),
             ),

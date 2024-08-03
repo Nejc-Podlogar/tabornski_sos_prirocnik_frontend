@@ -26,108 +26,110 @@ class MorseCodeView extends StatelessWidget {
     return Scaffold(
         appBar: CustomAppBar(title: localizations.morseCodeAlphabet),
         bottomNavigationBar: CustomBottomNavigation(),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            const SizedBox(height: 20),
-            Text(
-                localizations.morseCodeAlphabet,
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 40),
-            SizedBox(
-                width: 300,
-                child: Text(
-                    localizations.morseCodeDescription,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                )),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  height: MediaQuery.of(context).size.width * 0.25,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.g_translate_outlined),
-                        iconSize: MediaQuery.of(context).size.width * 0.12,
-                        color: Colors.white,
-                        onPressed: () {
-                          context.goNamed(RouteNames.morseCodeTranslator);
-                        },
-                      ),
-                      Text(
-                        localizations.translator,
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
-                      )
-                    ]),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  height: MediaQuery.of(context).size.width * 0.25,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      IconButton(
-                          icon: const Icon(Icons.school_outlined),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              const SizedBox(height: 20),
+              Text(
+                  localizations.morseCodeAlphabet,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              const SizedBox(height: 40),
+              SizedBox(
+                  width: 300,
+                  child: Text(
+                      localizations.morseCodeDescription,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  )),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    height: MediaQuery.of(context).size.width * 0.25,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.g_translate_outlined),
                           iconSize: MediaQuery.of(context).size.width * 0.12,
                           color: Colors.white,
-                          onPressed: () => context.goNamed(RouteNames.morseCodeLearningSelector)
-                      ),
-                      Text(
-                          localizations.exercises,
+                          onPressed: () {
+                            context.goNamed(RouteNames.morseCodeTranslator);
+                          },
+                        ),
+                        Text(
+                          localizations.translator,
                           style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
-                      )
-                    ],
+                        )
+                      ]),
                   ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  height: MediaQuery.of(context).size.width * 0.25,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      IconButton(
-                        icon: const Icon(Icons.menu_book_outlined),
-                        iconSize: MediaQuery.of(context).size.width * 0.12,
-                        color: Colors.white,
-                        onPressed: () {
-                          context.goNamed(RouteNames.morseCodeMaterials);
-                        },
-                      ),
-                      Text(
-                          localizations.dictionary,
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
-                      )
-                    ],
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    height: MediaQuery.of(context).size.width * 0.25,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        IconButton(
+                            icon: const Icon(Icons.school_outlined),
+                            iconSize: MediaQuery.of(context).size.width * 0.12,
+                            color: Colors.white,
+                            onPressed: () => context.goNamed(RouteNames.morseCodeLearningSelector)
+                        ),
+                        Text(
+                            localizations.exercises,
+                            style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ]
-            ),
-            const SizedBox(height: 40),
-            MaterialsWidget(key: key, materials: materials)
-          ],
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    height: MediaQuery.of(context).size.width * 0.25,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        IconButton(
+                          icon: const Icon(Icons.menu_book_outlined),
+                          iconSize: MediaQuery.of(context).size.width * 0.12,
+                          color: Colors.white,
+                          onPressed: () {
+                            context.goNamed(RouteNames.morseCodeMaterials);
+                          },
+                        ),
+                        Text(
+                            localizations.dictionary,
+                            style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.white)
+                        )
+                      ],
+                    ),
+                  ),
+                ]
+              ),
+              const SizedBox(height: 40),
+              MaterialsWidget(key: key, materials: materials)
+            ],
+          ),
         ));
   }
 }

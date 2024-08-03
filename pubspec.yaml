@@ -60,6 +60,9 @@ dependencies:
   flutter_dotenv: ^5.1.0
   webview_flutter: ^4.8.0
   pdfx: ^2.6.0
+  pdf: ^3.11.0
+  open_file: ^3.3.2
+  file_picker: ^8.0.6
 
 dev_dependencies:
   flutter_test:
@@ -154,5 +157,6 @@ flutter:
     - assets/pdfs/
     - assets/pdfs/GSJ23_razpis.pdf
     - assets/pdfs/topografski-znaki-za-dtk25.pdf
+    - assets/fonts/JetBrainsMono/JetBrainsMonoNL-Regular.ttf
 flutter_intl:
   enabled: true

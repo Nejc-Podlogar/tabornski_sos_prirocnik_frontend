@@ -98,6 +98,7 @@ class _MorseCodeLearningState extends State<MorseCodeLearning> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   ChoiceChip(
+                    backgroundColor: Theme.of(context).chipTheme.backgroundColor,
                     showCheckmark: false,
                     label: SizedBox(
                         width: 90,

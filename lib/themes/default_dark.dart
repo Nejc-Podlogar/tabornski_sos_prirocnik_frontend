@@ -38,7 +38,7 @@ final ThemeData darkTheme = ThemeData(
     color: Colors.white, // Default card background
   ),
   chipTheme: const ChipThemeData(
-    backgroundColor: Colors.white,
+    backgroundColor: Color(0xFF1A1A1A),
     labelStyle: TextStyle(
         color: Color(0xFFB2B39C),
     ),

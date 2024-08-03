@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabornski_sos_prirocnik_frontend/utils/create_pdf.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_app_bar.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart';
 
@@ -233,6 +234,10 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
       },
     );
   }
+  
+  Future<void> _handleSaveButton(String text) async {
+    CreatePdf().createPdf(data: text, title: 'Morse code', pdfType: PdfType.morseCode);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -268,9 +273,9 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
 
                 return Container(
                   height: MediaQuery.of(context).size.height * 0.58,
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(30),
                           bottomRight: Radius.circular(30))),
                   child: Column(children: <Widget>[
@@ -281,10 +286,11 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                         child: SingleChildScrollView(
                           child: SingleChildScrollView(
                             child: TextField(
-                              controller: _textEditingController,
+                              controller: state.languageSetting.languageSetting == MorseLanguageSetting.textToMorse ? _textEditingController : _textTranslatedController,
                               enabled: isTextFieldEnabled,
                               maxLines: null,
                               decoration: InputDecoration(
+                                hintStyle: Theme.of(context).textTheme.bodyMedium,
                                 hintText: isTextFieldEnabled
                                     ? '${AppLocalizations.of(context)!.inputText}...'
                                     : AppLocalizations.of(context)!
@@ -297,8 +303,8 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                         ),
                       ),
                     ),
-                    const Divider(
-                      color: Colors.black,
+                    Divider(
+                      color: Theme.of(context).textTheme.labelLarge?.color,
                       endIndent: 15,
                       indent: 15,
                       thickness: 1,
@@ -312,8 +318,9 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                               child: TextField(
                                 maxLines: null,
                                 enabled: false,
-                                controller: _textTranslatedController,
+                                controller: state.languageSetting.languageSetting == MorseLanguageSetting.textToMorse ? _textTranslatedController : _textEditingController,
                                 decoration: InputDecoration(
+                                  hintStyle: Theme.of(context).textTheme.bodyMedium,
                                   hintText:
                                       '${AppLocalizations.of(context)!.translation}...',
                                   border: InputBorder.none,
@@ -346,13 +353,23 @@ class _MorseCodeTranslatorViewState extends State<MorseCodeTranslatorView> {
                                       },
                                       icon: const Icon(
                                           Icons.delete_outline_outlined)),
-                                  IconButton(
-                                      onPressed: () {
-                                        Clipboard.setData(ClipboardData(
-                                            text: _textTranslatedController
-                                                .text));
-                                      },
-                                      icon: const Icon(Icons.copy_rounded))
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: <Widget>[
+                                      IconButton(
+                                          onPressed: () {
+                                            Clipboard.setData(ClipboardData(
+                                                text: _textTranslatedController
+                                                    .text));
+                                          },
+                                          icon: const Icon(Icons.copy_rounded)),
+                                      IconButton(
+                                          onPressed: _textTranslatedController.text ==  '' ? null : () => _handleSaveButton(_textTranslatedController.text),
+                                          icon: const Icon(Icons.save_outlined))
+                                    ],
+                                  )
                                 ],
                               ))
                         ])),

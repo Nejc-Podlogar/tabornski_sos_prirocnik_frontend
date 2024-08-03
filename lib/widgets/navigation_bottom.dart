@@ -16,26 +16,29 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
   int _currentIndex = 0;
 
   void _onItemTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
 
-    switch (_currentIndex) {
-      case 0:
-        context.goNamed(RouteNames.morseCode);
-        break;
-      case 1:
-        context.goNamed(RouteNames.semaphore);
-        break;
-      case 2:
-        context.goNamed(RouteNames.orientation);
-        break;
-      case 3:
-        context.goNamed(RouteNames.settings);
-        break;
-      default:
-        context.goNamed(RouteNames.home);
-        break;
+    if (_currentIndex != index) {
+      setState(() {
+        _currentIndex = index;
+      });
+
+      switch (_currentIndex) {
+        case 0:
+          context.goNamed(RouteNames.morseCode);
+          break;
+        case 1:
+          context.goNamed(RouteNames.semaphore);
+          break;
+        case 2:
+          context.goNamed(RouteNames.orientation);
+          break;
+        case 3:
+          context.goNamed(RouteNames.settings);
+          break;
+        default:
+          context.goNamed(RouteNames.home);
+          break;
+      }
     }
 
   }
@@ -45,34 +48,36 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
       currentIndex: _currentIndex,
+      selectedIconTheme: IconThemeData(
+        color: Theme.of(context).primaryColor,
+      ),
+      unselectedIconTheme: Theme.of(context).iconTheme,
       onTap: _onItemTapped,
-      items: <BottomNavigationBarItem>[
+      items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(
               Icons.more_horiz_sharp,
-              color: Theme.of(context).iconTheme.color,
           ),
           label: ''
         ),
         BottomNavigationBarItem(
           icon: Icon(
               Icons.flag_outlined,
-              color: Theme.of(context).iconTheme.color,
           ),
           label: ''
         ),
         BottomNavigationBarItem(
           icon: Icon(
               Icons.map_outlined,
-              color: Theme.of(context).iconTheme.color,
           ),
           label: ''
         ),
         BottomNavigationBarItem(
           icon: Icon(
               Icons.settings_outlined,
-              color: Theme.of(context).iconTheme.color,
           ),
           label: '',
         ),
