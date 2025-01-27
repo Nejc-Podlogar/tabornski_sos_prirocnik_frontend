@@ -119,6 +119,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Start using the app"),
         "stopTransmitting":
             MessageLookupByLibrary.simpleMessage("Stop transmitting"),
+        "tabornski_sos_prirocnik_frontend":
+            MessageLookupByLibrary.simpleMessage("Scouts S.O.S Manual"),
         "text": MessageLookupByLibrary.simpleMessage("Text"),
         "textToMorseCode":
             MessageLookupByLibrary.simpleMessage("Text to Morse code"),

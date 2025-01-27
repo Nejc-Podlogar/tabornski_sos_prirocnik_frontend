@@ -121,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Začni uporabljati aplikacijo"),
         "stopTransmitting":
             MessageLookupByLibrary.simpleMessage("Prenehaj z oddajanjem"),
+        "tabornski_sos_prirocnik_frontend":
+            MessageLookupByLibrary.simpleMessage("Taborniški S.O.S Priročnik"),
         "text": MessageLookupByLibrary.simpleMessage("Besedilo"),
         "textToMorseCode": MessageLookupByLibrary.simpleMessage(
             "Besedilo v Morsejevo abecedo"),

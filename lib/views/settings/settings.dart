@@ -73,7 +73,7 @@ class _SettingsViewState extends State<SettingsView> {
         _loadUserName();
       });
       showDialog(
-        context: context,
+        context: context.mounted ? context : context,
         builder: (BuildContext context) => const CustomDialogNoButtons(
             title: '',
             content: 'All of local data has been deleted',
@@ -85,51 +85,83 @@ class _SettingsViewState extends State<SettingsView> {
 
   void _toggleNotifications(bool value) async {
     if (value) {
-      var status = Permission.notification.status;
-      if (await status.isDenied) {
-        await Permission.notification.request();
+      var status = await Permission.notification.status;
+      if (status.isDenied || status.isPermanentlyDenied) {
+        status = await Permission.notification.request();
+      }
 
-        await Permission.notification.isGranted.then((status) {
-          if(status) {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) => const CustomDialogNoButtons(
-                  title: 'Notifications enabled',
-                  content: 'You will now receive notifications',
-                  icon: Icons.notifications_active_outlined,
-                  duration: Duration(seconds: 2)),
-            );
+      if (status.isGranted) {
+        showDialog(
+          context: context.mounted ? context : context,
+          builder: (BuildContext context) => const CustomDialogNoButtons(
+              title: 'Notifications enabled',
+              content: 'You will now receive notifications',
+              icon: Icons.notifications_active_outlined,
+              duration: Duration(seconds: 2)),
+        );
 
-            setState(() {
-              _notificationsEnabled = true;
-            });
-          }
+        setState(() {
+          _notificationsEnabled = true;
+        });
+      } else if (status.isDenied) {
+        showDialog(
+          context: context.mounted ? context : context,
+          builder: (BuildContext context) => const CustomDialogNoButtons(
+              title: 'Permission denied',
+              content: 'Notification permission was denied',
+              icon: Icons.error_outline,
+              duration: Duration(seconds: 2)),
+        );
+
+        setState(() {
+          _notificationsEnabled = false;
+        });
+      } else if (status.isPermanentlyDenied) {
+        showDialog(
+          context: context.mounted ? context : context,
+          builder: (BuildContext context) => AlertDialog(
+            title: const Text('Permission permanently denied'),
+            content: const Text('Please enable notifications in your phone settings.'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  openAppSettings();
+                },
+                child: const Text('Open Settings'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Cancel'),
+              ),
+            ],
+          ),
+        );
+
+        setState(() {
+          _notificationsEnabled = false;
         });
       }
     } else {
-      await Permission.notification.status.then((status) {
-        if (status.isGranted) {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) => const CustomDialogNoButtons(
-                title: 'Manual notification disable required',
-                content:
-                'Please disable the notifications in your phone settings',
-                icon: Icons.restore_from_trash_outlined,
-                duration: Duration(seconds: 2)),
-          );
+      showDialog(
+        context: context,
+        builder: (BuildContext context) => const CustomDialogNoButtons(
+            title: 'Manual notification disable required',
+            content: 'Please disable the notifications in your phone settings',
+            icon: Icons.restore_from_trash_outlined,
+            duration: Duration(seconds: 2)),
+      );
 
-          setState(() {
-            _notificationsEnabled = true;
-          });
-        }
+      setState(() {
+        _notificationsEnabled = false;
       });
     }
   }
 
   void showAboutDialog() async {
     await PackageInfo.fromPlatform().then((packageInfo) {
-      String appName = packageInfo.appName;
+      String appName = S.of(context).tabornski_sos_prirocnik_frontend;
       String version = packageInfo.version;
 
       showDialog(
@@ -466,7 +498,6 @@ class _SettingsViewState extends State<SettingsView> {
                   checkmarkSwitch(
                     value: _notificationsEnabled,
                     callback: (bool value) {
-                      print('Toggling notifications: $value');
                       _toggleNotifications(value);
                     },
                   )
@@ -502,16 +533,13 @@ class _SettingsViewState extends State<SettingsView> {
                       ),
                     )
                   ]),
-
-                  /// add a button
-
                   ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
+                          backgroundColor: WidgetStateProperty.all<Color>(
                               primaryCardTheme.color!),
                           shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                              WidgetStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(
                                   25.0), // Set the corner radius here

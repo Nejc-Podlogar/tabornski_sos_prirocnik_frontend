@@ -820,6 +820,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Scouts S.O.S Manual`
+  String get tabornski_sos_prirocnik_frontend {
+    return Intl.message(
+      'Scouts S.O.S Manual',
+      name: 'tabornski_sos_prirocnik_frontend',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
