@@ -23,16 +23,16 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
       });
 
       switch (_currentIndex) {
-        case 0:
+        case 1:
           context.goNamed(RouteNames.morseCode);
           break;
-        case 1:
+        case 2:
           context.goNamed(RouteNames.semaphore);
           break;
-        case 2:
+        case 3:
           context.goNamed(RouteNames.orientation);
           break;
-        case 3:
+        case 4:
           context.goNamed(RouteNames.settings);
           break;
         default:
