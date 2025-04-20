@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         ],
         child: BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, ThemeState state) {
-            return MaterialApp.router(
+            return SafeArea(child: MaterialApp.router(
               routerConfig: goRouter,
               theme: state is LightThemeState ? lightTheme : darkTheme,
               title: 'Taborniški SOS priročnik',
@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
                 GlobalCupertinoLocalizations.delegate,
               ],
               supportedLocales: AppLocalizations.supportedLocales,
-              );
+            ));
           },
         ));
   }

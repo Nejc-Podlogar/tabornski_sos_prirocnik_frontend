@@ -70,7 +70,7 @@ class OrientationView extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const PDFScreen(path: 'assets/pdfs/topografski-znaki-za-dtk25.pdf', title: 'Topografski znaki za DTK 25', isLocal: true,),
+                                        builder: (context) => const PDFScreen(assetPath: 'assets/pdfs/topografski-znaki-za-dtk25.pdf', title: 'Topografski znaki za DTK 25'),
                                       ),
                                     );
                                   },

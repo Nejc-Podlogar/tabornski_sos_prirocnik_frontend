@@ -63,7 +63,7 @@ class MaterialsWidget extends StatelessWidget {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => PDFScreen(path: materials[index].file, title: materials[index].name,),
+                                            builder: (context) => PDFScreen(assetPath: materials[index].file, title: materials[index].name,),
                                           ),
                                         );
                                     },

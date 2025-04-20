@@ -5,7 +5,7 @@ import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:meta/meta.dart';
 import 'package:tabornski_sos_prirocnik_frontend/models/models.dart';
 import 'package:tabornski_sos_prirocnik_frontend/repositories/morde_translation_repository.dart';
-import 'package:torch_controller/torch_controller.dart';
+import 'package:torch_light/torch_light.dart';
 
 part 'morse_translation_event.dart';
 part 'morse_translation_state.dart';
@@ -123,8 +123,7 @@ class MorseTranslationBloc
 
   _mapToggleTransmittingToState(ToggleTransmitting event, emit) async {
     try {
-      final TorchController torchController = TorchController();
-      torchController.initialize(intensity: 0.0);
+      final bool hasTorch = await TorchLight.isTorchAvailable();
 
       if (state is MorseTranslationInitial) {
         MorseTranslationInitial initialState = state as MorseTranslationInitial;
@@ -132,10 +131,10 @@ class MorseTranslationBloc
         if (initialState.languageSetting.translatedValue == null ||
             initialState.languageSetting.languageSetting !=
                 MorseLanguageSetting.textToMorse ||
-            await torchController.hasTorch == false) {
+            !hasTorch) {
           emit(MorseTorchTransmittingFailure(
               errorMessage:
-                  "Problem with starting the torch transmitting. Please validate that you have translated the text to morse code and that you have the correct language setting.",
+              "Problem with starting the torch transmitting. Please validate that you have translated the text to morse code and that you have the correct language setting.",
               languageSetting: initialState.languageSetting.copyWith(
                 translatedText: [event.morseCode],
               ),
@@ -144,9 +143,7 @@ class MorseTranslationBloc
         }
 
         if (_isTransmitting) {
-          if (await torchController.isTorchActive == true) {
-            await torchController.toggle();
-          }
+          await TorchLight.disableTorch();
 
           _isTransmitting = false;
           emit(MorseTorchStoppedTransmitting(
@@ -162,21 +159,17 @@ class MorseTranslationBloc
               ),
               isAutoRepeating: state.isAutoRepeating));
 
-          if (await torchController.isTorchActive == true) {
-            await torchController.toggle();
-          }
-
           final String morseCode = initialState.languageSetting.translatedValue![0];
           do {
             for (int i = 0; i < morseCode.length; i++) {
               if (morseCode[i] == ".") {
-                torchController.toggle(intensity: 1.0);
+                await TorchLight.enableTorch();
                 await Future.delayed(const Duration(milliseconds: 100));
-                torchController.toggle(intensity: 0.0);
+                await TorchLight.disableTorch();
               } else if (morseCode[i] == "-") {
-                torchController.toggle(intensity: 1.0);
+                await TorchLight.enableTorch();
                 await Future.delayed(const Duration(milliseconds: 300));
-                torchController.toggle(intensity: 0.0);
+                await TorchLight.disableTorch();
               } else if (morseCode[i] == "/") {
                 await Future.delayed(const Duration(milliseconds: 700));
               }
@@ -190,9 +183,7 @@ class MorseTranslationBloc
             }
           } while (state.isAutoRepeating && _isTransmitting);
 
-          if (await torchController.isTorchActive == true) {
-            await torchController.toggle();
-          }
+          await TorchLight.disableTorch();
 
           emit(MorseTorchStoppedTransmitting(
               languageSetting: initialState.languageSetting.copyWith(
