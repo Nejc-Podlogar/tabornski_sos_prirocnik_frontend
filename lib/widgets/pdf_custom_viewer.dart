@@ -102,10 +102,11 @@ class _PDFScreenState extends State<PDFScreen> {
                     swipeHorizontal: false,
                     autoSpacing: true,
                     pageFling: true,
+                    nightMode: false,
                     onRender: (pages) {
                       setState(() {
                         this.pages = pages!;
-                        currentPage = 1;
+                        currentPage = 0;
                         isReady = true;
                       });
                     },
@@ -138,7 +139,7 @@ class _PDFScreenState extends State<PDFScreen> {
                             radius: 15,
                             backgroundColor: Colors.grey[200],
                             child: Text(
-                              '$currentPage/$pages',
+                              '${currentPage + 1}/$pages',
                               style: const TextStyle(
                                 fontSize: 10,
                                 color: Colors.black,
