@@ -65,12 +65,14 @@
   "semaphoreToText": "Semaphore (flags) to text",
 
   "orientation": "Orientation",
+  "orientationDescription": "Orientation helps scouts find direction, navigate in nature, and reach their destination using a compass, map, and natural signs.",
   "topography": "Topography",
   "topographyLearning": "Topography learning",
   "topoImages": "Images",
   "topoText": "Text",
   "topoCategories": "Categories",
   "topoCategory": "{selectedTopoCategory, select, geodetske_tocke{Geodetic points} morje_in_morska_obala{The sea and the sea coast} naselja_in_objekti{Settlements and facilities} promet{Traffic} rastje_in_vrste_tal{Growth and soil types} relief{Relief} vodovje{Water supply} meje_in_ograje{Borders and fences} other{Other}}",
+  "orientationMoreComingSoon": "More categories are coming soon.",
 
   "user": "User",
   "settings": "Settings",
@@ -84,5 +86,7 @@
 
   "translatedText": "Translated text",
   "selectFlags": "Select flags",
-  "tabornski_sos_prirocnik_frontend": "Scouts S.O.S Manual"
+  "tabornski_sos_prirocnik_frontend": "Scouts S.O.S Manual",
+
+  "homeWelcomeMessage": "Taborniški S.O.S Priročnik is a cross-platform application designed for learning and digitalizing scout knowledge. It offers users an interactive way to explore Morse code, semaphore, topography, and orientation through translators, flashcards, and quizzes. The app features an intuitive user interface with clearly structured content and thematically tailored screens. Special attention is given to practical features, such as sending Morse messages via a phone flashlight. Built with Flutter, it ensures a consistent experience across Android, iOS, and web platforms."
 }

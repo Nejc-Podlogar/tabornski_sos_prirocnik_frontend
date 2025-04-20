@@ -35,7 +35,7 @@ class InfoCard extends StatelessWidget {
                     Text(
                       title,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 20,
                         fontFamily: 'JetBrains Mono',
                         fontWeight: FontWeight.normal,
                         color: primaryCardTextStyle.color,
@@ -47,7 +47,7 @@ class InfoCard extends StatelessWidget {
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontSize: 11,
+                        fontSize: 15,
                         fontFamily: 'JetBrains Mono',
                         fontWeight: FontWeight.normal,
                         color: primaryCardTextStyle.color,
@@ -72,7 +72,7 @@ class InfoCard extends StatelessWidget {
                               localizations.readMore,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 12,
+                                fontSize: 15,
                                 fontFamily: 'JetBrains Mono',
                               )
                           )

@@ -6,6 +6,8 @@ import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_app_bar.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../generated/l10n.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -24,7 +26,8 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    final AppLocalizations localizations = AppLocalizations.of(context)!;
+    final S localisations = S.of(context);
+
 
     return Scaffold(
       body: Stack(
@@ -43,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 child: Center(
                   child: Text(
-                    localizations.appTitle,
+                    localisations.appTitle,
                     style: const TextStyle(
                       fontSize: 25,
                       fontFamily: 'JetBrains Mono',
@@ -57,10 +60,10 @@ class _HomeViewState extends State<HomeView> {
               const SizedBox(height: 150), // Replaced Container with SizedBox
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.70,
-                child: const Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+                child: Text(
+                  localisations.homeWelcomeMessage,
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: 15,
                     fontFamily: 'JetBrains Mono',
                     fontWeight: FontWeight.normal,
                   ),

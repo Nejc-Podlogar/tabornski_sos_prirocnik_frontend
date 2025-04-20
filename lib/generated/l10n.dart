@@ -530,6 +530,16 @@ class S {
     return Intl.message('Orientation', name: 'orientation', desc: '', args: []);
   }
 
+  /// `Orientation helps scouts find direction, navigate in nature, and reach their destination using a compass, map, and natural signs.`
+  String get orientationDescription {
+    return Intl.message(
+      'Orientation helps scouts find direction, navigate in nature, and reach their destination using a compass, map, and natural signs.',
+      name: 'orientationDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Topography`
   String get topography {
     return Intl.message('Topography', name: 'topography', desc: '', args: []);
@@ -583,6 +593,16 @@ class S {
       name: 'topoCategory',
       desc: '',
       args: [selectedTopoCategory],
+    );
+  }
+
+  /// `More categories are coming soon.`
+  String get orientationMoreComingSoon {
+    return Intl.message(
+      'More categories are coming soon.',
+      name: 'orientationMoreComingSoon',
+      desc: '',
+      args: [],
     );
   }
 
@@ -661,6 +681,16 @@ class S {
     return Intl.message(
       'Scouts S.O.S Manual',
       name: 'tabornski_sos_prirocnik_frontend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Taborniški S.O.S Priročnik is a cross-platform application designed for learning and digitalizing scout knowledge. It offers users an interactive way to explore Morse code, semaphore, topography, and orientation through translators, flashcards, and quizzes. The app features an intuitive user interface with clearly structured content and thematically tailored screens. Special attention is given to practical features, such as sending Morse messages via a phone flashlight. Built with Flutter, it ensures a consistent experience across Android, iOS, and web platforms.`
+  String get homeWelcomeMessage {
+    return Intl.message(
+      'Taborniški S.O.S Priročnik is a cross-platform application designed for learning and digitalizing scout knowledge. It offers users an interactive way to explore Morse code, semaphore, topography, and orientation through translators, flashcards, and quizzes. The app features an intuitive user interface with clearly structured content and thematically tailored screens. Special attention is given to practical features, such as sending Morse messages via a phone flashlight. Built with Flutter, it ensures a consistent experience across Android, iOS, and web platforms.',
+      name: 'homeWelcomeMessage',
       desc: '',
       args: [],
     );

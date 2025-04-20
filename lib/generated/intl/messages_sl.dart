@@ -58,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "exercises": MessageLookupByLibrary.simpleMessage("Vaje"),
     "finishExercise": MessageLookupByLibrary.simpleMessage("Končaj vajo"),
+    "homeWelcomeMessage": MessageLookupByLibrary.simpleMessage(
+      "Taborniški S.O.S Priročnik je večplatformna aplikacija, namenjena učenju in digitalizaciji taborniškega znanja. Uporabnikom omogoča interaktivno raziskovanje Morsejeve abecede, semaforja, topografije in orientacije skozi prevajalnike, učne kartice in kvize. Aplikacija vključuje intuitiven uporabniški vmesnik z jasno razdeljenimi vsebinami in tematsko prilagojenimi zasloni. Poseben poudarek je na praktičnih funkcijah, kot je oddajanje Morsejevega sporočila preko svetilke na mobilni napravi. Z uporabo Flutterja zagotavlja enotno izkušnjo na Android, iOS in spletnih platformah.",
+    ),
     "incorrectAnswer": MessageLookupByLibrary.simpleMessage("Napačen odgovor"),
     "inputText": MessageLookupByLibrary.simpleMessage("Vnesi besedilo"),
     "introApplication": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +93,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "nextExercise": MessageLookupByLibrary.simpleMessage("Naslednja vaja"),
     "numbers": MessageLookupByLibrary.simpleMessage("Številke"),
     "orientation": MessageLookupByLibrary.simpleMessage("Orientacija"),
+    "orientationDescription": MessageLookupByLibrary.simpleMessage(
+      "Orientacija tabornikom pomaga določiti smer, se znajti v naravi in varno priti do cilja s pomočjo kompasa, zemljevida in naravnih znakov.",
+    ),
+    "orientationMoreComingSoon": MessageLookupByLibrary.simpleMessage(
+      "Več kategorij prihaja kmalu.",
+    ),
     "partiallyCorrectAnswer": MessageLookupByLibrary.simpleMessage(
       "Delno pravilen odgovor",
     ),

@@ -33,7 +33,7 @@ class MorseCodeView extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                   localizations.morseCodeAlphabet,
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineLarge,
               ),
               const SizedBox(height: 40),
               SizedBox(

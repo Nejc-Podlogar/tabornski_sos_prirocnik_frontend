@@ -58,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "exercises": MessageLookupByLibrary.simpleMessage("Exercises"),
     "finishExercise": MessageLookupByLibrary.simpleMessage("Finish exercise"),
+    "homeWelcomeMessage": MessageLookupByLibrary.simpleMessage(
+      "Taborniški S.O.S Priročnik is a cross-platform application designed for learning and digitalizing scout knowledge. It offers users an interactive way to explore Morse code, semaphore, topography, and orientation through translators, flashcards, and quizzes. The app features an intuitive user interface with clearly structured content and thematically tailored screens. Special attention is given to practical features, such as sending Morse messages via a phone flashlight. Built with Flutter, it ensures a consistent experience across Android, iOS, and web platforms.",
+    ),
     "incorrectAnswer": MessageLookupByLibrary.simpleMessage("Incorrect answer"),
     "inputText": MessageLookupByLibrary.simpleMessage("Input text"),
     "introApplication": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +93,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "nextExercise": MessageLookupByLibrary.simpleMessage("Next exercise"),
     "numbers": MessageLookupByLibrary.simpleMessage("Numbers"),
     "orientation": MessageLookupByLibrary.simpleMessage("Orientation"),
+    "orientationDescription": MessageLookupByLibrary.simpleMessage(
+      "Orientation helps scouts find direction, navigate in nature, and reach their destination using a compass, map, and natural signs.",
+    ),
+    "orientationMoreComingSoon": MessageLookupByLibrary.simpleMessage(
+      "More categories are coming soon.",
+    ),
     "partiallyCorrectAnswer": MessageLookupByLibrary.simpleMessage(
       "Partially correct answer",
     ),

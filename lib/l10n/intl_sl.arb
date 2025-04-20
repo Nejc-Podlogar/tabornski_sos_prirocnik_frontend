@@ -65,12 +65,14 @@
   "semaphoreToText": "Semafor (zastavica) v besedilo",
 
   "orientation": "Orientacija",
+  "orientationDescription": "Orientacija tabornikom pomaga določiti smer, se znajti v naravi in varno priti do cilja s pomočjo kompasa, zemljevida in naravnih znakov.",
   "topography": "Topografija",
   "topographyLearning": "Učenje topografije",
   "topoText": "Besedilo",
   "topoImages": "Slike",
   "topoCategories": "Kategorije",
   "topoCategory": "{selectedTopoCategory, select, geodetske_tocke{Geodetske točke} morje_in_morska_obala{Morje in morska obala} naselja_in_objekti{Naselja in objekti} promet{Promet} rastje_in_vrste_tal{Rastje in vrste tal} relief{Relief} vodovje{Vodovje} meje_in_ograje{Meje in ograje} other{Ostalo}}",
+  "orientationMoreComingSoon": "Več kategorij prihaja kmalu.",
 
   "user": "Uporabnik",
   "settings": "Nastavitve",
@@ -84,5 +86,7 @@
 
   "translatedText": "Prevedeno besedilo",
   "selectFlags": "Izberi zastavice",
-  "tabornski_sos_prirocnik_frontend": "Taborniški S.O.S Priročnik"
+  "tabornski_sos_prirocnik_frontend": "Taborniški S.O.S Priročnik",
+
+  "homeWelcomeMessage": "Taborniški S.O.S Priročnik je večplatformna aplikacija, namenjena učenju in digitalizaciji taborniškega znanja. Uporabnikom omogoča interaktivno raziskovanje Morsejeve abecede, semaforja, topografije in orientacije skozi prevajalnike, učne kartice in kvize. Aplikacija vključuje intuitiven uporabniški vmesnik z jasno razdeljenimi vsebinami in tematsko prilagojenimi zasloni. Poseben poudarek je na praktičnih funkcijah, kot je oddajanje Morsejevega sporočila preko svetilke na mobilni napravi. Z uporabo Flutterja zagotavlja enotno izkušnjo na Android, iOS in spletnih platformah."
 }

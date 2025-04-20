@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tabornski_sos_prirocnik_frontend/icons/custom_icons_icons.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_app_bar.dart';
+import 'package:tabornski_sos_prirocnik_frontend/widgets/custom_dialog.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/materials_widget.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/navigation_bottom.dart';
 import 'package:tabornski_sos_prirocnik_frontend/widgets/pdf_custom_viewer.dart';
@@ -35,12 +36,12 @@ class OrientationView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 20),
-                Text(localisations.orientation, style: Theme.of(context).textTheme.headlineMedium),
+                Text(localisations.orientation, style: Theme.of(context).textTheme.headlineLarge),
                 const SizedBox(height: 30),
                 SizedBox(
                     width: 300,
                     child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare nec velit at maximus. Proin neque diam, vestibulum molestie dolor sed, pulvinar vehicula mauris. Vivamus in porta leo. Proin dignissim augue eget neque lacinia, non finibus risus pretium.',
+                      localisations.orientationDescription,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyMedium
                     )),
@@ -192,18 +193,31 @@ class OrientationView extends StatelessWidget {
                         onPressed: () {},
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.all(5),
-                      height: MediaQuery.of(context).size.width * 0.25,
-                      width: MediaQuery.of(context).size.width * 0.25,
-                      decoration: BoxDecoration(
-                          color: primaryCardTheme.color,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: const Center(
-                        child: MorseCodeCustomDisplay(
-                            morseCodeText: '...', color: Colors.white),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => CustomDialogNoButtons(
+                            duration: Duration(seconds: 5),
+                            title: localisations.comingSoon,
+                            content: localisations.orientationMoreComingSoon,
+                            icon: Icons.info, // Added the required 'icon' parameter
+                          ),
+                        );
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.all(5),
+                        height: MediaQuery.of(context).size.width * 0.25,
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        decoration: BoxDecoration(
+                            color: primaryCardTheme.color,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: const Center(
+                          child: MorseCodeCustomDisplay(
+                              morseCodeText: '...', color: Colors.white),
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
                 const SizedBox(height: 40),
