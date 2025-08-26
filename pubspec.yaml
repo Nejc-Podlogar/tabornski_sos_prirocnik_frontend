@@ -65,6 +65,7 @@ dependencies:
   file_picker: ^10.1.2
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
 
@@ -77,6 +78,11 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo/square_logo_main.png"
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -155,6 +161,7 @@ flutter:
     - assets/images/topografija/relief/
     - assets/images/topografija/vodovje/
     - assets/pdfs/
+    - assets/pdfs/orientation/
     - assets/pdfs/GSJ23_razpis.pdf
     - assets/pdfs/topografski-znaki-za-dtk25.pdf
     - assets/fonts/JetBrainsMono/JetBrainsMonoNL-Regular.ttf

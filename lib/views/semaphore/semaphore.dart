@@ -17,12 +17,12 @@ class SemaphoreView extends StatelessWidget {
 
     final List<models.Material> materials = <models.Material>[
       models.Material(
-          name: 'GSJ razpis',
-          file: 'assets/pdfs/GSJ23_razpis.pdf',
-          description: 'GSJ razpis'),
+          name: 'Semafor abeceda',
+          file: 'assets/pdfs/semafor_abeceda.pdf',
+          description: 'Semafor abeceda'),
       models.Material(
-          name: 'Semaforjeva abeceda 2',
-          file: 'semaphore.pdf',
+          name: 'Semaphore alphabet',
+          file: 'assets/pdfs/Semaphore.pdf',
           description: ''),
     ];
 

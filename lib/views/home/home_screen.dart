@@ -78,7 +78,7 @@ class _HomeViewState extends State<HomeView> {
                   return const CircularProgressIndicator();
                 }else if (state is PostSuccess) {
                   return Positioned(
-                    top: 220, // Adjust this value to move the card up or down
+                    top: 220,
                     child: InfoCard(
                       title: state.post.title,
                       description: state.post.content,

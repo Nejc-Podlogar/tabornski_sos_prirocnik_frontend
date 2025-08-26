@@ -12,14 +12,10 @@ class OrientationRepository {
     if (swiperDirection == CardSwiperDirection.right) {
       if(isCombinationCorrect) {
         return true;
-      } else {
-        return false;
       }
     } else if (swiperDirection == CardSwiperDirection.left) {
       if(!isCombinationCorrect) {
         return true;
-      } else {
-        return false;
       }
     }
 

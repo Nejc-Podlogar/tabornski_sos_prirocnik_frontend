@@ -158,6 +158,7 @@ class AppRouter {
       GoRoute(
           name: RouteNames.webview,
           path: RoutePaths.webview,
+
           pageBuilder: (context, state) {
             String? url;
             if (state.extra != null) {

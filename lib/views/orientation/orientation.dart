@@ -22,9 +22,7 @@ class OrientationView extends StatelessWidget {
 
     final List<models.Material> materials = <models.Material>[
       models.Material(
-          name: 'Morsejeva abeceda', file: 'morse_code.pdf', description: ''),
-      models.Material(
-          name: 'Morsejeva abeceda 2', file: 'morse_code.pdf', description: ''),
+          name: 'Orientacija - celota', file: 'assets/pdfs/Bodi_pripravljen_2.pdf', description: ''),
     ];
 
     return Scaffold(
@@ -126,10 +124,17 @@ class OrientationView extends StatelessWidget {
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(20)),
                       child: IconButton(
-                        icon: const Icon(Icons.g_translate_outlined),
+                        icon: const Icon(Icons.map_outlined),
                         iconSize: MediaQuery.of(context).size.width * 0.14,
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PDFScreen(assetPath: 'assets/pdfs/orientation/orientacija_karta.pdf', title: 'Orientacija - karta'),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Container(
@@ -140,10 +145,17 @@ class OrientationView extends StatelessWidget {
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(20)),
                       child: IconButton(
-                        icon: const Icon(Icons.school_outlined),
+                        icon: const Icon(Icons.star_border_outlined),
                         iconSize: MediaQuery.of(context).size.width * 0.14,
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PDFScreen(assetPath: 'assets/pdfs/orientation/orientacija_zvezde.pdf', title: 'Orientacija - zvezde'),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Container(
@@ -154,10 +166,17 @@ class OrientationView extends StatelessWidget {
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(20)),
                       child: IconButton(
-                        icon: const Icon(Icons.school_outlined),
+                        icon: const Icon(Icons.map_sharp),
                         iconSize: MediaQuery.of(context).size.width * 0.14,
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PDFScreen(assetPath: 'assets/pdfs/orientation/orientacija_kompas.pdf', title: 'Orientacija - kompas'),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ],
@@ -173,10 +192,17 @@ class OrientationView extends StatelessWidget {
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(20)),
                       child: IconButton(
-                        icon: const Icon(Icons.g_translate_outlined),
+                        icon: const Icon(Icons.forest_outlined),
                         iconSize: MediaQuery.of(context).size.width * 0.14,
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PDFScreen(assetPath: 'assets/pdfs/orientation/orientacija_splosno.pdf', title: 'Orientacija - splošno'),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Container(
@@ -187,10 +213,17 @@ class OrientationView extends StatelessWidget {
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(20)),
                       child: IconButton(
-                        icon: const Icon(Icons.school_outlined),
+                        icon: const Icon(Icons.directions_walk_outlined),
                         iconSize: MediaQuery.of(context).size.width * 0.14,
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PDFScreen(assetPath: 'assets/pdfs/orientation/orientacija_navigacija_azimuti.pdf', title: 'Orientacija - splošno'),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     GestureDetector(

@@ -18,20 +18,17 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-      _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
-    );
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -44,10 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -67,17 +62,32 @@ class S {
 
   /// `Read more`
   String get readMore {
-    return Intl.message('Read more', name: 'readMore', desc: '', args: []);
+    return Intl.message(
+      'Read more',
+      name: 'readMore',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Coming\nsoon`
   String get comingSoon {
-    return Intl.message('Coming\nsoon', name: 'comingSoon', desc: '', args: []);
+    return Intl.message(
+      'Coming\nsoon',
+      name: 'comingSoon',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Begin`
   String get begin {
-    return Intl.message('Begin', name: 'begin', desc: '', args: []);
+    return Intl.message(
+      'Begin',
+      name: 'begin',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `The application is primarily intended for scouts who want to learn the Morse and Semaphore alphabets and practice their knowledge of orientation. \nThe application contains a translator, dictionary, learning materials and exercises. \nIt also includes the possibility of learning topography. \nThe application is designed to be easy to use and allows learning in various ways.`
@@ -122,12 +132,22 @@ class S {
 
   /// `Morse code`
   String get morseCode {
-    return Intl.message('Morse code', name: 'morseCode', desc: '', args: []);
+    return Intl.message(
+      'Morse code',
+      name: 'morseCode',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Semaphore`
   String get semaphore {
-    return Intl.message('Semaphore', name: 'semaphore', desc: '', args: []);
+    return Intl.message(
+      'Semaphore',
+      name: 'semaphore',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Start using the app`
@@ -142,22 +162,42 @@ class S {
 
   /// `Translator`
   String get translator {
-    return Intl.message('Translator', name: 'translator', desc: '', args: []);
+    return Intl.message(
+      'Translator',
+      name: 'translator',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Dictionary`
   String get dictionary {
-    return Intl.message('Dictionary', name: 'dictionary', desc: '', args: []);
+    return Intl.message(
+      'Dictionary',
+      name: 'dictionary',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Materials`
   String get materials {
-    return Intl.message('Materials', name: 'materials', desc: '', args: []);
+    return Intl.message(
+      'Materials',
+      name: 'materials',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Exercises`
   String get exercises {
-    return Intl.message('Exercises', name: 'exercises', desc: '', args: []);
+    return Intl.message(
+      'Exercises',
+      name: 'exercises',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Select translation type`
@@ -172,17 +212,32 @@ class S {
 
   /// `Translation`
   String get translation {
-    return Intl.message('Translation', name: 'translation', desc: '', args: []);
+    return Intl.message(
+      'Translation',
+      name: 'translation',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Input text`
   String get inputText {
-    return Intl.message('Input text', name: 'inputText', desc: '', args: []);
+    return Intl.message(
+      'Input text',
+      name: 'inputText',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Text`
   String get text {
-    return Intl.message('Text', name: 'text', desc: '', args: []);
+    return Intl.message(
+      'Text',
+      name: 'text',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Enter translation`
@@ -197,17 +252,32 @@ class S {
 
   /// `Letters`
   String get letters {
-    return Intl.message('Letters', name: 'letters', desc: '', args: []);
+    return Intl.message(
+      'Letters',
+      name: 'letters',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Numbers`
   String get numbers {
-    return Intl.message('Numbers', name: 'numbers', desc: '', args: []);
+    return Intl.message(
+      'Numbers',
+      name: 'numbers',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `All`
   String get all {
-    return Intl.message('All', name: 'all', desc: '', args: []);
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Special characters`
@@ -302,7 +372,12 @@ class S {
 
   /// `Receiving`
   String get receiving {
-    return Intl.message('Receiving', name: 'receiving', desc: '', args: []);
+    return Intl.message(
+      'Receiving',
+      name: 'receiving',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Learning type`
@@ -347,12 +422,22 @@ class S {
 
   /// `Words`
   String get words {
-    return Intl.message('Words', name: 'words', desc: '', args: []);
+    return Intl.message(
+      'Words',
+      name: 'words',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Sentences`
   String get sentences {
-    return Intl.message('Sentences', name: 'sentences', desc: '', args: []);
+    return Intl.message(
+      'Sentences',
+      name: 'sentences',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Start learning`
@@ -367,22 +452,42 @@ class S {
 
   /// `Cards`
   String get cardSwipe {
-    return Intl.message('Cards', name: 'cardSwipe', desc: '', args: []);
+    return Intl.message(
+      'Cards',
+      name: 'cardSwipe',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Keyboard`
   String get keyboard {
-    return Intl.message('Keyboard', name: 'keyboard', desc: '', args: []);
+    return Intl.message(
+      'Keyboard',
+      name: 'keyboard',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Progress`
   String get progress {
-    return Intl.message('Progress', name: 'progress', desc: '', args: []);
+    return Intl.message(
+      'Progress',
+      name: 'progress',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Check`
   String get check {
-    return Intl.message('Check', name: 'check', desc: '', args: []);
+    return Intl.message(
+      'Check',
+      name: 'check',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Translate the following text`
@@ -527,7 +632,12 @@ class S {
 
   /// `Orientation`
   String get orientation {
-    return Intl.message('Orientation', name: 'orientation', desc: '', args: []);
+    return Intl.message(
+      'Orientation',
+      name: 'orientation',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Orientation helps scouts find direction, navigate in nature, and reach their destination using a compass, map, and natural signs.`
@@ -542,7 +652,12 @@ class S {
 
   /// `Topography`
   String get topography {
-    return Intl.message('Topography', name: 'topography', desc: '', args: []);
+    return Intl.message(
+      'Topography',
+      name: 'topography',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Topography learning`
@@ -557,12 +672,22 @@ class S {
 
   /// `Images`
   String get topoImages {
-    return Intl.message('Images', name: 'topoImages', desc: '', args: []);
+    return Intl.message(
+      'Images',
+      name: 'topoImages',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Text`
   String get topoText {
-    return Intl.message('Text', name: 'topoText', desc: '', args: []);
+    return Intl.message(
+      'Text',
+      name: 'topoText',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Categories`
@@ -608,22 +733,42 @@ class S {
 
   /// `User`
   String get user {
-    return Intl.message('User', name: 'user', desc: '', args: []);
+    return Intl.message(
+      'User',
+      name: 'user',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Settings`
   String get settings {
-    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Preferences`
   String get preferences {
-    return Intl.message('Preferences', name: 'preferences', desc: '', args: []);
+    return Intl.message(
+      'Preferences',
+      name: 'preferences',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Dark theme`
   String get darkMode {
-    return Intl.message('Dark theme', name: 'darkMode', desc: '', args: []);
+    return Intl.message(
+      'Dark theme',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Allow notifications`
@@ -638,22 +783,42 @@ class S {
 
   /// `Permissions`
   String get permissions {
-    return Intl.message('Permissions', name: 'permissions', desc: '', args: []);
+    return Intl.message(
+      'Permissions',
+      name: 'permissions',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Manage`
   String get manage {
-    return Intl.message('Manage', name: 'manage', desc: '', args: []);
+    return Intl.message(
+      'Manage',
+      name: 'manage',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Delete data`
   String get deleteData {
-    return Intl.message('Delete data', name: 'deleteData', desc: '', args: []);
+    return Intl.message(
+      'Delete data',
+      name: 'deleteData',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `About`
   String get about {
-    return Intl.message('About', name: 'about', desc: '', args: []);
+    return Intl.message(
+      'About',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Translated text`
