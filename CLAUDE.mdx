@@ -1,0 +1,173 @@
+# ====================================
+# GLOBAL WORKSPACE RULES
+# ====================================
+
+## Project Description
+"Taborniški S.O.S Priročnik" — A mobile and web application for scouts
+providing reference material: navigation, maps, morse code, semaphore,
+and knowledge exercises. Originally a university thesis project (Diplomska
+naloga) that was never released. Refactoring to a modern Flutter app.
+
+## Offline-First Principle
+Every feature MUST work without internet.
+Online features are additive only — never required for core functionality.
+
+## Repositories
+- taborniski_sos_prirocnik_frontend/ — Flutter app (BLoC → Riverpod)
+- taborniski_sos_prirocnik_backend/ — Express/Postgres (READ ONLY, reference only)
+
+## Target Stack
+- Flutter (mobile + web, both supported)
+- Riverpod (state management — replacing BLoC)
+- Drift (local SQLite, WASM for web)
+- go_router (navigation)
+- freezed + json_serializable (immutable models)
+- No backend, no required internet connection
+
+## Package Versions (pinned)
+- flutter_riverpod: ^2.6.1
+- riverpod_annotation: ^2.6.1  
+- riverpod_generator: ^2.6.1
+- drift: ^2.26.1
+- drift_flutter: ^0.2.4
+- build_runner: ^2.4.13
+- drift_dev: ^2.26.1
+
+## SOLID — Non-Negotiable
+- S: One class, one responsibility. Widgets are UI only, zero business logic.
+- O: Program to abstract interfaces, not concrete implementations.
+- L: Subtypes must be fully substitutable. Never throw UnimplementedError.
+- I: Small focused interfaces, one per feature or concern.
+- D: Always inject dependencies. Never instantiate services inside a class.
+
+## Agent Roles
+Each conversation declares a role. Stay strictly in that role.
+- Explorer: reads and describes only, zero opinions, zero suggestions
+- Analyst: identifies what matters, flags risks, no solutions yet
+- Architect: designs structure only, no implementation code
+- Planner: sequences tasks into small units, no design decisions
+- Builder: implements one task at a time, follows specs exactly
+
+## Token Rules
+- Output only what was asked for
+- Do not modify files not explicitly mentioned in the task
+- Do not add explanations unless asked
+- Flag ambiguity before proceeding — never assume
+- Save all analysis output to docs/
+- When generating code, output only changed files
+
+# ====================================
+# FRONTEND SPECIFIC RULES
+# ====================================
+
+## Current State
+- State management: BLoC (being replaced — do not use BLoC in new code)
+- Data: all data fetched from Express API (being replaced by Drift)
+- All new code uses Riverpod providers, never BLoC
+
+## Architecture (Feature-First, strictly enforced)
+lib/
+  core/              ← shared utilities, theme, constants, base classes
+  features/
+    [feature_name]/
+      data/          ← Drift tables, repository implementations, DTOs, mappers
+      domain/        ← abstract repository interfaces, use cases, entities
+                        (pure Dart only — no Flutter imports)
+      presentation/  ← screens, widgets, Riverpod providers
+  main.dart
+
+## Layer Rules
+- domain/ has zero Flutter dependencies (pure Dart)
+- data/ depends on domain/ interfaces only
+- presentation/ depends on domain/ only, never on data/ directly
+- Providers live in presentation/, injected via Riverpod
+
+## Naming Conventions
+- Repositories: IUserRepository (interface), UserRepository (implementation)
+- Use cases: GetUserUseCase, SaveSettingsUseCase (one public method: execute/call)
+- Providers: userRepositoryProvider, getUserUseCaseProvider
+- Screens: ProfileScreen, not ProfilePage or ProfileView
+- Widgets: reusable components go in core/widgets/
+
+## Docs
+All analysis and planning output saved to docs/:
+- docs/BACKEND.md      ← Phase 1a: backend analysis
+- docs/FRONTEND.md     ← Phase 1b: frontend analysis
+- docs/THESIS.md       ← Phase 1c: thesis analysis
+- docs/ANALYSIS.md     ← Phase 2: analyst output
+- docs/ARCHITECTURE.md ← Phase 3: architect output
+- docs/ROADMAP.md      ← Phase 4: migration roadmap
+
+## Design
+Follow DESIGN.md for all UI decisions.
+It is the single source of truth for colors, typography,
+spacing, and components. Never hardcode colors.
+
+## Product Decisions (locked)
+
+### Platform
+- Primary: mobile (Android + iOS)
+- Secondary: web (best effort — platform features 
+  show disabled state, never crash)
+
+### Storage
+- Drift is single source of truth for ALL persistent data
+- SharedPreferences: dropped entirely
+- User preferences table in Drift: theme, username, 
+  avatar, onboarding-seen flag
+
+### Morse Exercises
+- Letters: local random A-Z algorithm
+- Words/sentences: pre-seeded corpus in Drift
+  (bundled JSON, seeded on first launch)
+- Local AI generation: future upgrade, not in scope
+- OpenAI: dropped entirely
+
+### Semaphore Exercises
+- Full feature in scope: card swipe + keyboard modes
+- Mirror Morse exercise architecture exactly
+
+### Interactive Tokens Learning Mode
+- In scope — build properly for Morse, Semaphore,
+  and Orientation exercises
+
+### Orientation — Sign Data
+- All 230 images are bundled in Flutter assets
+- Seed data generated algorithmically from asset 
+  folder + filename patterns (no DB migration needed)
+- Canonical enum values = Flutter asset folder names
+  (not DB enum values — those have typos)
+- Drift seeder reads assets/images/topografija/ 
+  and builds name → imageLoc → topoGroupType mapping
+
+### Orientation — Content Screens
+- Naloge na karti, Naloge na terenu, 
+  Naloge na tekmovanjih, Okolje:
+  reference/theory TEXT screens (not exercises)
+- Content: bundled Markdown/JSON files (offline)
+- Source: physical book (to be digitised)
+- Architecture must support adding more categories 
+  in future without code changes
+
+### Home Screen News
+- Optional online RSS/CMS feed
+- Offline: shows last cached post from Drift
+- Empty state if never been online
+
+### What's Dropped
+- Entire backend (reference only)
+- All API service classes (lib/api/)
+- flutter_dotenv + .env file
+- OpenAI integration
+- flutter_cached_pdfview (flutter_pdfview is canonical)
+- SharedPreferences dependency
+- Commented-out code, debug prints, empty stubs
+
+### LearningKeyboard (Q4 — resolved)
+- Implementation: complete and functional
+- partial answer state: keep it — add MorseCodeValidation.partial 
+  to the validation enum in domain layer
+- index state: move to AsyncNotifier in migration
+  (never local StatefulWidget state)
+- MorseCodeCustomDisplay: migrate as morse_pattern_display.dart
+  must support inline use inside bottom sheet

@@ -1,0 +1,4 @@
+enum TranslationDirection {
+  textToMorse,
+  morseToText,
+}
