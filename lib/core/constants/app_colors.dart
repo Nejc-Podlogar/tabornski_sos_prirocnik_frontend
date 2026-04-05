@@ -21,6 +21,9 @@ abstract class AppColors {
   static const Color textSecondary = Color(0xFF8DB88F);
   static const Color textTertiary = Color(0xFF5A7A5C);
 
+  // Decorative
+  static const Color mountainSilhouette = Color(0xFF050505);
+
   // Feedback
   static const Color danger = Color(0xFFC0392B);
   static const Color dangerSurface = Color(0xFF3D1010);
