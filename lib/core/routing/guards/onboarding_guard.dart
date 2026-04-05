@@ -16,15 +16,13 @@ String? onboardingGuard(ProviderContainer container, GoRouterState state) {
 
   return asyncValue.when(
     data: (seen) {
-      if (seen) {
-        if (state.matchedLocation == '/${RouteNames.onboarding}') {
-          return '/${RouteNames.home}';
-        }
+      if (seen && state.matchedLocation == '/${RouteNames.onboarding}') {
         return '/${RouteNames.home}';
-      } else {
-        if (state.matchedLocation == '/${RouteNames.onboarding}') return null;
+      }
+      if (!seen && state.matchedLocation != '/${RouteNames.onboarding}') {
         return '/${RouteNames.onboarding}';
       }
+      return null;
     },
     loading: () => null, // no redirect while loading — refreshListenable re-triggers
     error: (_, __) => null, // fail open on error

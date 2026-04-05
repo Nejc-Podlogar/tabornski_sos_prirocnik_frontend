@@ -49,7 +49,11 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
 
   Future<void> _completeOnboarding() async {
     await ref.read(onboardingNotifierProvider.notifier).markSeen();
-    if (mounted) context.goNamed(RouteNames.home);
+    // Wait for provider to propagate
+    await Future.delayed(const Duration(milliseconds: 300));
+    if (mounted) {
+      context.goNamed(RouteNames.home);
+    }
   }
 
   Future<void> _skip() async {
