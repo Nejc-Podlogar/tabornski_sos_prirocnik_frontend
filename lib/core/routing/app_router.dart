@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_seen_provider.dart';
 import '../../features/settings/presentation/screens/settings_edit_profile_screen.dart';
@@ -70,9 +71,7 @@ class _PlaceholderScreen extends StatelessWidget {
           GoRoute(
             path: '/${RouteNames.home}',
             name: RouteNames.home,
-            // TODO: GROUP 13 — replace with HomeScreen
-            builder: (_, __) =>
-                const _PlaceholderScreen(label: 'Home'),
+            builder: (_, __) => const HomeScreen(),
           ),
 
           // Morse

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../constants/app_colors.dart';
 import '../constants/app_spacing.dart';
@@ -29,30 +30,43 @@ class AppHeaderBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       leading: showBackButton
           ? IconButton(
-              icon: const Icon(Icons.chevron_left,
-                  color: AppColors.textSecondary, size: 24),
+              icon: const HugeIcon(
+                icon: HugeIcons.strokeRoundedArrowLeft01,
+                color: AppColors.textSecondary,
+                size: 24,
+              ),
               onPressed: () => Navigator.of(context).maybePop(),
             )
           : Padding(
               padding: const EdgeInsets.only(left: AppSpacing.base),
-              child: CircleAvatar(
-                radius: 16,
-                backgroundColor: AppColors.surface,
-                child: Icon(Icons.person,
-                    color: AppColors.primaryLight, size: 18),
+              child: Center(
+                child: CircleAvatar(
+                  radius: 18,
+                  backgroundColor: AppColors.surface,
+                  child: HugeIcon(
+                    icon: HugeIcons.strokeRoundedUser,
+                    color: AppColors.primary,
+                    size: 20,
+                  ),
+                ),
               ),
             ),
-      title: Text(title,
-          style: AppTypography.overline.copyWith(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-            color: AppColors.primaryLight,
-            letterSpacing: 0,
-          )),
+      title: Text(
+        title,
+        style: AppTypography.overline.copyWith(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: AppColors.primaryLight,
+          letterSpacing: 0,
+        ),
+      ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.settings_outlined,
-              color: AppColors.textSecondary, size: 24),
+          icon: const HugeIcon(
+            icon: HugeIcons.strokeRoundedSettings01,
+            color: AppColors.textSecondary,
+            size: 24,
+          ),
           onPressed: onSettingsPressed,
         ),
       ],
