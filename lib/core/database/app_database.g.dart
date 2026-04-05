@@ -301,6 +301,434 @@ class PostsTableCompanion extends UpdateCompanion<PostsTableData> {
   }
 }
 
+class $MorseExercisesTableTable extends MorseExercisesTable
+    with TableInfo<$MorseExercisesTableTable, MorseExercisesTableData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $MorseExercisesTableTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+      'id', aliasedName, false,
+      hasAutoIncrement: true,
+      type: DriftSqlType.int,
+      requiredDuringInsert: false,
+      defaultConstraints:
+          GeneratedColumn.constraintIsAlways('PRIMARY KEY AUTOINCREMENT'));
+  @override
+  late final GeneratedColumnWithTypeConverter<ExerciseContentType, String>
+      exerciseContentType = GeneratedColumn<String>(
+              'exercise_content_type', aliasedName, false,
+              type: DriftSqlType.string, requiredDuringInsert: true)
+          .withConverter<ExerciseContentType>(
+              $MorseExercisesTableTable.$converterexerciseContentType);
+  @override
+  late final GeneratedColumnWithTypeConverter<TranslationDirection, String>
+      translateType = GeneratedColumn<String>(
+              'translate_type', aliasedName, false,
+              type: DriftSqlType.string, requiredDuringInsert: true)
+          .withConverter<TranslationDirection>(
+              $MorseExercisesTableTable.$convertertranslateType);
+  static const VerificationMeta _exerciseValuesMeta =
+      const VerificationMeta('exerciseValues');
+  @override
+  late final GeneratedColumn<String> exerciseValues = GeneratedColumn<String>(
+      'exercise_values', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _translatedValuesMeta =
+      const VerificationMeta('translatedValues');
+  @override
+  late final GeneratedColumn<String> translatedValues = GeneratedColumn<String>(
+      'translated_values', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _countMeta = const VerificationMeta('count');
+  @override
+  late final GeneratedColumn<int> count = GeneratedColumn<int>(
+      'count', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  @override
+  late final GeneratedColumnWithTypeConverter<InteractionType, String>
+      interactionType = GeneratedColumn<String>(
+              'interaction_type', aliasedName, false,
+              type: DriftSqlType.string, requiredDuringInsert: true)
+          .withConverter<InteractionType>(
+              $MorseExercisesTableTable.$converterinteractionType);
+  @override
+  List<GeneratedColumn> get $columns => [
+        id,
+        exerciseContentType,
+        translateType,
+        exerciseValues,
+        translatedValues,
+        count,
+        interactionType
+      ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'morse_exercises_table';
+  @override
+  VerificationContext validateIntegrity(
+      Insertable<MorseExercisesTableData> instance,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('exercise_values')) {
+      context.handle(
+          _exerciseValuesMeta,
+          exerciseValues.isAcceptableOrUnknown(
+              data['exercise_values']!, _exerciseValuesMeta));
+    } else if (isInserting) {
+      context.missing(_exerciseValuesMeta);
+    }
+    if (data.containsKey('translated_values')) {
+      context.handle(
+          _translatedValuesMeta,
+          translatedValues.isAcceptableOrUnknown(
+              data['translated_values']!, _translatedValuesMeta));
+    } else if (isInserting) {
+      context.missing(_translatedValuesMeta);
+    }
+    if (data.containsKey('count')) {
+      context.handle(
+          _countMeta, count.isAcceptableOrUnknown(data['count']!, _countMeta));
+    } else if (isInserting) {
+      context.missing(_countMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  MorseExercisesTableData map(Map<String, dynamic> data,
+      {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return MorseExercisesTableData(
+      id: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
+      exerciseContentType: $MorseExercisesTableTable
+          .$converterexerciseContentType
+          .fromSql(attachedDatabase.typeMapping.read(DriftSqlType.string,
+              data['${effectivePrefix}exercise_content_type'])!),
+      translateType: $MorseExercisesTableTable.$convertertranslateType.fromSql(
+          attachedDatabase.typeMapping.read(
+              DriftSqlType.string, data['${effectivePrefix}translate_type'])!),
+      exerciseValues: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}exercise_values'])!,
+      translatedValues: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}translated_values'])!,
+      count: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}count'])!,
+      interactionType: $MorseExercisesTableTable.$converterinteractionType
+          .fromSql(attachedDatabase.typeMapping.read(DriftSqlType.string,
+              data['${effectivePrefix}interaction_type'])!),
+    );
+  }
+
+  @override
+  $MorseExercisesTableTable createAlias(String alias) {
+    return $MorseExercisesTableTable(attachedDatabase, alias);
+  }
+
+  static JsonTypeConverter2<ExerciseContentType, String, String>
+      $converterexerciseContentType =
+      const EnumNameConverter<ExerciseContentType>(ExerciseContentType.values);
+  static JsonTypeConverter2<TranslationDirection, String, String>
+      $convertertranslateType = const EnumNameConverter<TranslationDirection>(
+          TranslationDirection.values);
+  static JsonTypeConverter2<InteractionType, String, String>
+      $converterinteractionType =
+      const EnumNameConverter<InteractionType>(InteractionType.values);
+}
+
+class MorseExercisesTableData extends DataClass
+    implements Insertable<MorseExercisesTableData> {
+  final int id;
+  final ExerciseContentType exerciseContentType;
+  final TranslationDirection translateType;
+  final String exerciseValues;
+
+  /// JSON array of strings.
+  final String translatedValues;
+  final int count;
+  final InteractionType interactionType;
+  const MorseExercisesTableData(
+      {required this.id,
+      required this.exerciseContentType,
+      required this.translateType,
+      required this.exerciseValues,
+      required this.translatedValues,
+      required this.count,
+      required this.interactionType});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    {
+      map['exercise_content_type'] = Variable<String>($MorseExercisesTableTable
+          .$converterexerciseContentType
+          .toSql(exerciseContentType));
+    }
+    {
+      map['translate_type'] = Variable<String>($MorseExercisesTableTable
+          .$convertertranslateType
+          .toSql(translateType));
+    }
+    map['exercise_values'] = Variable<String>(exerciseValues);
+    map['translated_values'] = Variable<String>(translatedValues);
+    map['count'] = Variable<int>(count);
+    {
+      map['interaction_type'] = Variable<String>($MorseExercisesTableTable
+          .$converterinteractionType
+          .toSql(interactionType));
+    }
+    return map;
+  }
+
+  MorseExercisesTableCompanion toCompanion(bool nullToAbsent) {
+    return MorseExercisesTableCompanion(
+      id: Value(id),
+      exerciseContentType: Value(exerciseContentType),
+      translateType: Value(translateType),
+      exerciseValues: Value(exerciseValues),
+      translatedValues: Value(translatedValues),
+      count: Value(count),
+      interactionType: Value(interactionType),
+    );
+  }
+
+  factory MorseExercisesTableData.fromJson(Map<String, dynamic> json,
+      {ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return MorseExercisesTableData(
+      id: serializer.fromJson<int>(json['id']),
+      exerciseContentType: $MorseExercisesTableTable
+          .$converterexerciseContentType
+          .fromJson(serializer.fromJson<String>(json['exerciseContentType'])),
+      translateType: $MorseExercisesTableTable.$convertertranslateType
+          .fromJson(serializer.fromJson<String>(json['translateType'])),
+      exerciseValues: serializer.fromJson<String>(json['exerciseValues']),
+      translatedValues: serializer.fromJson<String>(json['translatedValues']),
+      count: serializer.fromJson<int>(json['count']),
+      interactionType: $MorseExercisesTableTable.$converterinteractionType
+          .fromJson(serializer.fromJson<String>(json['interactionType'])),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'exerciseContentType': serializer.toJson<String>($MorseExercisesTableTable
+          .$converterexerciseContentType
+          .toJson(exerciseContentType)),
+      'translateType': serializer.toJson<String>($MorseExercisesTableTable
+          .$convertertranslateType
+          .toJson(translateType)),
+      'exerciseValues': serializer.toJson<String>(exerciseValues),
+      'translatedValues': serializer.toJson<String>(translatedValues),
+      'count': serializer.toJson<int>(count),
+      'interactionType': serializer.toJson<String>($MorseExercisesTableTable
+          .$converterinteractionType
+          .toJson(interactionType)),
+    };
+  }
+
+  MorseExercisesTableData copyWith(
+          {int? id,
+          ExerciseContentType? exerciseContentType,
+          TranslationDirection? translateType,
+          String? exerciseValues,
+          String? translatedValues,
+          int? count,
+          InteractionType? interactionType}) =>
+      MorseExercisesTableData(
+        id: id ?? this.id,
+        exerciseContentType: exerciseContentType ?? this.exerciseContentType,
+        translateType: translateType ?? this.translateType,
+        exerciseValues: exerciseValues ?? this.exerciseValues,
+        translatedValues: translatedValues ?? this.translatedValues,
+        count: count ?? this.count,
+        interactionType: interactionType ?? this.interactionType,
+      );
+  MorseExercisesTableData copyWithCompanion(MorseExercisesTableCompanion data) {
+    return MorseExercisesTableData(
+      id: data.id.present ? data.id.value : this.id,
+      exerciseContentType: data.exerciseContentType.present
+          ? data.exerciseContentType.value
+          : this.exerciseContentType,
+      translateType: data.translateType.present
+          ? data.translateType.value
+          : this.translateType,
+      exerciseValues: data.exerciseValues.present
+          ? data.exerciseValues.value
+          : this.exerciseValues,
+      translatedValues: data.translatedValues.present
+          ? data.translatedValues.value
+          : this.translatedValues,
+      count: data.count.present ? data.count.value : this.count,
+      interactionType: data.interactionType.present
+          ? data.interactionType.value
+          : this.interactionType,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MorseExercisesTableData(')
+          ..write('id: $id, ')
+          ..write('exerciseContentType: $exerciseContentType, ')
+          ..write('translateType: $translateType, ')
+          ..write('exerciseValues: $exerciseValues, ')
+          ..write('translatedValues: $translatedValues, ')
+          ..write('count: $count, ')
+          ..write('interactionType: $interactionType')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, exerciseContentType, translateType,
+      exerciseValues, translatedValues, count, interactionType);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is MorseExercisesTableData &&
+          other.id == this.id &&
+          other.exerciseContentType == this.exerciseContentType &&
+          other.translateType == this.translateType &&
+          other.exerciseValues == this.exerciseValues &&
+          other.translatedValues == this.translatedValues &&
+          other.count == this.count &&
+          other.interactionType == this.interactionType);
+}
+
+class MorseExercisesTableCompanion
+    extends UpdateCompanion<MorseExercisesTableData> {
+  final Value<int> id;
+  final Value<ExerciseContentType> exerciseContentType;
+  final Value<TranslationDirection> translateType;
+  final Value<String> exerciseValues;
+  final Value<String> translatedValues;
+  final Value<int> count;
+  final Value<InteractionType> interactionType;
+  const MorseExercisesTableCompanion({
+    this.id = const Value.absent(),
+    this.exerciseContentType = const Value.absent(),
+    this.translateType = const Value.absent(),
+    this.exerciseValues = const Value.absent(),
+    this.translatedValues = const Value.absent(),
+    this.count = const Value.absent(),
+    this.interactionType = const Value.absent(),
+  });
+  MorseExercisesTableCompanion.insert({
+    this.id = const Value.absent(),
+    required ExerciseContentType exerciseContentType,
+    required TranslationDirection translateType,
+    required String exerciseValues,
+    required String translatedValues,
+    required int count,
+    required InteractionType interactionType,
+  })  : exerciseContentType = Value(exerciseContentType),
+        translateType = Value(translateType),
+        exerciseValues = Value(exerciseValues),
+        translatedValues = Value(translatedValues),
+        count = Value(count),
+        interactionType = Value(interactionType);
+  static Insertable<MorseExercisesTableData> custom({
+    Expression<int>? id,
+    Expression<String>? exerciseContentType,
+    Expression<String>? translateType,
+    Expression<String>? exerciseValues,
+    Expression<String>? translatedValues,
+    Expression<int>? count,
+    Expression<String>? interactionType,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (exerciseContentType != null)
+        'exercise_content_type': exerciseContentType,
+      if (translateType != null) 'translate_type': translateType,
+      if (exerciseValues != null) 'exercise_values': exerciseValues,
+      if (translatedValues != null) 'translated_values': translatedValues,
+      if (count != null) 'count': count,
+      if (interactionType != null) 'interaction_type': interactionType,
+    });
+  }
+
+  MorseExercisesTableCompanion copyWith(
+      {Value<int>? id,
+      Value<ExerciseContentType>? exerciseContentType,
+      Value<TranslationDirection>? translateType,
+      Value<String>? exerciseValues,
+      Value<String>? translatedValues,
+      Value<int>? count,
+      Value<InteractionType>? interactionType}) {
+    return MorseExercisesTableCompanion(
+      id: id ?? this.id,
+      exerciseContentType: exerciseContentType ?? this.exerciseContentType,
+      translateType: translateType ?? this.translateType,
+      exerciseValues: exerciseValues ?? this.exerciseValues,
+      translatedValues: translatedValues ?? this.translatedValues,
+      count: count ?? this.count,
+      interactionType: interactionType ?? this.interactionType,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (exerciseContentType.present) {
+      map['exercise_content_type'] = Variable<String>($MorseExercisesTableTable
+          .$converterexerciseContentType
+          .toSql(exerciseContentType.value));
+    }
+    if (translateType.present) {
+      map['translate_type'] = Variable<String>($MorseExercisesTableTable
+          .$convertertranslateType
+          .toSql(translateType.value));
+    }
+    if (exerciseValues.present) {
+      map['exercise_values'] = Variable<String>(exerciseValues.value);
+    }
+    if (translatedValues.present) {
+      map['translated_values'] = Variable<String>(translatedValues.value);
+    }
+    if (count.present) {
+      map['count'] = Variable<int>(count.value);
+    }
+    if (interactionType.present) {
+      map['interaction_type'] = Variable<String>($MorseExercisesTableTable
+          .$converterinteractionType
+          .toSql(interactionType.value));
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MorseExercisesTableCompanion(')
+          ..write('id: $id, ')
+          ..write('exerciseContentType: $exerciseContentType, ')
+          ..write('translateType: $translateType, ')
+          ..write('exerciseValues: $exerciseValues, ')
+          ..write('translatedValues: $translatedValues, ')
+          ..write('count: $count, ')
+          ..write('interactionType: $interactionType')
+          ..write(')'))
+        .toString();
+  }
+}
+
 class $SemaphoreExercisesTableTable extends SemaphoreExercisesTable
     with TableInfo<$SemaphoreExercisesTableTable, SemaphoreExercisesTableData> {
   @override
@@ -1791,6 +2219,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
   late final $PostsTableTable postsTable = $PostsTableTable(this);
+  late final $MorseExercisesTableTable morseExercisesTable =
+      $MorseExercisesTableTable(this);
   late final $SemaphoreExercisesTableTable semaphoreExercisesTable =
       $SemaphoreExercisesTableTable(this);
   late final $OrientationSignsTableTable orientationSignsTable =
@@ -1805,6 +2235,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [
         postsTable,
+        morseExercisesTable,
         semaphoreExercisesTable,
         orientationSignsTable,
         userPreferencesTable,
@@ -1976,6 +2407,227 @@ typedef $$PostsTableTableProcessedTableManager = ProcessedTableManager<
       BaseReferences<_$AppDatabase, $PostsTableTable, PostsTableData>
     ),
     PostsTableData,
+    PrefetchHooks Function()>;
+typedef $$MorseExercisesTableTableCreateCompanionBuilder
+    = MorseExercisesTableCompanion Function({
+  Value<int> id,
+  required ExerciseContentType exerciseContentType,
+  required TranslationDirection translateType,
+  required String exerciseValues,
+  required String translatedValues,
+  required int count,
+  required InteractionType interactionType,
+});
+typedef $$MorseExercisesTableTableUpdateCompanionBuilder
+    = MorseExercisesTableCompanion Function({
+  Value<int> id,
+  Value<ExerciseContentType> exerciseContentType,
+  Value<TranslationDirection> translateType,
+  Value<String> exerciseValues,
+  Value<String> translatedValues,
+  Value<int> count,
+  Value<InteractionType> interactionType,
+});
+
+class $$MorseExercisesTableTableFilterComposer
+    extends Composer<_$AppDatabase, $MorseExercisesTableTable> {
+  $$MorseExercisesTableTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnWithTypeConverterFilters<ExerciseContentType, ExerciseContentType,
+          String>
+      get exerciseContentType => $composableBuilder(
+          column: $table.exerciseContentType,
+          builder: (column) => ColumnWithTypeConverterFilters(column));
+
+  ColumnWithTypeConverterFilters<TranslationDirection, TranslationDirection,
+          String>
+      get translateType => $composableBuilder(
+          column: $table.translateType,
+          builder: (column) => ColumnWithTypeConverterFilters(column));
+
+  ColumnFilters<String> get exerciseValues => $composableBuilder(
+      column: $table.exerciseValues,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get translatedValues => $composableBuilder(
+      column: $table.translatedValues,
+      builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get count => $composableBuilder(
+      column: $table.count, builder: (column) => ColumnFilters(column));
+
+  ColumnWithTypeConverterFilters<InteractionType, InteractionType, String>
+      get interactionType => $composableBuilder(
+          column: $table.interactionType,
+          builder: (column) => ColumnWithTypeConverterFilters(column));
+}
+
+class $$MorseExercisesTableTableOrderingComposer
+    extends Composer<_$AppDatabase, $MorseExercisesTableTable> {
+  $$MorseExercisesTableTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get exerciseContentType => $composableBuilder(
+      column: $table.exerciseContentType,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get translateType => $composableBuilder(
+      column: $table.translateType,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get exerciseValues => $composableBuilder(
+      column: $table.exerciseValues,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get translatedValues => $composableBuilder(
+      column: $table.translatedValues,
+      builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get count => $composableBuilder(
+      column: $table.count, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get interactionType => $composableBuilder(
+      column: $table.interactionType,
+      builder: (column) => ColumnOrderings(column));
+}
+
+class $$MorseExercisesTableTableAnnotationComposer
+    extends Composer<_$AppDatabase, $MorseExercisesTableTable> {
+  $$MorseExercisesTableTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<ExerciseContentType, String>
+      get exerciseContentType => $composableBuilder(
+          column: $table.exerciseContentType, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<TranslationDirection, String>
+      get translateType => $composableBuilder(
+          column: $table.translateType, builder: (column) => column);
+
+  GeneratedColumn<String> get exerciseValues => $composableBuilder(
+      column: $table.exerciseValues, builder: (column) => column);
+
+  GeneratedColumn<String> get translatedValues => $composableBuilder(
+      column: $table.translatedValues, builder: (column) => column);
+
+  GeneratedColumn<int> get count =>
+      $composableBuilder(column: $table.count, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<InteractionType, String>
+      get interactionType => $composableBuilder(
+          column: $table.interactionType, builder: (column) => column);
+}
+
+class $$MorseExercisesTableTableTableManager extends RootTableManager<
+    _$AppDatabase,
+    $MorseExercisesTableTable,
+    MorseExercisesTableData,
+    $$MorseExercisesTableTableFilterComposer,
+    $$MorseExercisesTableTableOrderingComposer,
+    $$MorseExercisesTableTableAnnotationComposer,
+    $$MorseExercisesTableTableCreateCompanionBuilder,
+    $$MorseExercisesTableTableUpdateCompanionBuilder,
+    (
+      MorseExercisesTableData,
+      BaseReferences<_$AppDatabase, $MorseExercisesTableTable,
+          MorseExercisesTableData>
+    ),
+    MorseExercisesTableData,
+    PrefetchHooks Function()> {
+  $$MorseExercisesTableTableTableManager(
+      _$AppDatabase db, $MorseExercisesTableTable table)
+      : super(TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$MorseExercisesTableTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$MorseExercisesTableTableOrderingComposer(
+                  $db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$MorseExercisesTableTableAnnotationComposer(
+                  $db: db, $table: table),
+          updateCompanionCallback: ({
+            Value<int> id = const Value.absent(),
+            Value<ExerciseContentType> exerciseContentType =
+                const Value.absent(),
+            Value<TranslationDirection> translateType = const Value.absent(),
+            Value<String> exerciseValues = const Value.absent(),
+            Value<String> translatedValues = const Value.absent(),
+            Value<int> count = const Value.absent(),
+            Value<InteractionType> interactionType = const Value.absent(),
+          }) =>
+              MorseExercisesTableCompanion(
+            id: id,
+            exerciseContentType: exerciseContentType,
+            translateType: translateType,
+            exerciseValues: exerciseValues,
+            translatedValues: translatedValues,
+            count: count,
+            interactionType: interactionType,
+          ),
+          createCompanionCallback: ({
+            Value<int> id = const Value.absent(),
+            required ExerciseContentType exerciseContentType,
+            required TranslationDirection translateType,
+            required String exerciseValues,
+            required String translatedValues,
+            required int count,
+            required InteractionType interactionType,
+          }) =>
+              MorseExercisesTableCompanion.insert(
+            id: id,
+            exerciseContentType: exerciseContentType,
+            translateType: translateType,
+            exerciseValues: exerciseValues,
+            translatedValues: translatedValues,
+            count: count,
+            interactionType: interactionType,
+          ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ));
+}
+
+typedef $$MorseExercisesTableTableProcessedTableManager = ProcessedTableManager<
+    _$AppDatabase,
+    $MorseExercisesTableTable,
+    MorseExercisesTableData,
+    $$MorseExercisesTableTableFilterComposer,
+    $$MorseExercisesTableTableOrderingComposer,
+    $$MorseExercisesTableTableAnnotationComposer,
+    $$MorseExercisesTableTableCreateCompanionBuilder,
+    $$MorseExercisesTableTableUpdateCompanionBuilder,
+    (
+      MorseExercisesTableData,
+      BaseReferences<_$AppDatabase, $MorseExercisesTableTable,
+          MorseExercisesTableData>
+    ),
+    MorseExercisesTableData,
     PrefetchHooks Function()>;
 typedef $$SemaphoreExercisesTableTableCreateCompanionBuilder
     = SemaphoreExercisesTableCompanion Function({
@@ -2776,6 +3428,8 @@ class $AppDatabaseManager {
   $AppDatabaseManager(this._db);
   $$PostsTableTableTableManager get postsTable =>
       $$PostsTableTableTableManager(_db, _db.postsTable);
+  $$MorseExercisesTableTableTableManager get morseExercisesTable =>
+      $$MorseExercisesTableTableTableManager(_db, _db.morseExercisesTable);
   $$SemaphoreExercisesTableTableTableManager get semaphoreExercisesTable =>
       $$SemaphoreExercisesTableTableTableManager(
           _db, _db.semaphoreExercisesTable);

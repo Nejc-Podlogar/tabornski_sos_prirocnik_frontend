@@ -1,72 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:go_router/go_router.dart';
-import 'package:tabornski_sos_prirocnik_frontend/api/post_api_service.dart';
-import 'package:tabornski_sos_prirocnik_frontend/blocs/morse_exercise_bloc/morse_exercise_bloc.dart';
-import 'package:tabornski_sos_prirocnik_frontend/blocs/orientation_exercise_bloc/orientation_exercise_bloc.dart';
-import 'package:tabornski_sos_prirocnik_frontend/blocs/post_cubit/post_cubit.dart';
-import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_bloc.dart';
-import 'package:tabornski_sos_prirocnik_frontend/blocs/theme_block/theme_state.dart';
-import 'package:tabornski_sos_prirocnik_frontend/routing/app_router.dart';
-import 'package:tabornski_sos_prirocnik_frontend/themes/default_dark.dart';
-import 'package:tabornski_sos_prirocnik_frontend/themes/default_light.dart';
-import 'package:tabornski_sos_prirocnik_frontend/utils/shared_prefs.dart';
-
-import 'blocs/morse_translation_bloc/morse_translation_bloc.dart';
-import 'blocs/semaphore_bloc/semaphore_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import 'generated/l10n.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'core/constants/app_colors.dart';
+import 'core/database/database_provider.dart';
+import 'core/database/seeder/app_seeder.dart';
+import 'core/routing/app_router.dart';
+import 'core/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
-
-  //GoRouter part & definitions
-  final goRouter = AppRouter.router;
-
-  runApp(MyApp(goRouter: goRouter));
+  runApp(const ProviderScope(child: AppBootstrap()));
 }
 
-class MyApp extends StatelessWidget {
-  final GoRouter goRouter;
+class AppBootstrap extends ConsumerWidget {
+  const AppBootstrap({super.key});
 
-  const MyApp({super.key, required this.goRouter});
-
-
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    final postApiService = PostApiService();
+  Widget build(BuildContext context, WidgetRef ref) {
+    return FutureBuilder(
+      future: _init(ref),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return MaterialApp(
+            home: Scaffold(
+              backgroundColor: AppColors.background,
+              body: Center(
+                child: CircularProgressIndicator(
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
+          );
+        }
+        final container = ProviderScope.containerOf(context);
+        final appRouter = createAppRouter(container);
+        return MaterialApp.router(
+          routerConfig: appRouter.router,
+          theme: AppTheme.light(),
+          darkTheme: AppTheme.dark(),
+          themeMode: ThemeMode.dark,
+          debugShowCheckedModeBanner: false,
+        );
+      },
+    );
+  }
 
-
-    return MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) => ThemeBloc()),
-          BlocProvider(create: (context) => MorseTranslationBloc()),
-          BlocProvider(create: (context) => SemaphoreBloc()),
-          BlocProvider(create: (context) => MorseExerciseBloc()),
-          BlocProvider(create: (context) => PostCubit(postApiService)),
-          BlocProvider(create: (context) => OrientationExerciseBloc())
-        ],
-        child: BlocBuilder<ThemeBloc, ThemeState>(
-          builder: (context, ThemeState state) {
-            return SafeArea(child: MaterialApp.router(
-              routerConfig: goRouter,
-              theme: state is LightThemeState ? lightTheme : darkTheme,
-              title: 'Taborniški SOS priročnik',
-              localizationsDelegates: const [
-                S.delegate,
-                AppLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: AppLocalizations.supportedLocales,
-            ));
-          },
-        ));
+  Future<void> _init(WidgetRef ref) async {
+    final db = ref.read(appDatabaseProvider);
+    await AppSeeder.run(db);
   }
 }

@@ -9,7 +9,10 @@ class AppSeeder {
   AppSeeder._();
 
   static Future<void> run(AppDatabase db) async {
-    final rowCount = await db.userPreferencesTable.count().getSingle();
+    final rowCount = await (db.select(db.userPreferencesTable)
+          ..limit(1))
+        .get()
+        .then((rows) => rows.length);
     if (rowCount > 0) return;
 
     final seeders = <ISeeder>[

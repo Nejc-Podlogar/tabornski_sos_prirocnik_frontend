@@ -52,22 +52,31 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     if (mounted) context.goNamed(RouteNames.home);
   }
 
-  void _skip() {
-    // Skip still marks onboarding as seen to avoid repeat
-    _completeOnboarding();
+  Future<void> _skip() async {
+    await _completeOnboarding();
   }
 
   @override
   Widget build(BuildContext context) {
     final slide = _slides[_currentIndex];
-    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: SafeArea(
         child: Stack(
           children: [
-            // Main content
+            // Bottom layer: mountain silhouette strip
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: 200,
+              child: CustomPaint(
+                painter: _MountainPainter(),
+              ),
+            ),
+
+            // Top layer: all screen content
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: AppSpacing.xl),
@@ -120,7 +129,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                   ),
                   const SizedBox(height: AppSpacing.xxl),
 
-                  // Next button
+                  // Next / Start button
                   SizedBox(
                     width: double.infinity,
                     height: 52,
@@ -153,19 +162,6 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                     ),
                   const SizedBox(height: AppSpacing.xl),
                 ],
-              ),
-            ),
-
-            // Mountain silhouette strip at bottom
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: SizedBox(
-                height: size.height * 0.18,
-                child: CustomPaint(
-                  painter: _MountainPainter(),
-                ),
               ),
             ),
           ],
