@@ -1,11 +1,16 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/screens/home_screen.dart';
-import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
+import '../../features/morse/presentation/screens/flashlight_transmitter_screen.dart';
+import '../../features/morse/presentation/screens/morse_exercise_screen.dart';
+import '../../features/morse/presentation/screens/morse_exercise_selector_screen.dart';
+import '../../features/morse/presentation/screens/morse_materials_screen.dart';
+import '../../features/morse/presentation/screens/morse_screen.dart';
+import '../../features/morse/presentation/screens/morse_translator_screen.dart';
 import '../../features/onboarding/presentation/providers/onboarding_seen_provider.dart';
+import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/settings/presentation/screens/settings_edit_profile_screen.dart';
 import '../../features/settings/presentation/screens/settings_permissions_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
@@ -78,30 +83,22 @@ class _PlaceholderScreen extends StatelessWidget {
           GoRoute(
             path: '/morse',
             name: RouteNames.morse,
-            // TODO: GROUP 17 — replace with MorseScreen
-            builder: (_, __) =>
-                const _PlaceholderScreen(label: 'Morse'),
+            builder: (_, __) => const MorseScreen(),
             routes: [
               GoRoute(
                 path: 'translator',
                 name: RouteNames.morseTranslator,
-                // TODO: GROUP 18 — replace with MorseTranslatorScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Morse Translator'),
+                builder: (_, __) => const MorseTranslatorScreen(),
               ),
               GoRoute(
                 path: 'materials',
                 name: RouteNames.morseMaterials,
-                // TODO: GROUP 19 — replace with MorseMaterialsScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Morse Materials'),
+                builder: (_, __) => const MorseMaterialsScreen(),
               ),
               GoRoute(
                 path: 'flashlight',
                 name: RouteNames.morseFlashlight,
-                // TODO: GROUP 20 — replace with MorseFlashlightScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Morse Flashlight'),
+                builder: (_, __) => const FlashlightTransmitterScreen(),
               ),
               GoRoute(
                 path: 'exercises',
@@ -113,25 +110,14 @@ class _PlaceholderScreen extends StatelessWidget {
                   GoRoute(
                     path: 'selector',
                     name: RouteNames.morseExerciseSelector,
-                    // TODO: GROUP 21 — replace with MorseExerciseSelectorScreen
-                    builder: (_, __) =>
-                        const _PlaceholderScreen(
-                            label: 'Morse Exercise Selector'),
+                    builder: (_, __) => const MorseExerciseSelectorScreen(),
                   ),
                   GoRoute(
                     path: 'session',
                     name: RouteNames.morseExerciseSession,
-                    redirect: (context, state) {
-                      if (state.extra == null) {
-                        return GoRouter.of(context)
-                            .namedLocation(RouteNames.morseExerciseSelector);
-                      }
-                      return null;
-                    },
-                    // TODO: GROUP 21 — replace with MorseExerciseSessionScreen
-                    builder: (_, __) =>
-                        const _PlaceholderScreen(
-                            label: 'Morse Exercise Session'),
+                    // No extra guard — MorseExerciseScreen handles null state
+                    // gracefully by showing 'Ni aktivne vaje.'
+                    builder: (_, __) => const MorseExerciseScreen(),
                   ),
                 ],
               ),
@@ -151,32 +137,28 @@ class _PlaceholderScreen extends StatelessWidget {
                 name: RouteNames.semaphoreTranslator,
                 // TODO: GROUP 23 — replace with SemaphoreTranslatorScreen
                 builder: (_, __) =>
-                    const _PlaceholderScreen(
-                        label: 'Semaphore Translator'),
+                    const _PlaceholderScreen(label: 'Semaphore Translator'),
               ),
               GoRoute(
                 path: 'materials',
                 name: RouteNames.semaphoreMaterials,
                 // TODO: GROUP 23 — replace with SemaphoreMaterialsScreen
                 builder: (_, __) =>
-                    const _PlaceholderScreen(
-                        label: 'Semaphore Materials'),
+                    const _PlaceholderScreen(label: 'Semaphore Materials'),
               ),
               GoRoute(
                 path: 'exercises',
                 name: RouteNames.semaphoreExercises,
                 // TODO: GROUP 24 — replace with SemaphoreExercisesScreen
                 builder: (_, __) =>
-                    const _PlaceholderScreen(
-                        label: 'Semaphore Exercises'),
+                    const _PlaceholderScreen(label: 'Semaphore Exercises'),
                 routes: [
                   GoRoute(
                     path: 'selector',
                     name: RouteNames.semaphoreExerciseSelector,
                     // TODO: GROUP 24 — replace with SemaphoreExerciseSelectorScreen
-                    builder: (_, __) =>
-                        const _PlaceholderScreen(
-                            label: 'Semaphore Exercise Selector'),
+                    builder: (_, __) => const _PlaceholderScreen(
+                        label: 'Semaphore Exercise Selector'),
                   ),
                   GoRoute(
                     path: 'session',
@@ -189,9 +171,8 @@ class _PlaceholderScreen extends StatelessWidget {
                       return null;
                     },
                     // TODO: GROUP 24 — replace with SemaphoreExerciseSessionScreen
-                    builder: (_, __) =>
-                        const _PlaceholderScreen(
-                            label: 'Semaphore Exercise Session'),
+                    builder: (_, __) => const _PlaceholderScreen(
+                        label: 'Semaphore Exercise Session'),
                   ),
                 ],
               ),
@@ -211,16 +192,14 @@ class _PlaceholderScreen extends StatelessWidget {
                 name: RouteNames.orientationExercises,
                 // TODO: GROUP 16 — replace with OrientationExercisesScreen
                 builder: (_, __) =>
-                    const _PlaceholderScreen(
-                        label: 'Orientation Exercises'),
+                    const _PlaceholderScreen(label: 'Orientation Exercises'),
                 routes: [
                   GoRoute(
                     path: 'selector',
                     name: RouteNames.orientationExerciseSelector,
                     // TODO: GROUP 16 — replace with OrientationExerciseSelectorScreen
-                    builder: (_, __) =>
-                        const _PlaceholderScreen(
-                            label: 'Orientation Exercise Selector'),
+                    builder: (_, __) => const _PlaceholderScreen(
+                        label: 'Orientation Exercise Selector'),
                   ),
                   GoRoute(
                     path: 'session',
@@ -233,9 +212,8 @@ class _PlaceholderScreen extends StatelessWidget {
                       return null;
                     },
                     // TODO: GROUP 16 — replace with OrientationExerciseSessionScreen
-                    builder: (_, __) =>
-                        const _PlaceholderScreen(
-                            label: 'Orientation Exercise Session'),
+                    builder: (_, __) => const _PlaceholderScreen(
+                        label: 'Orientation Exercise Session'),
                   ),
                 ],
               ),
@@ -245,8 +223,7 @@ class _PlaceholderScreen extends StatelessWidget {
                 // No guard — unknown categoryId shows empty state in screen
                 // TODO: GROUP 15 — replace with OrientationReferenceScreen
                 builder: (_, __) =>
-                    const _PlaceholderScreen(
-                        label: 'Orientation Reference'),
+                    const _PlaceholderScreen(label: 'Orientation Reference'),
               ),
               GoRoute(
                 path: 'pdf',
@@ -293,15 +270,13 @@ class _PlaceholderScreen extends StatelessWidget {
         path: '/pdf-viewer',
         name: RouteNames.pdfViewer,
         // TODO: GROUP 15 — replace with PdfViewerScreen
-        builder: (_, __) =>
-            const _PlaceholderScreen(label: 'PDF Viewer'),
+        builder: (_, __) => const _PlaceholderScreen(label: 'PDF Viewer'),
       ),
       GoRoute(
         path: '/webview',
         name: RouteNames.webview,
         // TODO: GROUP 25 — replace with WebviewScreen
-        builder: (_, __) =>
-            const _PlaceholderScreen(label: 'Webview'),
+        builder: (_, __) => const _PlaceholderScreen(label: 'Webview'),
       ),
     ],
   );

@@ -16,6 +16,12 @@ String? onboardingGuard(ProviderContainer container, GoRouterState state) {
 
   return asyncValue.when(
     data: (seen) {
+      // Root route is a bare redirect stub — always push to the correct destination.
+      if (state.matchedLocation == '/') {
+        return seen
+            ? '/${RouteNames.home}'
+            : '/${RouteNames.onboarding}';
+      }
       if (seen && state.matchedLocation == '/${RouteNames.onboarding}') {
         return '/${RouteNames.home}';
       }

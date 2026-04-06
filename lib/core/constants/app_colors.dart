@@ -23,6 +23,8 @@ abstract class AppColors {
 
   // Decorative
   static const Color mountainSilhouette = Color(0xFF050505);
+  static const Color backgroundPure = Color(0xFF000000);
+  static const Color torchGlow = Color(0xFFFFFFCC);
 
   // Feedback
   static const Color danger = Color(0xFFC0392B);

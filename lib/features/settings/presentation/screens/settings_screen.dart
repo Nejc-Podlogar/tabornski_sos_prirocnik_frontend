@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_spacing.dart';
@@ -52,7 +53,15 @@ class SettingsScreen extends ConsumerWidget {
             const SizedBox(height: AppSpacing.sm),
 
             _SettingsRow(
-              icon: Icons.dark_mode_outlined,
+              icon: SizedBox(
+                width: 20,
+                height: 20,
+                child: HugeIcon(
+                  icon: HugeIcons.strokeRoundedMoon01,
+                  color: AppColors.primary,
+                  size: 20,
+                ),
+              ),
               title: 'Temni način',
               subtitle: 'Videz aplikacije',
               trailing: Switch(
@@ -69,7 +78,15 @@ class SettingsScreen extends ConsumerWidget {
             // ref.watch(platformFeaturesProvider).isPermissionHandlerAvailable
             if (!kIsWeb) ...[
               _SettingsRow(
-                icon: Icons.notifications_outlined,
+                icon: SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: HugeIcon(
+                    icon: HugeIcons.strokeRoundedNotification01,
+                    color: AppColors.primary,
+                    size: 20,
+                  ),
+                ),
                 title: 'Dovoljenja',
                 subtitle: 'Kamera, obvestila',
                 trailing: const Icon(Icons.chevron_right,
@@ -145,8 +162,11 @@ class _ProfileHero extends StatelessWidget {
           CircleAvatar(
             radius: 36,
             backgroundColor: AppColors.primaryDark,
-            child: const Icon(Icons.person,
-                color: AppColors.primaryLight, size: 36),
+            child: HugeIcon(
+              icon: HugeIcons.strokeRoundedUserAdd01,
+              color: AppColors.primaryLight,
+              size: 36
+            )
           ),
           const SizedBox(width: AppSpacing.base),
           Expanded(
@@ -173,8 +193,11 @@ class _ProfileHero extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.edit_outlined,
-                color: AppColors.textSecondary),
+            icon: HugeIcon(
+              icon: HugeIcons.strokeRoundedEdit02,
+              color: AppColors.textSecondary,
+              size: 20,
+            ),
             onPressed: onEditTap,
           ),
         ],
@@ -203,7 +226,7 @@ class _SettingsRow extends StatelessWidget {
     this.onTap,
   });
 
-  final IconData icon;
+  final Widget icon;
   final String title;
   final String subtitle;
   final Widget trailing;
@@ -229,7 +252,7 @@ class _SettingsRow extends StatelessWidget {
                 color: AppColors.background,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Icon(icon, color: AppColors.primary, size: 20),
+              child: Center(child: icon),
             ),
             const SizedBox(width: AppSpacing.base),
             Expanded(
@@ -277,8 +300,17 @@ class _DangerZoneCard extends StatelessWidget {
                   color: AppColors.danger,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Icon(Icons.delete_outline,
-                    color: AppColors.textPrimary, size: 20),
+                child: Center(
+                  child: SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: HugeIcon(
+                      icon: HugeIcons.strokeRoundedRestoreBin,
+                      color: AppColors.textPrimary,
+                      size: 24,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(width: AppSpacing.base),
               Column(
