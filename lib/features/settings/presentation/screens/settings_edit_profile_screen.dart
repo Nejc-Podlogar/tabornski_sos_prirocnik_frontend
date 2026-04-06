@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_spacing.dart';
@@ -70,8 +71,15 @@ class _SettingsEditProfileScreenState
                 CircleAvatar(
                   radius: 56,
                   backgroundColor: AppColors.primaryDark,
-                  child: const Icon(Icons.person,
-                      color: AppColors.primaryLight, size: 56),
+                  child: SizedBox(
+                    width: 72,
+                    height: 72,
+                    child: HugeIcon(
+                      icon: HugeIcons.strokeRoundedUser,
+                      color: AppColors.primaryLight,
+                      size: 64,
+                    ),
+                  ),
                 ),
                 Container(
                   width: 32,
@@ -82,8 +90,17 @@ class _SettingsEditProfileScreenState
                     border: Border.all(
                         color: AppColors.background, width: 2),
                   ),
-                  child: const Icon(Icons.edit,
-                      color: AppColors.textPrimary, size: 16),
+                  child: Center(
+                    child: SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: HugeIcon(
+                        icon: HugeIcons.strokeRoundedEdit02,
+                        color: AppColors.textPrimary,
+                        size: 16,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
