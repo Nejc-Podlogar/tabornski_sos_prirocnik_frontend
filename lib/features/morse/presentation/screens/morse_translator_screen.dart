@@ -12,7 +12,7 @@ import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
 import '../../../../core/widgets/primary_cta_button.dart';
 import '../../../../core/widgets/segmented_control.dart';
-import '../../domain/value_objects/translation_direction.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../providers/morse_translation_provider.dart';
 
 class MorseTranslatorScreen extends ConsumerWidget {

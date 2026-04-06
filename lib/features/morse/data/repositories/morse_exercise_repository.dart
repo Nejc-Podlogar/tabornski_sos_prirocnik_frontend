@@ -3,11 +3,9 @@ import 'dart:math';
 import 'package:drift/drift.dart';
 
 import '../../../../core/database/app_database.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../../domain/entities/morse_exercise.dart';
 import '../../domain/repositories/i_morse_exercise_repository.dart';
-import '../../domain/value_objects/exercise_content_type.dart';
-import '../../domain/value_objects/interaction_type.dart';
-import '../../domain/value_objects/translation_direction.dart';
 import '../mappers/morse_exercise_mapper.dart';
 import '../sources/morse_dictionary.dart';
 

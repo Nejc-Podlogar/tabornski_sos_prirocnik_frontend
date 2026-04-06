@@ -1,14 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/domain/value_objects/exercise_enums.dart';
+import '../../../../core/domain/value_objects/exercise_validation.dart';
 import '../../domain/entities/morse_exercise.dart';
 import '../../domain/usecases/generate_letter_exercise_usecase.dart';
 import '../../domain/usecases/get_corpus_exercise_usecase.dart';
 import '../../domain/usecases/validate_morse_answer_usecase.dart';
-import '../../domain/value_objects/exercise_content_type.dart';
-import '../../domain/value_objects/interaction_type.dart';
-import '../../domain/value_objects/morse_code_validation.dart';
-import '../../domain/value_objects/translation_direction.dart';
 import 'morse_exercise_repository_provider.dart';
 import 'morse_translation_repository_provider.dart';
 
@@ -19,7 +17,7 @@ class MorseExerciseState with _$MorseExerciseState {
   const factory MorseExerciseState({
     required List<MorseExercise> exercises,
     @Default(0) int currentIndex,
-    required List<MorseCodeValidation?> sessionResults,
+    required List<ExerciseValidation?> sessionResults,
     @Default(false) bool isComplete,
   }) = _MorseExerciseState;
 }
@@ -70,7 +68,7 @@ class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
     final useCase = ValidateMorseAnswerUseCase(translationRepo);
     final result = useCase.call(userInput, expected, exercise.direction);
 
-    final updatedResults = List<MorseCodeValidation?>.from(current.sessionResults)
+    final updatedResults = List<ExerciseValidation?>.from(current.sessionResults)
       ..[current.currentIndex] = result;
 
     state = AsyncData(current.copyWith(sessionResults: updatedResults));
@@ -93,8 +91,8 @@ class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
     if (current == null || current.isComplete) return;
 
     final result =
-        isCorrect ? MorseCodeValidation.correct : MorseCodeValidation.incorrect;
-    final updatedResults = List<MorseCodeValidation?>.from(current.sessionResults)
+        isCorrect ? ExerciseValidation.correct : ExerciseValidation.incorrect;
+    final updatedResults = List<ExerciseValidation?>.from(current.sessionResults)
       ..[current.currentIndex] = result;
 
     state = AsyncData(current.copyWith(sessionResults: updatedResults));

@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../domain/value_objects/translation_direction.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import 'morse_translation_repository_provider.dart';
 
 part 'morse_translation_provider.freezed.dart';

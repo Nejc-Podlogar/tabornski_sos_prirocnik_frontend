@@ -8,7 +8,7 @@ import '../../../../core/widgets/feedback_bottom_sheet.dart';
 import '../../../../core/widgets/primary_cta_button.dart';
 import '../../../../core/widgets/progress_dots_row.dart';
 import '../../domain/entities/morse_exercise.dart';
-import '../../domain/value_objects/morse_code_validation.dart';
+import '../../../../core/domain/value_objects/exercise_validation.dart';
 import '../providers/morse_exercise_provider.dart';
 
 class LearningKeyboardWidget extends ConsumerStatefulWidget {
@@ -57,7 +57,7 @@ class _LearningKeyboardWidgetState
     if (state == null || !mounted) return;
 
     final result = state.sessionResults[widget.currentIndex];
-    final isCorrect = result == MorseCodeValidation.correct;
+    final isCorrect = result == ExerciseValidation.correct;
 
     FeedbackBottomSheet.show(
       context: context,
@@ -75,7 +75,7 @@ class _LearningKeyboardWidgetState
     );
 
     final boolResults = sessionResults
-        .map((r) => r == null ? null : r == MorseCodeValidation.correct)
+        .map((r) => r == null ? null : r == ExerciseValidation.correct)
         .toList();
 
     return Padding(

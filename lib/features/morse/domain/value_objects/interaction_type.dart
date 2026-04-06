@@ -1,5 +1,2 @@
-enum InteractionType {
-  cards,
-  keyboard,
-  tokens,
-}
+export '../../../../core/domain/value_objects/exercise_enums.dart'
+    show InteractionType;

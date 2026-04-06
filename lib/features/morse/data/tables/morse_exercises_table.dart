@@ -1,8 +1,6 @@
 import 'package:drift/drift.dart';
 
-import '../../domain/value_objects/exercise_content_type.dart';
-import '../../domain/value_objects/interaction_type.dart';
-import '../../domain/value_objects/translation_direction.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 
 class MorseExercisesTable extends Table {
   IntColumn get id => integer().autoIncrement()();

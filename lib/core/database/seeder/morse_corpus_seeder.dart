@@ -3,9 +3,7 @@ import 'dart:convert';
 import 'package:drift/drift.dart';
 import 'package:flutter/services.dart';
 
-import '../../../features/morse/domain/value_objects/exercise_content_type.dart';
-import '../../../features/morse/domain/value_objects/interaction_type.dart';
-import '../../../features/morse/domain/value_objects/translation_direction.dart';
+import '../../domain/value_objects/exercise_enums.dart';
 import '../app_database.dart';
 import 'i_seeder.dart';
 
