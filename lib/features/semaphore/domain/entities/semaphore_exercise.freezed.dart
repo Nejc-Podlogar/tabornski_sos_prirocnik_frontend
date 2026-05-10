@@ -64,8 +64,8 @@ class _$SemaphoreExerciseCopyWithImpl<$Res, $Val extends SemaphoreExercise>
     Object? translatedValues = null,
     Object? areCorrect = null,
     Object? currentIndex = null,
-    Object? direction = freezed,
-    Object? interactionType = freezed,
+    Object? direction = null,
+    Object? interactionType = null,
   }) {
     return _then(_value.copyWith(
       exerciseValues: null == exerciseValues
@@ -84,11 +84,11 @@ class _$SemaphoreExerciseCopyWithImpl<$Res, $Val extends SemaphoreExercise>
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      direction: freezed == direction
+      direction: null == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as TranslationDirection,
-      interactionType: freezed == interactionType
+      interactionType: null == interactionType
           ? _value.interactionType
           : interactionType // ignore: cast_nullable_to_non_nullable
               as InteractionType,
@@ -130,8 +130,8 @@ class __$$SemaphoreExerciseImplCopyWithImpl<$Res>
     Object? translatedValues = null,
     Object? areCorrect = null,
     Object? currentIndex = null,
-    Object? direction = freezed,
-    Object? interactionType = freezed,
+    Object? direction = null,
+    Object? interactionType = null,
   }) {
     return _then(_$SemaphoreExerciseImpl(
       exerciseValues: null == exerciseValues
@@ -150,11 +150,11 @@ class __$$SemaphoreExerciseImplCopyWithImpl<$Res>
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      direction: freezed == direction
+      direction: null == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as TranslationDirection,
-      interactionType: freezed == interactionType
+      interactionType: null == interactionType
           ? _value.interactionType
           : interactionType // ignore: cast_nullable_to_non_nullable
               as InteractionType,
@@ -226,9 +226,10 @@ class _$SemaphoreExerciseImpl implements _SemaphoreExercise {
                 .equals(other._areCorrect, _areCorrect) &&
             (identical(other.currentIndex, currentIndex) ||
                 other.currentIndex == currentIndex) &&
-            const DeepCollectionEquality().equals(other.direction, direction) &&
-            const DeepCollectionEquality()
-                .equals(other.interactionType, interactionType));
+            (identical(other.direction, direction) ||
+                other.direction == direction) &&
+            (identical(other.interactionType, interactionType) ||
+                other.interactionType == interactionType));
   }
 
   @override
@@ -238,8 +239,8 @@ class _$SemaphoreExerciseImpl implements _SemaphoreExercise {
       const DeepCollectionEquality().hash(_translatedValues),
       const DeepCollectionEquality().hash(_areCorrect),
       currentIndex,
-      const DeepCollectionEquality().hash(direction),
-      const DeepCollectionEquality().hash(interactionType));
+      direction,
+      interactionType);
 
   /// Create a copy of SemaphoreExercise
   /// with the given fields replaced by the non-null parameter values.

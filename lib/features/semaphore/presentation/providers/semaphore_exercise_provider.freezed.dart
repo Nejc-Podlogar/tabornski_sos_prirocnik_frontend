@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'morse_exercise_provider.dart';
+part of 'semaphore_exercise_provider.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,44 +15,45 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$MorseExerciseState {
-  List<MorseExercise> get exercises => throw _privateConstructorUsedError;
+mixin _$SemaphoreExerciseState {
+  List<SemaphoreExercise> get exercises => throw _privateConstructorUsedError;
   int get currentIndex => throw _privateConstructorUsedError;
   List<ExerciseValidation?> get sessionResults =>
       throw _privateConstructorUsedError;
   bool get isComplete => throw _privateConstructorUsedError;
 
-  /// Create a copy of MorseExerciseState
+  /// Create a copy of SemaphoreExerciseState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MorseExerciseStateCopyWith<MorseExerciseState> get copyWith =>
+  $SemaphoreExerciseStateCopyWith<SemaphoreExerciseState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MorseExerciseStateCopyWith<$Res> {
-  factory $MorseExerciseStateCopyWith(
-          MorseExerciseState value, $Res Function(MorseExerciseState) then) =
-      _$MorseExerciseStateCopyWithImpl<$Res, MorseExerciseState>;
+abstract class $SemaphoreExerciseStateCopyWith<$Res> {
+  factory $SemaphoreExerciseStateCopyWith(SemaphoreExerciseState value,
+          $Res Function(SemaphoreExerciseState) then) =
+      _$SemaphoreExerciseStateCopyWithImpl<$Res, SemaphoreExerciseState>;
   @useResult
   $Res call(
-      {List<MorseExercise> exercises,
+      {List<SemaphoreExercise> exercises,
       int currentIndex,
       List<ExerciseValidation?> sessionResults,
       bool isComplete});
 }
 
 /// @nodoc
-class _$MorseExerciseStateCopyWithImpl<$Res, $Val extends MorseExerciseState>
-    implements $MorseExerciseStateCopyWith<$Res> {
-  _$MorseExerciseStateCopyWithImpl(this._value, this._then);
+class _$SemaphoreExerciseStateCopyWithImpl<$Res,
+        $Val extends SemaphoreExerciseState>
+    implements $SemaphoreExerciseStateCopyWith<$Res> {
+  _$SemaphoreExerciseStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MorseExerciseState
+  /// Create a copy of SemaphoreExerciseState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -66,7 +67,7 @@ class _$MorseExerciseStateCopyWithImpl<$Res, $Val extends MorseExerciseState>
       exercises: null == exercises
           ? _value.exercises
           : exercises // ignore: cast_nullable_to_non_nullable
-              as List<MorseExercise>,
+              as List<SemaphoreExercise>,
       currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
@@ -84,29 +85,32 @@ class _$MorseExerciseStateCopyWithImpl<$Res, $Val extends MorseExerciseState>
 }
 
 /// @nodoc
-abstract class _$$MorseExerciseStateImplCopyWith<$Res>
-    implements $MorseExerciseStateCopyWith<$Res> {
-  factory _$$MorseExerciseStateImplCopyWith(_$MorseExerciseStateImpl value,
-          $Res Function(_$MorseExerciseStateImpl) then) =
-      __$$MorseExerciseStateImplCopyWithImpl<$Res>;
+abstract class _$$SemaphoreExerciseStateImplCopyWith<$Res>
+    implements $SemaphoreExerciseStateCopyWith<$Res> {
+  factory _$$SemaphoreExerciseStateImplCopyWith(
+          _$SemaphoreExerciseStateImpl value,
+          $Res Function(_$SemaphoreExerciseStateImpl) then) =
+      __$$SemaphoreExerciseStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {List<MorseExercise> exercises,
+      {List<SemaphoreExercise> exercises,
       int currentIndex,
       List<ExerciseValidation?> sessionResults,
       bool isComplete});
 }
 
 /// @nodoc
-class __$$MorseExerciseStateImplCopyWithImpl<$Res>
-    extends _$MorseExerciseStateCopyWithImpl<$Res, _$MorseExerciseStateImpl>
-    implements _$$MorseExerciseStateImplCopyWith<$Res> {
-  __$$MorseExerciseStateImplCopyWithImpl(_$MorseExerciseStateImpl _value,
-      $Res Function(_$MorseExerciseStateImpl) _then)
+class __$$SemaphoreExerciseStateImplCopyWithImpl<$Res>
+    extends _$SemaphoreExerciseStateCopyWithImpl<$Res,
+        _$SemaphoreExerciseStateImpl>
+    implements _$$SemaphoreExerciseStateImplCopyWith<$Res> {
+  __$$SemaphoreExerciseStateImplCopyWithImpl(
+      _$SemaphoreExerciseStateImpl _value,
+      $Res Function(_$SemaphoreExerciseStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MorseExerciseState
+  /// Create a copy of SemaphoreExerciseState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -116,11 +120,11 @@ class __$$MorseExerciseStateImplCopyWithImpl<$Res>
     Object? sessionResults = null,
     Object? isComplete = null,
   }) {
-    return _then(_$MorseExerciseStateImpl(
+    return _then(_$SemaphoreExerciseStateImpl(
       exercises: null == exercises
           ? _value._exercises
           : exercises // ignore: cast_nullable_to_non_nullable
-              as List<MorseExercise>,
+              as List<SemaphoreExercise>,
       currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
@@ -139,18 +143,18 @@ class __$$MorseExerciseStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MorseExerciseStateImpl implements _MorseExerciseState {
-  const _$MorseExerciseStateImpl(
-      {required final List<MorseExercise> exercises,
+class _$SemaphoreExerciseStateImpl implements _SemaphoreExerciseState {
+  const _$SemaphoreExerciseStateImpl(
+      {required final List<SemaphoreExercise> exercises,
       this.currentIndex = 0,
       required final List<ExerciseValidation?> sessionResults,
       this.isComplete = false})
       : _exercises = exercises,
         _sessionResults = sessionResults;
 
-  final List<MorseExercise> _exercises;
+  final List<SemaphoreExercise> _exercises;
   @override
-  List<MorseExercise> get exercises {
+  List<SemaphoreExercise> get exercises {
     if (_exercises is EqualUnmodifiableListView) return _exercises;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_exercises);
@@ -173,14 +177,14 @@ class _$MorseExerciseStateImpl implements _MorseExerciseState {
 
   @override
   String toString() {
-    return 'MorseExerciseState(exercises: $exercises, currentIndex: $currentIndex, sessionResults: $sessionResults, isComplete: $isComplete)';
+    return 'SemaphoreExerciseState(exercises: $exercises, currentIndex: $currentIndex, sessionResults: $sessionResults, isComplete: $isComplete)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MorseExerciseStateImpl &&
+            other is _$SemaphoreExerciseStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._exercises, _exercises) &&
             (identical(other.currentIndex, currentIndex) ||
@@ -199,25 +203,25 @@ class _$MorseExerciseStateImpl implements _MorseExerciseState {
       const DeepCollectionEquality().hash(_sessionResults),
       isComplete);
 
-  /// Create a copy of MorseExerciseState
+  /// Create a copy of SemaphoreExerciseState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MorseExerciseStateImplCopyWith<_$MorseExerciseStateImpl> get copyWith =>
-      __$$MorseExerciseStateImplCopyWithImpl<_$MorseExerciseStateImpl>(
-          this, _$identity);
+  _$$SemaphoreExerciseStateImplCopyWith<_$SemaphoreExerciseStateImpl>
+      get copyWith => __$$SemaphoreExerciseStateImplCopyWithImpl<
+          _$SemaphoreExerciseStateImpl>(this, _$identity);
 }
 
-abstract class _MorseExerciseState implements MorseExerciseState {
-  const factory _MorseExerciseState(
-      {required final List<MorseExercise> exercises,
+abstract class _SemaphoreExerciseState implements SemaphoreExerciseState {
+  const factory _SemaphoreExerciseState(
+      {required final List<SemaphoreExercise> exercises,
       final int currentIndex,
       required final List<ExerciseValidation?> sessionResults,
-      final bool isComplete}) = _$MorseExerciseStateImpl;
+      final bool isComplete}) = _$SemaphoreExerciseStateImpl;
 
   @override
-  List<MorseExercise> get exercises;
+  List<SemaphoreExercise> get exercises;
   @override
   int get currentIndex;
   @override
@@ -225,10 +229,10 @@ abstract class _MorseExerciseState implements MorseExerciseState {
   @override
   bool get isComplete;
 
-  /// Create a copy of MorseExerciseState
+  /// Create a copy of SemaphoreExerciseState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MorseExerciseStateImplCopyWith<_$MorseExerciseStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SemaphoreExerciseStateImplCopyWith<_$SemaphoreExerciseStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

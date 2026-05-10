@@ -1,3 +1,5 @@
+import 'package:drift/drift.dart';
+
 import '../../../../core/database/app_database.dart';
 import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../../domain/entities/semaphore_exercise.dart';
