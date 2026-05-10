@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/exercise_history/presentation/screens/exercise_history_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/morse/presentation/screens/flashlight_transmitter_screen.dart';
 import '../../features/semaphore/presentation/screens/semaphore_exercise_screen.dart';
@@ -242,9 +243,7 @@ class _PlaceholderScreen extends StatelessWidget {
           GoRoute(
             path: '/exercise-history',
             name: RouteNames.exerciseHistory,
-            // TODO: GROUP 14 — replace with ExerciseHistoryScreen
-            builder: (_, __) =>
-                const _PlaceholderScreen(label: 'Exercise History'),
+            builder: (_, __) => const ExerciseHistoryScreen(),
           ),
         ],
       ),
