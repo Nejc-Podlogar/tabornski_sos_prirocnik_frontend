@@ -5,9 +5,7 @@ import '../../features/exercise_history/data/tables/exercise_history_table.dart'
 import '../../features/exercise_history/domain/value_objects/feature_type.dart';
 import '../../features/home/data/tables/posts_table.dart';
 import '../../features/morse/data/tables/morse_exercises_table.dart';
-import '../../features/morse/domain/value_objects/exercise_content_type.dart';
-import '../../features/morse/domain/value_objects/interaction_type.dart';
-import '../../features/morse/domain/value_objects/translation_direction.dart';
+import '../domain/value_objects/exercise_enums.dart';
 import '../../features/orientation/data/tables/orientation_signs_table.dart';
 import '../../features/orientation/domain/value_objects/topo_group_type.dart';
 import '../../features/semaphore/data/tables/semaphore_exercises_table.dart';

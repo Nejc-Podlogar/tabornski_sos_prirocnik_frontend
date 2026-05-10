@@ -7,7 +7,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/constants/app_typography.dart';
 import '../../domain/entities/morse_exercise.dart';
-import '../../domain/value_objects/translation_direction.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../providers/morse_exercise_provider.dart';
 import 'morse_pattern_display.dart';
 

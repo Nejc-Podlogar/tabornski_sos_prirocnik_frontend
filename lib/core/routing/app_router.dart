@@ -4,6 +4,11 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/morse/presentation/screens/flashlight_transmitter_screen.dart';
+import '../../features/semaphore/presentation/screens/semaphore_exercise_screen.dart';
+import '../../features/semaphore/presentation/screens/semaphore_exercise_selector_screen.dart';
+import '../../features/semaphore/presentation/screens/semaphore_materials_screen.dart';
+import '../../features/semaphore/presentation/screens/semaphore_screen.dart';
+import '../../features/semaphore/presentation/screens/semaphore_translator_screen.dart';
 import '../../features/morse/presentation/screens/morse_exercise_screen.dart';
 import '../../features/morse/presentation/screens/morse_exercise_selector_screen.dart';
 import '../../features/morse/presentation/screens/morse_materials_screen.dart';
@@ -128,51 +133,36 @@ class _PlaceholderScreen extends StatelessWidget {
           GoRoute(
             path: '/semaphore',
             name: RouteNames.semaphore,
-            // TODO: GROUP 22 — replace with SemaphoreScreen
-            builder: (_, __) =>
-                const _PlaceholderScreen(label: 'Semaphore'),
+            builder: (_, __) => const SemaphoreScreen(),
             routes: [
               GoRoute(
                 path: 'translator',
                 name: RouteNames.semaphoreTranslator,
-                // TODO: GROUP 23 — replace with SemaphoreTranslatorScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Semaphore Translator'),
+                builder: (_, __) => const SemaphoreTranslatorScreen(),
               ),
               GoRoute(
                 path: 'materials',
                 name: RouteNames.semaphoreMaterials,
-                // TODO: GROUP 23 — replace with SemaphoreMaterialsScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Semaphore Materials'),
+                builder: (_, __) => const SemaphoreMaterialsScreen(),
               ),
               GoRoute(
                 path: 'exercises',
                 name: RouteNames.semaphoreExercises,
-                // TODO: GROUP 24 — replace with SemaphoreExercisesScreen
+                // TODO: GROUP 21 — replace with SemaphoreExercisesScreen
                 builder: (_, __) =>
                     const _PlaceholderScreen(label: 'Semaphore Exercises'),
                 routes: [
                   GoRoute(
                     path: 'selector',
                     name: RouteNames.semaphoreExerciseSelector,
-                    // TODO: GROUP 24 — replace with SemaphoreExerciseSelectorScreen
-                    builder: (_, __) => const _PlaceholderScreen(
-                        label: 'Semaphore Exercise Selector'),
+                    builder: (_, __) => const SemaphoreExerciseSelectorScreen(),
                   ),
                   GoRoute(
                     path: 'session',
                     name: RouteNames.semaphoreExerciseSession,
-                    redirect: (context, state) {
-                      if (state.extra == null) {
-                        return GoRouter.of(context).namedLocation(
-                            RouteNames.semaphoreExerciseSelector);
-                      }
-                      return null;
-                    },
-                    // TODO: GROUP 24 — replace with SemaphoreExerciseSessionScreen
-                    builder: (_, __) => const _PlaceholderScreen(
-                        label: 'Semaphore Exercise Session'),
+                    // No extra guard — SemaphoreExerciseScreen handles null state
+                    // gracefully by showing 'Ni aktivne vaje.'
+                    builder: (_, __) => const SemaphoreExerciseScreen(),
                   ),
                 ],
               ),

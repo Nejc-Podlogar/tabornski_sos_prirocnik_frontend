@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$MorseExerciseState {
   List<MorseExercise> get exercises => throw _privateConstructorUsedError;
   int get currentIndex => throw _privateConstructorUsedError;
-  List<MorseCodeValidation?> get sessionResults =>
+  List<ExerciseValidation?> get sessionResults =>
       throw _privateConstructorUsedError;
   bool get isComplete => throw _privateConstructorUsedError;
 
@@ -38,7 +38,7 @@ abstract class $MorseExerciseStateCopyWith<$Res> {
   $Res call(
       {List<MorseExercise> exercises,
       int currentIndex,
-      List<MorseCodeValidation?> sessionResults,
+      List<ExerciseValidation?> sessionResults,
       bool isComplete});
 }
 
@@ -74,7 +74,7 @@ class _$MorseExerciseStateCopyWithImpl<$Res, $Val extends MorseExerciseState>
       sessionResults: null == sessionResults
           ? _value.sessionResults
           : sessionResults // ignore: cast_nullable_to_non_nullable
-              as List<MorseCodeValidation?>,
+              as List<ExerciseValidation?>,
       isComplete: null == isComplete
           ? _value.isComplete
           : isComplete // ignore: cast_nullable_to_non_nullable
@@ -94,7 +94,7 @@ abstract class _$$MorseExerciseStateImplCopyWith<$Res>
   $Res call(
       {List<MorseExercise> exercises,
       int currentIndex,
-      List<MorseCodeValidation?> sessionResults,
+      List<ExerciseValidation?> sessionResults,
       bool isComplete});
 }
 
@@ -128,7 +128,7 @@ class __$$MorseExerciseStateImplCopyWithImpl<$Res>
       sessionResults: null == sessionResults
           ? _value._sessionResults
           : sessionResults // ignore: cast_nullable_to_non_nullable
-              as List<MorseCodeValidation?>,
+              as List<ExerciseValidation?>,
       isComplete: null == isComplete
           ? _value.isComplete
           : isComplete // ignore: cast_nullable_to_non_nullable
@@ -143,7 +143,7 @@ class _$MorseExerciseStateImpl implements _MorseExerciseState {
   const _$MorseExerciseStateImpl(
       {required final List<MorseExercise> exercises,
       this.currentIndex = 0,
-      required final List<MorseCodeValidation?> sessionResults,
+      required final List<ExerciseValidation?> sessionResults,
       this.isComplete = false})
       : _exercises = exercises,
         _sessionResults = sessionResults;
@@ -159,9 +159,9 @@ class _$MorseExerciseStateImpl implements _MorseExerciseState {
   @override
   @JsonKey()
   final int currentIndex;
-  final List<MorseCodeValidation?> _sessionResults;
+  final List<ExerciseValidation?> _sessionResults;
   @override
-  List<MorseCodeValidation?> get sessionResults {
+  List<ExerciseValidation?> get sessionResults {
     if (_sessionResults is EqualUnmodifiableListView) return _sessionResults;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_sessionResults);
@@ -213,7 +213,7 @@ abstract class _MorseExerciseState implements MorseExerciseState {
   const factory _MorseExerciseState(
       {required final List<MorseExercise> exercises,
       final int currentIndex,
-      required final List<MorseCodeValidation?> sessionResults,
+      required final List<ExerciseValidation?> sessionResults,
       final bool isComplete}) = _$MorseExerciseStateImpl;
 
   @override
@@ -221,7 +221,7 @@ abstract class _MorseExerciseState implements MorseExerciseState {
   @override
   int get currentIndex;
   @override
-  List<MorseCodeValidation?> get sessionResults;
+  List<ExerciseValidation?> get sessionResults;
   @override
   bool get isComplete;
 

@@ -1,8 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../value_objects/exercise_content_type.dart';
-import '../value_objects/interaction_type.dart';
-import '../value_objects/translation_direction.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 
 part 'morse_exercise.freezed.dart';
 

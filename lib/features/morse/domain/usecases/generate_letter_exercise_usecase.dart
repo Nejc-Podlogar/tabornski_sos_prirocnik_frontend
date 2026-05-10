@@ -1,7 +1,6 @@
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../entities/morse_exercise.dart';
 import '../repositories/i_morse_exercise_repository.dart';
-import '../value_objects/interaction_type.dart';
-import '../value_objects/translation_direction.dart';
 
 class GenerateLetterExerciseUseCase {
   const GenerateLetterExerciseUseCase(this._repository);

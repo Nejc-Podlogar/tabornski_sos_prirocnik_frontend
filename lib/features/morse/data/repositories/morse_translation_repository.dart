@@ -1,7 +1,7 @@
+import '../../../../core/domain/value_objects/exercise_enums.dart';
+import '../../../../core/domain/value_objects/exercise_validation.dart';
 import '../../domain/entities/morse_entry.dart';
 import '../../domain/repositories/i_morse_translation_repository.dart';
-import '../../domain/value_objects/morse_code_validation.dart';
-import '../../domain/value_objects/translation_direction.dart';
 import '../sources/morse_dictionary.dart';
 
 class MorseTranslationRepository implements IMorseTranslationRepository {
@@ -32,7 +32,7 @@ class MorseTranslationRepository implements IMorseTranslationRepository {
   }
 
   @override
-  MorseCodeValidation validate(
+  ExerciseValidation validate(
     String input,
     String expected,
     TranslationDirection direction,
@@ -41,7 +41,7 @@ class MorseTranslationRepository implements IMorseTranslationRepository {
     final normalizedExpected = expected.trim().toLowerCase();
 
     if (normalizedInput == normalizedExpected) {
-      return MorseCodeValidation.correct;
+      return ExerciseValidation.correct;
     }
 
     final inputChars = normalizedInput.split('');
@@ -56,7 +56,7 @@ class MorseTranslationRepository implements IMorseTranslationRepository {
     final matchRatio =
         expectedChars.isEmpty ? 0.0 : matches / expectedChars.length;
 
-    if (matchRatio > 0.5) return MorseCodeValidation.partial;
-    return MorseCodeValidation.incorrect;
+    if (matchRatio > 0.5) return ExerciseValidation.partial;
+    return ExerciseValidation.incorrect;
   }
 }

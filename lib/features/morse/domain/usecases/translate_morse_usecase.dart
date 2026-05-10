@@ -1,5 +1,5 @@
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../repositories/i_morse_translation_repository.dart';
-import '../value_objects/translation_direction.dart';
 
 class TranslateMorseUseCase {
   const TranslateMorseUseCase(this._repository);

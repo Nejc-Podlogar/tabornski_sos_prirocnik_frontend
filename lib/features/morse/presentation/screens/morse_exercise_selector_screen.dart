@@ -10,9 +10,7 @@ import '../../../../core/widgets/app_header_bar.dart';
 import '../../../../core/widgets/filter_chip_row.dart';
 import '../../../../core/widgets/primary_cta_button.dart';
 import '../../../../core/widgets/segmented_control.dart'; // direction only
-import '../../domain/value_objects/exercise_content_type.dart';
-import '../../domain/value_objects/interaction_type.dart';
-import '../../domain/value_objects/translation_direction.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../providers/morse_exercise_provider.dart';
 
 class MorseExerciseSelectorScreen extends ConsumerStatefulWidget {

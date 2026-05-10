@@ -1,5 +1,2 @@
-enum ExerciseContentType {
-  letters,
-  words,
-  sentences,
-}
+export '../../../../core/domain/value_objects/exercise_enums.dart'
+    show ExerciseContentType;

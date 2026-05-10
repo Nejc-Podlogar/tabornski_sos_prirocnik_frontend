@@ -7,8 +7,8 @@ import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/constants/app_typography.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
-import '../../domain/value_objects/interaction_type.dart';
-import '../../domain/value_objects/morse_code_validation.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
+import '../../../../core/domain/value_objects/exercise_validation.dart';
 import '../providers/morse_exercise_provider.dart';
 import '../widgets/learning_cards_widget.dart';
 import '../widgets/learning_keyboard_widget.dart';
@@ -41,7 +41,7 @@ class MorseExerciseScreen extends ConsumerWidget {
 
           if (state.isComplete) {
             final correctCount = state.sessionResults
-                .where((r) => r == MorseCodeValidation.correct)
+                .where((r) => r == ExerciseValidation.correct)
                 .length;
             return _CompletionView(
               correct: correctCount,

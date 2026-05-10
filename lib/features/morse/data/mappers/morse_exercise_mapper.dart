@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:drift/drift.dart';
 
 import '../../../../core/database/app_database.dart';
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../../domain/entities/morse_exercise.dart';
-import '../../domain/value_objects/exercise_content_type.dart';
 
 class MorseExerciseMapper {
   MorseExerciseMapper._();

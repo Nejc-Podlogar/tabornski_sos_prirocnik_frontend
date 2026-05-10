@@ -2,10 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../../domain/entities/morse_exercise.dart';
-import '../../domain/value_objects/exercise_content_type.dart';
-import '../../domain/value_objects/interaction_type.dart';
-import '../../domain/value_objects/translation_direction.dart';
 
 class MorseCorpusLoader {
   const MorseCorpusLoader();
