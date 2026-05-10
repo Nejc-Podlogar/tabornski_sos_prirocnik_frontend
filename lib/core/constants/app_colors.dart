@@ -21,6 +21,9 @@ abstract class AppColors {
   static const Color textSecondary = Color(0xFF8DB88F);
   static const Color textTertiary = Color(0xFF5A7A5C);
 
+  // Utility
+  static const Color transparent = Color(0x00000000);
+
   // Decorative
   static const Color mountainSilhouette = Color(0xFF050505);
   static const Color backgroundPure = Color(0xFF000000);

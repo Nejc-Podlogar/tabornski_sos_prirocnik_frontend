@@ -18,6 +18,10 @@ import '../../features/onboarding/presentation/providers/onboarding_seen_provide
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/settings/presentation/screens/settings_edit_profile_screen.dart';
 import '../../features/settings/presentation/screens/settings_permissions_screen.dart';
+import '../../features/orientation/presentation/screens/orientation_exercise_screen.dart';
+import '../../features/orientation/presentation/screens/orientation_exercise_selector_screen.dart';
+import '../../features/orientation/presentation/screens/orientation_reference_screen.dart';
+import '../../features/orientation/presentation/screens/orientation_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
 import 'guards/onboarding_guard.dart';
 import 'provider_listenable.dart';
@@ -173,47 +177,37 @@ class _PlaceholderScreen extends StatelessWidget {
           GoRoute(
             path: '/orientation',
             name: RouteNames.orientation,
-            // TODO: GROUP 15 — replace with OrientationScreen
-            builder: (_, __) =>
-                const _PlaceholderScreen(label: 'Orientation'),
+            builder: (_, __) => const OrientationScreen(),
             routes: [
               GoRoute(
                 path: 'exercises',
                 name: RouteNames.orientationExercises,
-                // TODO: GROUP 16 — replace with OrientationExercisesScreen
+                // TODO: GROUP 21 — replace with OrientationExercisesScreen
                 builder: (_, __) =>
                     const _PlaceholderScreen(label: 'Orientation Exercises'),
                 routes: [
                   GoRoute(
                     path: 'selector',
                     name: RouteNames.orientationExerciseSelector,
-                    // TODO: GROUP 16 — replace with OrientationExerciseSelectorScreen
-                    builder: (_, __) => const _PlaceholderScreen(
-                        label: 'Orientation Exercise Selector'),
+                    builder: (_, __) =>
+                        const OrientationExerciseSelectorScreen(),
                   ),
                   GoRoute(
                     path: 'session',
                     name: RouteNames.orientationExerciseSession,
-                    redirect: (context, state) {
-                      if (state.extra == null) {
-                        return GoRouter.of(context).namedLocation(
-                            RouteNames.orientationExerciseSelector);
-                      }
-                      return null;
-                    },
-                    // TODO: GROUP 16 — replace with OrientationExerciseSessionScreen
-                    builder: (_, __) => const _PlaceholderScreen(
-                        label: 'Orientation Exercise Session'),
+                    // No extra guard — OrientationExerciseScreen handles null
+                    // state gracefully by showing 'Ni aktivne vaje.'
+                    builder: (_, __) => const OrientationExerciseScreen(),
                   ),
                 ],
               ),
               GoRoute(
                 path: 'reference/:categoryId',
                 name: RouteNames.orientationReference,
-                // No guard — unknown categoryId shows empty state in screen
-                // TODO: GROUP 15 — replace with OrientationReferenceScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Orientation Reference'),
+                // No guard — unknown categoryId shows empty state in screen.
+                // OrientationReferenceScreen reads categoryId directly from
+                // GoRouterState.of(context).pathParameters.
+                builder: (_, __) => const OrientationReferenceScreen(),
               ),
               GoRoute(
                 path: 'pdf',
