@@ -10,6 +10,8 @@ class UserPreferencesTable extends Table {
 
   TextColumn get username => text().nullable()();
 
+  TextColumn get role => text().nullable()();
+
   TextColumn get avatarId => text().nullable()();
 
   BoolColumn get onboardingSeen =>

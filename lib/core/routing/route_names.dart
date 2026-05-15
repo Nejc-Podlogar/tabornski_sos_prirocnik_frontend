@@ -9,7 +9,6 @@ abstract class RouteNames {
   static const String morse = 'morse';
   static const String morseTranslator = 'morseTranslator';
   static const String morseMaterials = 'morseMaterials';
-  static const String morseExercises = 'morseExercises';
   static const String morseExerciseSelector = 'morseExerciseSelector';
   static const String morseExerciseSession = 'morseExerciseSession';
   static const String morseFlashlight = 'morseFlashlight';
@@ -18,18 +17,15 @@ abstract class RouteNames {
   static const String semaphore = 'semaphore';
   static const String semaphoreTranslator = 'semaphoreTranslator';
   static const String semaphoreMaterials = 'semaphoreMaterials';
-  static const String semaphoreExercises = 'semaphoreExercises';
   static const String semaphoreExerciseSelector = 'semaphoreExerciseSelector';
   static const String semaphoreExerciseSession = 'semaphoreExerciseSession';
 
   // Orientation
   static const String orientation = 'orientation';
-  static const String orientationExercises = 'orientationExercises';
   static const String orientationExerciseSelector =
       'orientationExerciseSelector';
   static const String orientationExerciseSession = 'orientationExerciseSession';
   static const String orientationReference = 'orientationReference';
-  static const String orientationPdf = 'orientationPdf';
 
   // Settings
   static const String settings = 'settings';

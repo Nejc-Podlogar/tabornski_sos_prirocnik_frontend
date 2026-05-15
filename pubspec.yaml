@@ -63,6 +63,7 @@ dependencies:
   pdf: ^3.11.0
   open_filex: ^4.7.0
   file_picker: ^10.1.2
+  image_picker: ^1.1.2
   drift: ^2.26.1
   flutter_riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
@@ -154,6 +155,7 @@ flutter:
     - assets/icons/
     - assets/icons/card_swipe_icon.svg
     - assets/images/
+    - assets/images/logo/
     - assets/images/rsk_logo.png
     - assets/images/semaphore/flags/
     - assets/images/semaphore/flags/cancel.png
@@ -175,5 +177,6 @@ flutter:
     - assets/pdfs/GSJ23_razpis.pdf
     - assets/pdfs/topografski-znaki-za-dtk25.pdf
     - assets/fonts/JetBrainsMono/JetBrainsMonoNL-Regular.ttf
+    - assets/data/
 flutter_intl:
   enabled: true

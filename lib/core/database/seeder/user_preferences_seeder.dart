@@ -12,6 +12,7 @@ class UserPreferencesSeeder implements ISeeder {
         id: const Value(1),
         themeMode: const Value(AppThemeMode.dark),
         username: const Value<String?>(null),
+        role: const Value<String?>(null),
         avatarId: const Value<String?>(null),
         onboardingSeen: const Value(false),
       ),

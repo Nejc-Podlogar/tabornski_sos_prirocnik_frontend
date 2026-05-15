@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserPreferences {
   AppThemeMode get themeMode => throw _privateConstructorUsedError;
   String? get username => throw _privateConstructorUsedError;
+  String? get role => throw _privateConstructorUsedError;
   String? get avatarId => throw _privateConstructorUsedError;
   bool get onboardingSeen => throw _privateConstructorUsedError;
 
@@ -37,6 +38,7 @@ abstract class $UserPreferencesCopyWith<$Res> {
   $Res call(
       {AppThemeMode themeMode,
       String? username,
+      String? role,
       String? avatarId,
       bool onboardingSeen});
 }
@@ -58,6 +60,7 @@ class _$UserPreferencesCopyWithImpl<$Res, $Val extends UserPreferences>
   $Res call({
     Object? themeMode = null,
     Object? username = freezed,
+    Object? role = freezed,
     Object? avatarId = freezed,
     Object? onboardingSeen = null,
   }) {
@@ -69,6 +72,10 @@ class _$UserPreferencesCopyWithImpl<$Res, $Val extends UserPreferences>
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
               as String?,
       avatarId: freezed == avatarId
           ? _value.avatarId
@@ -93,6 +100,7 @@ abstract class _$$UserPreferencesImplCopyWith<$Res>
   $Res call(
       {AppThemeMode themeMode,
       String? username,
+      String? role,
       String? avatarId,
       bool onboardingSeen});
 }
@@ -112,6 +120,7 @@ class __$$UserPreferencesImplCopyWithImpl<$Res>
   $Res call({
     Object? themeMode = null,
     Object? username = freezed,
+    Object? role = freezed,
     Object? avatarId = freezed,
     Object? onboardingSeen = null,
   }) {
@@ -123,6 +132,10 @@ class __$$UserPreferencesImplCopyWithImpl<$Res>
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      role: freezed == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
               as String?,
       avatarId: freezed == avatarId
           ? _value.avatarId
@@ -142,6 +155,7 @@ class _$UserPreferencesImpl implements _UserPreferences {
   const _$UserPreferencesImpl(
       {required this.themeMode,
       this.username,
+      this.role,
       this.avatarId,
       required this.onboardingSeen});
 
@@ -150,13 +164,15 @@ class _$UserPreferencesImpl implements _UserPreferences {
   @override
   final String? username;
   @override
+  final String? role;
+  @override
   final String? avatarId;
   @override
   final bool onboardingSeen;
 
   @override
   String toString() {
-    return 'UserPreferences(themeMode: $themeMode, username: $username, avatarId: $avatarId, onboardingSeen: $onboardingSeen)';
+    return 'UserPreferences(themeMode: $themeMode, username: $username, role: $role, avatarId: $avatarId, onboardingSeen: $onboardingSeen)';
   }
 
   @override
@@ -168,6 +184,7 @@ class _$UserPreferencesImpl implements _UserPreferences {
                 other.themeMode == themeMode) &&
             (identical(other.username, username) ||
                 other.username == username) &&
+            (identical(other.role, role) || other.role == role) &&
             (identical(other.avatarId, avatarId) ||
                 other.avatarId == avatarId) &&
             (identical(other.onboardingSeen, onboardingSeen) ||
@@ -175,8 +192,8 @@ class _$UserPreferencesImpl implements _UserPreferences {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, themeMode, username, avatarId, onboardingSeen);
+  int get hashCode => Object.hash(
+      runtimeType, themeMode, username, role, avatarId, onboardingSeen);
 
   /// Create a copy of UserPreferences
   /// with the given fields replaced by the non-null parameter values.
@@ -192,6 +209,7 @@ abstract class _UserPreferences implements UserPreferences {
   const factory _UserPreferences(
       {required final AppThemeMode themeMode,
       final String? username,
+      final String? role,
       final String? avatarId,
       required final bool onboardingSeen}) = _$UserPreferencesImpl;
 
@@ -199,6 +217,8 @@ abstract class _UserPreferences implements UserPreferences {
   AppThemeMode get themeMode;
   @override
   String? get username;
+  @override
+  String? get role;
   @override
   String? get avatarId;
   @override

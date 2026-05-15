@@ -53,12 +53,16 @@ class _PlaceholderScreen extends StatelessWidget {
 /// // TODO: GROUP 26 — call listenable.dispose() on app shutdown.
 ({GoRouter router, ChangeNotifier listenable}) createAppRouter(
     ProviderContainer container) {
+  final rootNavigatorKey = GlobalKey<NavigatorState>();
+  final shellNavigatorKey = GlobalKey<NavigatorState>();
+
   final listenable = ProviderListenableAdapter(
     container,
     onboardingSeenProvider,
   );
 
   final router = GoRouter(
+    navigatorKey: rootNavigatorKey,
     initialLocation: '/',
     refreshListenable: listenable,
     redirect: (context, state) => onboardingGuard(container, state),
@@ -70,8 +74,9 @@ class _PlaceholderScreen extends StatelessWidget {
         builder: (_, __) => const SizedBox.shrink(),
       ),
 
-      // Onboarding
+      // Onboarding — root navigator so it covers the full screen
       GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/${RouteNames.onboarding}',
         name: RouteNames.onboarding,
         redirect: (context, state) => onboardingGuard(container, state),
@@ -80,6 +85,7 @@ class _PlaceholderScreen extends StatelessWidget {
 
       // Shell: bottom-nav screens
       ShellRoute(
+        navigatorKey: shellNavigatorKey,
         builder: (context, state, child) => child,
         routes: [
           // Home
@@ -106,30 +112,16 @@ class _PlaceholderScreen extends StatelessWidget {
                 builder: (_, __) => const MorseMaterialsScreen(),
               ),
               GoRoute(
-                path: 'flashlight',
-                name: RouteNames.morseFlashlight,
-                builder: (_, __) => const FlashlightTransmitterScreen(),
+                path: 'exercise-selector',
+                name: RouteNames.morseExerciseSelector,
+                builder: (_, __) => const MorseExerciseSelectorScreen(),
               ),
               GoRoute(
-                path: 'exercises',
-                name: RouteNames.morseExercises,
-                // TODO: GROUP 21 — replace with MorseExercisesScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Morse Exercises'),
-                routes: [
-                  GoRoute(
-                    path: 'selector',
-                    name: RouteNames.morseExerciseSelector,
-                    builder: (_, __) => const MorseExerciseSelectorScreen(),
-                  ),
-                  GoRoute(
-                    path: 'session',
-                    name: RouteNames.morseExerciseSession,
-                    // No extra guard — MorseExerciseScreen handles null state
-                    // gracefully by showing 'Ni aktivne vaje.'
-                    builder: (_, __) => const MorseExerciseScreen(),
-                  ),
-                ],
+                path: 'exercise-session',
+                name: RouteNames.morseExerciseSession,
+                // No extra guard — MorseExerciseScreen handles null state
+                // gracefully by showing 'Ni aktivne vaje.'
+                builder: (_, __) => const MorseExerciseScreen(),
               ),
             ],
           ),
@@ -151,25 +143,16 @@ class _PlaceholderScreen extends StatelessWidget {
                 builder: (_, __) => const SemaphoreMaterialsScreen(),
               ),
               GoRoute(
-                path: 'exercises',
-                name: RouteNames.semaphoreExercises,
-                // TODO: GROUP 21 — replace with SemaphoreExercisesScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Semaphore Exercises'),
-                routes: [
-                  GoRoute(
-                    path: 'selector',
-                    name: RouteNames.semaphoreExerciseSelector,
-                    builder: (_, __) => const SemaphoreExerciseSelectorScreen(),
-                  ),
-                  GoRoute(
-                    path: 'session',
-                    name: RouteNames.semaphoreExerciseSession,
-                    // No extra guard — SemaphoreExerciseScreen handles null state
-                    // gracefully by showing 'Ni aktivne vaje.'
-                    builder: (_, __) => const SemaphoreExerciseScreen(),
-                  ),
-                ],
+                path: 'exercise-selector',
+                name: RouteNames.semaphoreExerciseSelector,
+                builder: (_, __) => const SemaphoreExerciseSelectorScreen(),
+              ),
+              GoRoute(
+                path: 'exercise-session',
+                name: RouteNames.semaphoreExerciseSession,
+                // No extra guard — SemaphoreExerciseScreen handles null state
+                // gracefully by showing 'Ni aktivne vaje.'
+                builder: (_, __) => const SemaphoreExerciseScreen(),
               ),
             ],
           ),
@@ -181,26 +164,16 @@ class _PlaceholderScreen extends StatelessWidget {
             builder: (_, __) => const OrientationScreen(),
             routes: [
               GoRoute(
-                path: 'exercises',
-                name: RouteNames.orientationExercises,
-                // TODO: GROUP 21 — replace with OrientationExercisesScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'Orientation Exercises'),
-                routes: [
-                  GoRoute(
-                    path: 'selector',
-                    name: RouteNames.orientationExerciseSelector,
-                    builder: (_, __) =>
-                        const OrientationExerciseSelectorScreen(),
-                  ),
-                  GoRoute(
-                    path: 'session',
-                    name: RouteNames.orientationExerciseSession,
-                    // No extra guard — OrientationExerciseScreen handles null
-                    // state gracefully by showing 'Ni aktivne vaje.'
-                    builder: (_, __) => const OrientationExerciseScreen(),
-                  ),
-                ],
+                path: 'exercise-selector',
+                name: RouteNames.orientationExerciseSelector,
+                builder: (_, __) => const OrientationExerciseSelectorScreen(),
+              ),
+              GoRoute(
+                path: 'exercise-session',
+                name: RouteNames.orientationExerciseSession,
+                // No extra guard — OrientationExerciseScreen handles null state
+                // gracefully by showing 'Ni aktivne vaje.'
+                builder: (_, __) => const OrientationExerciseScreen(),
               ),
               GoRoute(
                 path: 'reference/:categoryId',
@@ -209,13 +182,6 @@ class _PlaceholderScreen extends StatelessWidget {
                 // OrientationReferenceScreen reads categoryId directly from
                 // GoRouterState.of(context).pathParameters.
                 builder: (_, __) => const OrientationReferenceScreen(),
-              ),
-              GoRoute(
-                path: 'pdf',
-                name: RouteNames.orientationPdf,
-                // TODO: GROUP 15 — replace with OrientationPdfScreen
-                builder: (_, __) =>
-                    const _PlaceholderScreen(label: 'PDF Viewer'),
               ),
             ],
           ),
@@ -248,8 +214,15 @@ class _PlaceholderScreen extends StatelessWidget {
         ],
       ),
 
-      // Utility — outside shell
+      // Full-screen — root navigator, covers shell entirely
       GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/morse/flashlight',
+        name: RouteNames.morseFlashlight,
+        builder: (_, __) => const FlashlightTransmitterScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/pdf-viewer',
         name: RouteNames.pdfViewer,
         // TODO: GROUP 15 — replace with PdfViewerScreen

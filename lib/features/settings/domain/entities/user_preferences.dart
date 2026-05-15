@@ -9,6 +9,7 @@ class UserPreferences with _$UserPreferences {
   const factory UserPreferences({
     required AppThemeMode themeMode,
     String? username,
+    String? role,
     String? avatarId,
     required bool onboardingSeen,
   }) = _UserPreferences;

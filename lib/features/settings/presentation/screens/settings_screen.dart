@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,8 +9,12 @@ import 'package:hugeicons/hugeicons.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/constants/app_typography.dart';
+import '../../../../core/database/database_provider.dart';
+import '../../../../core/database/seeder/user_preferences_seeder.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
+import '../../../exercise_history/presentation/providers/exercise_history_provider.dart';
+import '../../../onboarding/presentation/providers/onboarding_seen_provider.dart';
 import '../../domain/value_objects/app_theme_mode.dart';
 import '../providers/theme_provider.dart';
 import '../providers/user_preferences_provider.dart';
@@ -27,9 +33,10 @@ class SettingsScreen extends ConsumerWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppHeaderBar(
-        title: 'Nastavitve',
-        showBackButton: false,
-        onSettingsPressed: null,
+        title: '',
+        showBackButton: true,
+        showSettingsButton: false,
+        showBuyMeCoffeeButton: true,
       ),
       body: prefsAsync.when(
         loading: () =>
@@ -40,11 +47,29 @@ class SettingsScreen extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(
               horizontal: AppSpacing.xl, vertical: AppSpacing.base),
           children: [
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  'assets/images/logo/taborniskiSOSprirocnik.jpg',
+                  width: 120,
+                  height: 120,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: AppSpacing.xxl),
+
             // Profile hero
+            _SectionLabel('PROFIL'),
+            const SizedBox(height: AppSpacing.sm),
             _ProfileHero(
               username: prefs.username,
-              onEditTap: () =>
-                  context.pushNamed(RouteNames.settingsEditProfile),
+              role: prefs.role,
+              avatarPath: prefs.avatarId,
+              onEditTap: () {
+                context.pushNamed(RouteNames.settingsEditProfile);
+              },
             ),
             const SizedBox(height: AppSpacing.xxl),
 
@@ -113,44 +138,82 @@ class SettingsScreen extends ConsumerWidget {
       BuildContext context, WidgetRef ref) async {
     final confirmed = await showDialog<bool>(
       context: context,
-      builder: (_) => AlertDialog(
-        backgroundColor: AppColors.surface,
-        title: Text('Izbriši vse podatke',
-            style: AppTypography.cardTitle
-                .copyWith(color: AppColors.danger)),
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppColors.dangerSurface,
+        title: Text(
+          'Izbriši vse podatke',
+          style: AppTypography.cardTitle.copyWith(color: AppColors.danger),
+        ),
         content: Text(
-            'Ta dejanje je nepovratno. Vsi napredki in nastavitve bodo izbrisani.',
-            style: AppTypography.body),
+          'To dejanje je dokončno. '
+          'Vsi podatki bodo trajno izbrisani.',
+          style: AppTypography.body,
+        ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: Text('Prekliči',
-                style: AppTypography.buttonLabel
-                    .copyWith(color: AppColors.textSecondary)),
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: const Text('Prekliči'),
           ),
           TextButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            child: Text('Izbriši',
-                style: AppTypography.buttonLabel
-                    .copyWith(color: AppColors.danger)),
+            onPressed: () => Navigator.of(ctx).pop(true),
+            style: TextButton.styleFrom(
+              foregroundColor: AppColors.danger,
+            ),
+            child: const Text('Izbriši'),
           ),
         ],
       ),
     );
-    if (confirmed == true) {
-      // TODO: GROUP 26 — wire delete-all to AppSeeder reset
+
+    if (confirmed != true) return;
+    if (!context.mounted) return;
+
+    try {
+      // 1. Clear exercise history via notifier
+      await ref.read(exerciseHistoryProvider.notifier).clearAll();
+
+      // 2. Delete user preferences row — resets onboardingSeen to false
+      final db = ref.read(appDatabaseProvider);
+      await db.delete(db.userPreferencesTable).go();
+
+      // 3. Restore default preferences only — corpus tables are unaffected
+      //    and AppSeeder.run() cannot load assets from a widget context.
+      await UserPreferencesSeeder().seed(db);
+
+      // 4. Invalidate providers so router guard re-evaluates onboardingSeen
+      ref.invalidate(userPreferencesProvider);
+      ref.invalidate(onboardingSeenProvider);
+
+      if (!context.mounted) return;
+
+      // 5. go() replaces the entire stack — prevents pop() emptying the route stack
+      context.go('/${RouteNames.onboarding}');
+    } catch (e) {
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Napaka pri brisanju: $e')),
+      );
     }
   }
 }
 
 class _ProfileHero extends StatelessWidget {
-  const _ProfileHero({required this.username, required this.onEditTap});
+  const _ProfileHero({
+    required this.username,
+    required this.onEditTap,
+    this.role,
+    this.avatarPath,
+  });
 
   final String? username;
+  final String? role;
+  final String? avatarPath;
   final VoidCallback onEditTap;
 
   @override
   Widget build(BuildContext context) {
+    final hasAvatar = avatarPath != null && File(avatarPath!).existsSync();
+
     return Container(
       padding: const EdgeInsets.all(AppSpacing.xl),
       decoration: BoxDecoration(
@@ -162,18 +225,21 @@ class _ProfileHero extends StatelessWidget {
           CircleAvatar(
             radius: 36,
             backgroundColor: AppColors.primaryDark,
-            child: HugeIcon(
-              icon: HugeIcons.strokeRoundedUserAdd01,
-              color: AppColors.primaryLight,
-              size: 36
-            )
+            backgroundImage: hasAvatar ? FileImage(File(avatarPath!)) : null,
+            child: hasAvatar
+                ? null
+                : HugeIcon(
+                    icon: HugeIcons.strokeRoundedUserAdd01,
+                    color: AppColors.primaryLight,
+                    size: 36,
+                  ),
           ),
           const SizedBox(width: AppSpacing.base),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(username ?? 'Taborniški skavt',
+                Text(username ?? 'Tabornik',
                     style: AppTypography.cardTitle
                         .copyWith(color: AppColors.primary)),
                 const SizedBox(height: AppSpacing.xs),
@@ -184,10 +250,12 @@ class _ProfileHero extends StatelessWidget {
                     color: AppColors.accent,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Text('SKAVT',
-                      style: AppTypography.caption.copyWith(
-                          color: AppColors.textPrimary,
-                          fontWeight: FontWeight.w600)),
+                  child: Text(
+                    role?.isNotEmpty == true ? role! : 'SKAVT',
+                    style: AppTypography.caption.copyWith(
+                        color: AppColors.textPrimary,
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
               ],
             ),

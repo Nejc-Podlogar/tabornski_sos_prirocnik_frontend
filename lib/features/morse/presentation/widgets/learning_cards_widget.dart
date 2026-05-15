@@ -23,6 +23,13 @@ class LearningCardsWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Watch provider state directly so this widget reacts to isComplete
+    // before CardSwiper can attempt to render with cardsCount == 0.
+    final state = ref.watch(morseExerciseProvider).valueOrNull;
+    if (state == null || state.isComplete || exercises.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
     final remaining = exercises.length - currentIndex;
     if (remaining <= 0) return const SizedBox.shrink();
 
@@ -37,21 +44,34 @@ class LearningCardsWidget extends ConsumerWidget {
         const SizedBox(height: AppSpacing.base),
 
         Expanded(
-          // TODO: test web pointer drag — may need
-          // allowedSwipeDirection override for web
-          child: CardSwiper(
-            // key forces a fresh swiper whenever the deck advances
-            key: ValueKey(currentIndex),
-            cardsCount: remaining,
-            cardBuilder: (context, index, _, __) {
-              final exercise = exercises[currentIndex + index];
-              return _ExerciseCard(exercise: exercise);
-            },
-            onSwipe: (_, __, direction) {
-              ref.read(morseExerciseProvider.notifier).swipeCard(
-                    direction == CardSwiperDirection.right,
-                  );
-              return true;
+          child: Builder(
+            builder: (context) {
+              // Defensive boundary: re-check remaining inside Builder so that
+              // any mid-animation state change cannot produce cardsCount < 1.
+              if (remaining < 1) return const SizedBox.shrink();
+
+              return CardSwiper(
+                // key forces a fresh swiper whenever the deck advances
+                key: ValueKey(currentIndex),
+                cardsCount: remaining,
+                // Always display exactly 1 card — prevents the assertion
+                // 'numberOfCardsDisplayed >= 1 && numberOfCardsDisplayed <= cardsCount'
+                // from firing when remaining drops to 1 on the last card.
+                numberOfCardsDisplayed: 1,
+                cardBuilder: (context, index, _, __) {
+                  final exercise = exercises[currentIndex + index];
+                  return _ExerciseCard(exercise: exercise);
+                },
+                onSwipe: (_, __, direction) {
+                  final isLastCard = currentIndex >= exercises.length - 1;
+                  ref.read(morseExerciseProvider.notifier).swipeCard(
+                        direction == CardSwiperDirection.right,
+                      );
+                  // Return false on the last card so CardSwiper does not
+                  // attempt to advance to a non-existent next card.
+                  return !isLastCard;
+                },
+              );
             },
           ),
         ),

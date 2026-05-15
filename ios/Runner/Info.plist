@@ -43,6 +43,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Za zajem profilne slike potrebujemo dostop do kamere.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Za izbiro profilne slike potrebujemo dostop do galerije.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>

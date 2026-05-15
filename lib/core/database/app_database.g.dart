@@ -1459,6 +1459,11 @@ class $UserPreferencesTableTable extends UserPreferencesTable
   late final GeneratedColumn<String> username = GeneratedColumn<String>(
       'username', aliasedName, true,
       type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _roleMeta = const VerificationMeta('role');
+  @override
+  late final GeneratedColumn<String> role = GeneratedColumn<String>(
+      'role', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
   static const VerificationMeta _avatarIdMeta =
       const VerificationMeta('avatarId');
   @override
@@ -1477,7 +1482,7 @@ class $UserPreferencesTableTable extends UserPreferencesTable
       defaultValue: const Constant(false));
   @override
   List<GeneratedColumn> get $columns =>
-      [id, themeMode, username, avatarId, onboardingSeen];
+      [id, themeMode, username, role, avatarId, onboardingSeen];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -1495,6 +1500,10 @@ class $UserPreferencesTableTable extends UserPreferencesTable
     if (data.containsKey('username')) {
       context.handle(_usernameMeta,
           username.isAcceptableOrUnknown(data['username']!, _usernameMeta));
+    }
+    if (data.containsKey('role')) {
+      context.handle(
+          _roleMeta, role.isAcceptableOrUnknown(data['role']!, _roleMeta));
     }
     if (data.containsKey('avatar_id')) {
       context.handle(_avatarIdMeta,
@@ -1523,6 +1532,8 @@ class $UserPreferencesTableTable extends UserPreferencesTable
               DriftSqlType.string, data['${effectivePrefix}theme_mode'])!),
       username: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}username']),
+      role: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}role']),
       avatarId: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}avatar_id']),
       onboardingSeen: attachedDatabase.typeMapping
@@ -1544,12 +1555,14 @@ class UserPreferencesTableData extends DataClass
   final int id;
   final AppThemeMode themeMode;
   final String? username;
+  final String? role;
   final String? avatarId;
   final bool onboardingSeen;
   const UserPreferencesTableData(
       {required this.id,
       required this.themeMode,
       this.username,
+      this.role,
       this.avatarId,
       required this.onboardingSeen});
   @override
@@ -1562,6 +1575,9 @@ class UserPreferencesTableData extends DataClass
     }
     if (!nullToAbsent || username != null) {
       map['username'] = Variable<String>(username);
+    }
+    if (!nullToAbsent || role != null) {
+      map['role'] = Variable<String>(role);
     }
     if (!nullToAbsent || avatarId != null) {
       map['avatar_id'] = Variable<String>(avatarId);
@@ -1577,6 +1593,7 @@ class UserPreferencesTableData extends DataClass
       username: username == null && nullToAbsent
           ? const Value.absent()
           : Value(username),
+      role: role == null && nullToAbsent ? const Value.absent() : Value(role),
       avatarId: avatarId == null && nullToAbsent
           ? const Value.absent()
           : Value(avatarId),
@@ -1592,6 +1609,7 @@ class UserPreferencesTableData extends DataClass
       themeMode: $UserPreferencesTableTable.$converterthemeMode
           .fromJson(serializer.fromJson<String>(json['themeMode'])),
       username: serializer.fromJson<String?>(json['username']),
+      role: serializer.fromJson<String?>(json['role']),
       avatarId: serializer.fromJson<String?>(json['avatarId']),
       onboardingSeen: serializer.fromJson<bool>(json['onboardingSeen']),
     );
@@ -1604,6 +1622,7 @@ class UserPreferencesTableData extends DataClass
       'themeMode': serializer.toJson<String>(
           $UserPreferencesTableTable.$converterthemeMode.toJson(themeMode)),
       'username': serializer.toJson<String?>(username),
+      'role': serializer.toJson<String?>(role),
       'avatarId': serializer.toJson<String?>(avatarId),
       'onboardingSeen': serializer.toJson<bool>(onboardingSeen),
     };
@@ -1613,12 +1632,14 @@ class UserPreferencesTableData extends DataClass
           {int? id,
           AppThemeMode? themeMode,
           Value<String?> username = const Value.absent(),
+          Value<String?> role = const Value.absent(),
           Value<String?> avatarId = const Value.absent(),
           bool? onboardingSeen}) =>
       UserPreferencesTableData(
         id: id ?? this.id,
         themeMode: themeMode ?? this.themeMode,
         username: username.present ? username.value : this.username,
+        role: role.present ? role.value : this.role,
         avatarId: avatarId.present ? avatarId.value : this.avatarId,
         onboardingSeen: onboardingSeen ?? this.onboardingSeen,
       );
@@ -1628,6 +1649,7 @@ class UserPreferencesTableData extends DataClass
       id: data.id.present ? data.id.value : this.id,
       themeMode: data.themeMode.present ? data.themeMode.value : this.themeMode,
       username: data.username.present ? data.username.value : this.username,
+      role: data.role.present ? data.role.value : this.role,
       avatarId: data.avatarId.present ? data.avatarId.value : this.avatarId,
       onboardingSeen: data.onboardingSeen.present
           ? data.onboardingSeen.value
@@ -1641,6 +1663,7 @@ class UserPreferencesTableData extends DataClass
           ..write('id: $id, ')
           ..write('themeMode: $themeMode, ')
           ..write('username: $username, ')
+          ..write('role: $role, ')
           ..write('avatarId: $avatarId, ')
           ..write('onboardingSeen: $onboardingSeen')
           ..write(')'))
@@ -1649,7 +1672,7 @@ class UserPreferencesTableData extends DataClass
 
   @override
   int get hashCode =>
-      Object.hash(id, themeMode, username, avatarId, onboardingSeen);
+      Object.hash(id, themeMode, username, role, avatarId, onboardingSeen);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -1657,6 +1680,7 @@ class UserPreferencesTableData extends DataClass
           other.id == this.id &&
           other.themeMode == this.themeMode &&
           other.username == this.username &&
+          other.role == this.role &&
           other.avatarId == this.avatarId &&
           other.onboardingSeen == this.onboardingSeen);
 }
@@ -1666,12 +1690,14 @@ class UserPreferencesTableCompanion
   final Value<int> id;
   final Value<AppThemeMode> themeMode;
   final Value<String?> username;
+  final Value<String?> role;
   final Value<String?> avatarId;
   final Value<bool> onboardingSeen;
   const UserPreferencesTableCompanion({
     this.id = const Value.absent(),
     this.themeMode = const Value.absent(),
     this.username = const Value.absent(),
+    this.role = const Value.absent(),
     this.avatarId = const Value.absent(),
     this.onboardingSeen = const Value.absent(),
   });
@@ -1679,6 +1705,7 @@ class UserPreferencesTableCompanion
     this.id = const Value.absent(),
     this.themeMode = const Value.absent(),
     this.username = const Value.absent(),
+    this.role = const Value.absent(),
     this.avatarId = const Value.absent(),
     this.onboardingSeen = const Value.absent(),
   });
@@ -1686,6 +1713,7 @@ class UserPreferencesTableCompanion
     Expression<int>? id,
     Expression<String>? themeMode,
     Expression<String>? username,
+    Expression<String>? role,
     Expression<String>? avatarId,
     Expression<bool>? onboardingSeen,
   }) {
@@ -1693,6 +1721,7 @@ class UserPreferencesTableCompanion
       if (id != null) 'id': id,
       if (themeMode != null) 'theme_mode': themeMode,
       if (username != null) 'username': username,
+      if (role != null) 'role': role,
       if (avatarId != null) 'avatar_id': avatarId,
       if (onboardingSeen != null) 'onboarding_seen': onboardingSeen,
     });
@@ -1702,12 +1731,14 @@ class UserPreferencesTableCompanion
       {Value<int>? id,
       Value<AppThemeMode>? themeMode,
       Value<String?>? username,
+      Value<String?>? role,
       Value<String?>? avatarId,
       Value<bool>? onboardingSeen}) {
     return UserPreferencesTableCompanion(
       id: id ?? this.id,
       themeMode: themeMode ?? this.themeMode,
       username: username ?? this.username,
+      role: role ?? this.role,
       avatarId: avatarId ?? this.avatarId,
       onboardingSeen: onboardingSeen ?? this.onboardingSeen,
     );
@@ -1727,6 +1758,9 @@ class UserPreferencesTableCompanion
     if (username.present) {
       map['username'] = Variable<String>(username.value);
     }
+    if (role.present) {
+      map['role'] = Variable<String>(role.value);
+    }
     if (avatarId.present) {
       map['avatar_id'] = Variable<String>(avatarId.value);
     }
@@ -1742,6 +1776,7 @@ class UserPreferencesTableCompanion
           ..write('id: $id, ')
           ..write('themeMode: $themeMode, ')
           ..write('username: $username, ')
+          ..write('role: $role, ')
           ..write('avatarId: $avatarId, ')
           ..write('onboardingSeen: $onboardingSeen')
           ..write(')'))
@@ -3020,6 +3055,7 @@ typedef $$UserPreferencesTableTableCreateCompanionBuilder
   Value<int> id,
   Value<AppThemeMode> themeMode,
   Value<String?> username,
+  Value<String?> role,
   Value<String?> avatarId,
   Value<bool> onboardingSeen,
 });
@@ -3028,6 +3064,7 @@ typedef $$UserPreferencesTableTableUpdateCompanionBuilder
   Value<int> id,
   Value<AppThemeMode> themeMode,
   Value<String?> username,
+  Value<String?> role,
   Value<String?> avatarId,
   Value<bool> onboardingSeen,
 });
@@ -3051,6 +3088,9 @@ class $$UserPreferencesTableTableFilterComposer
 
   ColumnFilters<String> get username => $composableBuilder(
       column: $table.username, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get role => $composableBuilder(
+      column: $table.role, builder: (column) => ColumnFilters(column));
 
   ColumnFilters<String> get avatarId => $composableBuilder(
       column: $table.avatarId, builder: (column) => ColumnFilters(column));
@@ -3078,6 +3118,9 @@ class $$UserPreferencesTableTableOrderingComposer
   ColumnOrderings<String> get username => $composableBuilder(
       column: $table.username, builder: (column) => ColumnOrderings(column));
 
+  ColumnOrderings<String> get role => $composableBuilder(
+      column: $table.role, builder: (column) => ColumnOrderings(column));
+
   ColumnOrderings<String> get avatarId => $composableBuilder(
       column: $table.avatarId, builder: (column) => ColumnOrderings(column));
 
@@ -3103,6 +3146,9 @@ class $$UserPreferencesTableTableAnnotationComposer
 
   GeneratedColumn<String> get username =>
       $composableBuilder(column: $table.username, builder: (column) => column);
+
+  GeneratedColumn<String> get role =>
+      $composableBuilder(column: $table.role, builder: (column) => column);
 
   GeneratedColumn<String> get avatarId =>
       $composableBuilder(column: $table.avatarId, builder: (column) => column);
@@ -3144,6 +3190,7 @@ class $$UserPreferencesTableTableTableManager extends RootTableManager<
             Value<int> id = const Value.absent(),
             Value<AppThemeMode> themeMode = const Value.absent(),
             Value<String?> username = const Value.absent(),
+            Value<String?> role = const Value.absent(),
             Value<String?> avatarId = const Value.absent(),
             Value<bool> onboardingSeen = const Value.absent(),
           }) =>
@@ -3151,6 +3198,7 @@ class $$UserPreferencesTableTableTableManager extends RootTableManager<
             id: id,
             themeMode: themeMode,
             username: username,
+            role: role,
             avatarId: avatarId,
             onboardingSeen: onboardingSeen,
           ),
@@ -3158,6 +3206,7 @@ class $$UserPreferencesTableTableTableManager extends RootTableManager<
             Value<int> id = const Value.absent(),
             Value<AppThemeMode> themeMode = const Value.absent(),
             Value<String?> username = const Value.absent(),
+            Value<String?> role = const Value.absent(),
             Value<String?> avatarId = const Value.absent(),
             Value<bool> onboardingSeen = const Value.absent(),
           }) =>
@@ -3165,6 +3214,7 @@ class $$UserPreferencesTableTableTableManager extends RootTableManager<
             id: id,
             themeMode: themeMode,
             username: username,
+            role: role,
             avatarId: avatarId,
             onboardingSeen: onboardingSeen,
           ),

@@ -1,0 +1,4066 @@
+{
+  "words": [
+    {
+      "exerciseValues": [
+        "GOZD"
+      ],
+      "translatedValues": [
+        "--. --- --.. -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--. --- --.. -.."
+      ],
+      "translatedValues": [
+        "GOZD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "GOZD"
+      ],
+      "translatedValues": [
+        "--. --- --.. -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. --- --.. -.."
+      ],
+      "translatedValues": [
+        "GOZD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VODA"
+      ],
+      "translatedValues": [
+        "...- --- -.. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "...- --- -.. .-"
+      ],
+      "translatedValues": [
+        "VODA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "VODA"
+      ],
+      "translatedValues": [
+        "...- --- -.. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- --- -.. .-"
+      ],
+      "translatedValues": [
+        "VODA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "OGENJ"
+      ],
+      "translatedValues": [
+        "--- --. . -. .---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--- --. . -. .---"
+      ],
+      "translatedValues": [
+        "OGENJ"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "OGENJ"
+      ],
+      "translatedValues": [
+        "--- --. . -. .---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--- --. . -. .---"
+      ],
+      "translatedValues": [
+        "OGENJ"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "KAMP"
+      ],
+      "translatedValues": [
+        "-.- .- -- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.- .- -- .--."
+      ],
+      "translatedValues": [
+        "KAMP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "KAMP"
+      ],
+      "translatedValues": [
+        "-.- .- -- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.- .- -- .--."
+      ],
+      "translatedValues": [
+        "KAMP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TABLA"
+      ],
+      "translatedValues": [
+        "- .- -... .-.. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... .-.. .-"
+      ],
+      "translatedValues": [
+        "TABLA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TABLA"
+      ],
+      "translatedValues": [
+        "- .- -... .-.. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... .-.. .-"
+      ],
+      "translatedValues": [
+        "TABLA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SEVER"
+      ],
+      "translatedValues": [
+        "... . ...- . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... . ...- . .-."
+      ],
+      "translatedValues": [
+        "SEVER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SEVER"
+      ],
+      "translatedValues": [
+        "... . ...- . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... . ...- . .-."
+      ],
+      "translatedValues": [
+        "SEVER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "JUG"
+      ],
+      "translatedValues": [
+        ".--- ..- --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--- ..- --."
+      ],
+      "translatedValues": [
+        "JUG"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "JUG"
+      ],
+      "translatedValues": [
+        ".--- ..- --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--- ..- --."
+      ],
+      "translatedValues": [
+        "JUG"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VZHOD"
+      ],
+      "translatedValues": [
+        "...- --.. .... --- -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "...- --.. .... --- -.."
+      ],
+      "translatedValues": [
+        "VZHOD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ZAHOD"
+      ],
+      "translatedValues": [
+        "--.. .- .... --- -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--.. .- .... --- -.."
+      ],
+      "translatedValues": [
+        "ZAHOD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ZAHOD"
+      ],
+      "translatedValues": [
+        "--.. .- .... --- -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--.. .- .... --- -.."
+      ],
+      "translatedValues": [
+        "ZAHOD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "KOMPAS"
+      ],
+      "translatedValues": [
+        "-.- --- -- .--. .- ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.- --- -- .--. .- ..."
+      ],
+      "translatedValues": [
+        "KOMPAS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "KOMPAS"
+      ],
+      "translatedValues": [
+        "-.- --- -- .--. .- ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.- --- -- .--. .- ..."
+      ],
+      "translatedValues": [
+        "KOMPAS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ZEMLJEVID"
+      ],
+      "translatedValues": [
+        "--.. . -- .-.. .--- . ...- .. -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--.. . -- .-.. .--- . ...- .. -.."
+      ],
+      "translatedValues": [
+        "ZEMLJEVID"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TABORNIK"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. -. .. -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. -. .. -.-"
+      ],
+      "translatedValues": [
+        "TABORNIK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TABORNIK"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. -. .. -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. -. .. -.-"
+      ],
+      "translatedValues": [
+        "TABORNIK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNAL"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.."
+      ],
+      "translatedValues": [
+        "SIGNAL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SIGNAL"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.."
+      ],
+      "translatedValues": [
+        "SIGNAL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VARNOST"
+      ],
+      "translatedValues": [
+        "...- .- .-. -. --- ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "...- .- .-. -. --- ... -"
+      ],
+      "translatedValues": [
+        "VARNOST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "POHOD"
+      ],
+      "translatedValues": [
+        ".--. --- .... --- -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- .... --- -.."
+      ],
+      "translatedValues": [
+        "POHOD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "POHOD"
+      ],
+      "translatedValues": [
+        ".--. --- .... --- -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- .... --- -.."
+      ],
+      "translatedValues": [
+        "POHOD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "HRANA"
+      ],
+      "translatedValues": [
+        ".... .-. .- -. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".... .-. .- -. .-"
+      ],
+      "translatedValues": [
+        "HRANA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "HRANA"
+      ],
+      "translatedValues": [
+        ".... .-. .- -. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".... .-. .- -. .-"
+      ],
+      "translatedValues": [
+        "HRANA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SVETILKA"
+      ],
+      "translatedValues": [
+        "... ...- . - .. .-.. -.- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... ...- . - .. .-.. -.- .-"
+      ],
+      "translatedValues": [
+        "SVETILKA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SVETILKA"
+      ],
+      "translatedValues": [
+        "... ...- . - .. .-.. -.- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... ...- . - .. .-.. -.- .-"
+      ],
+      "translatedValues": [
+        "SVETILKA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VRVI"
+      ],
+      "translatedValues": [
+        "...- .-. ...- .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "...- .-. ...- .."
+      ],
+      "translatedValues": [
+        "VRVI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "VRVI"
+      ],
+      "translatedValues": [
+        "...- .-. ...- .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- .-. ...- .."
+      ],
+      "translatedValues": [
+        "VRVI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TABOR"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-."
+      ],
+      "translatedValues": [
+        "TABOR"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TABOR"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-."
+      ],
+      "translatedValues": [
+        "TABOR"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "GORE"
+      ],
+      "translatedValues": [
+        "--. --- .-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--. --- .-. ."
+      ],
+      "translatedValues": [
+        "GORE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "GORE"
+      ],
+      "translatedValues": [
+        "--. --- .-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. --- .-. ."
+      ],
+      "translatedValues": [
+        "GORE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "REKA"
+      ],
+      "translatedValues": [
+        ".-. . -.- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-. . -.- .-"
+      ],
+      "translatedValues": [
+        "REKA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "REKA"
+      ],
+      "translatedValues": [
+        ".-. . -.- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. . -.- .-"
+      ],
+      "translatedValues": [
+        "REKA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "JEZERO"
+      ],
+      "translatedValues": [
+        ".--- . --.. . .-. ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--- . --.. . .-. ---"
+      ],
+      "translatedValues": [
+        "JEZERO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "JEZERO"
+      ],
+      "translatedValues": [
+        ".--- . --.. . .-. ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--- . --.. . .-. ---"
+      ],
+      "translatedValues": [
+        "JEZERO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "POT"
+      ],
+      "translatedValues": [
+        ".--. --- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- -"
+      ],
+      "translatedValues": [
+        "POT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "POT"
+      ],
+      "translatedValues": [
+        ".--. --- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- -"
+      ],
+      "translatedValues": [
+        "POT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MOST"
+      ],
+      "translatedValues": [
+        "-- --- ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ... -"
+      ],
+      "translatedValues": [
+        "MOST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "MOST"
+      ],
+      "translatedValues": [
+        "-- --- ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ... -"
+      ],
+      "translatedValues": [
+        "MOST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "DREVO"
+      ],
+      "translatedValues": [
+        "-.. .-. . ...- ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.. .-. . ...- ---"
+      ],
+      "translatedValues": [
+        "DREVO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "DREVO"
+      ],
+      "translatedValues": [
+        "-.. .-. . ...- ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.. .-. . ...- ---"
+      ],
+      "translatedValues": [
+        "DREVO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SKALA"
+      ],
+      "translatedValues": [
+        "... -.- .- .-.. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... -.- .- .-.. .-"
+      ],
+      "translatedValues": [
+        "SKALA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SKALA"
+      ],
+      "translatedValues": [
+        "... -.- .- .-.. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... -.- .- .-.. .-"
+      ],
+      "translatedValues": [
+        "SKALA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "DOLINE"
+      ],
+      "translatedValues": [
+        "-.. --- .-.. .. -. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.. --- .-.. .. -. ."
+      ],
+      "translatedValues": [
+        "DOLINE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "DOLINE"
+      ],
+      "translatedValues": [
+        "-.. --- .-.. .. -. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.. --- .-.. .. -. ."
+      ],
+      "translatedValues": [
+        "DOLINE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VETER"
+      ],
+      "translatedValues": [
+        "...- . - . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "...- . - . .-."
+      ],
+      "translatedValues": [
+        "VETER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "VETER"
+      ],
+      "translatedValues": [
+        "...- . - . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- . - . .-."
+      ],
+      "translatedValues": [
+        "VETER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "DEZI"
+      ],
+      "translatedValues": [
+        "-.. . --.. .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.. . --.. .."
+      ],
+      "translatedValues": [
+        "DEZI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SNEG"
+      ],
+      "translatedValues": [
+        "... -. . --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... -. . --."
+      ],
+      "translatedValues": [
+        "SNEG"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SNEG"
+      ],
+      "translatedValues": [
+        "... -. . --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... -. . --."
+      ],
+      "translatedValues": [
+        "SNEG"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MRAZ"
+      ],
+      "translatedValues": [
+        "-- .-. .- --.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-- .-. .- --.."
+      ],
+      "translatedValues": [
+        "MRAZ"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "MRAZ"
+      ],
+      "translatedValues": [
+        "-- .-. .- --.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- .-. .- --.."
+      ],
+      "translatedValues": [
+        "MRAZ"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TOPLOTA"
+      ],
+      "translatedValues": [
+        "- --- .--. .-.. --- - .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- --- .--. .-.. --- - .-"
+      ],
+      "translatedValues": [
+        "TOPLOTA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "NEBO"
+      ],
+      "translatedValues": [
+        "-. . -... ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-. . -... ---"
+      ],
+      "translatedValues": [
+        "NEBO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "NEBO"
+      ],
+      "translatedValues": [
+        "-. . -... ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. . -... ---"
+      ],
+      "translatedValues": [
+        "NEBO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ZVEZDE"
+      ],
+      "translatedValues": [
+        "--.. ...- . --.. -.. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--.. ...- . --.. -.. ."
+      ],
+      "translatedValues": [
+        "ZVEZDE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ZVEZDE"
+      ],
+      "translatedValues": [
+        "--.. ...- . --.. -.. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--.. ...- . --.. -.. ."
+      ],
+      "translatedValues": [
+        "ZVEZDE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "LUNA"
+      ],
+      "translatedValues": [
+        ".-.. ..- -. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-.. ..- -. .-"
+      ],
+      "translatedValues": [
+        "LUNA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "LUNA"
+      ],
+      "translatedValues": [
+        ".-.. ..- -. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-.. ..- -. .-"
+      ],
+      "translatedValues": [
+        "LUNA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SONCE"
+      ],
+      "translatedValues": [
+        "... --- -. -.-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... --- -. -.-. ."
+      ],
+      "translatedValues": [
+        "SONCE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SONCE"
+      ],
+      "translatedValues": [
+        "... --- -. -.-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... --- -. -.-. ."
+      ],
+      "translatedValues": [
+        "SONCE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NARAVA"
+      ],
+      "translatedValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translatedValues": [
+        "NARAVA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "NARAVA"
+      ],
+      "translatedValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translatedValues": [
+        "NARAVA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ZVERI"
+      ],
+      "translatedValues": [
+        "--.. ...- . .-. .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--.. ...- . .-. .."
+      ],
+      "translatedValues": [
+        "ZVERI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "PTICE"
+      ],
+      "translatedValues": [
+        ".--. - .. -.-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--. - .. -.-. ."
+      ],
+      "translatedValues": [
+        "PTICE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "PTICE"
+      ],
+      "translatedValues": [
+        ".--. - .. -.-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. - .. -.-. ."
+      ],
+      "translatedValues": [
+        "PTICE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "RIBE"
+      ],
+      "translatedValues": [
+        ".-. .. -... ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-. .. -... ."
+      ],
+      "translatedValues": [
+        "RIBE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "RIBE"
+      ],
+      "translatedValues": [
+        ".-. .. -... ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. .. -... ."
+      ],
+      "translatedValues": [
+        "RIBE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SKAVT"
+      ],
+      "translatedValues": [
+        "... -.- .- ...- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... -.- .- ...- -"
+      ],
+      "translatedValues": [
+        "SKAVT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SKAVT"
+      ],
+      "translatedValues": [
+        "... -.- .- ...- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... -.- .- ...- -"
+      ],
+      "translatedValues": [
+        "SKAVT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VODNIK"
+      ],
+      "translatedValues": [
+        "...- --- -.. -. .. -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "...- --- -.. -. .. -.-"
+      ],
+      "translatedValues": [
+        "VODNIK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "VODNIK"
+      ],
+      "translatedValues": [
+        "...- --- -.. -. .. -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- --- -.. -. .. -.-"
+      ],
+      "translatedValues": [
+        "VODNIK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ENOTA"
+      ],
+      "translatedValues": [
+        ". -. --- - .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ". -. --- - .-"
+      ],
+      "translatedValues": [
+        "ENOTA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ENOTA"
+      ],
+      "translatedValues": [
+        ". -. --- - .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ". -. --- - .-"
+      ],
+      "translatedValues": [
+        "ENOTA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "OBROK"
+      ],
+      "translatedValues": [
+        "--- -... .-. --- -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--- -... .-. --- -.-"
+      ],
+      "translatedValues": [
+        "OBROK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "OBROK"
+      ],
+      "translatedValues": [
+        "--- -... .-. --- -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--- -... .-. --- -.-"
+      ],
+      "translatedValues": [
+        "OBROK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SHELTER"
+      ],
+      "translatedValues": [
+        "... .... . .-.. - . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... .... . .-.. - . .-."
+      ],
+      "translatedValues": [
+        "SHELTER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SHELTER"
+      ],
+      "translatedValues": [
+        "... .... . .-.. - . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .... . .-.. - . .-."
+      ],
+      "translatedValues": [
+        "SHELTER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FIRE"
+      ],
+      "translatedValues": [
+        "..-. .. .-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "..-. .. .-. ."
+      ],
+      "translatedValues": [
+        "FIRE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "FIRE"
+      ],
+      "translatedValues": [
+        "..-. .. .-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. .. .-. ."
+      ],
+      "translatedValues": [
+        "FIRE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "WATER"
+      ],
+      "translatedValues": [
+        ".-- .- - . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-- .- - . .-."
+      ],
+      "translatedValues": [
+        "WATER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "WATER"
+      ],
+      "translatedValues": [
+        ".-- .- - . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-- .- - . .-."
+      ],
+      "translatedValues": [
+        "WATER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NORTH"
+      ],
+      "translatedValues": [
+        "-. --- .-. - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-. --- .-. - ...."
+      ],
+      "translatedValues": [
+        "NORTH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "NORTH"
+      ],
+      "translatedValues": [
+        "-. --- .-. - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. --- .-. - ...."
+      ],
+      "translatedValues": [
+        "NORTH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SOUTH"
+      ],
+      "translatedValues": [
+        "... --- ..- - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... --- ..- - ...."
+      ],
+      "translatedValues": [
+        "SOUTH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SOUTH"
+      ],
+      "translatedValues": [
+        "... --- ..- - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... --- ..- - ...."
+      ],
+      "translatedValues": [
+        "SOUTH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "EAST"
+      ],
+      "translatedValues": [
+        ". .- ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ". .- ... -"
+      ],
+      "translatedValues": [
+        "EAST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "EAST"
+      ],
+      "translatedValues": [
+        ". .- ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ". .- ... -"
+      ],
+      "translatedValues": [
+        "EAST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "WEST"
+      ],
+      "translatedValues": [
+        ".-- . ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-- . ... -"
+      ],
+      "translatedValues": [
+        "WEST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "WEST"
+      ],
+      "translatedValues": [
+        ".-- . ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-- . ... -"
+      ],
+      "translatedValues": [
+        "WEST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "CAMP"
+      ],
+      "translatedValues": [
+        "-.-. .- -- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.-. .- -- .--."
+      ],
+      "translatedValues": [
+        "CAMP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "CAMP"
+      ],
+      "translatedValues": [
+        "-.-. .- -- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.-. .- -- .--."
+      ],
+      "translatedValues": [
+        "CAMP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TRAIL"
+      ],
+      "translatedValues": [
+        "- .-. .- .. .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- .-. .- .. .-.."
+      ],
+      "translatedValues": [
+        "TRAIL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TRAIL"
+      ],
+      "translatedValues": [
+        "- .-. .- .. .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .-. .- .. .-.."
+      ],
+      "translatedValues": [
+        "TRAIL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SCOUT"
+      ],
+      "translatedValues": [
+        "... -.-. --- ..- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... -.-. --- ..- -"
+      ],
+      "translatedValues": [
+        "SCOUT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SCOUT"
+      ],
+      "translatedValues": [
+        "... -.-. --- ..- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... -.-. --- ..- -"
+      ],
+      "translatedValues": [
+        "SCOUT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FOREST"
+      ],
+      "translatedValues": [
+        "..-. --- .-. . ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "..-. --- .-. . ... -"
+      ],
+      "translatedValues": [
+        "FOREST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "FOREST"
+      ],
+      "translatedValues": [
+        "..-. --- .-. . ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. --- .-. . ... -"
+      ],
+      "translatedValues": [
+        "FOREST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MOUNTAIN"
+      ],
+      "translatedValues": [
+        "-- --- ..- -. - .- .. -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ..- -. - .- .. -."
+      ],
+      "translatedValues": [
+        "MOUNTAIN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "MOUNTAIN"
+      ],
+      "translatedValues": [
+        "-- --- ..- -. - .- .. -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ..- -. - .- .. -."
+      ],
+      "translatedValues": [
+        "MOUNTAIN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "RIVER"
+      ],
+      "translatedValues": [
+        ".-. .. ...- . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-. .. ...- . .-."
+      ],
+      "translatedValues": [
+        "RIVER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "RIVER"
+      ],
+      "translatedValues": [
+        ".-. .. ...- . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. .. ...- . .-."
+      ],
+      "translatedValues": [
+        "RIVER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "COMPASS"
+      ],
+      "translatedValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translatedValues": [
+        "COMPASS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "COMPASS"
+      ],
+      "translatedValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translatedValues": [
+        "COMPASS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MAP"
+      ],
+      "translatedValues": [
+        "-- .- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-- .- .--."
+      ],
+      "translatedValues": [
+        "MAP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "MAP"
+      ],
+      "translatedValues": [
+        "-- .- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- .- .--."
+      ],
+      "translatedValues": [
+        "MAP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ROPE"
+      ],
+      "translatedValues": [
+        ".-. --- .--. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-. --- .--. ."
+      ],
+      "translatedValues": [
+        "ROPE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ROPE"
+      ],
+      "translatedValues": [
+        ".-. --- .--. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. --- .--. ."
+      ],
+      "translatedValues": [
+        "ROPE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "HELP"
+      ],
+      "translatedValues": [
+        ".... . .-.. .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".... . .-.. .--."
+      ],
+      "translatedValues": [
+        "HELP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "HELP"
+      ],
+      "translatedValues": [
+        ".... . .-.. .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".... . .-.. .--."
+      ],
+      "translatedValues": [
+        "HELP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "DANGER"
+      ],
+      "translatedValues": [
+        "-.. .- -. --. . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.. .- -. --. . .-."
+      ],
+      "translatedValues": [
+        "DANGER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "DANGER"
+      ],
+      "translatedValues": [
+        "-.. .- -. --. . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.. .- -. --. . .-."
+      ],
+      "translatedValues": [
+        "DANGER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNAL"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.."
+      ],
+      "translatedValues": [
+        "SIGNAL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SAFE"
+      ],
+      "translatedValues": [
+        "... .- ..-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... .- ..-. ."
+      ],
+      "translatedValues": [
+        "SAFE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SAFE"
+      ],
+      "translatedValues": [
+        "... .- ..-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .- ..-. ."
+      ],
+      "translatedValues": [
+        "SAFE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "STOP"
+      ],
+      "translatedValues": [
+        "... - --- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... - --- .--."
+      ],
+      "translatedValues": [
+        "STOP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "STOP"
+      ],
+      "translatedValues": [
+        "... - --- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... - --- .--."
+      ],
+      "translatedValues": [
+        "STOP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "BASE"
+      ],
+      "translatedValues": [
+        "-... .- ... ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-... .- ... ."
+      ],
+      "translatedValues": [
+        "BASE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "BASE"
+      ],
+      "translatedValues": [
+        "-... .- ... ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-... .- ... ."
+      ],
+      "translatedValues": [
+        "BASE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MEET"
+      ],
+      "translatedValues": [
+        "-- . . -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-- . . -"
+      ],
+      "translatedValues": [
+        "MEET"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "MEET"
+      ],
+      "translatedValues": [
+        "-- . . -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- . . -"
+      ],
+      "translatedValues": [
+        "MEET"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "GUIDE"
+      ],
+      "translatedValues": [
+        "--. ..- .. -.. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--. ..- .. -.. ."
+      ],
+      "translatedValues": [
+        "GUIDE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "GUIDE"
+      ],
+      "translatedValues": [
+        "--. ..- .. -.. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. ..- .. -.. ."
+      ],
+      "translatedValues": [
+        "GUIDE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "READY"
+      ],
+      "translatedValues": [
+        ".-. . .- -.. -.--"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-. . .- -.. -.--"
+      ],
+      "translatedValues": [
+        "READY"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "READY"
+      ],
+      "translatedValues": [
+        ".-. . .- -.. -.--"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. . .- -.. -.--"
+      ],
+      "translatedValues": [
+        "READY"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MOVE"
+      ],
+      "translatedValues": [
+        "-- --- ...- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ...- ."
+      ],
+      "translatedValues": [
+        "MOVE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "MOVE"
+      ],
+      "translatedValues": [
+        "-- --- ...- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ...- ."
+      ],
+      "translatedValues": [
+        "MOVE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "WAIT"
+      ],
+      "translatedValues": [
+        ".-- .- .. -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-- .- .. -"
+      ],
+      "translatedValues": [
+        "WAIT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "WAIT"
+      ],
+      "translatedValues": [
+        ".-- .- .. -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-- .- .. -"
+      ],
+      "translatedValues": [
+        "WAIT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    }
+  ],
+  "sentences": [
+    {
+      "exerciseValues": [
+        "TABOR JE PRIPRAVLJEN"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. / .--- . / .--. .-. .. .--. .-. .- ...- .-.. .--- . -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. / .--- . / .--. .-. .. .--. .-. .- ...- .-.. .--- . -."
+      ],
+      "translatedValues": [
+        "TABOR JE PRIPRAVLJEN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VODA JE BLIZU"
+      ],
+      "translatedValues": [
+        "...- --- -.. .- / .--- . / -... .-.. .. --.. ..-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- --- -.. .- / .--- . / -... .-.. .. --.. ..-"
+      ],
+      "translatedValues": [
+        "VODA JE BLIZU"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SEVER JE DESNO"
+      ],
+      "translatedValues": [
+        "... . ...- . .-. / .--- . / -.. . ... -. ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... . ...- . .-. / .--- . / -.. . ... -. ---"
+      ],
+      "translatedValues": [
+        "SEVER JE DESNO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "KAMP JE VARNO MESTO"
+      ],
+      "translatedValues": [
+        "-.- .- -- .--. / .--- . / ...- .- .-. -. --- / -- . ... - ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.- .- -- .--. / .--- . / ...- .- .-. -. --- / -- . ... - ---"
+      ],
+      "translatedValues": [
+        "KAMP JE VARNO MESTO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "POMAGAJ MI"
+      ],
+      "translatedValues": [
+        ".--. --- -- .- --. .- .--- / -- .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- -- .- --. .- .--- / -- .."
+      ],
+      "translatedValues": [
+        "POMAGAJ MI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "OGENJ JE UGASNJEN"
+      ],
+      "translatedValues": [
+        "--- --. . -. .--- / .--- . / ..- --. .- ... -. .--- . -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--- --. . -. .--- / .--- . / ..- --. .- ... -. .--- . -."
+      ],
+      "translatedValues": [
+        "OGENJ JE UGASNJEN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "REKA JE GLOBOKA"
+      ],
+      "translatedValues": [
+        ".-. . -.- .- / .--- . / --. .-.. --- -... --- -.- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. . -.- .- / .--- . / --. .-.. --- -... --- -.- .-"
+      ],
+      "translatedValues": [
+        "REKA JE GLOBOKA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "KOMPAS KAZE SEVER"
+      ],
+      "translatedValues": [
+        "-.- --- -- .--. .- ... / -.- .- --.. . / ... . ...- . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.- --- -- .--. .- ... / -.- .- --.. . / ... . ...- . .-."
+      ],
+      "translatedValues": [
+        "KOMPAS KAZE SEVER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "POHOD SE ZACNE ZJUTRAJ"
+      ],
+      "translatedValues": [
+        ".--. --- .... --- -.. / ... . / --.. .- -.-. -. . / --.. .--- ..- - .-. .- .---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- .... --- -.. / ... . / --.. .- -.-. -. . / --.. .--- ..- - .-. .- .---"
+      ],
+      "translatedValues": [
+        "POHOD SE ZACNE ZJUTRAJ"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "HRANA JE V NAHRBTNIKU"
+      ],
+      "translatedValues": [
+        ".... .-. .- -. .- / .--- . / ...- / -. .- .... .-. -... - -. .. -.- ..-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".... .-. .- -. .- / .--- . / ...- / -. .- .... .-. -... - -. .. -.- ..-"
+      ],
+      "translatedValues": [
+        "HRANA JE V NAHRBTNIKU"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ZVEZDE KAZEJO POT"
+      ],
+      "translatedValues": [
+        "--.. ...- . --.. -.. . / -.- .- --.. . .--- --- / .--. --- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--.. ...- . --.. -.. . / -.- .- --.. . .--- --- / .--. --- -"
+      ],
+      "translatedValues": [
+        "ZVEZDE KAZEJO POT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "GOZD JE GOST"
+      ],
+      "translatedValues": [
+        "--. --- --.. -.. / .--- . / --. --- ... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. --- --.. -.. / .--- . / --. --- ... -"
+      ],
+      "translatedValues": [
+        "GOZD JE GOST"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNAL POSLAN"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. / .--. --- ... .-.. .- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. / .--. --- ... .-.. .- -."
+      ],
+      "translatedValues": [
+        "SIGNAL POSLAN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VARNOST JE NA PRVEM MESTU"
+      ],
+      "translatedValues": [
+        "...- .- .-. -. --- ... - / .--- . / -. .- / .--. .-. ...- . -- / -- . ... - ..-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- .- .-. -. --- ... - / .--- . / -. .- / .--. .-. ...- . -- / -- . ... - ..-"
+      ],
+      "translatedValues": [
+        "VARNOST JE NA PRVEM MESTU"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TABORNIKI SMO PRIPRAVLJENI"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. -. .. -.- .. / ... -- --- / .--. .-. .. .--. .-. .- ...- .-.. .--- . -. .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. -. .. -.- .. / ... -- --- / .--. .-. .. .--. .-. .- ...- .-.. .--- . -. .."
+      ],
+      "translatedValues": [
+        "TABORNIKI SMO PRIPRAVLJENI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "THE CAMP IS READY"
+      ],
+      "translatedValues": [
+        "- .... . / -.-. .- -- .--. / .. ... / .-. . .- -.. -.--"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .... . / -.-. .- -- .--. / .. ... / .-. . .- -.. -.--"
+      ],
+      "translatedValues": [
+        "THE CAMP IS READY"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "WATER IS NEARBY"
+      ],
+      "translatedValues": [
+        ".-- .- - . .-. / .. ... / -. . .- .-. -... -.--"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-- .- - . .-. / .. ... / -. . .- .-. -... -.--"
+      ],
+      "translatedValues": [
+        "WATER IS NEARBY"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FOLLOW THE TRAIL"
+      ],
+      "translatedValues": [
+        "..-. --- .-.. .-.. --- .-- / - .... . / - .-. .- .. .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. --- .-.. .-.. --- .-- / - .... . / - .-. .- .. .-.."
+      ],
+      "translatedValues": [
+        "FOLLOW THE TRAIL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MEET AT BASE CAMP"
+      ],
+      "translatedValues": [
+        "-- . . - / .- - / -... .- ... . / -.-. .- -- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- . . - / .- - / -... .- ... . / -.-. .- -- .--."
+      ],
+      "translatedValues": [
+        "MEET AT BASE CAMP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNAL RECEIVED LOUD AND CLEAR"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. / .-. . -.-. . .. ...- . -.. / .-.. --- ..- -.. / .- -. -.. / -.-. .-.. . .- .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. / .-. . -.-. . .. ...- . -.. / .-.. --- ..- -.. / .- -. -.. / -.-. .-.. . .- .-."
+      ],
+      "translatedValues": [
+        "SIGNAL RECEIVED LOUD AND CLEAR"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NORTH STAR GUIDES THE WAY"
+      ],
+      "translatedValues": [
+        "-. --- .-. - .... / ... - .- .-. / --. ..- .. -.. . ... / - .... . / .-- .- -.--"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. --- .-. - .... / ... - .- .-. / --. ..- .. -.. . ... / - .... . / .-- .- -.--"
+      ],
+      "translatedValues": [
+        "NORTH STAR GUIDES THE WAY"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "STAY ON THE PATH"
+      ],
+      "translatedValues": [
+        "... - .- -.-- / --- -. / - .... . / .--. .- - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... - .- -.-- / --- -. / - .... . / .--. .- - ...."
+      ],
+      "translatedValues": [
+        "STAY ON THE PATH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FIRE IS UNDER CONTROL"
+      ],
+      "translatedValues": [
+        "..-. .. .-. . / .. ... / ..- -. -.. . .-. / -.-. --- -. - .-. --- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. .. .-. . / .. ... / ..- -. -.. . .-. / -.-. --- -. - .-. --- .-.."
+      ],
+      "translatedValues": [
+        "FIRE IS UNDER CONTROL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ALL SCOUTS REPORT TO BASE"
+      ],
+      "translatedValues": [
+        ".- .-.. .-.. / ... -.-. --- ..- - ... / .-. . .--. --- .-. - / - --- / -... .- ... ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".- .-.. .-.. / ... -.-. --- ..- - ... / .-. . .--. --- .-. - / - --- / -... .- ... ."
+      ],
+      "translatedValues": [
+        "ALL SCOUTS REPORT TO BASE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "BRIDGE IS SAFE TO CROSS"
+      ],
+      "translatedValues": [
+        "-... .-. .. -.. --. . / .. ... / ... .- ..-. . / - --- / -.-. .-. --- ... ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-... .-. .. -.. --. . / .. ... / ... .- ..-. . / - --- / -.-. .-. --- ... ..."
+      ],
+      "translatedValues": [
+        "BRIDGE IS SAFE TO CROSS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "WAIT FOR THE SIGNAL"
+      ],
+      "translatedValues": [
+        ".-- .- .. - / ..-. --- .-. / - .... . / ... .. --. -. .- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-- .- .. - / ..-. --- .-. / - .... . / ... .. --. -. .- .-.."
+      ],
+      "translatedValues": [
+        "WAIT FOR THE SIGNAL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MOVE TO HIGHER GROUND"
+      ],
+      "translatedValues": [
+        "-- --- ...- . / - --- / .... .. --. .... . .-. / --. .-. --- ..- -. -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ...- . / - --- / .... .. --. .... . .-. / --. .-. --- ..- -. -.."
+      ],
+      "translatedValues": [
+        "MOVE TO HIGHER GROUND"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "HELP IS ON THE WAY"
+      ],
+      "translatedValues": [
+        ".... . .-.. .--. / .. ... / --- -. / - .... . / .-- .- -.--"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".... . .-.. .--. / .. ... / --- -. / - .... . / .-- .- -.--"
+      ],
+      "translatedValues": [
+        "HELP IS ON THE WAY"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ROPE IS SECURED"
+      ],
+      "translatedValues": [
+        ".-. --- .--. . / .. ... / ... . -.-. ..- .-. . -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. --- .--. . / .. ... / ... . -.-. ..- .-. . -.."
+      ],
+      "translatedValues": [
+        "ROPE IS SECURED"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "STORM IS COMING TAKE SHELTER"
+      ],
+      "translatedValues": [
+        "... - --- .-. -- / .. ... / -.-. --- -- .. -. --. / - .- -.- . / ... .... . .-.. - . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... - --- .-. -- / .. ... / -.-. --- -- .. -. --. / - .- -.- . / ... .... . .-.. - . .-."
+      ],
+      "translatedValues": [
+        "STORM IS COMING TAKE SHELTER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "GUIDE LEADS THE GROUP"
+      ],
+      "translatedValues": [
+        "--. ..- .. -.. . / .-.. . .- -.. ... / - .... . / --. .-. --- ..- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. ..- .. -.. . / .-.. . .- -.. ... / - .... . / --. .-. --- ..- .--."
+      ],
+      "translatedValues": [
+        "GUIDE LEADS THE GROUP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "DANGER AHEAD STOP"
+      ],
+      "translatedValues": [
+        "-.. .- -. --. . .-. / .- .... . .- -.. / ... - --- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.. .- -. --. . .-. / .- .... . .- -.. / ... - --- .--."
+      ],
+      "translatedValues": [
+        "DANGER AHEAD STOP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TABOR JE BLIZU REKE"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. / .--- . / -... .-.. .. --.. ..- / .-. . -.- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. / .--- . / -... .-.. .. --.. ..- / .-. . -.- ."
+      ],
+      "translatedValues": [
+        "TABOR JE BLIZU REKE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SONCE ZAHAJA ZA GORAMI"
+      ],
+      "translatedValues": [
+        "... --- -. -.-. . / --.. .- .... .- .--- .- / --.. .- / --. --- .-. .- -- .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... --- -. -.-. . / --.. .- .... .- .--- .- / --.. .- / --. --- .-. .- -- .."
+      ],
+      "translatedValues": [
+        "SONCE ZAHAJA ZA GORAMI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SKAVTI POMAGAMO DRUG DRUGEMU"
+      ],
+      "translatedValues": [
+        "... -.- .- ...- - .. / .--. --- -- .- --. .- -- --- / -.. .-. ..- --. / -.. .-. ..- --. . -- ..-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... -.- .- ...- - .. / .--. --- -- .- --. .- -- --- / -.. .-. ..- --. / -.. .-. ..- --. . -- ..-"
+      ],
+      "translatedValues": [
+        "SKAVTI POMAGAMO DRUG DRUGEMU"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "OGENJ GREJE IN SVETI"
+      ],
+      "translatedValues": [
+        "--- --. . -. .--- / --. .-. . .--- . / .. -. / ... ...- . - .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--- --. . -. .--- / --. .-. . .--- . / .. -. / ... ...- . - .."
+      ],
+      "translatedValues": [
+        "OGENJ GREJE IN SVETI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "POT VODI SKOZI GOZD"
+      ],
+      "translatedValues": [
+        ".--. --- - / ...- --- -.. .. / ... -.- --- --.. .. / --. --- --.. -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- - / ...- --- -.. .. / ... -.- --- --.. .. / --. --- --.. -.."
+      ],
+      "translatedValues": [
+        "POT VODI SKOZI GOZD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "KOMPAS VEDNO KAZE SEVER"
+      ],
+      "translatedValues": [
+        "-.- --- -- .--. .- ... / ...- . -.. -. --- / -.- .- --.. . / ... . ...- . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.- --- -- .--. .- ... / ...- . -.. -. --- / -.- .- --.. . / ... . ...- . .-."
+      ],
+      "translatedValues": [
+        "KOMPAS VEDNO KAZE SEVER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "JEZERO JE MIRNO IN GLOBOKO"
+      ],
+      "translatedValues": [
+        ".--- . --.. . .-. --- / .--- . / -- .. .-. -. --- / .. -. / --. .-.. --- -... --- -.- ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--- . --.. . .-. --- / .--- . / -- .. .-. -. --- / .. -. / --. .-.. --- -... --- -.- ---"
+      ],
+      "translatedValues": [
+        "JEZERO JE MIRNO IN GLOBOKO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "JUTRO JE NAJBOLJSI CAS ZA POT"
+      ],
+      "translatedValues": [
+        ".--- ..- - .-. --- / .--- . / -. .- .--- -... --- .-.. .--- ... .. / -.-. .- ... / --.. .- / .--. --- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--- ..- - .-. --- / .--- . / -. .- .--- -... --- .-.. .--- ... .. / -.-. .- ... / --.. .- / .--. --- -"
+      ],
+      "translatedValues": [
+        "JUTRO JE NAJBOLJSI CAS ZA POT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "HRANA SE KUHA NA OGNJU"
+      ],
+      "translatedValues": [
+        ".... .-. .- -. .- / ... . / -.- ..- .... .- / -. .- / --- --. -. .--- ..-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".... .-. .- -. .- / ... . / -.- ..- .... .- / -. .- / --- --. -. .--- ..-"
+      ],
+      "translatedValues": [
+        "HRANA SE KUHA NA OGNJU"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ZVEZDE SO VODNIK PONOCNI"
+      ],
+      "translatedValues": [
+        "--.. ...- . --.. -.. . / ... --- / ...- --- -.. -. .. -.- / .--. --- -. --- -.-. -. .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--.. ...- . --.. -.. . / ... --- / ...- --- -.. -. .. -.- / .--. --- -. --- -.-. -. .."
+      ],
+      "translatedValues": [
+        "ZVEZDE SO VODNIK PONOCNI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "GOZD JE POLN ZIVLJENJA"
+      ],
+      "translatedValues": [
+        "--. --- --.. -.. / .--- . / .--. --- .-.. -. / --.. .. ...- .-.. .--- . -. .--- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. --- --.. -.. / .--- . / .--. --- .-.. -. / --.. .. ...- .-.. .--- . -. .--- .-"
+      ],
+      "translatedValues": [
+        "GOZD JE POLN ZIVLJENJA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "REKA TECE V DOLINO"
+      ],
+      "translatedValues": [
+        ".-. . -.- .- / - . -.-. . / ...- / -.. --- .-.. .. -. ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. . -.- .- / - . -.-. . / ...- / -.. --- .-.. .. -. ---"
+      ],
+      "translatedValues": [
+        "REKA TECE V DOLINO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VREMENSKO POROCILO NAPOVEDUJE DEZ"
+      ],
+      "translatedValues": [
+        "...- .-. . -- . -. ... -.- --- / .--. --- .-. --- -.-. .. .-.. --- / -. .- .--. --- ...- . -.. ..- .--- . / -.. . --.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- .-. . -- . -. ... -.- --- / .--. --- .-. --- -.-. .. .-.. --- / -. .- .--. --- ...- . -.. ..- .--- . / -.. . --.."
+      ],
+      "translatedValues": [
+        "VREMENSKO POROCILO NAPOVEDUJE DEZ"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TABORNIKI SKRBIMO ZA NARAVO"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. -. .. -.- .. / ... -.- .-. -... .. -- --- / --.. .- / -. .- .-. .- ...- ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. -. .. -.- .. / ... -.- .-. -... .. -- --- / --.. .- / -. .- .-. .- ...- ---"
+      ],
+      "translatedValues": [
+        "TABORNIKI SKRBIMO ZA NARAVO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SVETILKA RAZSVETLJUJE TEMO"
+      ],
+      "translatedValues": [
+        "... ...- . - .. .-.. -.- .- / .-. .- --.. ... ...- . - .-.. .--- ..- .--- . / - . -- ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... ...- . - .. .-.. -.- .- / .-. .- --.. ... ...- . - .-.. .--- ..- .--- . / - . -- ---"
+      ],
+      "translatedValues": [
+        "SVETILKA RAZSVETLJUJE TEMO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NAHRBTNIK JE POLN OPREME"
+      ],
+      "translatedValues": [
+        "-. .- .... .-. -... - -. .. -.- / .--- . / .--. --- .-.. -. / --- .--. .-. . -- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. .- .... .-. -... - -. .. -.- / .--- . / .--. --- .-.. -. / --- .--. .-. . -- ."
+      ],
+      "translatedValues": [
+        "NAHRBTNIK JE POLN OPREME"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "MOST CEZI REKO JE STAR"
+      ],
+      "translatedValues": [
+        "-- --- ... - / -.-. . --.. .. / .-. . -.- --- / .--- . / ... - .- .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-- --- ... - / -.-. . --.. .. / .-. . -.- --- / .--- . / ... - .- .-."
+      ],
+      "translatedValues": [
+        "MOST CEZI REKO JE STAR"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "GORE SO VISOKE IN SNEZNE"
+      ],
+      "translatedValues": [
+        "--. --- .-. . / ... --- / ...- .. ... --- -.- . / .. -. / ... -. . --.. -. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. --- .-. . / ... --- / ...- .. ... --- -.- . / .. -. / ... -. . --.. -. ."
+      ],
+      "translatedValues": [
+        "GORE SO VISOKE IN SNEZNE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SKAVTSKI ZAKON NAS VODI"
+      ],
+      "translatedValues": [
+        "... -.- .- ...- - ... -.- .. / --.. .- -.- --- -. / -. .- ... / ...- --- -.. .."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... -.- .- ...- - ... -.- .. / --.. .- -.- --- -. / -. .- ... / ...- --- -.. .."
+      ],
+      "translatedValues": [
+        "SKAVTSKI ZAKON NAS VODI"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ENOTA SE ZBIRA OB SEDMIH"
+      ],
+      "translatedValues": [
+        ". -. --- - .- / ... . / --.. -... .. .-. .- / --- -... / ... . -.. -- .. ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ". -. --- - .- / ... . / --.. -... .. .-. .- / --- -... / ... . -.. -- .. ...."
+      ],
+      "translatedValues": [
+        "ENOTA SE ZBIRA OB SEDMIH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "DREVO NUDI SENCO IN ZAVETJE"
+      ],
+      "translatedValues": [
+        "-.. .-. . ...- --- / -. ..- -.. .. / ... . -. -.-. --- / .. -. / --.. .- ...- . - .--- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.. .-. . ...- --- / -. ..- -.. .. / ... . -. -.-. --- / .. -. / --.. .- ...- . - .--- ."
+      ],
+      "translatedValues": [
+        "DREVO NUDI SENCO IN ZAVETJE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNAL POSLAN CAKAMO ODGOVOR"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. / .--. --- ... .-.. .- -. / -.-. .- -.- .- -- --- / --- -.. --. --- ...- --- .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. / .--. --- ... .-.. .- -. / -.-. .- -.- .- -- --- / --- -.. --. --- ...- --- .-."
+      ],
+      "translatedValues": [
+        "SIGNAL POSLAN CAKAMO ODGOVOR"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "VODNIK POZNA POT SKOZI GOZD"
+      ],
+      "translatedValues": [
+        "...- --- -.. -. .. -.- / .--. --- --.. -. .- / .--. --- - / ... -.- --- --.. .. / --. --- --.. -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "...- --- -.. -. .. -.- / .--. --- --.. -. .- / .--. --- - / ... -.- --- --.. .. / --. --- --.. -.."
+      ],
+      "translatedValues": [
+        "VODNIK POZNA POT SKOZI GOZD"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TABOR SE ZACNE IN KONCA V MIRU"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. / ... . / --.. .- -.-. -. . / .. -. / -.- --- -. -.-. .- / ...- / -- .. .-. ..-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. / ... . / --.. .- -.-. -. . / .. -. / -.- --- -. -.-. .- / ...- / -- .. .-. ..-"
+      ],
+      "translatedValues": [
+        "TABOR SE ZACNE IN KONCA V MIRU"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "POHOD TRAJA CELI DAN"
+      ],
+      "translatedValues": [
+        ".--. --- .... --- -.. / - .-. .- .--- .- / -.-. . .-.. .. / -.. .- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- .... --- -.. / - .-. .- .--- .- / -.-. . .-.. .. / -.. .- -."
+      ],
+      "translatedValues": [
+        "POHOD TRAJA CELI DAN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SCOUT LAW GUIDES OUR PATH"
+      ],
+      "translatedValues": [
+        "... -.-. --- ..- - / .-.. .- .-- / --. ..- .. -.. . ... / --- ..- .-. / .--. .- - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... -.-. --- ..- - / .-.. .- .-- / --. ..- .. -.. . ... / --- ..- .-. / .--. .- - ...."
+      ],
+      "translatedValues": [
+        "SCOUT LAW GUIDES OUR PATH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FIRE MUST BE FULLY EXTINGUISHED"
+      ],
+      "translatedValues": [
+        "..-. .. .-. . / -- ..- ... - / -... . / ..-. ..- .-.. .-.. -.-- / . -..- - .. -. --. ..- .. ... .... . -.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. .. .-. . / -- ..- ... - / -... . / ..-. ..- .-.. .-.. -.-- / . -..- - .. -. --. ..- .. ... .... . -.."
+      ],
+      "translatedValues": [
+        "FIRE MUST BE FULLY EXTINGUISHED"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ALWAYS LEAVE NO TRACE"
+      ],
+      "translatedValues": [
+        ".- .-.. .-- .- -.-- ... / .-.. . .- ...- . / -. --- / - .-. .- -.-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".- .-.. .-- .- -.-- ... / .-.. . .- ...- . / -. --- / - .-. .- -.-. ."
+      ],
+      "translatedValues": [
+        "ALWAYS LEAVE NO TRACE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "COMPASS AND MAP ARE ESSENTIAL"
+      ],
+      "translatedValues": [
+        "-.-. --- -- .--. .- ... ... / .- -. -.. / -- .- .--. / .- .-. . / . ... ... . -. - .. .- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.-. --- -- .--. .- ... ... / .- -. -.. / -- .- .--. / .- .-. . / . ... ... . -. - .. .- .-.."
+      ],
+      "translatedValues": [
+        "COMPASS AND MAP ARE ESSENTIAL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "RIVER CROSSING REQUIRES CAUTION"
+      ],
+      "translatedValues": [
+        ".-. .. ...- . .-. / -.-. .-. --- ... ... .. -. --. / .-. . --.- ..- .. .-. . ... / -.-. .- ..- - .. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. .. ...- . .-. / -.-. .-. --- ... ... .. -. --. / .-. . --.- ..- .. .-. . ... / -.-. .- ..- - .. --- -."
+      ],
+      "translatedValues": [
+        "RIVER CROSSING REQUIRES CAUTION"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SHELTER BUILT BEFORE DARK"
+      ],
+      "translatedValues": [
+        "... .... . .-.. - . .-. / -... ..- .. .-.. - / -... . ..-. --- .-. . / -.. .- .-. -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .... . .-.. - . .-. / -... ..- .. .-.. - / -... . ..-. --- .-. . / -.. .- .-. -.-"
+      ],
+      "translatedValues": [
+        "SHELTER BUILT BEFORE DARK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FOOD AND WATER ARE PRIORITIES"
+      ],
+      "translatedValues": [
+        "..-. --- --- -.. / .- -. -.. / .-- .- - . .-. / .- .-. . / .--. .-. .. --- .-. .. - .. . ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. --- --- -.. / .- -. -.. / .-- .- - . .-. / .- .-. . / .--. .-. .. --- .-. .. - .. . ..."
+      ],
+      "translatedValues": [
+        "FOOD AND WATER ARE PRIORITIES"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNAL THREE TIMES FOR HELP"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. / - .... .-. . . / - .. -- . ... / ..-. --- .-. / .... . .-.. .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. / - .... .-. . . / - .. -- . ... / ..-. --- .-. / .... . .-.. .--."
+      ],
+      "translatedValues": [
+        "SIGNAL THREE TIMES FOR HELP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "STARS SHOW THE WAY AT NIGHT"
+      ],
+      "translatedValues": [
+        "... - .- .-. ... / ... .... --- .-- / - .... . / .-- .- -.-- / .- - / -. .. --. .... -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... - .- .-. ... / ... .... --- .-- / - .... . / .-- .- -.-- / .- - / -. .. --. .... -"
+      ],
+      "translatedValues": [
+        "STARS SHOW THE WAY AT NIGHT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NATURE MUST BE RESPECTED ALWAYS"
+      ],
+      "translatedValues": [
+        "-. .- - ..- .-. . / -- ..- ... - / -... . / .-. . ... .--. . -.-. - . -.. / .- .-.. .-- .- -.-- ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. .- - ..- .-. . / -- ..- ... - / -... . / .-. . ... .--. . -.-. - . -.. / .- .-.. .-- .- -.-- ..."
+      ],
+      "translatedValues": [
+        "NATURE MUST BE RESPECTED ALWAYS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TEAM WORK MAKES CAMP WORK"
+      ],
+      "translatedValues": [
+        "- . .- -- / .-- --- .-. -.- / -- .- -.- . ... / -.-. .- -- .--. / .-- --- .-. -.-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- . .- -- / .-- --- .-. -.- / -- .- -.- . ... / -.-. .- -- .--. / .-- --- .-. -.-"
+      ],
+      "translatedValues": [
+        "TEAM WORK MAKES CAMP WORK"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    }
+  ]
+}

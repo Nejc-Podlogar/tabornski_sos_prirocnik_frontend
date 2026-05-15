@@ -1,0 +1,2604 @@
+{
+  "letters": [
+    {
+      "exerciseValues": [
+        "A"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "A"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translatedValues": [
+        "A"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translatedValues": [
+        "A"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "B"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "B"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translatedValues": [
+        "B"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translatedValues": [
+        "B"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "C"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "C"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translatedValues": [
+        "C"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translatedValues": [
+        "C"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "D"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "D"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translatedValues": [
+        "D"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translatedValues": [
+        "D"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "E"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "E"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translatedValues": [
+        "E"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translatedValues": [
+        "E"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "F"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "F"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translatedValues": [
+        "F"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translatedValues": [
+        "F"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "G"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "G"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translatedValues": [
+        "G"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translatedValues": [
+        "G"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "H"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "H"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translatedValues": [
+        "H"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translatedValues": [
+        "H"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "I"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "I"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translatedValues": [
+        "I"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translatedValues": [
+        "I"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "J"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "J"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translatedValues": [
+        "J"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translatedValues": [
+        "J"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "K"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "K"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translatedValues": [
+        "K"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translatedValues": [
+        "K"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "L"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "L"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translatedValues": [
+        "L"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translatedValues": [
+        "L"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "M"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "M"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translatedValues": [
+        "M"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translatedValues": [
+        "M"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "N"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "N"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translatedValues": [
+        "N"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translatedValues": [
+        "N"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "O"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "O"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translatedValues": [
+        "O"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translatedValues": [
+        "O"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "P"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "P"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translatedValues": [
+        "P"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translatedValues": [
+        "P"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "Q"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Q"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translatedValues": [
+        "Q"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translatedValues": [
+        "Q"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "R"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "R"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translatedValues": [
+        "R"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translatedValues": [
+        "R"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "S"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "S"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translatedValues": [
+        "S"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translatedValues": [
+        "S"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "T"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "T"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translatedValues": [
+        "T"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translatedValues": [
+        "T"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "U"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "U"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translatedValues": [
+        "U"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translatedValues": [
+        "U"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "V"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "V"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translatedValues": [
+        "V"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translatedValues": [
+        "V"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "W"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "W"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translatedValues": [
+        "W"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translatedValues": [
+        "W"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "X"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "X"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translatedValues": [
+        "X"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translatedValues": [
+        "X"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "Y"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Y"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translatedValues": [
+        "Y"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translatedValues": [
+        "Y"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "Z"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Z"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translatedValues": [
+        "Z"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translatedValues": [
+        "Z"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "Q"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translatedValues": [
+        "Q"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "M"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translatedValues": [
+        "M"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "J"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translatedValues": [
+        "J"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Z"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translatedValues": [
+        "Z"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "T"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translatedValues": [
+        "T"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "G"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translatedValues": [
+        "G"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "F"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translatedValues": [
+        "F"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "K"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translatedValues": [
+        "K"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "P"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translatedValues": [
+        "P"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "W"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translatedValues": [
+        "W"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "L"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translatedValues": [
+        "L"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "S"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translatedValues": [
+        "S"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "B"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translatedValues": [
+        "B"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "O"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translatedValues": [
+        "O"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "X"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translatedValues": [
+        "X"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "N"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translatedValues": [
+        "N"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "C"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translatedValues": [
+        "C"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "R"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translatedValues": [
+        "R"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Y"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translatedValues": [
+        "Y"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "E"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translatedValues": [
+        "E"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "V"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translatedValues": [
+        "V"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "H"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translatedValues": [
+        "H"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "I"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translatedValues": [
+        "I"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "A"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translatedValues": [
+        "A"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "D"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translatedValues": [
+        "D"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "U"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translatedValues": [
+        "U"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "C"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translatedValues": [
+        "C"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "V"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translatedValues": [
+        "V"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "M"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translatedValues": [
+        "M"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "H"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translatedValues": [
+        "H"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "T"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translatedValues": [
+        "T"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "P"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translatedValues": [
+        "P"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Q"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translatedValues": [
+        "Q"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "X"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translatedValues": [
+        "X"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Z"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translatedValues": [
+        "Z"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "J"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translatedValues": [
+        "J"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "L"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translatedValues": [
+        "L"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "W"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translatedValues": [
+        "W"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "O"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translatedValues": [
+        "O"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "R"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translatedValues": [
+        "R"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "B"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translatedValues": [
+        "B"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "D"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translatedValues": [
+        "D"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "U"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translatedValues": [
+        "U"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "G"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translatedValues": [
+        "G"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "E"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translatedValues": [
+        "E"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Y"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translatedValues": [
+        "Y"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "K"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translatedValues": [
+        "K"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "N"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translatedValues": [
+        "N"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "F"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translatedValues": [
+        "F"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "A"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translatedValues": [
+        "A"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "I"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translatedValues": [
+        "I"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "S"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translatedValues": [
+        "S"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "A"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/A_1.png"
+      ],
+      "translatedValues": [
+        "A"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "M"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/M.png"
+      ],
+      "translatedValues": [
+        "M"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "P"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/P.png"
+      ],
+      "translatedValues": [
+        "P"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "K"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/K_0.png"
+      ],
+      "translatedValues": [
+        "K"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "I"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/I_9.png"
+      ],
+      "translatedValues": [
+        "I"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "X"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/X.png"
+      ],
+      "translatedValues": [
+        "X"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "V"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/V.png"
+      ],
+      "translatedValues": [
+        "V"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "F"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/F_6.png"
+      ],
+      "translatedValues": [
+        "F"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Q"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Q.png"
+      ],
+      "translatedValues": [
+        "Q"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "E"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/E_5.png"
+      ],
+      "translatedValues": [
+        "E"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "W"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/W.png"
+      ],
+      "translatedValues": [
+        "W"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "O"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/O.png"
+      ],
+      "translatedValues": [
+        "O"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "D"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/D_4.png"
+      ],
+      "translatedValues": [
+        "D"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "N"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/N.png"
+      ],
+      "translatedValues": [
+        "N"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Z"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Z.png"
+      ],
+      "translatedValues": [
+        "Z"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "Y"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/Y.png"
+      ],
+      "translatedValues": [
+        "Y"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "H"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/H_8.png"
+      ],
+      "translatedValues": [
+        "H"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "B"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/B_2.png"
+      ],
+      "translatedValues": [
+        "B"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "C"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/C_3.png"
+      ],
+      "translatedValues": [
+        "C"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "G"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/G_7.png"
+      ],
+      "translatedValues": [
+        "G"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "S"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/S.png"
+      ],
+      "translatedValues": [
+        "S"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "L"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/L.png"
+      ],
+      "translatedValues": [
+        "L"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "T"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/T.png"
+      ],
+      "translatedValues": [
+        "T"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "U"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/U.png"
+      ],
+      "translatedValues": [
+        "U"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "J"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/J.png"
+      ],
+      "translatedValues": [
+        "J"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "R"
+      ],
+      "translatedValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "assets/images/semaphore/flags/R.png"
+      ],
+      "translatedValues": [
+        "R"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    }
+  ]
+}
