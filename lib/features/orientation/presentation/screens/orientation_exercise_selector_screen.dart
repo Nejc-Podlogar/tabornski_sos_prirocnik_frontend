@@ -51,7 +51,7 @@ class _OrientationExerciseSelectorScreenState
           _interactionType,
         );
 
-    if (mounted) context.goNamed(RouteNames.orientationExerciseSession);
+    if (mounted) context.pushNamed(RouteNames.orientationExerciseSession);
   }
 
   void _toggleGroup(TopoGroupType group) {

@@ -45,7 +45,7 @@ class _SemaphoreExerciseSelectorScreenState
           _interactionType,
           _counts[_repetitionIndex],
         );
-    if (mounted) context.goNamed(RouteNames.semaphoreExerciseSession);
+    if (mounted) context.pushNamed(RouteNames.semaphoreExerciseSession);
   }
 
   @override

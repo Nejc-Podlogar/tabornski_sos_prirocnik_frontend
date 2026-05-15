@@ -10,6 +10,7 @@ class UserPreferencesMapper {
     return UserPreferences(
       themeMode: row.themeMode,
       username: row.username,
+      role: row.role,
       avatarId: row.avatarId,
       onboardingSeen: row.onboardingSeen,
     );
@@ -19,6 +20,7 @@ class UserPreferencesMapper {
     return UserPreferencesTableCompanion(
       themeMode: Value(entity.themeMode),
       username: Value(entity.username),
+      role: Value(entity.role),
       avatarId: Value(entity.avatarId),
       onboardingSeen: Value(entity.onboardingSeen),
     );

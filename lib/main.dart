@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -14,6 +15,10 @@ import 'features/settings/presentation/providers/theme_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Edge-to-edge: app draws behind transparent system bars.
+  // AppBar handles the top status bar inset; the MaterialApp.router builder
+  // below handles the bottom navigation bar inset globally.
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   runApp(const ProviderScope(child: _AppBootstrap()));
 }
 
@@ -118,6 +123,10 @@ class _AppBootstrapState extends ConsumerState<_AppBootstrap> {
           darkTheme: AppTheme.dark(),
           themeMode: themeMode,
           debugShowCheckedModeBanner: false,
+          // Globally shield every screen from the bottom navigation bar.
+          // top: false because each Scaffold's AppBar handles the status bar.
+          builder: (context, child) =>
+              SafeArea(top: false, child: child ?? const SizedBox.shrink()),
           localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,

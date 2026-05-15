@@ -47,17 +47,13 @@ class HomeScreen extends ConsumerWidget {
           children: [
             // Logo
             Center(
-              child: Container(
-                width: 72,
-                height: 72,
-                decoration: BoxDecoration(
-                  color: AppColors.surface,
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: const HugeIcon(
-                  icon: HugeIcons.strokeRoundedDiamond,
-                  color: AppColors.primary,
-                  size: 40,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  'assets/images/logo/taborniskiSOSprirocnik.jpg',
+                  width: 96,
+                  height: 96,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),

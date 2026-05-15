@@ -54,7 +54,7 @@ class _MorseExerciseSelectorScreenState
           _interactionType,
           _counts[_repetitionIndex],
         );
-    if (mounted) context.goNamed(RouteNames.morseExerciseSession);
+    if (mounted) context.pushNamed(RouteNames.morseExerciseSession);
   }
 
   @override
