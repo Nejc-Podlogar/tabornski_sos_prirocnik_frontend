@@ -7,14 +7,21 @@ import '../constants/app_typography.dart';
 class SegmentedControl extends StatelessWidget {
   const SegmentedControl({
     super.key,
-    required this.options,
+    this.options = const [],
+    this.children,
     required this.selectedIndex,
     required this.onChanged,
-  }) : assert(options.length == 2, 'SegmentedControl requires exactly 2 options');
+  });
 
   final List<String> options;
+
+  /// When provided, rendered directly instead of text from [options].
+  final List<Widget>? children;
+
   final int selectedIndex;
   final ValueChanged<int> onChanged;
+
+  int get _itemCount => children?.length ?? options.length;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +33,7 @@ class SegmentedControl extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
-        children: List.generate(options.length, (index) {
+        children: List.generate(_itemCount, (index) {
           final isSelected = index == selectedIndex;
           return Expanded(
             child: GestureDetector(
@@ -38,12 +45,14 @@ class SegmentedControl extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 alignment: Alignment.center,
-                child: Text(
-                  options[index],
-                  style: isSelected
-                      ? AppTypography.buttonLabel.copyWith(fontSize: 14)
-                      : AppTypography.cardSubtitle.copyWith(fontSize: 14),
-                ),
+                child: children != null
+                    ? children![index]
+                    : Text(
+                        options[index],
+                        style: isSelected
+                            ? AppTypography.buttonLabel.copyWith(fontSize: 14)
+                            : AppTypography.cardSubtitle.copyWith(fontSize: 14),
+                      ),
               ),
             ),
           );

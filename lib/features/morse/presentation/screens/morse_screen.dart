@@ -116,6 +116,13 @@ class MorseScreen extends ConsumerWidget {
               subtitle: 'Vsi znaki',
               onTap: () => context.goNamed(RouteNames.morseMaterials),
             ),
+            const SizedBox(height: AppSpacing.md),
+            _ActionTile(
+              icon: HugeIcons.strokeRoundedFlashlight,
+              title: 'Svetilka',
+              subtitle: 'Oddajanje Morse kode s svetilko',
+              onTap: () => context.pushNamed(RouteNames.morseFlashlight),
+            ),
           ],
         ),
       ),
