@@ -219,7 +219,24 @@ class _PlaceholderScreen extends StatelessWidget {
         parentNavigatorKey: rootNavigatorKey,
         path: '/morse/flashlight',
         name: RouteNames.morseFlashlight,
-        builder: (_, __) => const FlashlightTransmitterScreen(),
+        pageBuilder: (context, state) {
+          final morse = (state.extra as String?) ?? '';
+          return CustomTransitionPage(
+            key: state.pageKey,
+            child: FlashlightTransmitterScreen(initialMorse: morse),
+            transitionsBuilder: (context, animation, secondary, child) =>
+                SlideTransition(
+              position: Tween(
+                begin: const Offset(0.0, 1.0),
+                end: Offset.zero,
+              ).animate(CurvedAnimation(
+                parent: animation,
+                curve: Curves.easeOutCubic,
+              )),
+              child: child,
+            ),
+          );
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

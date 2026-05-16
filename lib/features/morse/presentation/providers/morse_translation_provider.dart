@@ -36,12 +36,14 @@ class MorseTranslationNotifier extends Notifier<MorseTranslationState> {
     final newDirection = state.direction == TranslationDirection.textToMorse
         ? TranslationDirection.morseToText
         : TranslationDirection.textToMorse;
+    final newInput = state.outputText;
     final repo = ref.read(morseTranslationRepositoryProvider);
-    final output = state.inputText.isEmpty
-        ? ''
-        : repo.translate(state.inputText, newDirection);
-    state =
-        state.copyWith(direction: newDirection, outputText: output);
+    final newOutput = newInput.isEmpty ? '' : repo.translate(newInput, newDirection);
+    state = state.copyWith(
+      direction: newDirection,
+      inputText: newInput,
+      outputText: newOutput,
+    );
   }
 
   void setTransmitting(bool value) =>
@@ -50,5 +52,5 @@ class MorseTranslationNotifier extends Notifier<MorseTranslationState> {
   void setLooping(bool value) =>
       state = state.copyWith(isLooping: value);
 
-  void clear() => state = const MorseTranslationState();
+  void clear() => state = MorseTranslationState(direction: state.direction);
 }

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dart analyze *)",
+      "Bash(grep \"strokeRoundedText\\\\b\\\\|strokeRoundedTextInput\\\\|strokeRoundedTextWrap\\\\|strokeRoundedTextSquare\\\\|strokeRoundedWord\\\\|strokeRoundedType\\\\b\\\\|strokeRoundedTextBox\\\\|strokeRoundedTextAlt\" /home/nejcp/.pub-cache/hosted/pub.dev/hugeicons-1.1.6/lib/styles/stroke_rounded.dart | grep \"static const List\" | head -20)",
+      "Read(//home/nejcp/.pub-cache/hosted/pub.dev/hugeicons-1.1.6/lib/styles/**)"
+    ]
+  }
+}
