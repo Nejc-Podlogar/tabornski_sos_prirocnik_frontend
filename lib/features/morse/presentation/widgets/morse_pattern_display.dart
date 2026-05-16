@@ -54,7 +54,7 @@ class MorsePatternDisplay extends StatelessWidget {
         width: _dotSize,
         height: _dotSize,
         decoration: const BoxDecoration(
-          color: AppColors.accent,
+          color: AppColors.textPrimary,
           shape: BoxShape.circle,
         ),
       );
@@ -63,7 +63,7 @@ class MorsePatternDisplay extends StatelessWidget {
         width: _dashWidth,
         height: _dashHeight,
         decoration: BoxDecoration(
-          color: AppColors.accent,
+          color: AppColors.textPrimary,
           borderRadius: BorderRadius.circular(4),
         ),
       );

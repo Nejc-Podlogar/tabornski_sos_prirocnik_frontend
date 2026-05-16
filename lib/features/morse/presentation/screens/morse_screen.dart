@@ -85,10 +85,13 @@ class MorseScreen extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  const HugeIcon(
-                    icon: HugeIcons.strokeRoundedWifi01,
-                    color: AppColors.primary,
-                    size: 56,
+                  RotatedBox(
+                    quarterTurns: 1,
+                    child: HugeIcon(
+                      icon: HugeIcons.strokeRoundedBarcodeScan,
+                      color: AppColors.primary,
+                      size: 56,
+                    ),
                   ),
                 ],
               ),
@@ -99,28 +102,66 @@ class MorseScreen extends ConsumerWidget {
             _ActionTile(
               icon: HugeIcons.strokeRoundedTranslate,
               title: 'Prevedi',
-              subtitle: 'Besedilo ↔ Morse',
+              subtitle: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Besedilo',
+                    style: AppTypography.caption.copyWith(
+                      color: AppColors.textTertiary,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  const HugeIcon(
+                    icon: HugeIcons.strokeRoundedArrowDataTransferHorizontal,
+                    color: AppColors.textTertiary,
+                    size: 12,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    'Morse',
+                    style: AppTypography.caption.copyWith(
+                      color: AppColors.textTertiary,
+                    ),
+                  ),
+                ],
+              ),
               onTap: () => context.goNamed(RouteNames.morseTranslator),
             ),
             const SizedBox(height: AppSpacing.md),
             _ActionTile(
               icon: HugeIcons.strokeRoundedBook01,
               title: 'Učenje',
-              subtitle: 'Vaje in urjenje',
+              subtitle: Text(
+                'Vaje in urjenje',
+                style: AppTypography.caption.copyWith(
+                  color: AppColors.textTertiary,
+                ),
+              ),
               onTap: () => context.goNamed(RouteNames.morseExerciseSelector),
             ),
             const SizedBox(height: AppSpacing.md),
             _ActionTile(
-              icon: HugeIcons.strokeRoundedCode,
-              title: 'Referenca',
-              subtitle: 'Vsi znaki',
+              icon: HugeIcons.strokeRoundedLeftToRightListTriangle,
+              title: 'Morsejeva abeceda',
+              subtitle: Text(
+                'Vsi znaki',
+                style: AppTypography.caption.copyWith(
+                  color: AppColors.textTertiary,
+                ),
+              ),
               onTap: () => context.goNamed(RouteNames.morseMaterials),
             ),
             const SizedBox(height: AppSpacing.md),
             _ActionTile(
               icon: HugeIcons.strokeRoundedFlashlight,
               title: 'Svetilka',
-              subtitle: 'Oddajanje Morse kode s svetilko',
+              subtitle: Text(
+                'Oddajanje Morse kode s svetilko',
+                style: AppTypography.caption.copyWith(
+                  color: AppColors.textTertiary,
+                ),
+              ),
               onTap: () => context.pushNamed(RouteNames.morseFlashlight),
             ),
           ],
@@ -140,7 +181,7 @@ class _ActionTile extends StatelessWidget {
 
   final List<List<dynamic>> icon;
   final String title;
-  final String subtitle;
+  final Widget subtitle;
   final VoidCallback onTap;
 
   @override
@@ -185,12 +226,7 @@ class _ActionTile extends StatelessWidget {
                       color: AppColors.textPrimary,
                     ),
                   ),
-                  Text(
-                    subtitle,
-                    style: AppTypography.caption.copyWith(
-                      color: AppColors.textTertiary,
-                    ),
-                  ),
+                  subtitle,
                 ],
               ),
             ),
