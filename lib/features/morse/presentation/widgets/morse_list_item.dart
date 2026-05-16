@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_spacing.dart';
@@ -13,7 +14,12 @@ class MorseListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: () {
+        HapticFeedback.lightImpact();
+        Clipboard.setData(ClipboardData(text: entry.morseSequence));
+      },
+      child: Container(
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.base,
         vertical: AppSpacing.md,
@@ -48,9 +54,13 @@ class MorseListItem extends StatelessWidget {
 
           // Morse pattern
           Expanded(
-            child: MorsePatternDisplay(morseSequence: entry.morseSequence),
+            child: Align(
+              alignment: Alignment.center,
+              child: MorsePatternDisplay(morseSequence: entry.morseSequence),
+            ),
           ),
         ],
+      ),
       ),
     );
   }

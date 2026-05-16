@@ -40,7 +40,7 @@ class _MorseMaterialsScreenState extends ConsumerState<MorseMaterialsScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppHeaderBar(
-        title: 'Referenca',
+        title: 'Morsejeva abeceda',
         showBackButton: true,
         onSettingsPressed: () => context.goNamed(RouteNames.settings),
       ),
@@ -60,8 +60,7 @@ class _MorseMaterialsScreenState extends ConsumerState<MorseMaterialsScreen> {
               itemCount: filtered.length,
               separatorBuilder: (_, __) =>
                   const SizedBox(height: AppSpacing.sm),
-              itemBuilder: (_, index) =>
-                  MorseListItem(entry: filtered[index]),
+              itemBuilder: (_, index) => MorseListItem(entry: filtered[index]),
             ),
           ),
         ],
