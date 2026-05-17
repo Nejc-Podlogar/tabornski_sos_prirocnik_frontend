@@ -9,6 +9,7 @@ import '../../../../core/constants/app_typography.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
 import '../../../../core/widgets/bottom_nav_bar.dart';
+import '../../../../core/widgets/section_action_tile.dart';
 import '../providers/post_provider.dart';
 import '../widgets/news_card.dart';
 
@@ -61,9 +62,8 @@ class HomeScreen extends ConsumerWidget {
 
             // News card
             postAsync.when(
-              data: (post) => post != null
-                  ? NewsCard(post: post)
-                  : const _NewsEmptyState(),
+              data: (post) =>
+                  post != null ? NewsCard(post: post) : const _NewsEmptyState(),
               loading: () => const _NewsLoadingState(),
               error: (_, __) => const _NewsEmptyState(),
             ),
@@ -78,117 +78,32 @@ class HomeScreen extends ConsumerWidget {
             ),
             const SizedBox(height: AppSpacing.md),
 
-            _SectionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedWifi01,
-              label: 'Morse',
+              title: 'Morse',
               subtitle: 'SIGNALNA KODA',
               onTap: () => context.goNamed(RouteNames.morse),
             ),
             const SizedBox(height: AppSpacing.sm),
-            _SectionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedFlag01,
-              label: 'Semafor',
+              title: 'Semafor',
               subtitle: 'VIZUALNA KOMUNIKACIJA',
               onTap: () => context.goNamed(RouteNames.semaphore),
             ),
             const SizedBox(height: AppSpacing.sm),
-            _SectionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedCompass,
-              label: 'Orientacija',
+              title: 'Orientacija',
               subtitle: 'NAVIGACIJA',
               onTap: () => context.goNamed(RouteNames.orientation),
             ),
             const SizedBox(height: AppSpacing.sm),
-            _SectionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedUser,
-              label: 'Profil',
+              title: 'Profil',
               subtitle: 'MOJ PROFIL',
               onTap: () => context.goNamed(RouteNames.settings),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _SectionTile extends StatelessWidget {
-  const _SectionTile({
-    required this.icon,
-    required this.label,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  final List<List<dynamic>> icon;
-  final String label;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.base,
-          vertical: AppSpacing.md,
-        ),
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          children: [
-            // Icon container
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.15),
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: HugeIcon(
-                  icon: icon,
-                  color: AppColors.primary,
-                  size: 28,
-                ),
-              ),
-            ),
-            const SizedBox(width: AppSpacing.md),
-
-            // Labels
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    label,
-                    style: AppTypography.buttonLabel.copyWith(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    subtitle,
-                    style: AppTypography.caption.copyWith(
-                      fontSize: 12,
-                      color: AppColors.textTertiary,
-                      letterSpacing: 0.8,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            // Trailing arrow
-            const HugeIcon(
-              icon: HugeIcons.strokeRoundedArrowRight01,
-              color: AppColors.textTertiary,
-              size: 16,
             ),
           ],
         ),

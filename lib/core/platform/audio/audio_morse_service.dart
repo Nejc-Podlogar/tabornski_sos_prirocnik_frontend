@@ -4,16 +4,12 @@ import 'dart:typed_data';
 
 import 'package:audioplayers/audioplayers.dart';
 
+import '../morse_timing_constants.dart';
 import 'i_audio_morse_service.dart';
 
 class AudioMorseService implements IAudioMorseService {
   static const int _sampleRate = 44100;
   static const int _frequency = 700;
-  static const int _dotMs = 200;
-  static const int _dashMs = 600;
-  static const int _symbolGapMs = 200;
-  static const int _letterGapMs = 400;
-  static const int _wordGapMs = 400;
   static const int _roundGapMs = 300;
   static const int _roundGapStepMs = 100;
 
@@ -106,15 +102,15 @@ class AudioMorseService implements IAudioMorseService {
     for (final ch in morseSequence.split('')) {
       switch (ch) {
         case '.':
-          segments.add((_dotMs, true));
-          segments.add((_symbolGapMs, false));
+          segments.add((MorseTimingConstants.dotMs, true));
+          segments.add((MorseTimingConstants.symbolGapMs, false));
         case '-':
-          segments.add((_dashMs, true));
-          segments.add((_symbolGapMs, false));
+          segments.add((MorseTimingConstants.dashMs, true));
+          segments.add((MorseTimingConstants.symbolGapMs, false));
         case ' ':
-          segments.add((_letterGapMs, false));
+          segments.add((MorseTimingConstants.letterGapMs, false));
         case '/':
-          segments.add((_wordGapMs, false));
+          segments.add((MorseTimingConstants.wordGapMs, false));
       }
     }
 

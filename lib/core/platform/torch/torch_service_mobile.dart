@@ -1,15 +1,10 @@
 import 'package:torch_light/torch_light.dart';
 
+import '../morse_timing_constants.dart';
 import 'i_torch_service.dart';
 
 class TorchServiceMobile implements ITorchService {
   bool _running = false;
-
-  static const _dotOn = Duration(milliseconds: 200);
-  static const _dashOn = Duration(milliseconds: 600);
-  static const _symbolOff = Duration(milliseconds: 200);
-  static const _letterGap = Duration(milliseconds: 400);
-  static const _wordGap = Duration(milliseconds: 400);
 
   @override
   Future<void> transmit(String morseSequence, {bool loop = false}) async {
@@ -24,18 +19,24 @@ class TorchServiceMobile implements ITorchService {
           switch (char) {
             case '.':
               await TorchLight.enableTorch();
-              await Future.delayed(_dotOn);
+              await Future.delayed(
+                  const Duration(milliseconds: MorseTimingConstants.dotMs));
               await TorchLight.disableTorch();
-              await Future.delayed(_symbolOff);
+              await Future.delayed(
+                  const Duration(milliseconds: MorseTimingConstants.symbolGapMs));
             case '-':
               await TorchLight.enableTorch();
-              await Future.delayed(_dashOn);
+              await Future.delayed(
+                  const Duration(milliseconds: MorseTimingConstants.dashMs));
               await TorchLight.disableTorch();
-              await Future.delayed(_symbolOff);
+              await Future.delayed(
+                  const Duration(milliseconds: MorseTimingConstants.symbolGapMs));
             case ' ':
-              await Future.delayed(_letterGap);
+              await Future.delayed(
+                  const Duration(milliseconds: MorseTimingConstants.letterGapMs));
             case '/':
-              await Future.delayed(_wordGap);
+              await Future.delayed(
+                  const Duration(milliseconds: MorseTimingConstants.wordGapMs));
           }
         }
         if (!loop) break;

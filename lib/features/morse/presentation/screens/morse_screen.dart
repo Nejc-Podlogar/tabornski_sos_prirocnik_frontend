@@ -9,6 +9,7 @@ import '../../../../core/constants/app_typography.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
 import '../../../../core/widgets/bottom_nav_bar.dart';
+import '../../../../core/widgets/section_action_tile.dart';
 
 class MorseScreen extends ConsumerWidget {
   const MorseScreen({super.key});
@@ -99,141 +100,32 @@ class MorseScreen extends ConsumerWidget {
             const SizedBox(height: AppSpacing.xl),
 
             // Action tiles
-            _ActionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedTranslate,
               title: 'Prevedi',
-              subtitle: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Besedilo',
-                    style: AppTypography.caption.copyWith(
-                      color: AppColors.textTertiary,
-                    ),
-                  ),
-                  const SizedBox(width: 4),
-                  const HugeIcon(
-                    icon: HugeIcons.strokeRoundedArrowDataTransferHorizontal,
-                    color: AppColors.textTertiary,
-                    size: 12,
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    'Morse',
-                    style: AppTypography.caption.copyWith(
-                      color: AppColors.textTertiary,
-                    ),
-                  ),
-                ],
-              ),
+              subtitle: 'Besedilo → Morse',
               onTap: () => context.goNamed(RouteNames.morseTranslator),
             ),
             const SizedBox(height: AppSpacing.md),
-            _ActionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedBook01,
               title: 'Učenje',
-              subtitle: Text(
-                'Vaje in urjenje',
-                style: AppTypography.caption.copyWith(
-                  color: AppColors.textTertiary,
-                ),
-              ),
+              subtitle: 'Vaje in urjenje',
               onTap: () => context.goNamed(RouteNames.morseExerciseSelector),
             ),
             const SizedBox(height: AppSpacing.md),
-            _ActionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedLeftToRightListTriangle,
               title: 'Morsejeva abeceda',
-              subtitle: Text(
-                'Vsi znaki',
-                style: AppTypography.caption.copyWith(
-                  color: AppColors.textTertiary,
-                ),
-              ),
+              subtitle: 'Vsi znaki',
               onTap: () => context.goNamed(RouteNames.morseMaterials),
             ),
             const SizedBox(height: AppSpacing.md),
-            _ActionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedFlashlight,
               title: 'Svetilka',
-              subtitle: Text(
-                'Oddajanje Morse kode s svetilko',
-                style: AppTypography.caption.copyWith(
-                  color: AppColors.textTertiary,
-                ),
-              ),
+              subtitle: 'Oddajanje Morse kode s svetilko',
               onTap: () => context.pushNamed(RouteNames.morseFlashlight),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _ActionTile extends StatelessWidget {
-  const _ActionTile({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  final List<List<dynamic>> icon;
-  final String title;
-  final Widget subtitle;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.base,
-          vertical: AppSpacing.md,
-        ),
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.15),
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: HugeIcon(
-                  icon: icon,
-                  color: AppColors.primary,
-                  size: 26,
-                ),
-              ),
-            ),
-            const SizedBox(width: AppSpacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: AppTypography.buttonLabel.copyWith(
-                      fontSize: 16,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
-                  subtitle,
-                ],
-              ),
-            ),
-            const HugeIcon(
-              icon: HugeIcons.strokeRoundedArrowRight01,
-              color: AppColors.textTertiary,
-              size: 16,
             ),
           ],
         ),

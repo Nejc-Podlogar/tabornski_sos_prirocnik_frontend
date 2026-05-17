@@ -1,5 +1,6 @@
-import 'dart:io';
+import 'dart:io' show File;
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -32,13 +33,32 @@ class AppHeaderBar extends ConsumerWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(AppSpacing.headerBarHeight);
 
+  Widget _buildAvatar(String? avatarPath) {
+    if (avatarPath == null || kIsWeb) return _defaultAvatar();
+    final file = File(avatarPath);
+    if (!file.existsSync()) return _defaultAvatar();
+    return CircleAvatar(
+      radius: 18,
+      backgroundImage: FileImage(file),
+    );
+  }
+
+  Widget _defaultAvatar() => CircleAvatar(
+        radius: 18,
+        backgroundColor: AppColors.surface,
+        child: HugeIcon(
+          icon: HugeIcons.strokeRoundedUser,
+          color: AppColors.primary,
+          size: 20,
+        ),
+      );
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // Only read avatar when showing the left avatar circle (not the back button).
     final String? avatarPath = showBackButton
         ? null
         : ref.watch(userPreferencesProvider).valueOrNull?.avatarId;
-    final hasAvatar = avatarPath != null && File(avatarPath).existsSync();
 
     return AppBar(
       backgroundColor: AppColors.background,
@@ -62,19 +82,7 @@ class AppHeaderBar extends ConsumerWidget implements PreferredSizeWidget {
           : Padding(
               padding: const EdgeInsets.only(left: AppSpacing.base),
               child: Center(
-                child: CircleAvatar(
-                  radius: 18,
-                  backgroundColor: AppColors.surface,
-                  backgroundImage:
-                      hasAvatar ? FileImage(File(avatarPath)) : null,
-                  child: hasAvatar
-                      ? null
-                      : HugeIcon(
-                          icon: HugeIcons.strokeRoundedUser,
-                          color: AppColors.primary,
-                          size: 20,
-                        ),
-                ),
+                child: _buildAvatar(avatarPath),
               ),
             ),
       title: Text(

@@ -9,6 +9,7 @@ import '../../../../core/constants/app_typography.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
 import '../../../../core/widgets/bottom_nav_bar.dart';
+import '../../../../core/widgets/section_action_tile.dart';
 
 class SemaphoreScreen extends ConsumerWidget {
   const SemaphoreScreen({super.key});
@@ -38,7 +39,7 @@ class SemaphoreScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(AppSpacing.base),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+          children: [
             // Hero banner
             Container(
               padding: const EdgeInsets.all(AppSpacing.xl),
@@ -93,14 +94,14 @@ class SemaphoreScreen extends ConsumerWidget {
             const SizedBox(height: AppSpacing.xl),
 
             // Action tiles
-            _ActionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedTranslate,
               title: 'Prevedi',
               subtitle: 'Besedilo ↔ Zastave',
               onTap: () => context.goNamed(RouteNames.semaphoreTranslator),
             ),
             const SizedBox(height: AppSpacing.md),
-            _ActionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedBook01,
               title: 'Učenje',
               subtitle: 'Vaje in urjenje',
@@ -108,82 +109,11 @@ class SemaphoreScreen extends ConsumerWidget {
                   context.goNamed(RouteNames.semaphoreExerciseSelector),
             ),
             const SizedBox(height: AppSpacing.md),
-            _ActionTile(
+            SectionActionTile(
               icon: HugeIcons.strokeRoundedCode,
               title: 'Referenca',
               subtitle: 'Vsi znaki',
               onTap: () => context.goNamed(RouteNames.semaphoreMaterials),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _ActionTile extends StatelessWidget {
-  const _ActionTile({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  final List<List<dynamic>> icon;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.base,
-          vertical: AppSpacing.md,
-        ),
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.15),
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: HugeIcon(icon: icon, color: AppColors.primary, size: 26),
-              ),
-            ),
-            const SizedBox(width: AppSpacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: AppTypography.buttonLabel.copyWith(
-                      fontSize: 16,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
-                  Text(
-                    subtitle,
-                    style: AppTypography.caption
-                        .copyWith(color: AppColors.textTertiary),
-                  ),
-                ],
-              ),
-            ),
-            const HugeIcon(
-              icon: HugeIcons.strokeRoundedArrowRight01,
-              color: AppColors.textTertiary,
-              size: 16,
             ),
           ],
         ),
