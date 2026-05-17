@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../../domain/value_objects/exercise_enums.dart';
 import '../app_database.dart';
+import 'corpus_parser.dart';
 import 'i_seeder.dart';
 
 class SemaphoreCorpusSeeder implements ISeeder {
@@ -27,12 +28,12 @@ class SemaphoreCorpusSeeder implements ISeeder {
         companions.add(
           SemaphoreExercisesTableCompanion.insert(
             exerciseContentType: contentType,
-            translateType: _parseTranslationDirection(
+            translateType: CorpusParser.parseDirection(
                 map['translateType'] as String),
             exerciseValues: jsonEncode(map['exerciseValues']),
             translatedValues: jsonEncode(map['translatedValues']),
             count: (map['exerciseValues'] as List<dynamic>).length,
-            interactionType: _parseInteractionType(
+            interactionType: CorpusParser.parseInteractionType(
                 map['interactionType'] as String),
           ),
         );
@@ -44,27 +45,4 @@ class SemaphoreCorpusSeeder implements ISeeder {
     });
   }
 
-  TranslationDirection _parseTranslationDirection(String value) {
-    switch (value) {
-      case 'textToMorse':
-        return TranslationDirection.textToMorse;
-      case 'morseToText':
-        return TranslationDirection.morseToText;
-      default:
-        throw ArgumentError('Unknown translateType: $value');
-    }
-  }
-
-  InteractionType _parseInteractionType(String value) {
-    switch (value) {
-      case 'cards':
-        return InteractionType.cards;
-      case 'keyboard':
-        return InteractionType.keyboard;
-      case 'tokens':
-        return InteractionType.tokens;
-      default:
-        throw ArgumentError('Unknown interactionType: $value');
-    }
-  }
 }
