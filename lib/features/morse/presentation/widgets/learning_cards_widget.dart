@@ -1,15 +1,28 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'card_swiper_stub.dart'
+    if (dart.library.io) 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/constants/app_typography.dart';
-import '../../domain/entities/morse_exercise.dart';
 import '../../../../core/domain/value_objects/exercise_enums.dart';
+import '../../../../core/domain/value_objects/exercise_validation.dart';
+import '../../../../core/widgets/progress_dots_row.dart';
+import '../../domain/entities/morse_exercise.dart';
 import '../providers/morse_exercise_provider.dart';
 import 'morse_pattern_display.dart';
+
+const double _cardRadius = 24.0;
+const double _cardBorder = 1.0;
+const double _letterFontSize = 72.0;
+const double _overlayIconSize = 80.0;
+const double _hintIconSize = 22.0;
+const double _hintBorder = 1.5;
+const double _hintContainerSize = 48.0;
+const double _swipePercentageDivisor = 100.0;
 
 class LearningCardsWidget extends ConsumerWidget {
   const LearningCardsWidget({
@@ -33,13 +46,17 @@ class LearningCardsWidget extends ConsumerWidget {
     final remaining = exercises.length - currentIndex;
     if (remaining <= 0) return const SizedBox.shrink();
 
+    final dotResults = state.sessionResults
+        .map((r) => r == null ? null : r == ExerciseValidation.correct)
+        .toList();
+
     return Column(
       children: [
         const SizedBox(height: AppSpacing.base),
-        Text(
-          'Podrsaj desno = pravilno  •  levo = napačno',
-          style: AppTypography.caption.copyWith(color: AppColors.textTertiary),
-          textAlign: TextAlign.center,
+        ProgressDotsRow(
+          total: exercises.length,
+          currentIndex: currentIndex,
+          results: dotResults,
         ),
         const SizedBox(height: AppSpacing.base),
 
@@ -50,6 +67,17 @@ class LearningCardsWidget extends ConsumerWidget {
               // any mid-animation state change cannot produce cardsCount < 1.
               if (remaining < 1) return const SizedBox.shrink();
 
+              if (kIsWeb) {
+                return Center(
+                  child: Text(
+                    'Učenje s karticami ni na voljo na spletu.',
+                    style: AppTypography.body
+                        .copyWith(color: AppColors.textSecondary),
+                    textAlign: TextAlign.center,
+                  ),
+                );
+              }
+
               return CardSwiper(
                 // key forces a fresh swiper whenever the deck advances
                 key: ValueKey(currentIndex),
@@ -58,9 +86,15 @@ class LearningCardsWidget extends ConsumerWidget {
                 // 'numberOfCardsDisplayed >= 1 && numberOfCardsDisplayed <= cardsCount'
                 // from firing when remaining drops to 1 on the last card.
                 numberOfCardsDisplayed: 1,
-                cardBuilder: (context, index, _, __) {
+                cardBuilder: (context, index, horizontalThresholdPercentage, __) {
                   final exercise = exercises[currentIndex + index];
-                  return _ExerciseCard(exercise: exercise);
+                  final swipeProgress =
+                      (horizontalThresholdPercentage / _swipePercentageDivisor)
+                          .clamp(-1.0, 1.0);
+                  return _ExerciseCard(
+                    exercise: exercise,
+                    swipeProgress: swipeProgress,
+                  );
                 },
                 onSwipe: (_, __, direction) {
                   final isLastCard = currentIndex >= exercises.length - 1;
@@ -87,17 +121,10 @@ class LearningCardsWidget extends ConsumerWidget {
               _SwipeHint(
                 icon: HugeIcons.strokeRoundedCancel01,
                 color: AppColors.danger,
-                label: 'Napačno',
-              ),
-              Text(
-                '${currentIndex + 1} / ${exercises.length}',
-                style: AppTypography.caption
-                    .copyWith(color: AppColors.textTertiary),
               ),
               _SwipeHint(
                 icon: HugeIcons.strokeRoundedCheckmarkCircle01,
                 color: AppColors.correct,
-                label: 'Pravilno',
               ),
             ],
           ),
@@ -108,51 +135,93 @@ class LearningCardsWidget extends ConsumerWidget {
 }
 
 class _ExerciseCard extends StatelessWidget {
-  const _ExerciseCard({required this.exercise});
+  const _ExerciseCard({required this.exercise, required this.swipeProgress});
 
   final MorseExercise exercise;
+  final double swipeProgress; // -1.0 (left/incorrect) to 1.0 (right/correct)
 
   @override
   Widget build(BuildContext context) {
-    final prompt = exercise.exerciseValues[0];
-    final isMorsePrompt =
-        exercise.direction == TranslationDirection.morseToText;
+    final isMorsePrompt = exercise.direction == TranslationDirection.morseToText;
+    final overlayOpacity = swipeProgress.abs().clamp(0.0, 1.0);
+    final isSwipingRight = swipeProgress > 0;
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: AppSpacing.base),
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: AppColors.surface,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: AppColors.primaryDark, width: 1),
+        borderRadius: BorderRadius.circular(_cardRadius),
+        border: Border.all(color: AppColors.primaryDark, width: _cardBorder),
       ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.xxl),
-          child: isMorsePrompt
-              ? Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    MorsePatternDisplay(morseSequence: prompt),
-                    const SizedBox(height: AppSpacing.base),
-                    Text(
-                      prompt,
-                      style: AppTypography.morseSequence.copyWith(
-                        fontSize: 18,
-                        color: AppColors.accentLight,
-                      ),
-                      textAlign: TextAlign.center,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(AppSpacing.xxl),
+            child: Center(
+              child: isMorsePrompt
+                  ? Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        MorsePatternDisplay(
+                          morseSequence: exercise.exerciseValues[0],
+                        ),
+                        const SizedBox(height: AppSpacing.xxl),
+                        Text(
+                          '?',
+                          style: AppTypography.screenTitle.copyWith(
+                            fontSize: _letterFontSize,
+                            fontWeight: FontWeight.w900,
+                            color: AppColors.textTertiary,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    )
+                  : Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          exercise.exerciseValues[0],
+                          style: AppTypography.screenTitle.copyWith(
+                            fontSize: _letterFontSize,
+                            fontWeight: FontWeight.w900,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: AppSpacing.xl),
+                        Text(
+                          'Morsejeva koda:',
+                          style: AppTypography.caption
+                              .copyWith(color: AppColors.textTertiary),
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                        MorsePatternDisplay(
+                          morseSequence: exercise.translatedValues[0],
+                        ),
+                      ],
                     ),
-                  ],
-                )
-              : Text(
-                  prompt,
-                  style: AppTypography.screenTitle.copyWith(
-                    fontSize: 72,
-                    fontWeight: FontWeight.w900,
+            ),
+          ),
+          if (overlayOpacity > 0)
+            Positioned.fill(
+              child: Container(
+                color: (isSwipingRight ? AppColors.primary : AppColors.danger)
+                    .withValues(alpha: overlayOpacity * 0.3),
+                child: Center(
+                  child: HugeIcon(
+                    icon: isSwipingRight
+                        ? HugeIcons.strokeRoundedCheckmarkCircle01
+                        : HugeIcons.strokeRoundedCancel01,
+                    color:
+                        isSwipingRight ? AppColors.primary : AppColors.danger,
+                    size: _overlayIconSize,
                   ),
-                  textAlign: TextAlign.center,
                 ),
-        ),
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -162,36 +231,24 @@ class _SwipeHint extends StatelessWidget {
   const _SwipeHint({
     required this.icon,
     required this.color,
-    required this.label,
   });
 
   final List<List<dynamic>> icon;
   final Color color;
-  final String label;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          width: 48,
-          height: 48,
-          decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
-            shape: BoxShape.circle,
-            border: Border.all(color: color, width: 1.5),
-          ),
-          child: Center(
-            child: HugeIcon(icon: icon, color: color, size: 22),
-          ),
-        ),
-        const SizedBox(height: AppSpacing.xs),
-        Text(
-          label,
-          style: AppTypography.caption.copyWith(color: color),
-        ),
-      ],
+    return Container(
+      width: _hintContainerSize,
+      height: _hintContainerSize,
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        shape: BoxShape.circle,
+        border: Border.all(color: color, width: _hintBorder),
+      ),
+      child: Center(
+        child: HugeIcon(icon: icon, color: color, size: _hintIconSize),
+      ),
     );
   }
 }

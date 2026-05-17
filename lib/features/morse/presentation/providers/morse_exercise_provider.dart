@@ -9,6 +9,7 @@ import '../../domain/usecases/get_corpus_exercise_usecase.dart';
 import '../../domain/usecases/validate_morse_answer_usecase.dart';
 import 'morse_exercise_repository_provider.dart';
 import 'morse_translation_repository_provider.dart';
+import 'save_morse_session_provider.dart';
 
 part 'morse_exercise_provider.freezed.dart';
 
@@ -84,6 +85,24 @@ class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
     } else {
       state = AsyncData(current.copyWith(currentIndex: nextIndex));
     }
+  }
+
+  Future<void> saveSession({DateTime? completedAt}) async {
+    final s = state.valueOrNull;
+    if (s == null || !s.isComplete || s.exercises.isEmpty) return;
+    final correct = s.sessionResults
+        .where((r) => r == ExerciseValidation.correct)
+        .length;
+    final first = s.exercises.first;
+    final now = completedAt ?? DateTime.now();
+    final useCase = ref.read(saveMorseSessionUseCaseProvider);
+    await useCase.call(
+      contentType: first.contentType,
+      interactionType: first.interactionType,
+      totalQuestions: s.exercises.length,
+      correctCount: correct,
+      sessionDate: now,
+    );
   }
 
   void swipeCard(bool isCorrect) {
