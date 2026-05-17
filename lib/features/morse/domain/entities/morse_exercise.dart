@@ -14,5 +14,6 @@ class MorseExercise with _$MorseExercise {
     required ExerciseContentType contentType,
     required TranslationDirection direction,
     required InteractionType interactionType,
+    @Default(true) bool isCorrectPair,
   }) = _MorseExercise;
 }

@@ -30,20 +30,41 @@ class MorseExerciseRepository implements IMorseExerciseRepository {
     final selected = allChars.take(count).toList();
 
     return selected.map((char) {
-      final morse = MorseDictionary.charToMorse[char]!;
-      final exerciseValues =
-          direction == TranslationDirection.textToMorse ? [char] : [morse];
-      final translatedValues =
-          direction == TranslationDirection.textToMorse ? [morse] : [char];
+      final isCorrectPair = _random.nextDouble() < 0.6;
+      final correctMorse = MorseDictionary.charToMorse[char]!;
+
+      String exerciseValue;
+      String translatedValue;
+
+      if (direction == TranslationDirection.textToMorse) {
+        exerciseValue = char;
+        if (isCorrectPair) {
+          translatedValue = correctMorse;
+        } else {
+          final wrongChars = allChars.where((c) => c != char).toList()
+            ..shuffle(_random);
+          translatedValue = MorseDictionary.charToMorse[wrongChars.first]!;
+        }
+      } else {
+        exerciseValue = correctMorse;
+        if (isCorrectPair) {
+          translatedValue = char;
+        } else {
+          final wrongChars = allChars.where((c) => c != char).toList()
+            ..shuffle(_random);
+          translatedValue = wrongChars.first;
+        }
+      }
 
       return MorseExercise(
-        exerciseValues: exerciseValues,
-        translatedValues: translatedValues,
+        exerciseValues: [exerciseValue],
+        translatedValues: [translatedValue],
         areCorrect: [null],
         currentIndex: 0,
         contentType: ExerciseContentType.letters,
         direction: direction,
         interactionType: interactionType,
+        isCorrectPair: isCorrectPair,
       );
     }).toList();
   }

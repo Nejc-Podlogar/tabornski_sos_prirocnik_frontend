@@ -29,6 +29,16 @@ final morseExerciseProvider =
 );
 
 class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
+  late final _validateUseCase = ValidateMorseAnswerUseCase(
+    ref.read(morseTranslationRepositoryProvider),
+  );
+  late final _generateLetterUseCase = GenerateLetterExerciseUseCase(
+    ref.read(morseExerciseRepositoryProvider),
+  );
+  late final _getCorpusUseCase = GetCorpusExerciseUseCase(
+    ref.read(morseExerciseRepositoryProvider),
+  );
+
   @override
   Future<MorseExerciseState?> build() async => null;
 
@@ -39,16 +49,14 @@ class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
     int count,
   ) async {
     state = const AsyncLoading();
-    final exerciseRepo = ref.read(morseExerciseRepositoryProvider);
 
     List<MorseExercise> exercises;
     if (contentType == ExerciseContentType.letters) {
-      final useCase = GenerateLetterExerciseUseCase(exerciseRepo);
-      exercises = await useCase.call(count, direction, interactionType);
-    } else {
-      final useCase = GetCorpusExerciseUseCase(exerciseRepo);
       exercises =
-          await useCase.call(count, contentType, direction, interactionType);
+          await _generateLetterUseCase.call(count, direction, interactionType);
+    } else {
+      exercises = await _getCorpusUseCase.call(
+          count, contentType, direction, interactionType);
     }
 
     state = AsyncData(MorseExerciseState(
@@ -65,9 +73,7 @@ class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
 
     final exercise = current.exercises[current.currentIndex];
     final expected = exercise.translatedValues[0];
-    final translationRepo = ref.read(morseTranslationRepositoryProvider);
-    final useCase = ValidateMorseAnswerUseCase(translationRepo);
-    final result = useCase.call(userInput, expected, exercise.direction);
+    final result = _validateUseCase.call(userInput, expected, exercise.direction);
 
     final updatedResults = List<ExerciseValidation?>.from(current.sessionResults)
       ..[current.currentIndex] = result;
@@ -105,10 +111,12 @@ class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
     );
   }
 
-  void swipeCard(bool isCorrect) {
+  void swipeCard(bool swipedRight) {
     final current = state.valueOrNull;
     if (current == null || current.isComplete) return;
 
+    final exercise = current.exercises[current.currentIndex];
+    final isCorrect = swipedRight == exercise.isCorrectPair;
     final result =
         isCorrect ? ExerciseValidation.correct : ExerciseValidation.incorrect;
     final updatedResults = List<ExerciseValidation?>.from(current.sessionResults)

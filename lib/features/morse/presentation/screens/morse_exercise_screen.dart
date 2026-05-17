@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_icons.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/constants/app_typography.dart';
 import '../../../../core/domain/value_objects/exercise_enums.dart';
@@ -11,9 +12,11 @@ import '../../../../core/domain/value_objects/exercise_validation.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
 import '../../domain/entities/morse_exercise.dart';
+import '../../domain/helpers/morse_string_utils.dart';
 import '../providers/morse_exercise_provider.dart';
 import '../widgets/learning_cards_widget.dart';
 import '../widgets/learning_keyboard_widget.dart';
+import '../widgets/morse_pattern_display.dart';
 
 const double _scoreCircleSize = 140.0;
 const double _scoreCircleBorder = 4.0;
@@ -190,19 +193,47 @@ class _CompletionView extends ConsumerWidget {
                   child: Row(
                     children: [
                       HugeIcon(
-                        icon: isCorrect
-                            ? HugeIcons.strokeRoundedCheckmarkCircle01
-                            : HugeIcons.strokeRoundedCancel01,
+                        icon: isCorrect ? AppIcons.correct : AppIcons.wrong,
                         color: itemColor,
                         size: _breakdownIconSize,
                       ),
                       const SizedBox(width: AppSpacing.sm),
                       Expanded(
-                        child: Text(
-                          '${exercise.exerciseValues[0]}  →  ${exercise.translatedValues[0]}',
-                          style: AppTypography.body.copyWith(
-                            color: AppColors.textPrimary,
-                          ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            if (MorseStringUtils.isMorseSequence(
+                                exercise.exerciseValues[0]))
+                              Flexible(
+                                child: MorsePatternDisplay(
+                                  morseSequence: exercise.exerciseValues[0],
+                                ),
+                              )
+                            else
+                              Text(
+                                exercise.exerciseValues[0],
+                                style: AppTypography.body
+                                    .copyWith(color: AppColors.textPrimary),
+                              ),
+                            Text(
+                              '  →  ',
+                              style: AppTypography.body
+                                  .copyWith(color: AppColors.textTertiary),
+                            ),
+                            if (MorseStringUtils.isMorseSequence(
+                                exercise.translatedValues[0]))
+                              Flexible(
+                                child: MorsePatternDisplay(
+                                  morseSequence: exercise.translatedValues[0],
+                                ),
+                              )
+                            else
+                              Text(
+                                exercise.translatedValues[0],
+                                style: AppTypography.body
+                                    .copyWith(color: AppColors.textPrimary),
+                              ),
+                          ],
                         ),
                       ),
                     ],

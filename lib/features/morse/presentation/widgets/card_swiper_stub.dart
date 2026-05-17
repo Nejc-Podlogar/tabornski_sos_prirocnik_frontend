@@ -5,17 +5,24 @@ import 'package:flutter/material.dart';
 
 enum CardSwiperDirection { none, left, right, top, bottom }
 
+class CardSwiperController {
+  void swipe(CardSwiperDirection direction) {}
+  void dispose() {}
+}
+
 class CardSwiper extends StatelessWidget {
   const CardSwiper({
     super.key,
     required this.cardsCount,
     required this.cardBuilder,
+    this.controller,
     this.numberOfCardsDisplayed = 1,
     this.onSwipe,
   });
 
   final int cardsCount;
   final Widget? Function(BuildContext, int, int, int) cardBuilder;
+  final CardSwiperController? controller;
   final int numberOfCardsDisplayed;
   final bool Function(int, int, CardSwiperDirection)? onSwipe;
 
