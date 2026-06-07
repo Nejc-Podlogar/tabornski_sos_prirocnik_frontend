@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../app_database.dart';
 import 'i_seeder.dart';
 import 'morse_corpus_seeder.dart';
@@ -9,21 +11,23 @@ class AppSeeder {
   AppSeeder._();
 
   static Future<void> run(AppDatabase db) async {
-    final rowCount = await (db.select(db.userPreferencesTable)
-          ..limit(1))
-        .get()
-        .then((rows) => rows.length);
-    if (rowCount > 0) return;
+    debugPrint('AppSeeder.run() called');
 
     final seeders = <ISeeder>[
       UserPreferencesSeeder(),
-      OrientationSeeder(),
       MorseCorpusSeeder(),
       SemaphoreCorpusSeeder(),
+      OrientationSeeder(),
     ];
 
     for (final seeder in seeders) {
-      await seeder.seed(db);
+      try {
+        await seeder.seed(db);
+        debugPrint('AppSeeder: ${seeder.runtimeType} complete');
+      } catch (e) {
+        debugPrint('AppSeeder: ${seeder.runtimeType} failed — $e');
+        // Continue with next seeder
+      }
     }
   }
 }

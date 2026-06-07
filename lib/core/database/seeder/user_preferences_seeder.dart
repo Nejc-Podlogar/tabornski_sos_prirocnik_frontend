@@ -7,7 +7,7 @@ import 'i_seeder.dart';
 class UserPreferencesSeeder implements ISeeder {
   @override
   Future<void> seed(AppDatabase db) async {
-    await db.into(db.userPreferencesTable).insert(
+    await db.into(db.userPreferencesTable).insertOnConflictUpdate(
       UserPreferencesTableCompanion.insert(
         id: const Value(1),
         themeMode: const Value(AppThemeMode.dark),

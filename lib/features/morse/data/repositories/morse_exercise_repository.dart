@@ -35,6 +35,7 @@ class MorseExerciseRepository implements IMorseExerciseRepository {
 
       String exerciseValue;
       String translatedValue;
+      String correctTranslation = '';
 
       if (direction == TranslationDirection.textToMorse) {
         exerciseValue = char;
@@ -44,6 +45,7 @@ class MorseExerciseRepository implements IMorseExerciseRepository {
           final wrongChars = allChars.where((c) => c != char).toList()
             ..shuffle(_random);
           translatedValue = MorseDictionary.charToMorse[wrongChars.first]!;
+          correctTranslation = correctMorse;
         }
       } else {
         exerciseValue = correctMorse;
@@ -53,6 +55,7 @@ class MorseExerciseRepository implements IMorseExerciseRepository {
           final wrongChars = allChars.where((c) => c != char).toList()
             ..shuffle(_random);
           translatedValue = wrongChars.first;
+          correctTranslation = char;
         }
       }
 
@@ -65,6 +68,7 @@ class MorseExerciseRepository implements IMorseExerciseRepository {
         direction: direction,
         interactionType: interactionType,
         isCorrectPair: isCorrectPair,
+        correctTranslation: correctTranslation,
       );
     }).toList();
   }
@@ -80,10 +84,44 @@ class MorseExerciseRepository implements IMorseExerciseRepository {
           ..where((t) =>
               t.exerciseContentType.equalsValue(contentType) &
               t.translateType.equalsValue(direction) &
-              t.interactionType.equalsValue(interactionType))
-          ..limit(count))
+              t.interactionType.equalsValue(interactionType)))
         .get();
 
-    return rows.map(MorseExerciseMapper.fromRow).toList();
+    final allExercises = rows
+        .map(MorseExerciseMapper.fromRow)
+        .toList()
+      ..shuffle(_random);
+
+    final selected = allExercises.take(count).toList();
+
+    final allValues =
+        allExercises.map((e) => e.exerciseValues[0]).toList();
+
+    return selected.map((exercise) {
+      final isCorrectPair = _random.nextDouble() > 0.4;
+
+      if (isCorrectPair) {
+        return exercise.copyWith(isCorrectPair: true);
+      }
+
+      final wrongValues = allValues
+          .where((v) => v != exercise.exerciseValues[0])
+          .toList()
+        ..shuffle(_random);
+
+      if (wrongValues.isEmpty) {
+        return exercise.copyWith(isCorrectPair: true);
+      }
+
+      final wrongExercise = allExercises.firstWhere(
+        (e) => e.exerciseValues[0] == wrongValues.first,
+        orElse: () => exercise,
+      );
+      return exercise.copyWith(
+        translatedValues: wrongExercise.translatedValues,
+        isCorrectPair: false,
+        correctTranslation: exercise.translatedValues[0],
+      );
+    }).toList();
   }
 }

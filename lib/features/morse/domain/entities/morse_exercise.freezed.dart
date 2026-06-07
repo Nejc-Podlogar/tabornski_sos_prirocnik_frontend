@@ -24,6 +24,7 @@ mixin _$MorseExercise {
   TranslationDirection get direction => throw _privateConstructorUsedError;
   InteractionType get interactionType => throw _privateConstructorUsedError;
   bool get isCorrectPair => throw _privateConstructorUsedError;
+  String get correctTranslation => throw _privateConstructorUsedError;
 
   /// Create a copy of MorseExercise
   /// with the given fields replaced by the non-null parameter values.
@@ -46,7 +47,8 @@ abstract class $MorseExerciseCopyWith<$Res> {
       ExerciseContentType contentType,
       TranslationDirection direction,
       InteractionType interactionType,
-      bool isCorrectPair});
+      bool isCorrectPair,
+      String correctTranslation});
 }
 
 /// @nodoc
@@ -72,6 +74,7 @@ class _$MorseExerciseCopyWithImpl<$Res, $Val extends MorseExercise>
     Object? direction = null,
     Object? interactionType = null,
     Object? isCorrectPair = null,
+    Object? correctTranslation = null,
   }) {
     return _then(_value.copyWith(
       exerciseValues: null == exerciseValues
@@ -106,6 +109,10 @@ class _$MorseExerciseCopyWithImpl<$Res, $Val extends MorseExercise>
           ? _value.isCorrectPair
           : isCorrectPair // ignore: cast_nullable_to_non_nullable
               as bool,
+      correctTranslation: null == correctTranslation
+          ? _value.correctTranslation
+          : correctTranslation // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -126,7 +133,8 @@ abstract class _$$MorseExerciseImplCopyWith<$Res>
       ExerciseContentType contentType,
       TranslationDirection direction,
       InteractionType interactionType,
-      bool isCorrectPair});
+      bool isCorrectPair,
+      String correctTranslation});
 }
 
 /// @nodoc
@@ -150,6 +158,7 @@ class __$$MorseExerciseImplCopyWithImpl<$Res>
     Object? direction = null,
     Object? interactionType = null,
     Object? isCorrectPair = null,
+    Object? correctTranslation = null,
   }) {
     return _then(_$MorseExerciseImpl(
       exerciseValues: null == exerciseValues
@@ -184,6 +193,10 @@ class __$$MorseExerciseImplCopyWithImpl<$Res>
           ? _value.isCorrectPair
           : isCorrectPair // ignore: cast_nullable_to_non_nullable
               as bool,
+      correctTranslation: null == correctTranslation
+          ? _value.correctTranslation
+          : correctTranslation // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -199,7 +212,8 @@ class _$MorseExerciseImpl implements _MorseExercise {
       required this.contentType,
       required this.direction,
       required this.interactionType,
-      this.isCorrectPair = true})
+      this.isCorrectPair = true,
+      this.correctTranslation = ''})
       : _exerciseValues = exerciseValues,
         _translatedValues = translatedValues,
         _areCorrect = areCorrect;
@@ -240,10 +254,13 @@ class _$MorseExerciseImpl implements _MorseExercise {
   @override
   @JsonKey()
   final bool isCorrectPair;
+  @override
+  @JsonKey()
+  final String correctTranslation;
 
   @override
   String toString() {
-    return 'MorseExercise(exerciseValues: $exerciseValues, translatedValues: $translatedValues, areCorrect: $areCorrect, currentIndex: $currentIndex, contentType: $contentType, direction: $direction, interactionType: $interactionType, isCorrectPair: $isCorrectPair)';
+    return 'MorseExercise(exerciseValues: $exerciseValues, translatedValues: $translatedValues, areCorrect: $areCorrect, currentIndex: $currentIndex, contentType: $contentType, direction: $direction, interactionType: $interactionType, isCorrectPair: $isCorrectPair, correctTranslation: $correctTranslation)';
   }
 
   @override
@@ -266,7 +283,9 @@ class _$MorseExerciseImpl implements _MorseExercise {
             (identical(other.interactionType, interactionType) ||
                 other.interactionType == interactionType) &&
             (identical(other.isCorrectPair, isCorrectPair) ||
-                other.isCorrectPair == isCorrectPair));
+                other.isCorrectPair == isCorrectPair) &&
+            (identical(other.correctTranslation, correctTranslation) ||
+                other.correctTranslation == correctTranslation));
   }
 
   @override
@@ -279,7 +298,8 @@ class _$MorseExerciseImpl implements _MorseExercise {
       contentType,
       direction,
       interactionType,
-      isCorrectPair);
+      isCorrectPair,
+      correctTranslation);
 
   /// Create a copy of MorseExercise
   /// with the given fields replaced by the non-null parameter values.
@@ -299,7 +319,8 @@ abstract class _MorseExercise implements MorseExercise {
       required final ExerciseContentType contentType,
       required final TranslationDirection direction,
       required final InteractionType interactionType,
-      final bool isCorrectPair}) = _$MorseExerciseImpl;
+      final bool isCorrectPair,
+      final String correctTranslation}) = _$MorseExerciseImpl;
 
   @override
   List<String> get exerciseValues;
@@ -317,6 +338,8 @@ abstract class _MorseExercise implements MorseExercise {
   InteractionType get interactionType;
   @override
   bool get isCorrectPair;
+  @override
+  String get correctTranslation;
 
   /// Create a copy of MorseExercise
   /// with the given fields replaced by the non-null parameter values.

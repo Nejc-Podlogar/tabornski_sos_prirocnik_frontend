@@ -2699,6 +2699,1286 @@
       ],
       "translateType": "morseToText",
       "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ORIENTACIJA"
+      ],
+      "translatedValues": [
+        "--- .-. .. . -. - .- -.-. .. .--- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--- .-. .. . -. - .- -.-. .. .--- .-"
+      ],
+      "translatedValues": [
+        "ORIENTACIJA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ORIENTACIJA"
+      ],
+      "translatedValues": [
+        "--- .-. .. . -. - .- -.-. .. .--- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--- .-. .. . -. - .- -.-. .. .--- .-"
+      ],
+      "translatedValues": [
+        "ORIENTACIJA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NAVIGACIJA"
+      ],
+      "translatedValues": [
+        "-. .- ...- .. --. .- -.-. .. .--- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-. .- ...- .. --. .- -.-. .. .--- .-"
+      ],
+      "translatedValues": [
+        "NAVIGACIJA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "NAVIGACIJA"
+      ],
+      "translatedValues": [
+        "-. .- ...- .. --. .- -.-. .. .--- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. .- ...- .. --. .- -.-. .. .--- .-"
+      ],
+      "translatedValues": [
+        "NAVIGACIJA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TABORNISTVO"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. -. .. ... - ...- ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. -. .. ... - ...- ---"
+      ],
+      "translatedValues": [
+        "TABORNISTVO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TABORNISTVO"
+      ],
+      "translatedValues": [
+        "- .- -... --- .-. -. .. ... - ...- ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .- -... --- .-. -. .. ... - ...- ---"
+      ],
+      "translatedValues": [
+        "TABORNISTVO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNALIZACIJA"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. .. --.. .- -.-. .. .--- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. .. --.. .- -.-. .. .--- .-"
+      ],
+      "translatedValues": [
+        "SIGNALIZACIJA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SIGNALIZACIJA"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. .. --.. .- -.-. .. .--- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. .. --.. .- -.-. .. .--- .-"
+      ],
+      "translatedValues": [
+        "SIGNALIZACIJA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "PREZIVETJE"
+      ],
+      "translatedValues": [
+        ".--. .-. . --.. .. ...- . - .--- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--. .-. . --.. .. ...- . - .--- ."
+      ],
+      "translatedValues": [
+        "PREZIVETJE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "PREZIVETJE"
+      ],
+      "translatedValues": [
+        ".--. .-. . --.. .. ...- . - .--- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. .-. . --.. .. ...- . - .--- ."
+      ],
+      "translatedValues": [
+        "PREZIVETJE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NARAVA"
+      ],
+      "translatedValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translatedValues": [
+        "NARAVA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "NARAVA"
+      ],
+      "translatedValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. .- .-. .- ...- .-"
+      ],
+      "translatedValues": [
+        "NARAVA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "PLANINA"
+      ],
+      "translatedValues": [
+        ".--. .-.. .- -. .. -. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--. .-.. .- -. .. -. .-"
+      ],
+      "translatedValues": [
+        "PLANINA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "PLANINA"
+      ],
+      "translatedValues": [
+        ".--. .-.. .- -. .. -. .-"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. .-.. .- -. .. -. .-"
+      ],
+      "translatedValues": [
+        "PLANINA"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "GOZDIC"
+      ],
+      "translatedValues": [
+        "--. --- --.. -.. .. -.-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--. --- --.. -.. .. -.-."
+      ],
+      "translatedValues": [
+        "GOZDIC"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "GOZDIC"
+      ],
+      "translatedValues": [
+        "--. --- --.. -.. .. -.-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--. --- --.. -.. .. -.-."
+      ],
+      "translatedValues": [
+        "GOZDIC"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ORIENTATION"
+      ],
+      "translatedValues": [
+        "--- .-. .. . -. - .- - .. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "--- .-. .. . -. - .- - .. --- -."
+      ],
+      "translatedValues": [
+        "ORIENTATION"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ORIENTATION"
+      ],
+      "translatedValues": [
+        "--- .-. .. . -. - .- - .. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "--- .-. .. . -. - .- - .. --- -."
+      ],
+      "translatedValues": [
+        "ORIENTATION"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "NAVIGATION"
+      ],
+      "translatedValues": [
+        "-. .- ...- .. --. .- - .. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-. .- ...- .. --. .- - .. --- -."
+      ],
+      "translatedValues": [
+        "NAVIGATION"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "NAVIGATION"
+      ],
+      "translatedValues": [
+        "-. .- ...- .. --. .- - .. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-. .- ...- .. --. .- - .. --- -."
+      ],
+      "translatedValues": [
+        "NAVIGATION"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SURVIVAL"
+      ],
+      "translatedValues": [
+        "... ..- .-. ...- .. ...- .- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... ..- .-. ...- .. ...- .- .-.."
+      ],
+      "translatedValues": [
+        "SURVIVAL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SURVIVAL"
+      ],
+      "translatedValues": [
+        "... ..- .-. ...- .. ...- .- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... ..- .-. ...- .. ...- .- .-.."
+      ],
+      "translatedValues": [
+        "SURVIVAL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "SIGNALING"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. .. -. --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. .. -. --."
+      ],
+      "translatedValues": [
+        "SIGNALING"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "SIGNALING"
+      ],
+      "translatedValues": [
+        "... .. --. -. .- .-.. .. -. --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "... .. --. -. .- .-.. .. -. --."
+      ],
+      "translatedValues": [
+        "SIGNALING"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "KNOT"
+      ],
+      "translatedValues": [
+        "-.- -. --- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.- -. --- -"
+      ],
+      "translatedValues": [
+        "KNOT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "KNOT"
+      ],
+      "translatedValues": [
+        "-.- -. --- -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.- -. --- -"
+      ],
+      "translatedValues": [
+        "KNOT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TINDER"
+      ],
+      "translatedValues": [
+        "- .. -. -.. . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- .. -. -.. . .-."
+      ],
+      "translatedValues": [
+        "TINDER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TINDER"
+      ],
+      "translatedValues": [
+        "- .. -. -.. . .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .. -. -.. . .-."
+      ],
+      "translatedValues": [
+        "TINDER"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FLINT"
+      ],
+      "translatedValues": [
+        "..-. .-.. .. -. -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "..-. .-.. .. -. -"
+      ],
+      "translatedValues": [
+        "FLINT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "FLINT"
+      ],
+      "translatedValues": [
+        "..-. .-.. .. -. -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. .-.. .. -. -"
+      ],
+      "translatedValues": [
+        "FLINT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TORCH"
+      ],
+      "translatedValues": [
+        "- --- .-. -.-. ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- --- .-. -.-. ...."
+      ],
+      "translatedValues": [
+        "TORCH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TORCH"
+      ],
+      "translatedValues": [
+        "- --- .-. -.-. ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- --- .-. -.-. ...."
+      ],
+      "translatedValues": [
+        "TORCH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "PATROL"
+      ],
+      "translatedValues": [
+        ".--. .- - .-. --- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--. .- - .-. --- .-.."
+      ],
+      "translatedValues": [
+        "PATROL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "PATROL"
+      ],
+      "translatedValues": [
+        ".--. .- - .-. --- .-.."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. .- - .-. --- .-.."
+      ],
+      "translatedValues": [
+        "PATROL"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TROOP"
+      ],
+      "translatedValues": [
+        "- .-. --- --- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- .-. --- --- .--."
+      ],
+      "translatedValues": [
+        "TROOP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TROOP"
+      ],
+      "translatedValues": [
+        "- .-. --- --- .--."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- .-. --- --- .--."
+      ],
+      "translatedValues": [
+        "TROOP"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "BADGE"
+      ],
+      "translatedValues": [
+        "-... .- -.. --. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-... .- -.. --. ."
+      ],
+      "translatedValues": [
+        "BADGE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "BADGE"
+      ],
+      "translatedValues": [
+        "-... .- -.. --. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-... .- -.. --. ."
+      ],
+      "translatedValues": [
+        "BADGE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "HONOR"
+      ],
+      "translatedValues": [
+        ".... --- -. --- .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".... --- -. --- .-."
+      ],
+      "translatedValues": [
+        "HONOR"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "HONOR"
+      ],
+      "translatedValues": [
+        ".... --- -. --- .-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".... --- -. --- .-."
+      ],
+      "translatedValues": [
+        "HONOR"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "COMPASS"
+      ],
+      "translatedValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translatedValues": [
+        "COMPASS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "COMPASS"
+      ],
+      "translatedValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.-. --- -- .--. .- ... ..."
+      ],
+      "translatedValues": [
+        "COMPASS"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "BEARING"
+      ],
+      "translatedValues": [
+        "-... . .- .-. .. -. --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-... . .- .-. .. -. --."
+      ],
+      "translatedValues": [
+        "BEARING"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "BEARING"
+      ],
+      "translatedValues": [
+        "-... . .- .-. .. -. --."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-... . .- .-. .. -. --."
+      ],
+      "translatedValues": [
+        "BEARING"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "AZIMUTH"
+      ],
+      "translatedValues": [
+        ".- --.. .. -- ..- - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".- --.. .. -- ..- - ...."
+      ],
+      "translatedValues": [
+        "AZIMUTH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "AZIMUTH"
+      ],
+      "translatedValues": [
+        ".- --.. .. -- ..- - ...."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".- --.. .. -- ..- - ...."
+      ],
+      "translatedValues": [
+        "AZIMUTH"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "TERRAIN"
+      ],
+      "translatedValues": [
+        "- . .-. .-. .- .. -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "- . .-. .-. .- .. -."
+      ],
+      "translatedValues": [
+        "TERRAIN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "TERRAIN"
+      ],
+      "translatedValues": [
+        "- . .-. .-. .- .. -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "- . .-. .-. .- .. -."
+      ],
+      "translatedValues": [
+        "TERRAIN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "BIVOUAC"
+      ],
+      "translatedValues": [
+        "-... .. ...- --- ..- .- -.-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-... .. ...- --- ..- .- -.-."
+      ],
+      "translatedValues": [
+        "BIVOUAC"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "BIVOUAC"
+      ],
+      "translatedValues": [
+        "-... .. ...- --- ..- .- -.-."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-... .. ...- --- ..- .- -.-."
+      ],
+      "translatedValues": [
+        "BIVOUAC"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "RATION"
+      ],
+      "translatedValues": [
+        ".-. .- - .. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-. .- - .. --- -."
+      ],
+      "translatedValues": [
+        "RATION"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "RATION"
+      ],
+      "translatedValues": [
+        ".-. .- - .. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. .- - .. --- -."
+      ],
+      "translatedValues": [
+        "RATION"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "CANTEEN"
+      ],
+      "translatedValues": [
+        "-.-. .- -. - . . -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-.-. .- -. - . . -."
+      ],
+      "translatedValues": [
+        "CANTEEN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "CANTEEN"
+      ],
+      "translatedValues": [
+        "-.-. .- -. - . . -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-.-. .- -. - . . -."
+      ],
+      "translatedValues": [
+        "CANTEEN"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "PONCHO"
+      ],
+      "translatedValues": [
+        ".--. --- -. -.-. .... ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- -. -.-. .... ---"
+      ],
+      "translatedValues": [
+        "PONCHO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "PONCHO"
+      ],
+      "translatedValues": [
+        ".--. --- -. -.-. .... ---"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".--. --- -. -.-. .... ---"
+      ],
+      "translatedValues": [
+        "PONCHO"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "RESCUE"
+      ],
+      "translatedValues": [
+        ".-. . ... -.-. ..- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".-. . ... -.-. ..- ."
+      ],
+      "translatedValues": [
+        "RESCUE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "RESCUE"
+      ],
+      "translatedValues": [
+        ".-. . ... -.-. ..- ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".-. . ... -.-. ..- ."
+      ],
+      "translatedValues": [
+        "RESCUE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "ALERT"
+      ],
+      "translatedValues": [
+        ".- .-.. . .-. -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        ".- .-.. . .-. -"
+      ],
+      "translatedValues": [
+        "ALERT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "ALERT"
+      ],
+      "translatedValues": [
+        ".- .-.. . .-. -"
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        ".- .-.. . .-. -"
+      ],
+      "translatedValues": [
+        "ALERT"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "BEACON"
+      ],
+      "translatedValues": [
+        "-... . .- -.-. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "-... . .- -.-. --- -."
+      ],
+      "translatedValues": [
+        "BEACON"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "BEACON"
+      ],
+      "translatedValues": [
+        "-... . .- -.-. --- -."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "-... . .- -.-. --- -."
+      ],
+      "translatedValues": [
+        "BEACON"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "FLARE"
+      ],
+      "translatedValues": [
+        "..-. .-.. .- .-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "..-. .-.. .- .-. ."
+      ],
+      "translatedValues": [
+        "FLARE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "cards"
+    },
+    {
+      "exerciseValues": [
+        "FLARE"
+      ],
+      "translatedValues": [
+        "..-. .-.. .- .-. ."
+      ],
+      "translateType": "textToMorse",
+      "interactionType": "keyboard"
+    },
+    {
+      "exerciseValues": [
+        "..-. .-.. .- .-. ."
+      ],
+      "translatedValues": [
+        "FLARE"
+      ],
+      "translateType": "morseToText",
+      "interactionType": "keyboard"
     }
   ],
   "sentences": [

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:drift/drift.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import '../../../features/orientation/domain/value_objects/topo_group_type.dart';
@@ -57,43 +58,49 @@ class OrientationSeeder implements ISeeder {
 
   @override
   Future<void> seed(AppDatabase db) async {
-    final manifestJson =
-        await rootBundle.loadString('AssetManifest.json');
-    final manifest = jsonDecode(manifestJson) as Map<String, dynamic>;
+    try {
+      final manifestJson =
+          await rootBundle.loadString('AssetManifest.json');
+      final manifest = jsonDecode(manifestJson) as Map<String, dynamic>;
 
-    final companions = <OrientationSignsTableCompanion>[];
+      final companions = <OrientationSignsTableCompanion>[];
 
-    for (final assetPath in manifest.keys) {
-      if (!assetPath.startsWith('assets/images/topografija/')) continue;
+      for (final assetPath in manifest.keys) {
+        if (!assetPath.startsWith('assets/images/topografija/')) continue;
 
-      final segments = assetPath.split('/');
-      // segments: ['assets', 'images', 'topografija', '<folder>', '<file>']
-      if (segments.length < 5) continue;
+        final segments = assetPath.split('/');
+        // segments: ['assets', 'images', 'topografija', '<folder>', '<file>']
+        if (segments.length < 5) continue;
 
-      final folder = segments[3];
-      final group = _folderToGroup[folder];
-      if (group == null) continue; // skip unknown / corrupt folder names
+        final folder = segments[3];
+        final group = _folderToGroup[folder];
+        if (group == null) continue; // skip unknown / corrupt folder names
 
-      final fileName = segments.last;
-      final key = fileName.contains('.')
-          ? fileName.substring(0, fileName.lastIndexOf('.'))
-          : fileName;
+        final fileName = segments.last;
+        final key = fileName.contains('.')
+            ? fileName.substring(0, fileName.lastIndexOf('.'))
+            : fileName;
 
-      final name = _nameMap[key] ?? key;
+        final name = _nameMap[key] ?? key;
 
-      companions.add(
-        OrientationSignsTableCompanion.insert(
-          name: name,
-          imageLoc: assetPath,
-          topoGroupType: group,
-        ),
-      );
-    }
+        companions.add(
+          OrientationSignsTableCompanion.insert(
+            name: name,
+            imageLoc: assetPath,
+            topoGroupType: group,
+          ),
+        );
+      }
 
-    await db.transaction(() async {
-      await db.batch((batch) {
-        batch.insertAll(db.orientationSignsTable, companions);
+      await db.transaction(() async {
+        await db.batch((batch) {
+          batch.insertAll(db.orientationSignsTable, companions);
+        });
       });
-    });
+    } catch (e) {
+      debugPrint('OrientationSeeder: failed to load AssetManifest.json — $e');
+      // Silently skip — orientation signs can be seeded later when assets are available
+      return;
+    }
   }
 }

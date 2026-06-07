@@ -11,6 +11,7 @@ import '../../../../core/domain/value_objects/exercise_enums.dart';
 import '../../../../core/domain/value_objects/exercise_validation.dart';
 import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/app_header_bar.dart';
+import '../../../../core/widgets/primary_cta_button.dart';
 import '../../domain/entities/morse_exercise.dart';
 import '../../domain/helpers/morse_string_utils.dart';
 import '../providers/morse_exercise_provider.dart';
@@ -22,7 +23,6 @@ const double _scoreCircleSize = 140.0;
 const double _scoreCircleBorder = 4.0;
 const double _scoreFontSize = 36.0;
 const double _breakdownIconSize = 20.0;
-const double _dividerHeight = 1.0;
 
 class MorseExerciseScreen extends ConsumerWidget {
   const MorseExerciseScreen({super.key});
@@ -98,9 +98,30 @@ class MorseExerciseScreen extends ConsumerWidget {
           child: CircularProgressIndicator(color: AppColors.primary),
         ),
         error: (e, _) => Center(
-          child: Text(
-            'Napaka: $e',
-            style: AppTypography.body.copyWith(color: AppColors.danger),
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.xl),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                HugeIcon(
+                  icon: HugeIcons.strokeRoundedAlert02,
+                  color: AppColors.danger,
+                  size: 48.0,
+                ),
+                const SizedBox(height: AppSpacing.lg),
+                Text(
+                  e.toString(),
+                  style: AppTypography.body
+                      .copyWith(color: AppColors.textSecondary),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppSpacing.xl),
+                PrimaryCtaButton(
+                  label: 'Nazaj',
+                  onPressed: () => context.goNamed(RouteNames.morse),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -177,62 +198,122 @@ class _CompletionView extends ConsumerWidget {
 
           Expanded(
             child: ListView.separated(
-              itemCount: exercises.length,
-              separatorBuilder: (_, __) => const Divider(
-                color: AppColors.primaryDark,
-                height: _dividerHeight,
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.base,
+                vertical: AppSpacing.lg,
               ),
+              itemCount: exercises.length,
+              separatorBuilder: (_, i) {
+                final nextIsWrong =
+                    i + 1 < results.length && results[i + 1] != true;
+                return SizedBox(
+                    height: nextIsWrong ? AppSpacing.md : AppSpacing.sm);
+              },
               itemBuilder: (context, i) {
                 final exercise = exercises[i];
                 final isCorrect = i < results.length && results[i] == true;
-                final itemColor =
-                    isCorrect ? AppColors.correct : AppColors.wrong;
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: AppSpacing.sm),
+
+                final isExerciseMorse = MorseStringUtils.isMorseSequence(
+                    exercise.exerciseValues[0]);
+                final word = isExerciseMorse
+                    ? exercise.translatedValues[0]
+                    : exercise.exerciseValues[0];
+                final morseSeq = isExerciseMorse
+                    ? exercise.exerciseValues[0]
+                    : exercise.translatedValues[0];
+                final correctTranslation = exercise.correctTranslation;
+
+                if (isCorrect) {
+                  return Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: AppSpacing.xs),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        HugeIcon(
+                          icon: AppIcons.correct,
+                          color: AppColors.primary,
+                          size: _breakdownIconSize,
+                        ),
+                        const SizedBox(width: AppSpacing.sm),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '$word →',
+                                style: AppTypography.body.copyWith(
+                                  color: AppColors.textPrimary,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              MorsePatternDisplay(morseSequence: morseSeq),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+
+                return Container(
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  decoration: BoxDecoration(
+                    color: AppColors.dangerSurface,
+                    borderRadius: BorderRadius.circular(AppSpacing.sm),
+                    border: Border.all(
+                      color: AppColors.danger.withValues(alpha: 0.4),
+                    ),
+                  ),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       HugeIcon(
-                        icon: isCorrect ? AppIcons.correct : AppIcons.wrong,
-                        color: itemColor,
+                        icon: AppIcons.wrong,
+                        color: AppColors.danger,
                         size: _breakdownIconSize,
                       ),
                       const SizedBox(width: AppSpacing.sm),
                       Expanded(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (MorseStringUtils.isMorseSequence(
-                                exercise.exerciseValues[0]))
-                              Flexible(
-                                child: MorsePatternDisplay(
-                                  morseSequence: exercise.exerciseValues[0],
-                                ),
-                              )
-                            else
-                              Text(
-                                exercise.exerciseValues[0],
-                                style: AppTypography.body
-                                    .copyWith(color: AppColors.textPrimary),
-                              ),
                             Text(
-                              '  →  ',
-                              style: AppTypography.body
-                                  .copyWith(color: AppColors.textTertiary),
-                            ),
-                            if (MorseStringUtils.isMorseSequence(
-                                exercise.translatedValues[0]))
-                              Flexible(
-                                child: MorsePatternDisplay(
-                                  morseSequence: exercise.translatedValues[0],
-                                ),
-                              )
-                            else
-                              Text(
-                                exercise.translatedValues[0],
-                                style: AppTypography.body
-                                    .copyWith(color: AppColors.textPrimary),
+                              '$word →',
+                              style: AppTypography.body.copyWith(
+                                color: AppColors.textPrimary,
+                                fontWeight: FontWeight.w600,
                               ),
+                            ),
+                            const SizedBox(height: 4),
+                            MorsePatternDisplay(
+                              morseSequence: morseSeq,
+                              color: AppColors.danger,
+                            ),
+                            if (correctTranslation.isNotEmpty) ...[
+                              const SizedBox(height: AppSpacing.sm),
+                              Text(
+                                'Pravilno:',
+                                style: AppTypography.caption.copyWith(
+                                  color: AppColors.primaryLight,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              if (MorseStringUtils.isMorseSequence(
+                                  correctTranslation))
+                                MorsePatternDisplay(
+                                  morseSequence: correctTranslation,
+                                  color: AppColors.primaryLight,
+                                )
+                              else
+                                Text(
+                                  correctTranslation,
+                                  style: AppTypography.caption.copyWith(
+                                      color: AppColors.primaryLight),
+                                ),
+                            ],
                           ],
                         ),
                       ),
@@ -243,7 +324,7 @@ class _CompletionView extends ConsumerWidget {
             ),
           ),
 
-          const SizedBox(height: AppSpacing.base),
+          const SizedBox(height: AppSpacing.xl),
 
           Row(
             children: [

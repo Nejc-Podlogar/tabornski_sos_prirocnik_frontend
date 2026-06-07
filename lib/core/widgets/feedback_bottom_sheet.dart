@@ -4,6 +4,8 @@ import '../constants/app_colors.dart';
 import '../constants/app_spacing.dart';
 import '../constants/app_typography.dart';
 import 'primary_cta_button.dart';
+import '../../features/morse/domain/helpers/morse_string_utils.dart';
+import '../../features/morse/presentation/widgets/morse_pattern_display.dart';
 
 class FeedbackBottomSheet extends StatelessWidget {
   const FeedbackBottomSheet({
@@ -37,7 +39,7 @@ class FeedbackBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = isCorrect ? AppColors.correct : AppColors.accent;
+    final color = isCorrect ? AppColors.primary : AppColors.danger;
     final icon = isCorrect ? Icons.shield : Icons.close;
     final title = isCorrect ? 'Pravilen odgovor!' : 'Napačen odgovor';
 
@@ -89,10 +91,18 @@ class FeedbackBottomSheet extends StatelessWidget {
             Text('Pravilen odgovor:',
                 style: AppTypography.cardSubtitle),
             const SizedBox(height: AppSpacing.xs),
-            Text(correctAnswer,
+            if (MorseStringUtils.isMorseSequence(correctAnswer))
+              MorsePatternDisplay(
+                morseSequence: correctAnswer,
+                color: AppColors.primary,
+              )
+            else
+              Text(
+                correctAnswer,
                 style: AppTypography.body
                     .copyWith(color: AppColors.textPrimary),
-                textAlign: TextAlign.center),
+                textAlign: TextAlign.center,
+              ),
             const SizedBox(height: AppSpacing.base),
           ],
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_spacing.dart';
 
 /// Renders a morse sequence (e.g. ".-" or "-.." ) as visual dot/dash shapes.
 ///
@@ -12,9 +13,11 @@ class MorsePatternDisplay extends StatelessWidget {
   const MorsePatternDisplay({
     super.key,
     required this.morseSequence,
+    this.color = AppColors.textPrimary,
   });
 
   final String morseSequence;
+  final Color color;
 
   static const _dotSize = 8.0;
   static const _dashWidth = 24.0;
@@ -25,10 +28,16 @@ class MorsePatternDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final trimmed = morseSequence.trim();
+    if (trimmed.isEmpty) return const SizedBox.shrink();
+
+    final symbols =
+        trimmed.split(' ').where((s) => s.isNotEmpty).toList();
+    if (symbols.isEmpty) return const SizedBox.shrink();
+
     return Wrap(
       spacing: _symbolSpacing,
-      runSpacing: _symbolSpacing,
-      crossAxisAlignment: WrapCrossAlignment.center,
+      runSpacing: AppSpacing.xs,
       children: _buildSymbols(),
     );
   }
@@ -53,8 +62,8 @@ class MorsePatternDisplay extends StatelessWidget {
   Widget _dot() => Container(
         width: _dotSize,
         height: _dotSize,
-        decoration: const BoxDecoration(
-          color: AppColors.textPrimary,
+        decoration: BoxDecoration(
+          color: color,
           shape: BoxShape.circle,
         ),
       );
@@ -63,7 +72,7 @@ class MorsePatternDisplay extends StatelessWidget {
         width: _dashWidth,
         height: _dashHeight,
         decoration: BoxDecoration(
-          color: AppColors.textPrimary,
+          color: color,
           borderRadius: BorderRadius.circular(4),
         ),
       );

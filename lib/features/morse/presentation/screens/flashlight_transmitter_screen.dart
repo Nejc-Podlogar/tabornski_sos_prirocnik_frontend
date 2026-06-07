@@ -12,6 +12,7 @@ import '../../../../core/constants/app_typography.dart';
 import '../../../../core/platform/platform_features_provider.dart';
 import '../../../../core/platform/torch/torch_service_provider.dart';
 import '../../../../core/routing/route_names.dart';
+import '../widgets/morse_key.dart';
 
 class FlashlightTransmitterScreen extends ConsumerStatefulWidget {
   const FlashlightTransmitterScreen({
@@ -389,31 +390,28 @@ class _FlashlightTransmitterScreenState
   Widget _buildMorseKeyboard() {
     return Row(
       children: [
-        _MorseKey(
-          label: ' ',
-          onTap: () => _appendMorse(' '),
-          muted: true,
+        MorseKey(
           icon: HugeIcons.strokeRoundedLetterSpacing,
           sublabel: 'črka',
+          onTap: () => _appendMorse(' '),
+          muted: true,
         ),
         const SizedBox(width: AppSpacing.sm),
-        _MorseKey(label: '·', onTap: () => _appendMorse('.')),
+        MorseKey(label: '·', onTap: () => _appendMorse('.')),
         const SizedBox(width: AppSpacing.sm),
-        _MorseKey(label: '—', onTap: () => _appendMorse('-'), flex: 2),
+        MorseKey(label: '—', onTap: () => _appendMorse('-'), isWide: true),
         const SizedBox(width: AppSpacing.sm),
-        _MorseKey(
-          label: '/',
-          onTap: () => _appendMorse('/'),
-          muted: true,
+        MorseKey(
           icon: HugeIcons.strokeRoundedText,
           sublabel: 'beseda',
+          onTap: () => _appendMorse('/'),
+          muted: true,
         ),
         const SizedBox(width: AppSpacing.sm),
-        _MorseKey(
-          label: '',
+        MorseKey(
+          icon: HugeIcons.strokeRoundedEraser01,
           onTap: _backspace,
           muted: true,
-          icon: HugeIcons.strokeRoundedEraser01,
           rotateIcon: true,
         ),
       ],
@@ -439,89 +437,6 @@ class _FlashlightTransmitterScreenState
           ),
         ),
       ],
-    );
-  }
-}
-
-// ─── Morse keyboard key ───────────────────────────────────────────────────────
-
-class _MorseKey extends StatelessWidget {
-  const _MorseKey({
-    required this.label,
-    required this.onTap,
-    this.flex = 1,
-    this.muted = false,
-    this.icon,
-    this.sublabel,
-    this.rotateIcon = false,
-  });
-
-  final String label;
-  final VoidCallback onTap;
-  final int flex;
-  final bool muted;
-  final List<List<dynamic>>? icon;
-  final String? sublabel;
-  final bool rotateIcon;
-
-  @override
-  Widget build(BuildContext context) {
-    final color = muted ? AppColors.textSecondary : AppColors.primaryLight;
-
-    Widget child;
-    if (icon != null && sublabel != null) {
-      child = Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          HugeIcon(icon: icon!, color: color, size: 18),
-          const SizedBox(height: 2),
-          Text(
-            sublabel!,
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.w600,
-              color: color,
-            ),
-          ),
-        ],
-      );
-    } else if (icon != null) {
-      final iconWidget = HugeIcon(icon: icon!, color: color, size: 22);
-      child = rotateIcon
-          ? RotatedBox(quarterTurns: 2, child: iconWidget)
-          : iconWidget;
-    } else {
-      child = Text(
-        label,
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: color,
-        ),
-      );
-    }
-
-    return Expanded(
-      flex: flex,
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          height: 56,
-          decoration: BoxDecoration(
-            color: muted
-                ? AppColors.background
-                : AppColors.primaryDark.withValues(alpha: 0.25),
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: muted
-                  ? AppColors.textTertiary.withValues(alpha: 0.25)
-                  : AppColors.primaryDark,
-              width: 1,
-            ),
-          ),
-          child: Center(child: child),
-        ),
-      ),
     );
   }
 }

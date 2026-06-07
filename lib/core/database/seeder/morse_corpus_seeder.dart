@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:drift/drift.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import '../../domain/value_objects/exercise_enums.dart';
@@ -13,6 +14,9 @@ class MorseCorpusSeeder implements ISeeder {
   Future<void> seed(AppDatabase db) async {
     final raw = await rootBundle.loadString('assets/data/morse_corpus.json');
     final json = jsonDecode(raw) as Map<String, dynamic>;
+    debugPrint('Morse corpus loaded: ${json.keys.toList()}');
+    debugPrint('Words count: ${(json['words'] as List?)?.length}');
+    debugPrint('Sentences count: ${(json['sentences'] as List?)?.length}');
 
     final companions = <MorseExercisesTableCompanion>[];
 
@@ -42,6 +46,8 @@ class MorseCorpusSeeder implements ISeeder {
     await db.batch((batch) {
       batch.insertAll(db.morseExercisesTable, companions);
     });
+    debugPrint('Seeded ${companions.length} morse exercises');
+    debugPrint('MorseCorpusSeeder complete');
   }
 
 }

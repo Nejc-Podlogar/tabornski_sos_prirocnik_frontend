@@ -54,9 +54,25 @@ class MorseExerciseNotifier extends AsyncNotifier<MorseExerciseState?> {
     if (contentType == ExerciseContentType.letters) {
       exercises =
           await _generateLetterUseCase.call(count, direction, interactionType);
+      if (exercises.isEmpty) {
+        state = AsyncError(
+          'Napaka pri generiranju vaj.',
+          StackTrace.current,
+        );
+        return;
+      }
     } else {
       exercises = await _getCorpusUseCase.call(
           count, contentType, direction, interactionType);
+      if (exercises.isEmpty) {
+        state = AsyncError(
+          'Ni dovolj vaj za izbrano vrsto. '
+          'Preverite internetno povezavo ali '
+          'izberite drugo vrsto.',
+          StackTrace.current,
+        );
+        return;
+      }
     }
 
     state = AsyncData(MorseExerciseState(
